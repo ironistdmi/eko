@@ -1,0 +1,151 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Ekofarmer API documentation",
+        "contact": {
+            "email": "d5721299@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost/api",
+            "description": "Ekofarmer API server"
+        }
+    ],
+    "paths": {
+        "/products": {
+            "get": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Display a collection of the product resources",
+                "operationId": "productsAll",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The page number",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Display product collections"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Create a product record",
+                "operationId": "productCreate",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProductRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Everything is fine"
+                    }
+                },
+                "security": [
+                    {
+                        "app_id": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ProductRequest": {
+                "title": "Product request",
+                "description": "product collection",
+                "properties": {
+                    "shop_id": {
+                        "title": "Shop",
+                        "description": "relations shop->id",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": "1"
+                    },
+                    "name": {
+                        "title": "Name",
+                        "description": "Name of product",
+                        "type": "string",
+                        "format": "string",
+                        "example": "potato"
+                    },
+                    "brand": {
+                        "title": "Brand",
+                        "description": "Brand of product",
+                        "type": "string",
+                        "format": "string",
+                        "example": "potatos inc"
+                    },
+                    "description": {
+                        "title": "Brand",
+                        "description": "Description of product",
+                        "type": "string",
+                        "format": "string",
+                        "example": "some description"
+                    },
+                    "slug": {
+                        "title": "Url",
+                        "description": "Url of product",
+                        "type": "string",
+                        "format": "string",
+                        "example": "potatourl"
+                    },
+                    "active": {
+                        "title": "Active",
+                        "description": "Product status",
+                        "type": "integer",
+                        "format": "tinyint",
+                        "example": "1 or 0"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "securitySchemes": {
+            "X-APP-ID": {
+                "type": "apiKey",
+                "name": "X-APP-ID",
+                "in": "header"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Auth",
+            "description": "Auth links"
+        },
+        {
+            "name": "Products",
+            "description": "Products links"
+        },
+        {
+            "name": "Reviews",
+            "description": "Reviews links"
+        }
+    ]
+}

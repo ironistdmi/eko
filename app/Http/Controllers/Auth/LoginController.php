@@ -175,7 +175,7 @@ class LoginController extends Controller
     
     public function authenticated(Request $request, $user)
     {
-        if ($user->status !== User::STATUS_ACTIVE) {
+        if ($user->active !== User::STATUS_ACTIVE) {
             $this->guard()->logout();
             return back()->with('error', 'You need to confirm your account. Please check your email.');
         }

@@ -19,6 +19,7 @@ return [
     'email_address' => 'Email address',
     'email' => 'Email',
     'password' => 'Password',
+    'password-repeat' => 'Password repeat',
     'login_header' => 'Log in into account',
     'forgot_password' => 'Forgot your password?',
     'no_account_que' => 'Don’t have an account?',

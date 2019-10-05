@@ -10,21 +10,40 @@
     </div>
     <div class="auth-wrapper">
         <h2>{{ trans('auth.register_header') }}</h2>
+        @if ($errors->any())
+            <div class="row">
+                <div class="col-12">
+                    <div class="alert alert-danger" role="alert">
+                        <ul>                         
+                          @foreach($errors->all() as $error)                         
+                                <li> {{{ $error }}}</li>                         
+                          @endforeach    
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        @endif        
         {!! Form::open(['route' => 'register', 'id' => 'registration-form', 'data-toggle' => 'validator']) !!}
-            <label for="">I am a</label>
+            <label>I am a</label>
             <div class="radio-container">
                 <input type="radio" id="client-seller" name="client-type" value="seller" checked>
                 <label class="radio-button" for="client-seller">Seller/Store</label>
-                <input type="radio" id="client-buyer" name="client-type" value="buyer">
+                <input type="radio" id="client-buyer" name="client-type" value="customer">
                 <label class="radio-button" for="client-buyer">Buyer</label>
             </div>
-            <label for="email-input">{{ trans('auth.email_address') }}</label>
-            {!! Form::email('email', null, ['id' => 'email-input', 'placeholder' => trans('auth.email_address'), 'required']) !!}
-            <label for="password-input">{{ trans('auth.password') }}</label>
-            {!! Form::password('password', ['id' => 'password-input', 'placeholder' => trans('app.placeholder.password'), 'data-minlength' => '6', 'required']) !!}
-            <label for="password-repeat-input">{{ trans('auth.password-repeat') }}</label>
-            {!! Form::password('password_confirmation', ['id' => 'password-repeat-input', 'placeholder' => trans('app.placeholder.password'), 'data-minlength' => '6', 'required']) !!}
-            {!! Form::submit(trans('app.form.register'), ['class' => 'btn btn-block btn-lg btn-flat btn-primary']) !!}
+            <div class="form-group">
+                <label for="email-input">{{ trans('auth.email_address') }}</label>
+                <input type="email" id="email-input" name="email" placeholder="{{trans('auth.email_address')}}" required>            
+            </div>
+            <div class="form-group">
+                <label for="password-input">{{ trans('auth.password') }}</label>
+                <input type="password" id="password-input" name="password" placeholder="{{trans('auth.password')}}" required>
+            </div>
+            <div class="form-group">
+                <label for="password-repeat-input">{{ trans('auth.password-repeat') }}</label>
+                <input type="password" id="password-repeat-input" name="password_confirmation" placeholder="{{trans('auth.password-repeat')}}" required>
+            </div>
+            <button type="submit" class="btn btn-block btn-lg btn-flat btn-primary">{{trans('auth.register')}}</button>
             <p class="terms-of-use">By clicking «Continue» I agree to Ecofarmer’s <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
         {!! Form::close() !!}
     </div>

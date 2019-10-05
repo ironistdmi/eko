@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit88a2c93b928b59eb5d144bf2ffed987f
+class ComposerStaticInit08858ed04316c77efbb8254af30bd11c
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -587,12 +587,16 @@ class ComposerStaticInit88a2c93b928b59eb5d144bf2ffed987f
         'App\\Http\\Middleware\\VerifyUserIsAdmin' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyUserIsAdmin.php',
         'App\\Http\\Middleware\\VerifyUserIsMerchant' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyUserIsMerchant.php',
         'App\\Http\\Requests\\Api\\Auth\\RegisterFormRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Api/Auth/RegisterFormRequest.php',
+        'App\\Http\\Requests\\CreateCustomerRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CreateCustomerRequest.php',
+        'App\\Http\\Requests\\CreateUserRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CreateUserRequest.php',
         'App\\Http\\Requests\\CustomerAvatarUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CustomerAvatarUpdateRequest.php',
         'App\\Http\\Requests\\CustomerPasswordUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CustomerPasswordUpdateRequest.php',
         'App\\Http\\Requests\\CustomerUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CustomerUpdateRequest.php',
         'App\\Http\\Requests\\ProductRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProductRequest.php',
         'App\\Http\\Requests\\Request' => __DIR__ . '/../..' . '/app/Http/Requests/Request.php',
         'App\\Http\\Requests\\ReviewRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ReviewRequest.php',
+        'App\\Http\\Requests\\UpdateCustomerRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateCustomerRequest.php',
+        'App\\Http\\Requests\\Validations\\UpdateUserRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateUserRequest.php',
         'App\\Http\\Resources\\ImageResource' => __DIR__ . '/../..' . '/app/Http/Resources/ImageResource.php',
         'App\\Http\\Resources\\Product\\ProductCollection' => __DIR__ . '/../..' . '/app/Http/Resources/Product/ProductCollection.php',
         'App\\Http\\Resources\\Product\\ProductResource' => __DIR__ . '/../..' . '/app/Http/Resources/Product/ProductResource.php',
@@ -617,6 +621,15 @@ class ComposerStaticInit88a2c93b928b59eb5d144bf2ffed987f
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\HelperServiceProvider' => __DIR__ . '/../..' . '/app/Providers/HelperServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Repositories\\BaseRepository' => __DIR__ . '/../..' . '/app/Repositories/BaseRepository.php',
+        'App\\Repositories\\Customer\\CustomerRepository' => __DIR__ . '/../..' . '/app/Repositories/Customer/CustomerRepository.php',
+        'App\\Repositories\\Customer\\EloquentCustomer' => __DIR__ . '/../..' . '/app/Repositories/Customer/EloquentCustomer.php',
+        'App\\Repositories\\EloquentRepository' => __DIR__ . '/../..' . '/app/Repositories/EloquentRepository.php',
+        'App\\Repositories\\Role\\EloquentRole' => __DIR__ . '/../..' . '/app/Repositories/Role/EloquentRole.php',
+        'App\\Repositories\\Role\\RoleRepository' => __DIR__ . '/../..' . '/app/Repositories/Role/RoleRepository.php',
+        'App\\Repositories\\User\\EloquentUser' => __DIR__ . '/../..' . '/app/Repositories/User/EloquentUser.php',
+        'App\\Repositories\\User\\UserRepository' => __DIR__ . '/../..' . '/app/Repositories/User/UserRepository.php',
+        'App\\Traits\\AuthorizeTrait' => __DIR__ . '/../..' . '/app/Traits/AuthorizeTrait.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonImmutable.php',
@@ -4921,10 +4934,10 @@ class ComposerStaticInit88a2c93b928b59eb5d144bf2ffed987f
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit88a2c93b928b59eb5d144bf2ffed987f::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit88a2c93b928b59eb5d144bf2ffed987f::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit88a2c93b928b59eb5d144bf2ffed987f::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit88a2c93b928b59eb5d144bf2ffed987f::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit08858ed04316c77efbb8254af30bd11c::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit08858ed04316c77efbb8254af30bd11c::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit08858ed04316c77efbb8254af30bd11c::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit08858ed04316c77efbb8254af30bd11c::$classMap;
 
         }, null, ClassLoader::class);
     }

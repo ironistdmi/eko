@@ -172,4 +172,13 @@ class LoginController extends Controller
 
         return redirect()->to('/')->with('success', trans('auth.messages.logged_out_successfully'));
     }
+    
+    public function authenticated(Request $request, $user)
+    {
+        if ($user->status !== User::STATUS_ACTIVE) {
+            $this->guard()->logout();
+            return back()->with('error', 'You need to confirm your account. Please check your email.');
+        }
+        return redirect()->intended($this->redirectPath());
+    }
 }

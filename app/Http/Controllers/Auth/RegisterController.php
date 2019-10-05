@@ -9,8 +9,11 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use App\Notifications\Auth\SendVerificationEmail as EmailVerificationNotification;
+use App\Notifications\Auth\SendVerificationEmail;
 use Illuminate\Support\Str;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Auth\VerifyMail;
 
 class RegisterController extends Controller
 {
@@ -32,7 +35,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/customer/login';
+    protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
@@ -41,7 +44,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest:customer')->except('verify');
+        $this->middleware('guest');
     }
 
     /**
@@ -51,7 +54,7 @@ class RegisterController extends Controller
      */
     protected function guard()
     {
-        return Auth::guard('customer');
+
     }
 
     /**
@@ -73,7 +76,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'email' => 'required|string|email|max:255|unique:customers',
+            'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
@@ -87,15 +90,14 @@ class RegisterController extends Controller
     public function register(Request $request)
     {
         if(Auth::guard('web')->check())
-            return redirect()->back()->with('error', trans('messages.loogedin_as_admin'));
+            return redirect()->back()->withErrors(['errors'  => trans('messages.loogedin_as_admin')]);
 
         $this->validator($request->all())->validate();
 
-        $customer = $this->create($request->all());
+        event(new Registered($user = $this->create($request->all())));
 
-        $this->guard('customer')->login($customer);
-
-        return redirect($this->redirectTo());
+        return redirect()->route('login')
+               ->with('success', 'Check your email and click on the link to verify.');
     }
 
     /**
@@ -106,11 +108,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return Customer::create([
+        $user =  User::create([
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'verification_token' => Str::random(40)
+            'type' => $data['client-type'],
+            'verification_token' => Str::random(40),
+            'verify' => User::STATUS_INACTIVE,                
         ]);
+        Mail::to($user->email)->send(new VerifyMail($user));
+
+        return $user;
     }
 
     /**
@@ -121,31 +128,18 @@ class RegisterController extends Controller
      */
     public function verify($token = null)
     {
-        if(!$token){
-            $customer = Auth::guard('customer')->user();
-
-            $customer->verification_token = Str::random(40);
-
-            if($customer->save()){
-                $customer->notify(new EmailVerificationNotification($customer));
-
-                return redirect()->back()->with('success', trans('auth.verification_link_sent'));
-            }
-
-            return redirect()->back()->with('success', trans('auth.verification_link_sent'));
+        if (!$user = User::where('verification_token', $token)->first()) {
+            return redirect()->route('login')
+                ->with('error', 'Sorry your link cannot be identified.');
         }
 
-        try{
-            $customer = Customer::where('verification_token', $token)->firstOrFail();
+        $user->verify = User::STATUS_ACTIVE;
+        $user->verification_token = null;
+		$user->email_verified_at = \Carbon\Carbon::now();
+        $user->save();
 
-            $customer->verification_token = Null;
-
-            if($customer->save())
-                return redirect()->route('account', 'account')->with('success', trans('auth.verification_successful'));
-
-        } catch(\Exception $e){
-            return redirect()->route('account', 'account')->with('error', trans('auth.verification_failed'));
-        }
+        return redirect()->route('login')
+            ->with('success', 'Your e-mail is verified. You can now login.');
     }
 
 }

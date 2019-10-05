@@ -10,14 +10,19 @@
         </div>
         <div class="auth-wrapper">
             <h2>{{ trans('auth.login_header') }}</h2>
+            @if(session('success'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('success') }}
+                </div>
+            @endif
             {!! Form::open(['route' => 'login', 'id' => 'form', 'data-toggle' => 'validator']) !!}
             <div class="form-group has-feedback">
-                {!! Form::email('email', null, ['class' => 'form-control input-lg', 'placeholder' => trans('auth.email_address'), 'required']) !!}
+                {!! Form::email('email', null, ['class' => 'input-lg', 'placeholder' => trans('auth.email_address'), 'required']) !!}
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 <div class="help-block with-errors"></div>
             </div>
             <div class="form-group has-feedback">
-                {!! Form::password('password', ['class' => 'form-control input-lg', 'id' => 'password', 'placeholder' => trans('auth.password'), 'data-minlength' => '6', 'required']) !!}
+                {!! Form::password('password', ['class' => 'input-lg', 'id' => 'password', 'placeholder' => trans('auth.password'), 'data-minlength' => '6', 'required']) !!}
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 <div class="help-block with-errors"></div>
             </div>

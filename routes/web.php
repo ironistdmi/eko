@@ -11,7 +11,11 @@
 |
 */
 
-
+Route::get('/clear-cache', function() {
+	Artisan::call('view:clear'); 
+    Artisan::call('cache:clear');
+    return "Cache is cleared";
+});
 //Front Route
 Route::group(['middleware' => ['front'], 'namespace' => 'Front'], function() {
 
@@ -26,18 +30,19 @@ Route::group(['middleware' => ['front'], 'namespace' => 'Front'], function() {
 
             // Register
             Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-            Route::post('/register', function (Request $request){
-                $route = Route::current();
-                if ($request->has('type')) {
-                    if ($request->input('client-type') == 'seller') {
-                        exit('seller');
-                    } else if ($request->input('client-type') == 'buyer') {
-                        exit('buyer');
-                        //return $this->('Auth\RegisterController@register')
-                    }
-                }
-
-            })->name('register.submit'); //'Auth\RegisterController@register')->name('register.submit');
+            Route::post('/register', 'Auth\RegisterController@register');
+//            Route::post('/register', function (Request $request){
+//                $route = Route::current();
+//                if ($request->has('type')) {
+//                    if ($request->input('client-type') == 'seller') {
+//                        exit('seller');
+//                    } else if ($request->input('client-type') == 'buyer') {
+//                        exit('buyer');
+//                        //return $this->('Auth\RegisterController@register')
+//                    }
+//                }
+//
+//            })->name('register.submit'); //'Auth\RegisterController@register')->name('register.submit');
             Route::get('/verify/{token?}', 'Auth\RegisterController@verify')->name('verify');
 
             // Forgot Password

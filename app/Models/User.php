@@ -14,6 +14,8 @@ class User extends Authenticatable
 {
     use SoftDeletes, HasApiTokens, Notifiable;
 
+    const STATUS_INACTIVE = 0;
+    const STATUS_ACTIVE = 1;
     /**
      * The database table used by the model.
      *
@@ -89,6 +91,7 @@ class User extends Authenticatable
         'nice_name',
         'email',
         'password',
+        'type',
         'dob',
         'description',
         'sex',

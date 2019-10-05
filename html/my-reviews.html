@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document Template Title</title>
+        <!-- Main Meta information-->
+        <meta charset="utf-8" />
+        <meta http-equiv="Cache-control" content="public" />
+        <meta name="viewport" content="width=device-width, user-scalable=yes" />
+        <!-- Meta Information-->
+        <meta name="robots" content="index, follow" />
+        <link type="text/plain" rel="author" href="humans.txt" />
+        <!-- Get html5shiv if this is IE lower or equal to 9-->
+        <!--[if lte IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+        <link rel="stylesheet" href="css/main.min.css" />
+    </head>
+    <body>
+        <header>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="header-wrapper col-12">
+                        <div class="header-button">
+                            <button class="menu-toggle-trigger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                            <a href="index.html" class="header-logo">
+                                <h1>ECOFARMER</h1>
+                            </a>
+                        </div>
+                        <div class="header-navigation">
+                            <div class="navigation-container">
+                                <a href="search.html">Search</a>
+                                <a href="saved.html">Saved</a>
+                                <a href="add-item.html">Add item</a>
+                            </div>
+                            <div class="search-container">
+                                <form action="">
+                                    <div class="input-field">
+                                        <input type="text">
+                                        <svg class="field-icon search-icon" xmlns="http://www.w3.org/2000/svg" width="12.992" height="13" viewBox="0 0 12.992 13">
+                                            <g id="noun_Search_875352" transform="translate(-10.4 -10.3)">
+                                                <path id="Path_938" data-name="Path 938" d="M23.176,22.07l-2.332-2.316a5.854,5.854,0,1,0-4.6,2.236,5.777,5.777,0,0,0,3.593-1.246l2.316,2.348a.7.7,0,0,0,.511.208.769.769,0,0,0,.511-.208A.713.713,0,0,0,23.176,22.07Zm-2.523-5.925a4.417,4.417,0,1,1-1.294-3.114A4.373,4.373,0,0,1,20.653,16.145Z" transform="translate(0)" fill="#cecece" />
+                                            </g>
+                                        </svg>
+                                        <svg class="field-icon micro-icon" xmlns="http://www.w3.org/2000/svg" width="12.136" height="15.925" viewBox="0 0 12.136 15.925">
+                                            <g id="noun_voice_2627272" transform="translate(0 0)">
+                                                <g id="Group_16" data-name="Group 16">
+                                                    <path id="Path_939" data-name="Path 939" d="M10.928,93.839a.6.6,0,0,1,1.208,0v.906A6.082,6.082,0,0,1,6.7,100.782v2.174a.6.6,0,0,1-1.208,0v-2.174A6.135,6.135,0,0,1,0,94.744v-.906a.6.6,0,0,1,1.208,0v.906a4.861,4.861,0,0,0,9.721,0Z" transform="translate(0 -87.62)" fill="#00074d" />
+                                                    <path id="Path_940" data-name="Path 940" d="M48.381,0A3.35,3.35,0,0,1,51.7,3.321v3.8a3.351,3.351,0,0,1-6.7,0v-3.8A3.363,3.363,0,0,1,48.381,0Zm0,1.208a2.152,2.152,0,0,0-2.174,2.113v3.8a2.144,2.144,0,0,0,4.287,0v-3.8A2.139,2.139,0,0,0,48.381,1.208Z" transform="translate(-42.283)" fill="#00074d" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="button-wrapper">
+                                        <button type="submit">Find now</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="header-panel">
+                            <a class="conversation-link" href="chat.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                    <g id="noun_messages_1516437" transform="translate(-5 -2)">
+                                        <g id="Group_1019" data-name="Group 1019" transform="translate(5 2)">
+                                            <path id="Path_2126" data-name="Path 2126" d="M9.5,4h-6a.5.5,0,0,1,0-1h6a.5.5,0,0,1,0,1Z" fill="#2b2c33" />
+                                            <path id="Path_2127" data-name="Path 2127" d="M7.5,6h-4a.5.5,0,0,1,0-1h4a.5.5,0,0,1,0,1Z" fill="#2b2c33" />
+                                            <g id="Group_1018" data-name="Group 1018">
+                                                <path id="Path_2128" data-name="Path 2128" d="M.5,12.5a.507.507,0,0,1-.212-.047A.5.5,0,0,1,0,12V2A2,2,0,0,1,2,0h9a2,2,0,0,1,2,2V8a2,2,0,0,1-2,2H3.681L.82,12.384A.494.494,0,0,1,.5,12.5ZM2,1A1,1,0,0,0,1,2v8.933L3.18,9.117A.5.5,0,0,1,3.5,9H11a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1Z" fill="#2b2c33" />
+                                                <path id="Path_2129" data-name="Path 2129" d="M15.5,16a.5.5,0,0,1-.312-.109L12.824,14H6a2,2,0,0,1-2-2v-.5a.5.5,0,0,1,1,0V12a1,1,0,0,0,1,1h7a.5.5,0,0,1,.312.109L15,14.46V6a1,1,0,0,0-1-1,.5.5,0,0,1,0-1,2,2,0,0,1,2,2v9.5a.5.5,0,0,1-.283.45A.51.51,0,0,1,15.5,16Z" fill="#2b2c33" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                            <div class="notification-link new-notification">
+                                <div class="svg-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.928" height="15" viewBox="0 0 13.928 15">
+                                        <g id="noun_notification_2184965" transform="translate(-24 -22)">
+                                            <g id="Group_18" data-name="Group 18" transform="translate(24 22)">
+                                                <g id="Group_17" data-name="Group 17">
+                                                    <path id="Path_941" data-name="Path 941" d="M37.929,32.179a1.609,1.609,0,0,1-1.61,1.607H25.61a1.607,1.607,0,1,1,0-3.214s0-3.214,0-3.214a5.357,5.357,0,0,1,10.714,0v3.214A1.609,1.609,0,0,1,37.929,32.179Zm-1.608-.536a1.07,1.07,0,0,1-1.071-1.072V27.357a4.286,4.286,0,0,0-8.571,0v3.214a1.072,1.072,0,0,1-1.071,1.072.536.536,0,1,0,0,1.071H36.319a.536.536,0,1,0,0-1.071Zm-7.767,2.946h1.071a1.339,1.339,0,1,0,2.679,0h1.071a2.411,2.411,0,0,1-4.821,0Z" transform="translate(-24 -22)" fill="#2b2c33" />
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="new-notification-panel">
+                                    <div class="notification-item">
+                                        <div class="image-container">
+                                            <div class="image-wrapper">
+                                                <img src="/img/pics/avatar.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="text-container">
+                                            <p><span class="span-big">Oleg Makarov</span> send you a message.</p>
+                                            <a href="#">View</a>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="notification-item verification-notification">
+                                        <div class="image-container">
+                                            <div class="image-wrapper">
+                                                <img src="/img/pics/verified-icon.svg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="text-container">
+                                            <p><span class="span-big">You</span> received a verification icon!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="profile-panel" href="profile.html">
+                                <img src="/img/pics/avatar.png" alt="">
+                            </a>
+                            <!-- FOR USERS (DELETE THIS LINE)-->
+                            <!-- <a href="#" class="link-button">Log&nbsp;in</a>
+                    <a href="#" class="link-button button-fill">Sign&nbsp;Up</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="header-fixed-shadow disabled"></div>
+        <div class="d-flex fullscreen-page">
+            <aside class="profile-aside">
+                <h3>Dashboard</h3>
+                <div class="aside-navigation">
+                    <a class="" href="profile.html">Profile</a>
+                    <a class="" href="profile-full.html">Profile full delete</a>
+                    <a class="" href="my-products.html">My products</a>
+                    <a class="active" href="my-reviews.html">All reviews</a>
+                    <a class="" href="settings.html">Settings</a>
+                    <hr>
+                    <a href="#">Log out</a>
+                </div>
+            </aside>
+            <div class="my-reviews-page fullscreen-block">
+                <a class="toggle-dashboard" href="#">Dashboard <br> <svg xmlns="http://www.w3.org/2000/svg" width="33.312" height="13.934" viewBox="0 0 33.312 13.934">
+                        <g id="Group_997" data-name="Group 997" transform="translate(0)">
+                            <path id="Path_2079" data-name="Path 2079" d="M180.414,565.632l.428.428-.865.875L173,559.967,179.977,553l.865.875-5.471,5.48h30.941v1.234H175.371Z" transform="translate(-173 -553)" fill="#fff" />
+                        </g>
+                    </svg>
+                </a>
+                <h2>My reviews</h2>
+                <div class="my-reviews-items">
+                    <div class="review-item my-item">
+                        <div class="review-info">
+                            <div class="image-container">
+                                <div class="image-wrapper">
+                                    <img src="/img/pics/review-image-1.png" alt="">
+                                </div>
+                                <div class="review-status status-green">
+                                    <svg id="noun_Heart_1814275" xmlns="http://www.w3.org/2000/svg" width="9.073" height="8.354" viewBox="0 0 9.073 8.354">
+                                        <g id="Group_15" data-name="Group 15">
+                                            <path id="Path_937" data-name="Path 937" d="M13.442,966.416a2.4,2.4,0,0,0-1.761.77,2.731,2.731,0,0,0,0,3.686l3.479,3.752a.465.465,0,0,0,.679,0l3.483-3.748a2.73,2.73,0,0,0,0-3.686,2.394,2.394,0,0,0-3.519,0l-.3.323-.3-.327A2.389,2.389,0,0,0,13.442,966.416Zm0,.9a1.464,1.464,0,0,1,1.075.5l.646.694a.465.465,0,0,0,.679,0l.643-.686a1.414,1.414,0,0,1,2.154,0,1.813,1.813,0,0,1,0,2.419L15.5,973.625l-3.134-3.385a1.818,1.818,0,0,1,0-2.422A1.471,1.471,0,0,1,13.442,967.32Z" transform="translate(-10.965 -966.416)" fill="#fff" />
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="info-container">
+                                <div class="info-title">
+                                    <h3>Oleg Markov</h3>
+                                    <div class="review-rating">
+                                        <svg id="Group" xmlns="http://www.w3.org/2000/svg" height="9.904" viewBox="0 0 10.366 9.904">
+                                            <path id="Path_922" data-name="Path 922" d="M9.973,5.735a.716.716,0,0,0,.206.773l1.829,1.777a.315.315,0,0,1,.077.232l-.464,2.5a.671.671,0,0,0,.18.618.782.782,0,0,0,.953.18L15,10.629a.193.193,0,0,1,.232,0l2.241,1.185a.778.778,0,0,0,1.133-.8l-.438-2.5a.415.415,0,0,1,.077-.232l1.829-1.777a.8.8,0,0,0,.206-.773.747.747,0,0,0-.618-.515l-2.55-.386a.194.194,0,0,1-.18-.129L15.795,2.438a.771.771,0,0,0-1.391,0L13.3,4.7a.194.194,0,0,1-.18.129l-2.524.361A.783.783,0,0,0,9.973,5.735Z" transform="translate(-9.94 -2)" fill="#efba0b" />
+                                        </svg>
+                                        <span>4.9</span>
+                                    </div>
+                                    <div class="post-title">
+                                        <div class="post-image-container">
+                                            <img src="/img/pics/my-products-image.png" alt="">
+                                        </div>
+                                        <p>Fresh eggs from thoroughbred chickens</p>
+                                    </div>
+                                </div>
+                                <p>Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
+                            </div>
+                        </div>
+                        <div class="review-panel">
+                            <a href="#" data-toggle="modal" data-target="#modal-my-review-open">Delete</a>
+                        </div>
+                        <div class="deleted-item-display">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 0 14 15">
+                                <g id="noun_Delete_1561486" transform="translate(-3.903 -119.5)">
+                                    <g id="Group_642" data-name="Group 642" transform="translate(3.903 120)">
+                                        <path id="Path_1873" data-name="Path 1873" d="M255.313,334.1v9.236a.94.94,0,0,1-.933.94h-7.646a.94.94,0,0,1-.933-.94V334.1" transform="translate(-243.532 -330.276)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <path id="Path_1874" data-name="Path 1874" d="M132,248H118" transform="translate(-118 -245.714)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <path id="Path_1875" data-name="Path 1875" d="M356,122.286v-1.761a.572.572,0,0,1,.575-.525h4.473a.5.5,0,0,1,.488.525v1.761" transform="translate(-351.777 -120)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <line id="Line_100" data-name="Line 100" y2="7.882" transform="translate(5.463 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <line id="Line_101" data-name="Line 101" y2="7.882" transform="translate(8.585 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <span>Deleted</span>
+                        </div>
+                    </div>
+                    <div class="review-item my-item">
+                        <div class="review-info">
+                            <div class="image-container">
+                                <div class="image-wrapper">
+                                    <img src="/img/pics/review-image-2.png" alt="">
+                                </div>
+                                <div class="review-status status-green">
+                                    <svg id="noun_Heart_1814275" xmlns="http://www.w3.org/2000/svg" width="9.073" height="8.354" viewBox="0 0 9.073 8.354">
+                                        <g id="Group_15" data-name="Group 15">
+                                            <path id="Path_937" data-name="Path 937" d="M13.442,966.416a2.4,2.4,0,0,0-1.761.77,2.731,2.731,0,0,0,0,3.686l3.479,3.752a.465.465,0,0,0,.679,0l3.483-3.748a2.73,2.73,0,0,0,0-3.686,2.394,2.394,0,0,0-3.519,0l-.3.323-.3-.327A2.389,2.389,0,0,0,13.442,966.416Zm0,.9a1.464,1.464,0,0,1,1.075.5l.646.694a.465.465,0,0,0,.679,0l.643-.686a1.414,1.414,0,0,1,2.154,0,1.813,1.813,0,0,1,0,2.419L15.5,973.625l-3.134-3.385a1.818,1.818,0,0,1,0-2.422A1.471,1.471,0,0,1,13.442,967.32Z" transform="translate(-10.965 -966.416)" fill="#fff" />
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="info-container">
+                                <div class="info-title">
+                                    <h3>Oleg Markov</h3>
+                                    <div class="review-rating">
+                                        <svg id="Group" xmlns="http://www.w3.org/2000/svg" height="9.904" viewBox="0 0 10.366 9.904">
+                                            <path id="Path_922" data-name="Path 922" d="M9.973,5.735a.716.716,0,0,0,.206.773l1.829,1.777a.315.315,0,0,1,.077.232l-.464,2.5a.671.671,0,0,0,.18.618.782.782,0,0,0,.953.18L15,10.629a.193.193,0,0,1,.232,0l2.241,1.185a.778.778,0,0,0,1.133-.8l-.438-2.5a.415.415,0,0,1,.077-.232l1.829-1.777a.8.8,0,0,0,.206-.773.747.747,0,0,0-.618-.515l-2.55-.386a.194.194,0,0,1-.18-.129L15.795,2.438a.771.771,0,0,0-1.391,0L13.3,4.7a.194.194,0,0,1-.18.129l-2.524.361A.783.783,0,0,0,9.973,5.735Z" transform="translate(-9.94 -2)" fill="#efba0b" />
+                                        </svg>
+                                        <span>4.9</span>
+                                    </div>
+                                    <div class="post-title">
+                                        <div class="post-image-container">
+                                            <img src="/img/pics/my-products-image.png" alt="">
+                                        </div>
+                                        <p>Fresh eggs from thoroughbred chickens</p>
+                                    </div>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
+                            </div>
+                        </div>
+                        <div class="review-panel">
+                            <a href="#" data-toggle="modal" data-target="#modal-my-review-open">Delete</a>
+                        </div>
+                        <div class="deleted-item-display">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 0 14 15">
+                                <g id="noun_Delete_1561486" transform="translate(-3.903 -119.5)">
+                                    <g id="Group_642" data-name="Group 642" transform="translate(3.903 120)">
+                                        <path id="Path_1873" data-name="Path 1873" d="M255.313,334.1v9.236a.94.94,0,0,1-.933.94h-7.646a.94.94,0,0,1-.933-.94V334.1" transform="translate(-243.532 -330.276)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <path id="Path_1874" data-name="Path 1874" d="M132,248H118" transform="translate(-118 -245.714)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <path id="Path_1875" data-name="Path 1875" d="M356,122.286v-1.761a.572.572,0,0,1,.575-.525h4.473a.5.5,0,0,1,.488.525v1.761" transform="translate(-351.777 -120)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <line id="Line_100" data-name="Line 100" y2="7.882" transform="translate(5.463 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <line id="Line_101" data-name="Line 101" y2="7.882" transform="translate(8.585 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <span>Deleted</span>
+                        </div>
+                    </div>
+                    <div class="review-item my-item">
+                        <div class="review-info">
+                            <div class="image-container">
+                                <div class="image-wrapper">
+                                    <img src="/img/pics/review-image-3.png" alt="">
+                                </div>
+                                <div class="review-status status-green">
+                                    <svg id="noun_Heart_1814275" xmlns="http://www.w3.org/2000/svg" width="9.073" height="8.354" viewBox="0 0 9.073 8.354">
+                                        <g id="Group_15" data-name="Group 15">
+                                            <path id="Path_937" data-name="Path 937" d="M13.442,966.416a2.4,2.4,0,0,0-1.761.77,2.731,2.731,0,0,0,0,3.686l3.479,3.752a.465.465,0,0,0,.679,0l3.483-3.748a2.73,2.73,0,0,0,0-3.686,2.394,2.394,0,0,0-3.519,0l-.3.323-.3-.327A2.389,2.389,0,0,0,13.442,966.416Zm0,.9a1.464,1.464,0,0,1,1.075.5l.646.694a.465.465,0,0,0,.679,0l.643-.686a1.414,1.414,0,0,1,2.154,0,1.813,1.813,0,0,1,0,2.419L15.5,973.625l-3.134-3.385a1.818,1.818,0,0,1,0-2.422A1.471,1.471,0,0,1,13.442,967.32Z" transform="translate(-10.965 -966.416)" fill="#fff" />
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="info-container">
+                                <div class="info-title">
+                                    <h3>Oleg Markov</h3>
+                                    <div class="review-rating">
+                                        <svg id="Group" xmlns="http://www.w3.org/2000/svg" height="9.904" viewBox="0 0 10.366 9.904">
+                                            <path id="Path_922" data-name="Path 922" d="M9.973,5.735a.716.716,0,0,0,.206.773l1.829,1.777a.315.315,0,0,1,.077.232l-.464,2.5a.671.671,0,0,0,.18.618.782.782,0,0,0,.953.18L15,10.629a.193.193,0,0,1,.232,0l2.241,1.185a.778.778,0,0,0,1.133-.8l-.438-2.5a.415.415,0,0,1,.077-.232l1.829-1.777a.8.8,0,0,0,.206-.773.747.747,0,0,0-.618-.515l-2.55-.386a.194.194,0,0,1-.18-.129L15.795,2.438a.771.771,0,0,0-1.391,0L13.3,4.7a.194.194,0,0,1-.18.129l-2.524.361A.783.783,0,0,0,9.973,5.735Z" transform="translate(-9.94 -2)" fill="#efba0b" />
+                                        </svg>
+                                        <span>4.9</span>
+                                    </div>
+                                    <div class="post-title">
+                                        <div class="post-image-container">
+                                            <img src="/img/pics/my-products-image.png" alt="">
+                                        </div>
+                                        <p>Fresh eggs from thoroughbred chickens</p>
+                                    </div>
+                                </div>
+                                <p>Super! </p>
+                            </div>
+                        </div>
+                        <div class="review-panel">
+                            <a href="#" data-toggle="modal" data-target="#modal-my-review-open">Delete</a>
+                        </div>
+                        <div class="deleted-item-display">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 0 14 15">
+                                <g id="noun_Delete_1561486" transform="translate(-3.903 -119.5)">
+                                    <g id="Group_642" data-name="Group 642" transform="translate(3.903 120)">
+                                        <path id="Path_1873" data-name="Path 1873" d="M255.313,334.1v9.236a.94.94,0,0,1-.933.94h-7.646a.94.94,0,0,1-.933-.94V334.1" transform="translate(-243.532 -330.276)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <path id="Path_1874" data-name="Path 1874" d="M132,248H118" transform="translate(-118 -245.714)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <path id="Path_1875" data-name="Path 1875" d="M356,122.286v-1.761a.572.572,0,0,1,.575-.525h4.473a.5.5,0,0,1,.488.525v1.761" transform="translate(-351.777 -120)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <line id="Line_100" data-name="Line 100" y2="7.882" transform="translate(5.463 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <line id="Line_101" data-name="Line 101" y2="7.882" transform="translate(8.585 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <span>Deleted</span>
+                        </div>
+                    </div>
+                    <div class="review-item my-item">
+                        <div class="review-info">
+                            <div class="image-container">
+                                <div class="image-wrapper">
+                                    <img src="/img/pics/review-image-4.png" alt="">
+                                </div>
+                                <div class="review-status status-red">
+                                    <svg id="Group_1080" data-name="Group 1080" xmlns="http://www.w3.org/2000/svg" width="8.783" height="8.283" viewBox="0 0 8.783 8.283">
+                                        <path id="Path_2136" data-name="Path 2136" d="M10.647,967.749a4.33,4.33,0,0,1,.8-2.648.588.588,0,0,0,.41.169h1.774a.6.6,0,0,0,.591-.591v-3.547a.6.6,0,0,0-.591-.591H11.854a.589.589,0,0,0-.425.185,2.143,2.143,0,0,0-.231-.166,1.509,1.509,0,0,0-.637-.194c-.519-.054-1.338-.014-3.24-.021a.3.3,0,0,0-.188.068,1.769,1.769,0,0,0-.647.958.3.3,0,0,0-.086.071,1.519,1.519,0,0,0-.351,1.14.292.292,0,0,0-.043.043,1.474,1.474,0,0,0-.317,1.315,1.143,1.143,0,0,0-.246.822.977.977,0,0,0,.579.782.3.3,0,0,0,.117.025H8.565a4.053,4.053,0,0,0,.311,2.461,1.119,1.119,0,0,0,.785.585A.877.877,0,0,0,10.647,967.749Zm-1.256-.015a3.874,3.874,0,0,1-.2-2.408.309.309,0,0,0-.289-.351H6.225a.36.36,0,0,1-.194-.283.564.564,0,0,1,.157-.406H7.222a.3.3,0,1,0,0-.591H6.243A.9.9,0,0,1,6.4,963.1h.825a.3.3,0,1,0,0-.591H6.637a.9.9,0,0,1,.154-.591h.431a.3.3,0,1,0,0-.591h-.1a1.2,1.2,0,0,1,.326-.394c1.794.006,2.65-.023,3.055.019a.818.818,0,0,1,.394.114,4.131,4.131,0,0,1,.366.28v3a5.26,5.26,0,0,0-1.207,3.378C9.963,968.23,9.522,968.019,9.39,967.734Zm4.237-3.055H11.854c.007-1.175,0-2.364,0-3.548h1.774Z" transform="translate(-5.436 -960.336)" fill="#fff" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="info-container">
+                                <div class="info-title">
+                                    <h3>Oleg Markov</h3>
+                                    <div class="review-rating">
+                                        <svg id="Group" xmlns="http://www.w3.org/2000/svg" height="9.904" viewBox="0 0 10.366 9.904">
+                                            <path id="Path_922" data-name="Path 922" d="M9.973,5.735a.716.716,0,0,0,.206.773l1.829,1.777a.315.315,0,0,1,.077.232l-.464,2.5a.671.671,0,0,0,.18.618.782.782,0,0,0,.953.18L15,10.629a.193.193,0,0,1,.232,0l2.241,1.185a.778.778,0,0,0,1.133-.8l-.438-2.5a.415.415,0,0,1,.077-.232l1.829-1.777a.8.8,0,0,0,.206-.773.747.747,0,0,0-.618-.515l-2.55-.386a.194.194,0,0,1-.18-.129L15.795,2.438a.771.771,0,0,0-1.391,0L13.3,4.7a.194.194,0,0,1-.18.129l-2.524.361A.783.783,0,0,0,9.973,5.735Z" transform="translate(-9.94 -2)" fill="#efba0b" />
+                                        </svg>
+                                        <span>1</span>
+                                    </div>
+                                    <div class="post-title">
+                                        <div class="post-image-container">
+                                            <img src="/img/pics/my-products-image.png" alt="">
+                                        </div>
+                                        <p>Fresh eggs from thoroughbred chickens</p>
+                                    </div>
+                                </div>
+                                <p>Not as good as they say about it! Quality is bad. They need to check their proceses of creating tomatoes! </p>
+                            </div>
+                        </div>
+                        <div class="review-panel">
+                            <a href="#" data-toggle="modal" data-target="#modal-my-review-open">Delete</a>
+                        </div>
+                        <div class="deleted-item-display">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 0 14 15">
+                                <g id="noun_Delete_1561486" transform="translate(-3.903 -119.5)">
+                                    <g id="Group_642" data-name="Group 642" transform="translate(3.903 120)">
+                                        <path id="Path_1873" data-name="Path 1873" d="M255.313,334.1v9.236a.94.94,0,0,1-.933.94h-7.646a.94.94,0,0,1-.933-.94V334.1" transform="translate(-243.532 -330.276)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <path id="Path_1874" data-name="Path 1874" d="M132,248H118" transform="translate(-118 -245.714)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <path id="Path_1875" data-name="Path 1875" d="M356,122.286v-1.761a.572.572,0,0,1,.575-.525h4.473a.5.5,0,0,1,.488.525v1.761" transform="translate(-351.777 -120)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <line id="Line_100" data-name="Line 100" y2="7.882" transform="translate(5.463 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <line id="Line_101" data-name="Line 101" y2="7.882" transform="translate(8.585 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <span>Deleted</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-->
+        <div class="modal-my-product modal fade" id="modal-my-product-open" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="image-container">
+                            <img src="/img/pics/modal-image.png" alt="">
+                        </div>
+                        <div class="text-container">
+                            <p class="alert-text">Are you sure you want to delete this item?</p>
+                            <p>You will not be able to restore this product in the future.</p>
+                        </div>
+                        <div class="button-container">
+                            <button type="button" class="close-button" data-dismiss="modal">Close</button>
+                            <button type="button" class="delete-button">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-my-review modal fade" id="modal-my-review-open" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="review-container">
+                            <a href="#" class="post-title">
+                                <div class="post-image-container">
+                                    <img src="/img/pics/my-products-image.png" alt="">
+                                </div>
+                                <p>Fresh eggs from thoroughbred chickens</p>
+                            </a>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
+                        </div>
+                        <div class="text-container">
+                            <p class="alert-text">Are you sure you want to delete this item?</p>
+                            <p>You will not be able to restore this review in the future.</p>
+                        </div>
+                        <div class="button-container">
+                            <button type="button" class="close-button" data-dismiss="modal">Close</button>
+                            <button type="button" class="delete-button">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-product-post modal fade" id="modal-product-post-open" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="image-container">
+                            <img src="/img/pics/modal-product-post.png" alt="">
+                        </div>
+                        <div class="text-container">
+                            <p class="alert-text">Your product has been published!</p>
+                            <p>From now all your customers and users of Ecofarmer be able to see your product and message you!</p>
+                        </div>
+                        <div class="button-container">
+                            <button type="button" class="close-button" data-dismiss="modal">Yeah!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-verify-account modal fade" id="modal-verify-account-open" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h4>Verify your account</h4>
+                        <p>When you verify your account, you can get an <svg xmlns="http://www.w3.org/2000/svg" width="12.062" height="12" viewBox="0 0 12.062 12">
+                                <g id="noun_verified_2396751" transform="translate(-65.989 -67.821)">
+                                    <g id="Group_14" data-name="Group 14" transform="translate(65.989 67.821)">
+                                        <path id="Path_936" data-name="Path 936" d="M72.291,67.952l.77.879,1.152-.489a.344.344,0,0,1,.461.215l.352,1.133,1.25.022a.344.344,0,0,1,.335.383l-.139,1.18,1.133.529a.343.343,0,0,1,.165.456c-.154.32-.434.732-.623,1.05l.821.945a.345.345,0,0,1-.062.505l-.969.685.365,1.2a.343.343,0,0,1-.263.436l-1.162.232-.153,1.241a.345.345,0,0,1-.442.288l-1.133-.257L73.5,79.654a.344.344,0,0,1-.5.1l-.952-.711-1.024.717a.343.343,0,0,1-.5-.115l-.579-1.035-1.229.239a.344.344,0,0,1-.408-.327l-.106-1.161-1.218-.282a.344.344,0,0,1-.249-.445l.382-1.124-1-.753a.344.344,0,0,1-.025-.528l.787-.851-.606-1.094a.344.344,0,0,1,.166-.483l1.089-.468-.109-1.246a.346.346,0,0,1,.377-.372l1.156.016.408-1.183a.345.345,0,0,1,.487-.192l1.061.489.853-.914A.344.344,0,0,1,72.291,67.952Zm-3.086,6a.491.491,0,0,1,.694-.694l1.536,1.536,2.69-2.982a.49.49,0,0,1,.728.655l-3.02,3.347a.49.49,0,0,1-.727.037Z" transform="translate(-65.989 -67.821)" fill="#3997f0" fill-rule="evenodd" />
+                                    </g>
+                                </g>
+                            </svg> icon. All buyers and visitors of your store will understand that they can trust you. To verify your account, you need to upload several documents and wait until our system check them. After a successful verification, you will immediately receive an icon.</p>
+                        <label class="title-tooltip tooltip-relative"> Document 1 <svg xmlns="http://www.w3.org/2000/svg" width="12.486" height="15" viewBox="0 0 12.486 15">
+                                <g id="noun_Info_2397918" transform="translate(-105.498 -41.5)">
+                                    <g id="Group_1005" data-name="Group 1005" transform="translate(105.498 41.5)">
+                                        <path id="Path_2100" data-name="Path 2100" d="M105.595,49.765c-.076-1.847-.142-3.744-.057-5.594l6.2-2.671,6.2,2.671c.085,1.85.019,3.747-.057,5.594-.125,3.021-3.645,5.523-6.146,6.735C109.24,55.288,105.719,52.787,105.595,49.765Zm6.974-1.34v3.769a.828.828,0,0,1-1.656,0V48.425A.828.828,0,0,1,112.569,48.425Zm-.828-3.441a.871.871,0,1,1-.871.871A.871.871,0,0,1,111.741,44.985ZM106.7,49.722c.115,2.793,4.019,5.008,5.037,5.54,1.018-.531,4.922-2.747,5.037-5.54.107-2.593.1-4.159.083-4.806l-5.12-2.2-5.12,2.2C106.607,45.563,106.6,47.129,106.7,49.722Z" transform="translate(-105.498 -41.5)" fill="#00a757" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <div class="tooltip-container">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata </p>
+                            </div>
+                        </label>
+                        <div class="drag-n-drop-container drag-n-drop-verification">
+                            <div class="dropped-item"></div>
+                            <div class="drag-n-drop-input">
+                                <label for="drag-n-drop-file">or browse files</label>
+                                <input id="drag-n-drop-file" type="file">
+                            </div>
+                            <div class="drag-n-drop-paceholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="noun_Document_2887989" width="30" height="31.665" viewBox="0 0 30 31.665">
+                                    <defs>
+                                        <style> .cls-1 {
+                    fill: #cecece
+                  }
+                </style>
+                                    </defs>
+                                    <g id="Group_1252" data-name="Group 1252">
+                                        <g id="Group_1251" data-name="Group 1251">
+                                            <path id="Path_2432" d="M1211 1826h8.077v1.008H1211z" class="cls-1" data-name="Path 2432" transform="translate(-1206.342 -1818.977)" />
+                                            <path id="Path_2433" d="M1211 2847h8.077v1.007H1211z" class="cls-1" data-name="Path 2433" transform="translate(-1206.342 -2836.05)" />
+                                            <path id="Path_2434" d="M607 5183h19.592v1.008H607z" class="cls-1" data-name="Path 2434" transform="translate(-604.665 -5163.065)" />
+                                            <path id="Path_2435" d="M607 7176h19.592v1H607z" class="cls-1" data-name="Path 2435" transform="translate(-604.665 -7148.4)" />
+                                            <path id="Path_2436" d="M607 6233h19.592v1.008H607z" class="cls-1" data-name="Path 2436" transform="translate(-604.665 -6209.026)" />
+                                            <path id="Path_2437" d="M28.992 6.885H23.3V1.008H6.746v.958h11.527l5.988 6.258v20.468h4.731zM24.3 1.742v4.139h4.008zm-1.05 28.915V8.85h-5.7V2.969H1.008v27.689zm-.677-22.815l-4.008-4.134v4.134zM5.738 1.965V0h18.27L30 6.181V29.7h-5.738v1.965H0v-29.7z" class="cls-1" data-name="Path 2437" />
+                                        </g>
+                                    </g>
+                                </svg>
+                                <p>Drag&Drop File here</p>
+                            </div>
+                        </div>
+                        <label class="title-tooltip tooltip-relative"> Document 2 <svg xmlns="http://www.w3.org/2000/svg" width="12.486" height="15" viewBox="0 0 12.486 15">
+                                <g id="noun_Info_2397918" transform="translate(-105.498 -41.5)">
+                                    <g id="Group_1005" data-name="Group 1005" transform="translate(105.498 41.5)">
+                                        <path id="Path_2100" data-name="Path 2100" d="M105.595,49.765c-.076-1.847-.142-3.744-.057-5.594l6.2-2.671,6.2,2.671c.085,1.85.019,3.747-.057,5.594-.125,3.021-3.645,5.523-6.146,6.735C109.24,55.288,105.719,52.787,105.595,49.765Zm6.974-1.34v3.769a.828.828,0,0,1-1.656,0V48.425A.828.828,0,0,1,112.569,48.425Zm-.828-3.441a.871.871,0,1,1-.871.871A.871.871,0,0,1,111.741,44.985ZM106.7,49.722c.115,2.793,4.019,5.008,5.037,5.54,1.018-.531,4.922-2.747,5.037-5.54.107-2.593.1-4.159.083-4.806l-5.12-2.2-5.12,2.2C106.607,45.563,106.6,47.129,106.7,49.722Z" transform="translate(-105.498 -41.5)" fill="#00a757" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <div class="tooltip-container">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata </p>
+                            </div>
+                        </label>
+                        <div class="drag-n-drop-container drag-n-drop-verification">
+                            <div class="dropped-item"></div>
+                            <div class="drag-n-drop-input">
+                                <label for="drag-n-drop-file">or browse files</label>
+                                <input id="drag-n-drop-file" type="file">
+                            </div>
+                            <div class="drag-n-drop-paceholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="noun_Document_2887989" width="30" height="31.665" viewBox="0 0 30 31.665">
+                                    <defs>
+                                        <style> .cls-1 {
+                    fill: #cecece
+                  }
+                </style>
+                                    </defs>
+                                    <g id="Group_1252" data-name="Group 1252">
+                                        <g id="Group_1251" data-name="Group 1251">
+                                            <path id="Path_2432" d="M1211 1826h8.077v1.008H1211z" class="cls-1" data-name="Path 2432" transform="translate(-1206.342 -1818.977)" />
+                                            <path id="Path_2433" d="M1211 2847h8.077v1.007H1211z" class="cls-1" data-name="Path 2433" transform="translate(-1206.342 -2836.05)" />
+                                            <path id="Path_2434" d="M607 5183h19.592v1.008H607z" class="cls-1" data-name="Path 2434" transform="translate(-604.665 -5163.065)" />
+                                            <path id="Path_2435" d="M607 7176h19.592v1H607z" class="cls-1" data-name="Path 2435" transform="translate(-604.665 -7148.4)" />
+                                            <path id="Path_2436" d="M607 6233h19.592v1.008H607z" class="cls-1" data-name="Path 2436" transform="translate(-604.665 -6209.026)" />
+                                            <path id="Path_2437" d="M28.992 6.885H23.3V1.008H6.746v.958h11.527l5.988 6.258v20.468h4.731zM24.3 1.742v4.139h4.008zm-1.05 28.915V8.85h-5.7V2.969H1.008v27.689zm-.677-22.815l-4.008-4.134v4.134zM5.738 1.965V0h18.27L30 6.181V29.7h-5.738v1.965H0v-29.7z" class="cls-1" data-name="Path 2437" />
+                                        </g>
+                                    </g>
+                                </svg>
+                                <p>Drag&Drop File here</p>
+                            </div>
+                        </div>
+                        <label class="title-tooltip tooltip-relative"> Document 3 <svg xmlns="http://www.w3.org/2000/svg" width="12.486" height="15" viewBox="0 0 12.486 15">
+                                <g id="noun_Info_2397918" transform="translate(-105.498 -41.5)">
+                                    <g id="Group_1005" data-name="Group 1005" transform="translate(105.498 41.5)">
+                                        <path id="Path_2100" data-name="Path 2100" d="M105.595,49.765c-.076-1.847-.142-3.744-.057-5.594l6.2-2.671,6.2,2.671c.085,1.85.019,3.747-.057,5.594-.125,3.021-3.645,5.523-6.146,6.735C109.24,55.288,105.719,52.787,105.595,49.765Zm6.974-1.34v3.769a.828.828,0,0,1-1.656,0V48.425A.828.828,0,0,1,112.569,48.425Zm-.828-3.441a.871.871,0,1,1-.871.871A.871.871,0,0,1,111.741,44.985ZM106.7,49.722c.115,2.793,4.019,5.008,5.037,5.54,1.018-.531,4.922-2.747,5.037-5.54.107-2.593.1-4.159.083-4.806l-5.12-2.2-5.12,2.2C106.607,45.563,106.6,47.129,106.7,49.722Z" transform="translate(-105.498 -41.5)" fill="#00a757" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <div class="tooltip-container">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata </p>
+                            </div>
+                        </label>
+                        <div class="drag-n-drop-container drag-n-drop-verification">
+                            <div class="dropped-item"></div>
+                            <div class="drag-n-drop-input">
+                                <label for="drag-n-drop-file">or browse files</label>
+                                <input id="drag-n-drop-file" type="file">
+                            </div>
+                            <div class="drag-n-drop-paceholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="noun_Document_2887989" width="30" height="31.665" viewBox="0 0 30 31.665">
+                                    <defs>
+                                        <style> .cls-1 {
+                    fill: #cecece
+                  }
+                </style>
+                                    </defs>
+                                    <g id="Group_1252" data-name="Group 1252">
+                                        <g id="Group_1251" data-name="Group 1251">
+                                            <path id="Path_2432" d="M1211 1826h8.077v1.008H1211z" class="cls-1" data-name="Path 2432" transform="translate(-1206.342 -1818.977)" />
+                                            <path id="Path_2433" d="M1211 2847h8.077v1.007H1211z" class="cls-1" data-name="Path 2433" transform="translate(-1206.342 -2836.05)" />
+                                            <path id="Path_2434" d="M607 5183h19.592v1.008H607z" class="cls-1" data-name="Path 2434" transform="translate(-604.665 -5163.065)" />
+                                            <path id="Path_2435" d="M607 7176h19.592v1H607z" class="cls-1" data-name="Path 2435" transform="translate(-604.665 -7148.4)" />
+                                            <path id="Path_2436" d="M607 6233h19.592v1.008H607z" class="cls-1" data-name="Path 2436" transform="translate(-604.665 -6209.026)" />
+                                            <path id="Path_2437" d="M28.992 6.885H23.3V1.008H6.746v.958h11.527l5.988 6.258v20.468h4.731zM24.3 1.742v4.139h4.008zm-1.05 28.915V8.85h-5.7V2.969H1.008v27.689zm-.677-22.815l-4.008-4.134v4.134zM5.738 1.965V0h18.27L30 6.181V29.7h-5.738v1.965H0v-29.7z" class="cls-1" data-name="Path 2437" />
+                                        </g>
+                                    </g>
+                                </svg>
+                                <p>Drag&Drop File here</p>
+                            </div>
+                        </div>
+                        <button class="submit-button" type="submit">Send</button>
+                        <a class="close-modal" href="#" data-dismiss="modal">Skip for now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-after-verify-account modal fade" id="modal-after-verify-account-open" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h4>Thank you!</h4>
+                        <p>You’ll get an Email with response as fast as we can!</p>
+                        <a class="close-modal" href="#" data-dismiss="modal">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="aside-fixed-shadow disabled"></div>
+        <footer class="footer-reserved">
+            <div class="designer-name">
+                <div class="footer-menu-container">
+                    <svg class="toggle-footer-menu" xmlns="http://www.w3.org/2000/svg" width="14" height="3" viewBox="0 0 14 3">
+                        <g>
+                            <g>
+                                <g>
+                                    <path fill="#cecece" d="M10.96 1.492a1.508 1.508 0 1 1 3.016 0 1.508 1.508 0 0 1-3.017 0z" />
+                                </g>
+                                <g>
+                                    <path fill="#cecece" d="M5.72 1.492a1.508 1.508 0 1 1 3.017 0 1.508 1.508 0 0 1-3.017 0z" />
+                                </g>
+                                <g>
+                                    <path fill="#cecece" d="M.48 1.492a1.508 1.508 0 1 1 3.017 0 1.508 1.508 0 0 1-3.017 0z" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    <p>Ecofarmer Inc., All Rights Reserved, 2019.<br class="d-block d-sm-none"> Design by <a href="https://smotrow.com/" target="_blank">smotrow.com</a></p>
+                    <div class="footer-menu-list">
+                        <div class="green-links">
+                            <a href="#">What is new?</a>
+                            <a href="#">Tips for using</a>
+                        </div>
+                        <div class="regular-links">
+                            <a href="#">Terms of service</a>
+                            <a href="#">Email us</a>
+                            <a href="#">About Ecofarmer</a>
+                            <div class="langs-menu"> Language: English (USA) > <ul>
+                                    <li><a href="#">Russian</a></li>
+                                    <li><a href="#">German</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="scripts">
+            <!-- Set JS assets-->
+            <script src="js/vendor-bundle.min.js"></script>
+            <script src="js/custom-bundle.min.js"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>
+        </div>
+    </body>
+</html>

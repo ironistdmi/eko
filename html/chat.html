@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document Template Title</title>
+        <!-- Main Meta information-->
+        <meta charset="utf-8" />
+        <meta http-equiv="Cache-control" content="public" />
+        <meta name="viewport" content="width=device-width, user-scalable=yes" />
+        <!-- Meta Information-->
+        <meta name="robots" content="index, follow" />
+        <link type="text/plain" rel="author" href="humans.txt" />
+        <!-- Get html5shiv if this is IE lower or equal to 9-->
+        <!--[if lte IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+        <link rel="stylesheet" href="css/main.min.css" />
+    </head>
+    <body>
+        <header>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="header-wrapper col-12">
+                        <div class="header-button">
+                            <button class="menu-toggle-trigger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                            <a href="index.html" class="header-logo">
+                                <h1>ECOFARMER</h1>
+                            </a>
+                        </div>
+                        <div class="header-navigation">
+                            <div class="navigation-container">
+                                <a href="search.html">Search</a>
+                                <a href="saved.html">Saved</a>
+                                <a href="add-item.html">Add item</a>
+                            </div>
+                            <div class="search-container">
+                                <form action="">
+                                    <div class="input-field">
+                                        <input type="text">
+                                        <svg class="field-icon search-icon" xmlns="http://www.w3.org/2000/svg" width="12.992" height="13" viewBox="0 0 12.992 13">
+                                            <g id="noun_Search_875352" transform="translate(-10.4 -10.3)">
+                                                <path id="Path_938" data-name="Path 938" d="M23.176,22.07l-2.332-2.316a5.854,5.854,0,1,0-4.6,2.236,5.777,5.777,0,0,0,3.593-1.246l2.316,2.348a.7.7,0,0,0,.511.208.769.769,0,0,0,.511-.208A.713.713,0,0,0,23.176,22.07Zm-2.523-5.925a4.417,4.417,0,1,1-1.294-3.114A4.373,4.373,0,0,1,20.653,16.145Z" transform="translate(0)" fill="#cecece" />
+                                            </g>
+                                        </svg>
+                                        <svg class="field-icon micro-icon" xmlns="http://www.w3.org/2000/svg" width="12.136" height="15.925" viewBox="0 0 12.136 15.925">
+                                            <g id="noun_voice_2627272" transform="translate(0 0)">
+                                                <g id="Group_16" data-name="Group 16">
+                                                    <path id="Path_939" data-name="Path 939" d="M10.928,93.839a.6.6,0,0,1,1.208,0v.906A6.082,6.082,0,0,1,6.7,100.782v2.174a.6.6,0,0,1-1.208,0v-2.174A6.135,6.135,0,0,1,0,94.744v-.906a.6.6,0,0,1,1.208,0v.906a4.861,4.861,0,0,0,9.721,0Z" transform="translate(0 -87.62)" fill="#00074d" />
+                                                    <path id="Path_940" data-name="Path 940" d="M48.381,0A3.35,3.35,0,0,1,51.7,3.321v3.8a3.351,3.351,0,0,1-6.7,0v-3.8A3.363,3.363,0,0,1,48.381,0Zm0,1.208a2.152,2.152,0,0,0-2.174,2.113v3.8a2.144,2.144,0,0,0,4.287,0v-3.8A2.139,2.139,0,0,0,48.381,1.208Z" transform="translate(-42.283)" fill="#00074d" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="button-wrapper">
+                                        <button type="submit">Find now</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="header-panel">
+                            <a class="conversation-link" href="chat.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                    <g id="noun_messages_1516437" transform="translate(-5 -2)">
+                                        <g id="Group_1019" data-name="Group 1019" transform="translate(5 2)">
+                                            <path id="Path_2126" data-name="Path 2126" d="M9.5,4h-6a.5.5,0,0,1,0-1h6a.5.5,0,0,1,0,1Z" fill="#2b2c33" />
+                                            <path id="Path_2127" data-name="Path 2127" d="M7.5,6h-4a.5.5,0,0,1,0-1h4a.5.5,0,0,1,0,1Z" fill="#2b2c33" />
+                                            <g id="Group_1018" data-name="Group 1018">
+                                                <path id="Path_2128" data-name="Path 2128" d="M.5,12.5a.507.507,0,0,1-.212-.047A.5.5,0,0,1,0,12V2A2,2,0,0,1,2,0h9a2,2,0,0,1,2,2V8a2,2,0,0,1-2,2H3.681L.82,12.384A.494.494,0,0,1,.5,12.5ZM2,1A1,1,0,0,0,1,2v8.933L3.18,9.117A.5.5,0,0,1,3.5,9H11a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1Z" fill="#2b2c33" />
+                                                <path id="Path_2129" data-name="Path 2129" d="M15.5,16a.5.5,0,0,1-.312-.109L12.824,14H6a2,2,0,0,1-2-2v-.5a.5.5,0,0,1,1,0V12a1,1,0,0,0,1,1h7a.5.5,0,0,1,.312.109L15,14.46V6a1,1,0,0,0-1-1,.5.5,0,0,1,0-1,2,2,0,0,1,2,2v9.5a.5.5,0,0,1-.283.45A.51.51,0,0,1,15.5,16Z" fill="#2b2c33" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                            <div class="notification-link new-notification">
+                                <div class="svg-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.928" height="15" viewBox="0 0 13.928 15">
+                                        <g id="noun_notification_2184965" transform="translate(-24 -22)">
+                                            <g id="Group_18" data-name="Group 18" transform="translate(24 22)">
+                                                <g id="Group_17" data-name="Group 17">
+                                                    <path id="Path_941" data-name="Path 941" d="M37.929,32.179a1.609,1.609,0,0,1-1.61,1.607H25.61a1.607,1.607,0,1,1,0-3.214s0-3.214,0-3.214a5.357,5.357,0,0,1,10.714,0v3.214A1.609,1.609,0,0,1,37.929,32.179Zm-1.608-.536a1.07,1.07,0,0,1-1.071-1.072V27.357a4.286,4.286,0,0,0-8.571,0v3.214a1.072,1.072,0,0,1-1.071,1.072.536.536,0,1,0,0,1.071H36.319a.536.536,0,1,0,0-1.071Zm-7.767,2.946h1.071a1.339,1.339,0,1,0,2.679,0h1.071a2.411,2.411,0,0,1-4.821,0Z" transform="translate(-24 -22)" fill="#2b2c33" />
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="new-notification-panel">
+                                    <div class="notification-item">
+                                        <div class="image-container">
+                                            <div class="image-wrapper">
+                                                <img src="/img/pics/avatar.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="text-container">
+                                            <p><span class="span-big">Oleg Makarov</span> send you a message.</p>
+                                            <a href="#">View</a>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="notification-item verification-notification">
+                                        <div class="image-container">
+                                            <div class="image-wrapper">
+                                                <img src="/img/pics/verified-icon.svg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="text-container">
+                                            <p><span class="span-big">You</span> received a verification icon!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="profile-panel" href="profile.html">
+                                <img src="/img/pics/avatar.png" alt="">
+                            </a>
+                            <!-- FOR USERS (DELETE THIS LINE)-->
+                            <!-- <a href="#" class="link-button">Log&nbsp;in</a>
+                    <a href="#" class="link-button button-fill">Sign&nbsp;Up</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="header-fixed-shadow disabled"></div>
+        <div class="d-flex fullscreen-page only-fullscreen">
+            <div class="chat-page">
+                <div class="chat-fixed-shadow"></div>
+                <div class="chats-container open">
+                    <div class="title-container">
+                        <span>Messenger</span>
+                        <div class="find-field">
+                            <div class="loop-icon">
+                                <svg class="field-icon search-icon" xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 12.992 13">
+                                    <g id="noun_Search_875352" transform="translate(-10.4 -10.3)">
+                                        <path id="Path_938" data-name="Path 938" d="M23.176,22.07l-2.332-2.316a5.854,5.854,0,1,0-4.6,2.236,5.777,5.777,0,0,0,3.593-1.246l2.316,2.348a.7.7,0,0,0,.511.208.769.769,0,0,0,.511-.208A.713.713,0,0,0,23.176,22.07Zm-2.523-5.925a4.417,4.417,0,1,1-1.294-3.114A4.373,4.373,0,0,1,20.653,16.145Z" transform="translate(0)" fill="#cecece" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <input type="text" placeholder="Find chats">
+                        </div>
+                    </div>
+                    <div class="chat-items-container">
+                        <a href="#" class="chat-item user-online">
+                            <div class="image-container">
+                                <div class="image-wrapper">
+                                    <img src="/img/pics/avatar.png" alt="">
+                                </div>
+                            </div>
+                            <div class="text-container">
+                                <div class="title-text">
+                                    <h3>Oleg Makarov</h3>
+                                    <span class="time-text">12:44</span>
+                                </div>
+                                <p>Can I pick up these w…</p>
+                            </div>
+                            <div class="new-message">
+                                <span>3</span>
+                            </div>
+                        </a>
+                        <a href="#" class="chat-item">
+                            <div class="image-container">
+                                <div class="image-wrapper">
+                                    <img src="/img/pics/avatar.png" alt="">
+                                </div>
+                            </div>
+                            <div class="text-container">
+                                <div class="title-text">
+                                    <h3>Oleg Makarov</h3>
+                                    <span class="time-text">12:44</span>
+                                </div>
+                                <p>Can I pick up these w…</p>
+                            </div>
+                            <div class="new-message">
+                                <span>3</span>
+                            </div>
+                        </a>
+                        <a href="#" class="chat-item">
+                            <div class="image-container">
+                                <div class="image-wrapper">
+                                    <img src="/img/pics/avatar.png" alt="">
+                                </div>
+                            </div>
+                            <div class="text-container">
+                                <div class="title-text">
+                                    <h3>Oleg Makarov</h3>
+                                    <span class="time-text">12.08.19, 12:44</span>
+                                </div>
+                                <p>Can I pick up these w…</p>
+                            </div>
+                        </a>
+                        <a href="#" class="chat-item">
+                            <div class="image-container">
+                                <div class="image-wrapper">
+                                    <img src="/img/pics/avatar.png" alt="">
+                                </div>
+                            </div>
+                            <div class="text-container">
+                                <div class="title-text">
+                                    <h3>Oleg Makarov</h3>
+                                    <span class="time-text">12.08.19, 12:44</span>
+                                </div>
+                                <p>Can I pick up these w…</p>
+                            </div>
+                        </a>
+                        <a href="#" class="chat-item">
+                            <div class="image-container">
+                                <div class="image-wrapper">
+                                    <img src="/img/pics/avatar.png" alt="">
+                                </div>
+                            </div>
+                            <div class="text-container">
+                                <div class="title-text">
+                                    <h3>Oleg Makarov</h3>
+                                    <span class="time-text">12.08.19, 12:44</span>
+                                </div>
+                                <p>Can I pick up these w…</p>
+                            </div>
+                        </a>
+                        <a href="#" class="chat-item user-online">
+                            <div class="image-container">
+                                <div class="image-wrapper">
+                                    <img src="/img/pics/avatar.png" alt="">
+                                </div>
+                            </div>
+                            <div class="text-container">
+                                <div class="title-text">
+                                    <h3>Oleg Makarov</h3>
+                                    <span class="time-text">12.08.19, 12:44</span>
+                                </div>
+                                <p>Can I pick up these w…</p>
+                            </div>
+                        </a>
+                        <a href="#" class="chat-item user-online">
+                            <div class="image-container">
+                                <div class="image-wrapper">
+                                    <img src="/img/pics/avatar.png" alt="">
+                                </div>
+                            </div>
+                            <div class="text-container">
+                                <div class="title-text">
+                                    <h3>Oleg Makarov</h3>
+                                    <span class="time-text">12.08.19, 12:44</span>
+                                </div>
+                                <p>Can I pick up these w…</p>
+                            </div>
+                        </a>
+                        <a href="#" class="chat-item user-online">
+                            <div class="image-container">
+                                <div class="image-wrapper">
+                                    <img src="/img/pics/avatar.png" alt="">
+                                </div>
+                            </div>
+                            <div class="text-container">
+                                <div class="title-text">
+                                    <h3>Oleg Makarov</h3>
+                                    <span class="time-text">12.08.19, 12:44</span>
+                                </div>
+                                <p>Can I pick up these w…</p>
+                            </div>
+                        </a>
+                        <a href="#" class="chat-item user-online">
+                            <div class="image-container">
+                                <div class="image-wrapper">
+                                    <img src="/img/pics/avatar.png" alt="">
+                                </div>
+                            </div>
+                            <div class="text-container">
+                                <div class="title-text">
+                                    <h3>Oleg Makarov</h3>
+                                    <span class="time-text">12.08.19, 12:44</span>
+                                </div>
+                                <p>Can I pick up these w…</p>
+                            </div>
+                        </a>
+                        <a href="#" class="chat-item user-online">
+                            <div class="image-container">
+                                <div class="image-wrapper">
+                                    <img src="/img/pics/avatar.png" alt="">
+                                </div>
+                            </div>
+                            <div class="text-container">
+                                <div class="title-text">
+                                    <h3>Oleg Makarov</h3>
+                                    <span class="time-text">12.08.19, 12:44</span>
+                                </div>
+                                <p>Can I pick up these w…</p>
+                            </div>
+                        </a>
+                        <a href="#" class="chat-item user-online">
+                            <div class="image-container">
+                                <div class="image-wrapper">
+                                    <img src="/img/pics/avatar.png" alt="">
+                                </div>
+                            </div>
+                            <div class="text-container">
+                                <div class="title-text">
+                                    <h3>Oleg Makarov</h3>
+                                    <span class="time-text">12.08.19, 12:44</span>
+                                </div>
+                                <p>Can I pick up these w…</p>
+                            </div>
+                        </a>
+                        <a href="#" class="chat-item user-online">
+                            <div class="image-container">
+                                <div class="image-wrapper">
+                                    <img src="/img/pics/avatar.png" alt="">
+                                </div>
+                            </div>
+                            <div class="text-container">
+                                <div class="title-text">
+                                    <h3>Oleg Makarov</h3>
+                                    <span class="time-text">12.08.19, 12:44</span>
+                                </div>
+                                <p>Can I pick up these w…</p>
+                            </div>
+                        </a>
+                        <a href="#" class="chat-item user-online">
+                            <div class="image-container">
+                                <div class="image-wrapper">
+                                    <img src="/img/pics/avatar.png" alt="">
+                                </div>
+                            </div>
+                            <div class="text-container">
+                                <div class="title-text">
+                                    <h3>Oleg Makarov</h3>
+                                    <span class="time-text">12.08.19, 12:44</span>
+                                </div>
+                                <p>Can I pick up these w…</p>
+                            </div>
+                        </a>
+                        <a href="#" class="chat-item user-online">
+                            <div class="image-container">
+                                <div class="image-wrapper">
+                                    <img src="/img/pics/avatar.png" alt="">
+                                </div>
+                            </div>
+                            <div class="text-container">
+                                <div class="title-text">
+                                    <h3>Oleg Makarov</h3>
+                                    <span class="time-text">12.08.19, 12:44</span>
+                                </div>
+                                <p>Can I pick up these w…</p>
+                            </div>
+                        </a>
+                        <a href="#" class="chat-item user-online">
+                            <div class="image-container">
+                                <div class="image-wrapper">
+                                    <img src="/img/pics/avatar.png" alt="">
+                                </div>
+                            </div>
+                            <div class="text-container">
+                                <div class="title-text">
+                                    <h3>Oleg Makarov</h3>
+                                    <span class="time-text">12.08.19, 12:44</span>
+                                </div>
+                                <p>Can I pick up these w…</p>
+                            </div>
+                        </a>
+                        <p class="chat-hint">No more chats</p>
+                    </div>
+                    <div class="new-chat-container">
+                        <div class="start-new-chat">
+                            <h5>Start new chat</h5>
+                            <label for="">Find people</label>
+                            <input type="text" placeholder="Start typing the store or a seller">
+                            <div class="start-new-chat-items">
+                                <div class="start-new-chat-item">
+                                    <div class="image-container">
+                                        <div class="image-wrapper">
+                                            <img src="/img/pics/avatar.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="text-container">
+                                        <h3>Oleg Makarov</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="new-chat-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                <g id="noun_messages_1516437" transform="translate(-5 -2)">
+                                    <g id="Group_1019" data-name="Group 1019" transform="translate(5 2)">
+                                        <path id="Path_2126" data-name="Path 2126" d="M9.5,4h-6a.5.5,0,0,1,0-1h6a.5.5,0,0,1,0,1Z" fill="#2b2c33" />
+                                        <path id="Path_2127" data-name="Path 2127" d="M7.5,6h-4a.5.5,0,0,1,0-1h4a.5.5,0,0,1,0,1Z" fill="#2b2c33" />
+                                        <g id="Group_1018" data-name="Group 1018">
+                                            <path id="Path_2128" data-name="Path 2128" d="M.5,12.5a.507.507,0,0,1-.212-.047A.5.5,0,0,1,0,12V2A2,2,0,0,1,2,0h9a2,2,0,0,1,2,2V8a2,2,0,0,1-2,2H3.681L.82,12.384A.494.494,0,0,1,.5,12.5ZM2,1A1,1,0,0,0,1,2v8.933L3.18,9.117A.5.5,0,0,1,3.5,9H11a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1Z" fill="#2b2c33" />
+                                            <path id="Path_2129" data-name="Path 2129" d="M15.5,16a.5.5,0,0,1-.312-.109L12.824,14H6a2,2,0,0,1-2-2v-.5a.5.5,0,0,1,1,0V12a1,1,0,0,0,1,1h7a.5.5,0,0,1,.312.109L15,14.46V6a1,1,0,0,0-1-1,.5.5,0,0,1,0-1,2,2,0,0,1,2,2v9.5a.5.5,0,0,1-.283.45A.51.51,0,0,1,15.5,16Z" fill="#2b2c33" />
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg> New Chat </a>
+                    </div>
+                </div>
+                <div class="messenger-container">
+                    <div class="copy-to-clickboard">
+                        <span>Copied!</span>
+                    </div>
+                    <div class="messenger-head-wrapper">
+                        <div class="back-chat-button"><svg xmlns="http://www.w3.org/2000/svg" width="33.312" height="13.934" viewBox="0 0 33.312 13.934">
+                                <g id="noun_back_1971165" transform="translate(-1.681 -553)">
+                                    <g id="Group_997" data-name="Group 997" transform="translate(1.681 553)">
+                                        <path id="Path_2079" data-name="Path 2079" d="M180.414,565.632l.428.428-.865.875L173,559.967,179.977,553l.865.875-5.471,5.48h30.941v1.234H175.371Z" transform="translate(-173 -553)" fill="#fff" />
+                                    </g>
+                                </g>
+                            </svg>Back</div>
+                        <div class="messenger-head">
+                            <div class="messenger-product">
+                                <div class="image-container">
+                                    <img src="/img/pics/product-slider-2.png" alt="">
+                                </div>
+                                <div class="title-container">
+                                    <a href="#">
+                                        <h3>Fresh eggs from thoroughbred chickens</h3>
+                                    </a>
+                                    <div class="saved-desc">
+                                        <div class="review-rating">
+                                            <svg id="Group" xmlns="http://www.w3.org/2000/svg" height="9.904" viewBox="0 0 10.366 9.904">
+                                                <path id="Path_922" data-name="Path 922" d="M9.973,5.735a.716.716,0,0,0,.206.773l1.829,1.777a.315.315,0,0,1,.077.232l-.464,2.5a.671.671,0,0,0,.18.618.782.782,0,0,0,.953.18L15,10.629a.193.193,0,0,1,.232,0l2.241,1.185a.778.778,0,0,0,1.133-.8l-.438-2.5a.415.415,0,0,1,.077-.232l1.829-1.777a.8.8,0,0,0,.206-.773.747.747,0,0,0-.618-.515l-2.55-.386a.194.194,0,0,1-.18-.129L15.795,2.438a.771.771,0,0,0-1.391,0L13.3,4.7a.194.194,0,0,1-.18.129l-2.524.361A.783.783,0,0,0,9.973,5.735Z" transform="translate(-9.94 -2)" fill="#efba0b" />
+                                            </svg>
+                                            <span>4.9</span>
+                                            <span class="all-review">(493)</span>
+                                        </div>
+                                        <div class="map-distance">
+                                            <svg id="noun_distance_1122903" xmlns="http://www.w3.org/2000/svg" width="18.02" height="14.921" viewBox="0 0 18.02 14.921">
+                                                <g id="Group_10" data-name="Group 10" transform="translate(0 0)">
+                                                    <g id="Group_1" data-name="Group 1" transform="translate(0 0)">
+                                                        <path id="Path_926" data-name="Path 926" d="M12.115,13.606a4.457,4.457,0,0,0-6.966,5.462l.02.02,3.483,4.928a.413.413,0,0,0,.317.158.385.385,0,0,0,.317-.158l3.483-4.928.02-.02A4.491,4.491,0,0,0,12.115,13.606Zm-.02,5.046L8.949,23.105,5.8,18.652a3.657,3.657,0,0,1,.554-4.492A3.67,3.67,0,0,1,12.1,18.652Z" transform="translate(-4.495 -12.3)" fill="#b2b2b2" />
+                                                    </g>
+                                                    <g id="Group_2" data-name="Group 2" transform="translate(2.554 2.751)">
+                                                        <path id="Path_927" data-name="Path 927" d="M19.221,26.2a1.821,1.821,0,1,0,0,3.641h0a1.821,1.821,0,1,0,0-3.641Zm0,2.869h0A1.029,1.029,0,1,1,20.25,28.04,1.035,1.035,0,0,1,19.221,29.069Z" transform="translate(-17.4 -26.2)" fill="#b2b2b2" />
+                                                    </g>
+                                                    <g id="Group_3" data-name="Group 3" transform="translate(9.669 0)">
+                                                        <path id="Path_928" data-name="Path 928" d="M60.411,13.606a4.467,4.467,0,0,0-6.313,0,.392.392,0,1,0,.554.554,3.68,3.68,0,0,1,5.759,4.492l-3.166,4.453-3.166-4.453a.4.4,0,1,0-.653.455l3.483,4.928a.413.413,0,0,0,.317.158.385.385,0,0,0,.317-.158l3.483-4.928.02-.02A4.455,4.455,0,0,0,60.411,13.606Z" transform="translate(-53.357 -12.3)" fill="#b2b2b2" />
+                                                    </g>
+                                                    <g id="Group_4" data-name="Group 4" transform="translate(11.657 2.771)">
+                                                        <path id="Path_929" data-name="Path 929" d="M65.221,29.941A1.821,1.821,0,1,0,63.4,28.121a1.816,1.816,0,0,0,1.821,1.821ZM64.192,28.1a1.029,1.029,0,1,1,1.029,1.029h0A1.01,1.01,0,0,1,64.192,28.1Z" transform="translate(-63.4 -26.3)" fill="#b2b2b2" />
+                                                    </g>
+                                                    <g id="Group_5" data-name="Group 5" transform="translate(3.662 13.734)">
+                                                        <path id="Path_930" data-name="Path 930" d="M23.594,81.7a.594.594,0,1,0,.594.594A.583.583,0,0,0,23.594,81.7Zm0,.792a.2.2,0,1,1,.2-.2A.187.187,0,0,1,23.594,82.492Z" transform="translate(-23 -81.7)" fill="#b2b2b2" />
+                                                    </g>
+                                                    <g id="Group_6" data-name="Group 6" transform="translate(6.037 13.734)">
+                                                        <path id="Path_931" data-name="Path 931" d="M35.594,81.7a.594.594,0,1,0,.594.594A.583.583,0,0,0,35.594,81.7Zm0,.792a.2.2,0,1,1,.2-.2A.187.187,0,0,1,35.594,82.492Z" transform="translate(-35 -81.7)" fill="#b2b2b2" />
+                                                    </g>
+                                                    <g id="Group_7" data-name="Group 7" transform="translate(8.411 13.734)">
+                                                        <path id="Path_932" data-name="Path 932" d="M47.594,81.7a.594.594,0,1,0,.594.594A.583.583,0,0,0,47.594,81.7Zm0,.792a.2.2,0,1,1,.2-.2A.187.187,0,0,1,47.594,82.492Z" transform="translate(-47 -81.7)" fill="#b2b2b2" />
+                                                    </g>
+                                                    <g id="Group_8" data-name="Group 8" transform="translate(10.786 13.734)">
+                                                        <path id="Path_933" data-name="Path 933" d="M59.594,81.7a.594.594,0,1,0,.594.594A.583.583,0,0,0,59.594,81.7Zm0,.792a.2.2,0,1,1,.2-.2A.187.187,0,0,1,59.594,82.492Z" transform="translate(-59 -81.7)" fill="#b2b2b2" />
+                                                    </g>
+                                                    <g id="Group_9" data-name="Group 9" transform="translate(13.161 13.734)">
+                                                        <path id="Path_934" data-name="Path 934" d="M71.594,81.7a.594.594,0,1,0,.594.594A.583.583,0,0,0,71.594,81.7Zm0,.792a.2.2,0,1,1,.2-.2A.187.187,0,0,1,71.594,82.492Z" transform="translate(-71 -81.7)" fill="#b2b2b2" />
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <span>1,3 km</span>
+                                        </div>
+                                        <div class="map-link">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                                                <g id="noun_Map_2845826" transform="translate(-5.793 -0.794)">
+                                                    <g id="Group_25" data-name="Group 25" transform="translate(5.793 0.793)">
+                                                        <path id="Path_951" data-name="Path 951" d="M4.935.793a.461.461,0,0,0-.15.032L1.093,2.207a.461.461,0,0,0-.3.433v9.69a.461.461,0,0,0,.624.433L4.948,11.44l3.53,1.323a.461.461,0,0,0,.16.031H12.33a.461.461,0,0,0,.463-.463V2.64a.461.461,0,0,0-.463-.46H10.954a1.929,1.929,0,0,0-3.492-.473L5.141.837A.461.461,0,0,0,4.935.793ZM9.1,1.717a1.032,1.032,0,0,1,1.028,1.049,3.243,3.243,0,0,1-.657,1.478A3.837,3.837,0,0,1,9.1,4.69a3.824,3.824,0,0,1-.371-.446,3.246,3.246,0,0,1-.658-1.478A1.032,1.032,0,0,1,9.1,1.717Zm-4.616.207v8.7L1.717,11.662V2.96Zm.924,0,1.758.658c-.005.061-.018.121-.018.184A3.614,3.614,0,0,0,7.98,4.782a8.826,8.826,0,0,0,.79.951.461.461,0,0,0,.658,0,8.654,8.654,0,0,0,.793-.951,4.113,4.113,0,0,0,.8-1.679h.848V7.586L5.409,5.973ZM9.1,2.179a.461.461,0,1,0,.461.461A.461.461,0,0,0,9.1,2.179ZM5.409,6.921l3.025.757L7.013,11.229l-1.6-.6ZM9.338,7.9l2.532.634V11.87H8.723l-.844-.317Z" transform="translate(-0.793 -0.793)" fill="#b2b2b2" />
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <a href="#">Map</a>
+                                        </div>
+                                        <div class="learn-more-link">
+                                            <a href="#">Learn more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="messenger-settings">
+                                <div class="input-container">
+                                    <div class="loop-icon">
+                                        <svg class="field-icon search-icon" xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 12.992 13">
+                                            <g id="noun_Search_875352" transform="translate(-10.4 -10.3)">
+                                                <path id="Path_938" data-name="Path 938" d="M23.176,22.07l-2.332-2.316a5.854,5.854,0,1,0-4.6,2.236,5.777,5.777,0,0,0,3.593-1.246l2.316,2.348a.7.7,0,0,0,.511.208.769.769,0,0,0,.511-.208A.713.713,0,0,0,23.176,22.07Zm-2.523-5.925a4.417,4.417,0,1,1-1.294-3.114A4.373,4.373,0,0,1,20.653,16.145Z" transform="translate(0)" fill="#cecece" />
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <input type="text" placeholder="Find in conversation">
+                                </div>
+                                <a href="#" class="phone-setting">
+                                    <div class="image-container">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="9.684" height="10.943" viewBox="0 0 9.684 10.943">
+                                            <g id="noun_Phone_2840362_1_" data-name="noun_Phone_2840362 (1)" transform="translate(-8.703 -5.681)">
+                                                <path id="Path_959" data-name="Path 959" d="M18.115,14.5a8.731,8.731,0,0,0-.809-1.14,2.481,2.481,0,0,0-.581-.56.939.939,0,0,0-.933-.041c-.124.083-.228.145-.352.228-.1.083-.228.145-.332.228a.591.591,0,0,1-.809-.145,16.7,16.7,0,0,1-1.638-1.783c-.187-.228-1.285-1.451-.974-1.762l.062-.062.145-.145.29-.29.29-.29a1,1,0,0,0,.145-.933,2.394,2.394,0,0,0-.435-.684A7.528,7.528,0,0,0,11.211,6.1a1.565,1.565,0,0,0-.85-.415.731.731,0,0,0-.539.166,3.981,3.981,0,0,0-.311.29,3.136,3.136,0,0,0-.7,1.285,2.93,2.93,0,0,0-.083,1.12,6,6,0,0,0,1,2.633,18.409,18.409,0,0,0,1.825,2.55,8.7,8.7,0,0,0,3.711,2.757,2.914,2.914,0,0,0,1.12.124,3.035,3.035,0,0,0,1.389-.435c.124-.083.249-.166.352-.249a.794.794,0,0,0,.27-.5A1.591,1.591,0,0,0,18.115,14.5Z" transform="translate(0 0)" fill="#00a757" />
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <p>Phone</p>
+                                    <div class="toggle-messenger-menu">
+                                        <div class="phone-container-menu">
+                                            <div class="image-container">
+                                                <img src="/img/pics/avatar.png" alt="">
+                                            </div>
+                                            <div class="text-container">
+                                                <h4>Oleg Makarov</h4>
+                                                <div class="telephone-number">
+                                                    <span class="copy-text">066-997-8629</span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="11.727" height="14.333" viewBox="0 0 11.727 14.333">
+                                                        <g id="noun_copy_2757462" transform="translate(-3.704 -1.587)">
+                                                            <g id="Group_57" data-name="Group 57" transform="translate(3.704 1.587)">
+                                                                <path id="Path_960" data-name="Path 960" d="M7.613,272.129a1.311,1.311,0,0,0-1.3,1.3.489.489,0,1,0,.977,0,.315.315,0,0,1,.326-.326h6.515a.315.315,0,0,1,.326.326v9.121a.315.315,0,0,1-.326.326.489.489,0,1,0,0,.977,1.311,1.311,0,0,0,1.3-1.3v-9.121a1.311,1.311,0,0,0-1.3-1.3Zm-2.606,2.606a1.311,1.311,0,0,0-1.3,1.3v9.121a1.311,1.311,0,0,0,1.3,1.3h6.515a1.311,1.311,0,0,0,1.3-1.3v-9.121a1.311,1.311,0,0,0-1.3-1.3Zm0,.977h6.515a.315.315,0,0,1,.326.326v9.121a.315.315,0,0,1-.326.326H5.007a.315.315,0,0,1-.326-.326v-9.121A.315.315,0,0,1,5.007,275.713Z" transform="translate(-3.704 -272.129)" fill="#00a757" fill-rule="evenodd" />
+                                                            </g>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" class="more-setting">
+                                    <div class="image-container">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 3">
+                                            <g>
+                                                <g>
+                                                    <path fill="#00a757" d="M0 1.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0z" />
+                                                </g>
+                                                <g>
+                                                    <path fill="#00a757" d="M6 1.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0z" />
+                                                </g>
+                                                <g>
+                                                    <path fill="#00a757" d="M11 1.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0z" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <p>More</p>
+                                    <div class="toggle-messenger-menu">
+                                        <div class="notifications-container">
+                                            <p class="notifications-off">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="13.928" height="15" viewBox="0 0 13.928 15">
+                                                    <g id="noun_notification_2184965" transform="translate(-24 -22)">
+                                                        <g id="Group_18" data-name="Group 18" transform="translate(24 22)">
+                                                            <g id="Group_17" data-name="Group 17">
+                                                                <path id="Path_941" data-name="Path 941" d="M37.929,32.179a1.609,1.609,0,0,1-1.61,1.607H25.61a1.607,1.607,0,1,1,0-3.214s0-3.214,0-3.214a5.357,5.357,0,0,1,10.714,0v3.214A1.609,1.609,0,0,1,37.929,32.179Zm-1.608-.536a1.07,1.07,0,0,1-1.071-1.072V27.357a4.286,4.286,0,0,0-8.571,0v3.214a1.072,1.072,0,0,1-1.071,1.072.536.536,0,1,0,0,1.071H36.319a.536.536,0,1,0,0-1.071Zm-7.767,2.946h1.071a1.339,1.339,0,1,0,2.679,0h1.071a2.411,2.411,0,0,1-4.821,0Z" transform="translate(-24 -22)" fill="#2b2c33" />
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                                <span>Turn off notifications</span>
+                                            </p>
+                                            <p class="red-p">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14.313" viewBox="0 0 14 14.313">
+                                                    <g id="noun_Delete_2850491" transform="translate(-36.677 -25.998)">
+                                                        <g id="Group_1074" data-name="Group 1074" transform="translate(36.676 25.998)">
+                                                            <g id="Group_1065" data-name="Group 1065" transform="translate(1.212 2.153)">
+                                                                <g id="Group_1064" data-name="Group 1064">
+                                                                    <path id="Path_2131" data-name="Path 2131" d="M128.909,183.53h-7.294c-.315,0-.632,0-.947,0a1.6,1.6,0,0,1-.168-.01l.118.016a1.3,1.3,0,0,1-.3-.081l.106.044a1.366,1.366,0,0,1-.2-.109l-.047-.032c-.063-.044.087.074.029.022-.029-.025-.057-.05-.085-.078s-.052-.056-.078-.085c-.047-.054.065.091.022.029-.01-.016-.022-.031-.032-.047a1.365,1.365,0,0,1-.109-.2l.044.106a1.294,1.294,0,0,1-.081-.3c.006.04.01.078.016.118a3.233,3.233,0,0,1-.01-.4v-9.4c0-.133,0-.265,0-.4V172.7l-.442.442H129.7c.138,0,.278,0,.418,0h.018l-.442-.442v10.044a1.325,1.325,0,0,1-.01.171c.006-.04.01-.078.016-.118a1.294,1.294,0,0,1-.081.3l.044-.106a1.362,1.362,0,0,1-.109.2c-.01.016-.022.031-.032.047-.044.063.074-.087.022-.029-.025.029-.05.057-.078.085s-.056.052-.085.078c-.054.047.091-.065.029-.022l-.047.032a1.363,1.363,0,0,1-.2.109l.106-.044a1.3,1.3,0,0,1-.3.081l.118-.016a1.257,1.257,0,0,1-.165.01.442.442,0,0,0,0,.883,1.664,1.664,0,0,0,1.665-1.665c0-.119,0-.24,0-.359v-9.2c0-.156,0-.314,0-.47V172.7a.448.448,0,0,0-.442-.442H119.877c-.14,0-.278,0-.418,0h-.018a.448.448,0,0,0-.442.442v9.943a1.861,1.861,0,0,0,.212.922,1.689,1.689,0,0,0,1.475.853h8.223a.447.447,0,0,0,.442-.442A.452.452,0,0,0,128.909,183.53Z" transform="translate(-119 -172.255)" fill="#e03b4b" />
+                                                                </g>
+                                                            </g>
+                                                            <g id="Group_1067" data-name="Group 1067" transform="translate(3.929)">
+                                                                <g id="Group_1066" data-name="Group 1066">
+                                                                    <path id="Path_2132" data-name="Path 2132" d="M308.3,26h-3.391a1.352,1.352,0,0,0-1.4,1.355c0,.4,0,.8,0,1.2v.04a.448.448,0,0,0,.442.442h4.608c.212,0,.426,0,.638,0h.009a.448.448,0,0,0,.442-.442V27.357a1.389,1.389,0,0,0-.325-.885A1.342,1.342,0,0,0,308.3,26a.442.442,0,0,0,0,.883,1.086,1.086,0,0,1,.121.007l-.118-.016a.942.942,0,0,1,.227.062l-.106-.044a1.031,1.031,0,0,1,.144.077.461.461,0,0,1,.04.027s-.09-.074-.044-.034c.022.019.043.037.063.057s.035.037.052.056.032.068-.028-.037c.006.01.015.021.022.031a.847.847,0,0,1,.081.153l-.044-.106a1.015,1.015,0,0,1,.062.227c-.006-.04-.01-.078-.016-.118a4.243,4.243,0,0,1,.007.493v.875l.442-.442H304.6c-.212,0-.426-.006-.638,0h-.009l.442.442V27.457a2.083,2.083,0,0,1,.007-.234c-.006.04-.01.078-.016.118a.945.945,0,0,1,.062-.227l-.044.106a1.03,1.03,0,0,1,.077-.144s.025-.04.026-.04-.074.09-.034.044c.019-.022.037-.043.057-.063s.037-.035.056-.052.068-.032-.037.028a.375.375,0,0,0,.031-.022.842.842,0,0,1,.153-.081l-.106.044a1.014,1.014,0,0,1,.227-.062l-.118.016a3.369,3.369,0,0,1,.423-.007H308.3a.447.447,0,0,0,.442-.442A.441.441,0,0,0,308.3,26Z" transform="translate(-303.511 -25.998)" fill="#e03b4b" />
+                                                                </g>
+                                                            </g>
+                                                            <g id="Group_1069" data-name="Group 1069" transform="translate(0 2.152)">
+                                                                <g id="Group_1068" data-name="Group 1068">
+                                                                    <path id="Path_2133" data-name="Path 2133" d="M50.234,172.156H37.65c-.169,0-.339,0-.509,0h-.022a.442.442,0,0,0,0,.883H49.7c.169,0,.339,0,.509,0h.022a.442.442,0,0,0,0-.883Z" transform="translate(-36.676 -172.156)" fill="#e03b4b" />
+                                                                </g>
+                                                            </g>
+                                                            <g id="Group_1071" data-name="Group 1071" transform="translate(4.675 4.507)">
+                                                                <g id="Group_1070" data-name="Group 1070">
+                                                                    <path id="Path_2134" data-name="Path 2134" d="M355.108,339.084v-5.753c0-.266.006-.534,0-.8v-.012a.442.442,0,1,0-.883,0v5.752c0,.267-.006.535,0,.8v.012a.442.442,0,0,0,.883,0Z" transform="translate(-354.222 -332.076)" fill="#e03b4b" />
+                                                                </g>
+                                                            </g>
+                                                            <g id="Group_1073" data-name="Group 1073" transform="translate(8.433 4.507)">
+                                                                <g id="Group_1072" data-name="Group 1072">
+                                                                    <path id="Path_2135" data-name="Path 2135" d="M610.308,339.084v-5.753c0-.266.006-.534,0-.8v-.012a.442.442,0,1,0-.883,0v5.752c0,.267-.006.535,0,.8v.012a.442.442,0,0,0,.883,0Z" transform="translate(-609.422 -332.076)" fill="#e03b4b" />
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </svg> Delete chat </p>
+                                        </div>
+                                        <hr>
+                                        <div class="phone-container-menu">
+                                            <div class="image-container">
+                                                <img src="/img/pics/avatar.png" alt="">
+                                            </div>
+                                            <div class="text-container">
+                                                <h4>Oleg Makarov</h4>
+                                                <div class="telephone-number">
+                                                    <span class="copy-text">066-997-8629</span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="11.727" height="14.333" viewBox="0 0 11.727 14.333">
+                                                        <g id="noun_copy_2757462" transform="translate(-3.704 -1.587)">
+                                                            <g id="Group_57" data-name="Group 57" transform="translate(3.704 1.587)">
+                                                                <path id="Path_960" data-name="Path 960" d="M7.613,272.129a1.311,1.311,0,0,0-1.3,1.3.489.489,0,1,0,.977,0,.315.315,0,0,1,.326-.326h6.515a.315.315,0,0,1,.326.326v9.121a.315.315,0,0,1-.326.326.489.489,0,1,0,0,.977,1.311,1.311,0,0,0,1.3-1.3v-9.121a1.311,1.311,0,0,0-1.3-1.3Zm-2.606,2.606a1.311,1.311,0,0,0-1.3,1.3v9.121a1.311,1.311,0,0,0,1.3,1.3h6.515a1.311,1.311,0,0,0,1.3-1.3v-9.121a1.311,1.311,0,0,0-1.3-1.3Zm0,.977h6.515a.315.315,0,0,1,.326.326v9.121a.315.315,0,0,1-.326.326H5.007a.315.315,0,0,1-.326-.326v-9.121A.315.315,0,0,1,5.007,275.713Z" transform="translate(-3.704 -272.129)" fill="#00a757" fill-rule="evenodd" />
+                                                            </g>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="messages-container user-online">
+                        <div class="date-wrapper">
+                            <hr>
+                            <span>Today, 12.05.19</span>
+                            <hr>
+                        </div>
+                        <div class="messages-wrapper">
+                            <div class="message-item interlocutor-message">
+                                <div class="image-container">
+                                    <div class="image-wrapper">
+                                        <img src="/img/pics/avatar.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="text-container">
+                                    <p class="text-title">Oleg Makarov, 12:39</p>
+                                    <div class="message-content">
+                                        <p>Hi! ) I I would like to know how much the 15 kilograms of these eggs will cost</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="message-item your-message">
+                                <div class="text-container">
+                                    <p class="text-title">You</p>
+                                    <div class="message-content">
+                                        <p>Hi Oleg! It will cost 500 dollars, like the new iPhone! </p>
+                                    </div>
+                                    <div class="message-status">Viewed</div>
+                                </div>
+                            </div>
+                            <div class="message-item interlocutor-message">
+                                <div class="image-container">
+                                    <div class="image-wrapper">
+                                        <img src="/img/pics/avatar.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="text-container">
+                                    <p class="text-title">Oleg Makarov, 12:42</p>
+                                    <div class="message-content">
+                                        <p>Good pricing! )</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="message-item interlocutor-message">
+                                <div class="image-container">
+                                    <div class="image-wrapper">
+                                        <img src="/img/pics/avatar.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="text-container">
+                                    <p class="text-title">Oleg Makarov, 12:44</p>
+                                    <div class="message-content">
+                                        <p>Can I pick up these wonderful eggs today?</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="message-item your-message">
+                                <div class="text-container">
+                                    <p class="text-title">You</p>
+                                    <div class="message-content">
+                                        <p>Hi Oleg! It will cost 500 dollars, like the new iPhone! </p>
+                                    </div>
+                                    <div class="message-status">Viewed</div>
+                                </div>
+                            </div>
+                            <div class="message-item your-message">
+                                <div class="text-container">
+                                    <p class="text-title">You</p>
+                                    <div class="message-content">
+                                        <p>Hi Oleg! It will cost 500 dollars, like the new iPhone! </p>
+                                    </div>
+                                    <div class="message-status">Viewed</div>
+                                </div>
+                            </div>
+                            <div class="message-item interlocutor-message">
+                                <div class="image-container">
+                                    <div class="image-wrapper">
+                                        <img src="/img/pics/avatar.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="text-container">
+                                    <p class="text-title">Oleg Makarov, 12:42</p>
+                                    <div class="message-content">
+                                        <p>Good pricing! )</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="date-wrapper">
+                            <hr>
+                            <span>Today, 13.05.19</span>
+                            <hr>
+                        </div>
+                        <div class="messages-wrapper">
+                            <div class="message-item interlocutor-message">
+                                <div class="image-container">
+                                    <div class="image-wrapper">
+                                        <img src="/img/pics/avatar.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="text-container">
+                                    <p class="text-title">Oleg Makarov, 12:44</p>
+                                    <div class="message-content">
+                                        <p>Can I pick up these wonderful eggs today?</p>
+                                    </div>
+                                    <div class="message-status">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                                            <g id="noun_edit_684936" transform="translate(-1.618 -1.618)">
+                                                <path id="Path_958" data-name="Path 958" d="M15.042,3.121l-.928-.928a1.97,1.97,0,0,0-2.783,0L2.983,10.542a.434.434,0,0,0-.111.189L1.635,15.06a.437.437,0,0,0,.421.558.426.426,0,0,0,.12-.017L6.5,14.363a.436.436,0,0,0,.189-.111L15.042,5.9a1.968,1.968,0,0,0,0-2.783ZM6.155,13.554l-3.463.989.99-3.463L10.4,4.358l2.474,2.474Zm8.269-8.269-.928.928L11.022,3.74l.928-.928a1.1,1.1,0,0,1,1.547,0l.928.928a1.092,1.092,0,0,1,0,1.546Z" transform="translate(0 0)" fill="#8b8d91" />
+                                            </g>
+                                        </svg> Oleg is typing</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="empty-chat-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+                                <g id="noun_messages_1516437" transform="translate(0.5 3.5)">
+                                    <g id="Group_1019" data-name="Group 1019" transform="translate(-0.5 -3.5)">
+                                        <path id="Path_2126" data-name="Path 2126" d="M25.75,6.5h-21a1.75,1.75,0,0,1,0-3.5h21a1.75,1.75,0,0,1,0,3.5Z" transform="translate(7.5 7.5)" fill="#cecece" />
+                                        <path id="Path_2127" data-name="Path 2127" d="M18.75,8.5h-14a1.75,1.75,0,0,1,0-3.5h14a1.75,1.75,0,0,1,0,3.5Z" transform="translate(7.5 12.5)" fill="#cecece" />
+                                        <g id="Group_1018" data-name="Group 1018">
+                                            <path id="Path_2128" data-name="Path 2128" d="M1.75,43.75a1.775,1.775,0,0,1-.742-.165A1.752,1.752,0,0,1,0,42V7A7.007,7.007,0,0,1,7,0H38.5a7.007,7.007,0,0,1,7,7V28a7.007,7.007,0,0,1-7,7H12.884L2.87,43.344A1.73,1.73,0,0,1,1.75,43.75ZM7,3.5A3.506,3.506,0,0,0,3.5,7V38.265l7.63-6.356a1.732,1.732,0,0,1,1.12-.409H38.5A3.5,3.5,0,0,0,42,28V7a3.5,3.5,0,0,0-3.5-3.5Z" fill="#cecece" />
+                                            <path id="Path_2129" data-name="Path 2129" d="M44.25,46a1.75,1.75,0,0,1-1.092-.382L34.884,39H11a7.007,7.007,0,0,1-7-7V30.25a1.75,1.75,0,0,1,3.5,0V32A3.5,3.5,0,0,0,11,35.5H35.5a1.763,1.763,0,0,1,1.092.382L42.5,40.61V11A3.5,3.5,0,0,0,39,7.5,1.75,1.75,0,0,1,39,4a7.007,7.007,0,0,1,7,7V44.25a1.747,1.747,0,0,1-.991,1.575A1.783,1.783,0,0,1,44.25,46Z" transform="translate(10 10)" fill="#cecece" />
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                            <span>No messages yet</span>
+                        </div>
+                    </div>
+                    <div class="messages-input">
+                        <form action="">
+                            <div class="form-wrapper">
+                                <div class="input-container">
+                                    <input type="text" placeholder="Start typing here…">
+                                    <input id="messages-file-attach" type="file">
+                                    <label for="messages-file-attach" class="attach-file">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20.504" height="23.185" viewBox="0 0 20.504 23.185">
+                                            <g id="noun_attach_120441" transform="translate(-6.784 -33.242) rotate(31)">
+                                                <path id="Path_957" data-name="Path 957" d="M37.694,19.737a6.007,6.007,0,0,0-6,6v9.419a4.419,4.419,0,0,0,8.839.01s0-.007,0-.01V25.737a2.839,2.839,0,0,0-5.679,0V32.47a.819.819,0,1,0,1.639,0V25.737a1.2,1.2,0,0,1,2.4,0v9.415s0,0,0,0a2.781,2.781,0,0,1-5.562,0v-9.42a4.361,4.361,0,0,1,8.722,0V32.47a.819.819,0,1,0,1.639,0V25.737A6.007,6.007,0,0,0,37.694,19.737Z" fill="#cecece" />
+                                            </g>
+                                        </svg>
+                                    </label>
+                                </div>
+                                <div class="button-container">
+                                    <button class="disable" type="submit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="12.998" viewBox="0 0 13 12.998">
+                                            <g id="noun_send_2846956" transform="translate(-290.339 -368.401)">
+                                                <g id="Group_53" data-name="Group 53" transform="translate(228 306)">
+                                                    <g id="Group_50" data-name="Group 50" transform="translate(62.339 62.401)">
+                                                        <g id="Group_49" data-name="Group 49" transform="translate(0 0)">
+                                                            <g id="Group_48" data-name="Group 48">
+                                                                <path id="Path_955" data-name="Path 955" d="M63,67.66l1.192-.423,2.844-1.008q1.73-.613,3.457-1.223c1-.353,1.992-.707,2.99-1.057.482-.17.98-.315,1.448-.513.007,0,.014,0,.021-.007l-.641-.641c-.142.4-.281.793-.423,1.192q-.5,1.424-1.008,2.844-.613,1.73-1.223,3.457c-.353,1-.707,1.992-1.057,2.99-.17.482-.371.96-.513,1.448,0,.007,0,.014-.007.021h1c-.256-.627-.509-1.251-.766-1.878q-.6-1.481-1.209-2.965c-.087-.215-.173-.43-.26-.641a.614.614,0,0,0-.371-.371c-.021-.01-.042-.017-.062-.028-.107-.045-.215-.087-.322-.132l-2.83-1.154c-.741-.3-1.476-.637-2.228-.908-.014,0-.024-.01-.038-.014a.522.522,0,0,0-.641.364.538.538,0,0,0,.364.641c.617.249,1.23.5,1.846.752l2.965,1.206c.225.094.454.184.679.277l-.364-.364c.249.617.5,1.23.752,1.846q.6,1.481,1.206,2.965c.094.225.184.454.277.679a.522.522,0,0,0,1,0c.142-.4.281-.793.423-1.192q.5-1.424,1.008-2.844.613-1.73,1.223-3.457c.353-1,.707-1.992,1.057-2.99.17-.482.367-.96.513-1.448,0-.007,0-.014.007-.021a.524.524,0,0,0-.641-.641l-1.192.423-2.844,1.008q-1.73.613-3.457,1.223c-1,.353-1.992.707-2.99,1.057-.482.17-.97.336-1.448.513-.007,0-.014,0-.021.007a.536.536,0,0,0-.364.641A.527.527,0,0,0,63,67.66Z" transform="translate(-62.339 -62.401)" fill="#fff" />
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                    <g id="Group_52" data-name="Group 52" transform="translate(67.826 66.289)">
+                                                        <g id="Group_51" data-name="Group 51" transform="translate(0 0)">
+                                                            <path id="Path_956" data-name="Path 956" d="M221.607,178.106l2.276-2.276.322-.322a.519.519,0,1,0-.734-.734l-2.276,2.276-.322.322a.519.519,0,0,0,.734.734Z" transform="translate(-220.725 -174.625)" fill="#fff" />
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        <span>Send</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scripts">
+            <!-- Set JS assets-->
+            <script src="js/vendor-bundle.min.js"></script>
+            <script src="js/custom-bundle.min.js"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>
+        </div>
+    </body>
+</html>

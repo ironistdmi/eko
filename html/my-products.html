@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document Template Title</title>
+        <!-- Main Meta information-->
+        <meta charset="utf-8" />
+        <meta http-equiv="Cache-control" content="public" />
+        <meta name="viewport" content="width=device-width, user-scalable=yes" />
+        <!-- Meta Information-->
+        <meta name="robots" content="index, follow" />
+        <link type="text/plain" rel="author" href="humans.txt" />
+        <!-- Get html5shiv if this is IE lower or equal to 9-->
+        <!--[if lte IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+        <link rel="stylesheet" href="css/main.min.css" />
+    </head>
+    <body>
+        <header>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="header-wrapper col-12">
+                        <div class="header-button">
+                            <button class="menu-toggle-trigger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                            <a href="index.html" class="header-logo">
+                                <h1>ECOFARMER</h1>
+                            </a>
+                        </div>
+                        <div class="header-navigation">
+                            <div class="navigation-container">
+                                <a href="search.html">Search</a>
+                                <a href="saved.html">Saved</a>
+                                <a href="add-item.html">Add item</a>
+                            </div>
+                            <div class="search-container">
+                                <form action="">
+                                    <div class="input-field">
+                                        <input type="text">
+                                        <svg class="field-icon search-icon" xmlns="http://www.w3.org/2000/svg" width="12.992" height="13" viewBox="0 0 12.992 13">
+                                            <g id="noun_Search_875352" transform="translate(-10.4 -10.3)">
+                                                <path id="Path_938" data-name="Path 938" d="M23.176,22.07l-2.332-2.316a5.854,5.854,0,1,0-4.6,2.236,5.777,5.777,0,0,0,3.593-1.246l2.316,2.348a.7.7,0,0,0,.511.208.769.769,0,0,0,.511-.208A.713.713,0,0,0,23.176,22.07Zm-2.523-5.925a4.417,4.417,0,1,1-1.294-3.114A4.373,4.373,0,0,1,20.653,16.145Z" transform="translate(0)" fill="#cecece" />
+                                            </g>
+                                        </svg>
+                                        <svg class="field-icon micro-icon" xmlns="http://www.w3.org/2000/svg" width="12.136" height="15.925" viewBox="0 0 12.136 15.925">
+                                            <g id="noun_voice_2627272" transform="translate(0 0)">
+                                                <g id="Group_16" data-name="Group 16">
+                                                    <path id="Path_939" data-name="Path 939" d="M10.928,93.839a.6.6,0,0,1,1.208,0v.906A6.082,6.082,0,0,1,6.7,100.782v2.174a.6.6,0,0,1-1.208,0v-2.174A6.135,6.135,0,0,1,0,94.744v-.906a.6.6,0,0,1,1.208,0v.906a4.861,4.861,0,0,0,9.721,0Z" transform="translate(0 -87.62)" fill="#00074d" />
+                                                    <path id="Path_940" data-name="Path 940" d="M48.381,0A3.35,3.35,0,0,1,51.7,3.321v3.8a3.351,3.351,0,0,1-6.7,0v-3.8A3.363,3.363,0,0,1,48.381,0Zm0,1.208a2.152,2.152,0,0,0-2.174,2.113v3.8a2.144,2.144,0,0,0,4.287,0v-3.8A2.139,2.139,0,0,0,48.381,1.208Z" transform="translate(-42.283)" fill="#00074d" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="button-wrapper">
+                                        <button type="submit">Find now</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="header-panel">
+                            <a class="conversation-link" href="chat.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                    <g id="noun_messages_1516437" transform="translate(-5 -2)">
+                                        <g id="Group_1019" data-name="Group 1019" transform="translate(5 2)">
+                                            <path id="Path_2126" data-name="Path 2126" d="M9.5,4h-6a.5.5,0,0,1,0-1h6a.5.5,0,0,1,0,1Z" fill="#2b2c33" />
+                                            <path id="Path_2127" data-name="Path 2127" d="M7.5,6h-4a.5.5,0,0,1,0-1h4a.5.5,0,0,1,0,1Z" fill="#2b2c33" />
+                                            <g id="Group_1018" data-name="Group 1018">
+                                                <path id="Path_2128" data-name="Path 2128" d="M.5,12.5a.507.507,0,0,1-.212-.047A.5.5,0,0,1,0,12V2A2,2,0,0,1,2,0h9a2,2,0,0,1,2,2V8a2,2,0,0,1-2,2H3.681L.82,12.384A.494.494,0,0,1,.5,12.5ZM2,1A1,1,0,0,0,1,2v8.933L3.18,9.117A.5.5,0,0,1,3.5,9H11a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1Z" fill="#2b2c33" />
+                                                <path id="Path_2129" data-name="Path 2129" d="M15.5,16a.5.5,0,0,1-.312-.109L12.824,14H6a2,2,0,0,1-2-2v-.5a.5.5,0,0,1,1,0V12a1,1,0,0,0,1,1h7a.5.5,0,0,1,.312.109L15,14.46V6a1,1,0,0,0-1-1,.5.5,0,0,1,0-1,2,2,0,0,1,2,2v9.5a.5.5,0,0,1-.283.45A.51.51,0,0,1,15.5,16Z" fill="#2b2c33" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                            <div class="notification-link new-notification">
+                                <div class="svg-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.928" height="15" viewBox="0 0 13.928 15">
+                                        <g id="noun_notification_2184965" transform="translate(-24 -22)">
+                                            <g id="Group_18" data-name="Group 18" transform="translate(24 22)">
+                                                <g id="Group_17" data-name="Group 17">
+                                                    <path id="Path_941" data-name="Path 941" d="M37.929,32.179a1.609,1.609,0,0,1-1.61,1.607H25.61a1.607,1.607,0,1,1,0-3.214s0-3.214,0-3.214a5.357,5.357,0,0,1,10.714,0v3.214A1.609,1.609,0,0,1,37.929,32.179Zm-1.608-.536a1.07,1.07,0,0,1-1.071-1.072V27.357a4.286,4.286,0,0,0-8.571,0v3.214a1.072,1.072,0,0,1-1.071,1.072.536.536,0,1,0,0,1.071H36.319a.536.536,0,1,0,0-1.071Zm-7.767,2.946h1.071a1.339,1.339,0,1,0,2.679,0h1.071a2.411,2.411,0,0,1-4.821,0Z" transform="translate(-24 -22)" fill="#2b2c33" />
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="new-notification-panel">
+                                    <div class="notification-item">
+                                        <div class="image-container">
+                                            <div class="image-wrapper">
+                                                <img src="/img/pics/avatar.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="text-container">
+                                            <p><span class="span-big">Oleg Makarov</span> send you a message.</p>
+                                            <a href="#">View</a>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="notification-item verification-notification">
+                                        <div class="image-container">
+                                            <div class="image-wrapper">
+                                                <img src="/img/pics/verified-icon.svg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="text-container">
+                                            <p><span class="span-big">You</span> received a verification icon!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="profile-panel" href="profile.html">
+                                <img src="/img/pics/avatar.png" alt="">
+                            </a>
+                            <!-- FOR USERS (DELETE THIS LINE)-->
+                            <!-- <a href="#" class="link-button">Log&nbsp;in</a>
+                    <a href="#" class="link-button button-fill">Sign&nbsp;Up</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="header-fixed-shadow disabled"></div>
+        <div class="d-flex fullscreen-page">
+            <aside class="profile-aside">
+                <h3>Dashboard</h3>
+                <div class="aside-navigation">
+                    <a class="" href="profile.html">Profile</a>
+                    <a class="" href="profile-full.html">Profile full delete</a>
+                    <a class="active" href="my-products.html">My products</a>
+                    <a class="" href="my-reviews.html">All reviews</a>
+                    <a class="" href="settings.html">Settings</a>
+                    <hr>
+                    <a href="#">Log out</a>
+                </div>
+            </aside>
+            <div class="my-products-page fullscreen-block">
+                <a class="toggle-dashboard" href="#">Dashboard <br> <svg xmlns="http://www.w3.org/2000/svg" width="33.312" height="13.934" viewBox="0 0 33.312 13.934">
+                        <g id="Group_997" data-name="Group 997" transform="translate(0)">
+                            <path id="Path_2079" data-name="Path 2079" d="M180.414,565.632l.428.428-.865.875L173,559.967,179.977,553l.865.875-5.471,5.48h30.941v1.234H175.371Z" transform="translate(-173 -553)" fill="#fff" />
+                        </g>
+                    </svg>
+                </a>
+                <div class="title-container">
+                    <h2>My products</h2>
+                    <a class="toggle-archive-button" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                            <g id="noun_archive_750186" transform="translate(-10.759 -13.59)">
+                                <path id="Path_2316" data-name="Path 2316" d="M25.175,36.36h-4.17a.291.291,0,0,0-.219.1l-.733.821H16.465l-.733-.821a.291.291,0,0,0-.219-.1h-4.17a.546.546,0,0,0-.411.192.72.72,0,0,0-.173.489l.549,8.769a.626.626,0,0,0,.576.646H24.628a.614.614,0,0,0,.576-.646l.555-8.795a.689.689,0,0,0-.169-.466A.545.545,0,0,0,25.175,36.36Zm-.576,9.3a.089.089,0,0,1-.084.086H11.988a.071.071,0,0,1-.065-.069l-.541-8.558a.067.067,0,0,1,.015-.05.053.053,0,0,1,.042-.019h3.947l.733.821a.3.3,0,0,0,.219.1h3.84a.3.3,0,0,0,.227-.1l.733-.821h3.893a.091.091,0,0,1,.071.034.114.114,0,0,1,.025.082Z" transform="translate(0 -17.865)" fill="#a3a3a3" />
+                                <path id="Path_2317" data-name="Path 2317" d="M16.307,26.872h.017a.268.268,0,0,0,.192-.105.337.337,0,0,0,.069-.227l-.071-1.025H28.272L28.2,26.542a.331.331,0,0,0,.069.215.274.274,0,0,0,.207.106.292.292,0,0,0,.276-.291l.077-1.1a.557.557,0,0,0-.522-.586H16.48a.49.49,0,0,0-.367.17.642.642,0,0,0-.154.431l.075,1.077A.3.3,0,0,0,16.307,26.872Z" transform="translate(-4.202 -8.866)" fill="#a3a3a3" />
+                                <path id="Path_2318" data-name="Path 2318" d="M19.015,15.423h.015a.268.268,0,0,0,.192-.105.337.337,0,0,0,.069-.227l-.063-.877H29.939l-.071.879a.34.34,0,0,0,.077.231.269.269,0,0,0,.2.1.294.294,0,0,0,.276-.291l.069-.98a.534.534,0,0,0-.5-.562H19.171a.47.47,0,0,0-.353.164.617.617,0,0,0-.148.418l.063.959A.294.294,0,0,0,19.015,15.423Z" transform="translate(-6.392)" fill="#a3a3a3" />
+                                <path id="Path_2319" data-name="Path 2319" d="M44.249,56.383l.868-.976.069-.078a.352.352,0,0,0-.007-.449.266.266,0,0,0-.4-.008l-.937,1.051-.937-1.051a.267.267,0,0,0-.408,0,.352.352,0,0,0,0,.458l.935,1.053-.939,1.049a.352.352,0,0,0,0,.458.267.267,0,0,0,.408,0l.069-.075.872-.971.87.974.069.078a.266.266,0,0,0,.4-.008.352.352,0,0,0,.007-.449Z" transform="translate(-25.572 -32.316)" fill="#a3a3a3" />
+                            </g>
+                        </svg> <span>Archive</span></a>
+                </div>
+                <div class="my-products-items">
+                    <div class="archived-products">
+                        <div class="button-container">
+                            <a class="delete-items" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="20.138" viewBox="0 0 19 20.138">
+                                    <g id="noun_Delete_1561486" transform="translate(-3.903 -119.25)">
+                                        <g id="Group_642" data-name="Group 642" transform="translate(3.903 120)">
+                                            <path id="Path_1873" data-name="Path 1873" d="M258.71,334.1v12.3a1.263,1.263,0,0,1-1.267,1.251H247.067A1.263,1.263,0,0,1,245.8,346.4V334.1" transform="translate(-242.722 -329.009)" fill="none" stroke="#e03b4b" stroke-miterlimit="10" stroke-width="1.5" />
+                                            <path id="Path_1874" data-name="Path 1874" d="M137,248H118" transform="translate(-118 -244.956)" fill="none" stroke="#e03b4b" stroke-miterlimit="10" stroke-width="1.5" />
+                                            <path id="Path_1875" data-name="Path 1875" d="M356,123.044V120.7a.771.771,0,0,1,.78-.7h6.071a.668.668,0,0,1,.662.7v2.344" transform="translate(-350.269 -120)" fill="none" stroke="#e03b4b" stroke-miterlimit="10" stroke-width="1.5" />
+                                            <line id="Line_100" data-name="Line 100" y2="10.493" transform="translate(7.415 5.091)" fill="none" stroke="#e03b4b" stroke-miterlimit="10" stroke-width="1.5" />
+                                            <line id="Line_101" data-name="Line 101" y2="10.493" transform="translate(11.65 5.091)" fill="none" stroke="#e03b4b" stroke-miterlimit="10" stroke-width="1.5" />
+                                        </g>
+                                    </g>
+                                </svg> <span>Delete archived items</span></a>
+                            <a class="restore-items" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18.001" viewBox="0 0 18 18.001">
+                                    <g id="noun_restore_1856604" transform="translate(-14 -2.999)">
+                                        <path id="Path_2060" data-name="Path 2060" d="M21,12A9,9,0,0,1,3.065,13.09a.75.75,0,0,1,1.488-.18A7.532,7.532,0,1,0,5.382,8.5H7.75a.75.75,0,0,1,0,1.5h-3A1.752,1.752,0,0,1,3,8.25v-3a.75.75,0,1,1,1.5,0V7.058A8.986,8.986,0,0,1,21,12Z" transform="translate(11)" fill="#00a757" />
+                                    </g>
+                                </svg> <span>Restore archived items</span></a>
+                            <a class="toggle-archive-button" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                                    <g id="noun_archive_750186" transform="translate(-10.759 -13.59)">
+                                        <path id="Path_2316" data-name="Path 2316" d="M25.175,36.36h-4.17a.291.291,0,0,0-.219.1l-.733.821H16.465l-.733-.821a.291.291,0,0,0-.219-.1h-4.17a.546.546,0,0,0-.411.192.72.72,0,0,0-.173.489l.549,8.769a.626.626,0,0,0,.576.646H24.628a.614.614,0,0,0,.576-.646l.555-8.795a.689.689,0,0,0-.169-.466A.545.545,0,0,0,25.175,36.36Zm-.576,9.3a.089.089,0,0,1-.084.086H11.988a.071.071,0,0,1-.065-.069l-.541-8.558a.067.067,0,0,1,.015-.05.053.053,0,0,1,.042-.019h3.947l.733.821a.3.3,0,0,0,.219.1h3.84a.3.3,0,0,0,.227-.1l.733-.821h3.893a.091.091,0,0,1,.071.034.114.114,0,0,1,.025.082Z" transform="translate(0 -17.865)" fill="#a3a3a3" />
+                                        <path id="Path_2317" data-name="Path 2317" d="M16.307,26.872h.017a.268.268,0,0,0,.192-.105.337.337,0,0,0,.069-.227l-.071-1.025H28.272L28.2,26.542a.331.331,0,0,0,.069.215.274.274,0,0,0,.207.106.292.292,0,0,0,.276-.291l.077-1.1a.557.557,0,0,0-.522-.586H16.48a.49.49,0,0,0-.367.17.642.642,0,0,0-.154.431l.075,1.077A.3.3,0,0,0,16.307,26.872Z" transform="translate(-4.202 -8.866)" fill="#a3a3a3" />
+                                        <path id="Path_2318" data-name="Path 2318" d="M19.015,15.423h.015a.268.268,0,0,0,.192-.105.337.337,0,0,0,.069-.227l-.063-.877H29.939l-.071.879a.34.34,0,0,0,.077.231.269.269,0,0,0,.2.1.294.294,0,0,0,.276-.291l.069-.98a.534.534,0,0,0-.5-.562H19.171a.47.47,0,0,0-.353.164.617.617,0,0,0-.148.418l.063.959A.294.294,0,0,0,19.015,15.423Z" transform="translate(-6.392)" fill="#a3a3a3" />
+                                        <path id="Path_2319" data-name="Path 2319" d="M44.249,56.383l.868-.976.069-.078a.352.352,0,0,0-.007-.449.266.266,0,0,0-.4-.008l-.937,1.051-.937-1.051a.267.267,0,0,0-.408,0,.352.352,0,0,0,0,.458l.935,1.053-.939,1.049a.352.352,0,0,0,0,.458.267.267,0,0,0,.408,0l.069-.075.872-.971.87.974.069.078a.266.266,0,0,0,.4-.008.352.352,0,0,0,.007-.449Z" transform="translate(-25.572 -32.316)" fill="#a3a3a3" />
+                                    </g>
+                                </svg> <span>Close</span></a>
+                        </div>
+                        <div class="products-container">
+                            <div class="product-item">
+                                <a href="#" class="product-info">
+                                    <div class="image-container">
+                                        <img src="/img/pics/my-products-image.png">
+                                    </div>
+                                    <h3>Fresh eggs from thoroughbred chickens</h3>
+                                </a>
+                                <div class="product-panel product-panel-archived">
+                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="13.999" height="14" viewBox="0 0 13.999 14">
+                                            <g id="noun_restore_1856604" transform="translate(-14 -2.999)">
+                                                <path id="Path_2060" data-name="Path 2060" d="M17,10a7,7,0,0,1-13.948.848.583.583,0,0,1,1.157-.14,5.858,5.858,0,1,0,.644-3.43H6.694a.583.583,0,0,1,0,1.167H4.361A1.363,1.363,0,0,1,3,7.083V4.75a.583.583,0,1,1,1.167,0V6.156A6.989,6.989,0,0,1,17,10Z" transform="translate(11 0)" fill="#2b2c33" />
+                                            </g>
+                                        </svg> <span>Restore</span></a>
+                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 0 14 15">
+                                            <g id="noun_Delete_1561486" transform="translate(-3.903 -119.5)">
+                                                <g id="Group_642" data-name="Group 642" transform="translate(3.903 120)">
+                                                    <path id="Path_1873" data-name="Path 1873" d="M255.313,334.1v9.236a.94.94,0,0,1-.933.94h-7.646a.94.94,0,0,1-.933-.94V334.1" transform="translate(-243.532 -330.276)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <path id="Path_1874" data-name="Path 1874" d="M132,248H118" transform="translate(-118 -245.714)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <path id="Path_1875" data-name="Path 1875" d="M356,122.286v-1.761a.572.572,0,0,1,.575-.525h4.473a.5.5,0,0,1,.488.525v1.761" transform="translate(-351.777 -120)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <line id="Line_100" data-name="Line 100" y2="7.882" transform="translate(5.463 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <line id="Line_101" data-name="Line 101" y2="7.882" transform="translate(8.585 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        <span>Delete</span></a>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <a href="#" class="product-info">
+                                    <div class="image-container">
+                                        <img src="/img/pics/my-products-image.png">
+                                    </div>
+                                    <h3>Fresh eggs from thoroughbred chickens</h3>
+                                </a>
+                                <div class="product-panel product-panel-archived">
+                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="13.999" height="14" viewBox="0 0 13.999 14">
+                                            <g id="noun_restore_1856604" transform="translate(-14 -2.999)">
+                                                <path id="Path_2060" data-name="Path 2060" d="M17,10a7,7,0,0,1-13.948.848.583.583,0,0,1,1.157-.14,5.858,5.858,0,1,0,.644-3.43H6.694a.583.583,0,0,1,0,1.167H4.361A1.363,1.363,0,0,1,3,7.083V4.75a.583.583,0,1,1,1.167,0V6.156A6.989,6.989,0,0,1,17,10Z" transform="translate(11 0)" fill="#2b2c33" />
+                                            </g>
+                                        </svg> <span>Restore</span></a>
+                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 0 14 15">
+                                            <g id="noun_Delete_1561486" transform="translate(-3.903 -119.5)">
+                                                <g id="Group_642" data-name="Group 642" transform="translate(3.903 120)">
+                                                    <path id="Path_1873" data-name="Path 1873" d="M255.313,334.1v9.236a.94.94,0,0,1-.933.94h-7.646a.94.94,0,0,1-.933-.94V334.1" transform="translate(-243.532 -330.276)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <path id="Path_1874" data-name="Path 1874" d="M132,248H118" transform="translate(-118 -245.714)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <path id="Path_1875" data-name="Path 1875" d="M356,122.286v-1.761a.572.572,0,0,1,.575-.525h4.473a.5.5,0,0,1,.488.525v1.761" transform="translate(-351.777 -120)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <line id="Line_100" data-name="Line 100" y2="7.882" transform="translate(5.463 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <line id="Line_101" data-name="Line 101" y2="7.882" transform="translate(8.585 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        <span>Delete</span></a>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <a href="#" class="product-info">
+                                    <div class="image-container">
+                                        <img src="/img/pics/my-products-image.png">
+                                    </div>
+                                    <h3>Fresh eggs from thoroughbred chickens</h3>
+                                </a>
+                                <div class="product-panel product-panel-archived">
+                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="13.999" height="14" viewBox="0 0 13.999 14">
+                                            <g id="noun_restore_1856604" transform="translate(-14 -2.999)">
+                                                <path id="Path_2060" data-name="Path 2060" d="M17,10a7,7,0,0,1-13.948.848.583.583,0,0,1,1.157-.14,5.858,5.858,0,1,0,.644-3.43H6.694a.583.583,0,0,1,0,1.167H4.361A1.363,1.363,0,0,1,3,7.083V4.75a.583.583,0,1,1,1.167,0V6.156A6.989,6.989,0,0,1,17,10Z" transform="translate(11 0)" fill="#2b2c33" />
+                                            </g>
+                                        </svg> <span>Restore</span></a>
+                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 0 14 15">
+                                            <g id="noun_Delete_1561486" transform="translate(-3.903 -119.5)">
+                                                <g id="Group_642" data-name="Group 642" transform="translate(3.903 120)">
+                                                    <path id="Path_1873" data-name="Path 1873" d="M255.313,334.1v9.236a.94.94,0,0,1-.933.94h-7.646a.94.94,0,0,1-.933-.94V334.1" transform="translate(-243.532 -330.276)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <path id="Path_1874" data-name="Path 1874" d="M132,248H118" transform="translate(-118 -245.714)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <path id="Path_1875" data-name="Path 1875" d="M356,122.286v-1.761a.572.572,0,0,1,.575-.525h4.473a.5.5,0,0,1,.488.525v1.761" transform="translate(-351.777 -120)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <line id="Line_100" data-name="Line 100" y2="7.882" transform="translate(5.463 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <line id="Line_101" data-name="Line 101" y2="7.882" transform="translate(8.585 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        <span>Delete</span></a>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <a href="#" class="product-info">
+                                    <div class="image-container">
+                                        <img src="/img/pics/my-products-image.png">
+                                    </div>
+                                    <h3>Fresh eggs from thoroughbred chickens</h3>
+                                </a>
+                                <div class="product-panel product-panel-archived">
+                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="13.999" height="14" viewBox="0 0 13.999 14">
+                                            <g id="noun_restore_1856604" transform="translate(-14 -2.999)">
+                                                <path id="Path_2060" data-name="Path 2060" d="M17,10a7,7,0,0,1-13.948.848.583.583,0,0,1,1.157-.14,5.858,5.858,0,1,0,.644-3.43H6.694a.583.583,0,0,1,0,1.167H4.361A1.363,1.363,0,0,1,3,7.083V4.75a.583.583,0,1,1,1.167,0V6.156A6.989,6.989,0,0,1,17,10Z" transform="translate(11 0)" fill="#2b2c33" />
+                                            </g>
+                                        </svg> <span>Restore</span></a>
+                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 0 14 15">
+                                            <g id="noun_Delete_1561486" transform="translate(-3.903 -119.5)">
+                                                <g id="Group_642" data-name="Group 642" transform="translate(3.903 120)">
+                                                    <path id="Path_1873" data-name="Path 1873" d="M255.313,334.1v9.236a.94.94,0,0,1-.933.94h-7.646a.94.94,0,0,1-.933-.94V334.1" transform="translate(-243.532 -330.276)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <path id="Path_1874" data-name="Path 1874" d="M132,248H118" transform="translate(-118 -245.714)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <path id="Path_1875" data-name="Path 1875" d="M356,122.286v-1.761a.572.572,0,0,1,.575-.525h4.473a.5.5,0,0,1,.488.525v1.761" transform="translate(-351.777 -120)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <line id="Line_100" data-name="Line 100" y2="7.882" transform="translate(5.463 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <line id="Line_101" data-name="Line 101" y2="7.882" transform="translate(8.585 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        <span>Delete</span></a>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <a href="#" class="product-info">
+                                    <div class="image-container">
+                                        <img src="/img/pics/my-products-image.png">
+                                    </div>
+                                    <h3>Fresh eggs from thoroughbred chickens</h3>
+                                </a>
+                                <div class="product-panel product-panel-archived">
+                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="13.999" height="14" viewBox="0 0 13.999 14">
+                                            <g id="noun_restore_1856604" transform="translate(-14 -2.999)">
+                                                <path id="Path_2060" data-name="Path 2060" d="M17,10a7,7,0,0,1-13.948.848.583.583,0,0,1,1.157-.14,5.858,5.858,0,1,0,.644-3.43H6.694a.583.583,0,0,1,0,1.167H4.361A1.363,1.363,0,0,1,3,7.083V4.75a.583.583,0,1,1,1.167,0V6.156A6.989,6.989,0,0,1,17,10Z" transform="translate(11 0)" fill="#2b2c33" />
+                                            </g>
+                                        </svg> <span>Restore</span></a>
+                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 0 14 15">
+                                            <g id="noun_Delete_1561486" transform="translate(-3.903 -119.5)">
+                                                <g id="Group_642" data-name="Group 642" transform="translate(3.903 120)">
+                                                    <path id="Path_1873" data-name="Path 1873" d="M255.313,334.1v9.236a.94.94,0,0,1-.933.94h-7.646a.94.94,0,0,1-.933-.94V334.1" transform="translate(-243.532 -330.276)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <path id="Path_1874" data-name="Path 1874" d="M132,248H118" transform="translate(-118 -245.714)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <path id="Path_1875" data-name="Path 1875" d="M356,122.286v-1.761a.572.572,0,0,1,.575-.525h4.473a.5.5,0,0,1,.488.525v1.761" transform="translate(-351.777 -120)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <line id="Line_100" data-name="Line 100" y2="7.882" transform="translate(5.463 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <line id="Line_101" data-name="Line 101" y2="7.882" transform="translate(8.585 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        <span>Delete</span></a>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <a href="#" class="product-info">
+                                    <div class="image-container">
+                                        <img src="/img/pics/my-products-image.png">
+                                    </div>
+                                    <h3>Fresh eggs from thoroughbred chickens</h3>
+                                </a>
+                                <div class="product-panel product-panel-archived">
+                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="13.999" height="14" viewBox="0 0 13.999 14">
+                                            <g id="noun_restore_1856604" transform="translate(-14 -2.999)">
+                                                <path id="Path_2060" data-name="Path 2060" d="M17,10a7,7,0,0,1-13.948.848.583.583,0,0,1,1.157-.14,5.858,5.858,0,1,0,.644-3.43H6.694a.583.583,0,0,1,0,1.167H4.361A1.363,1.363,0,0,1,3,7.083V4.75a.583.583,0,1,1,1.167,0V6.156A6.989,6.989,0,0,1,17,10Z" transform="translate(11 0)" fill="#2b2c33" />
+                                            </g>
+                                        </svg> <span>Restore</span></a>
+                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 0 14 15">
+                                            <g id="noun_Delete_1561486" transform="translate(-3.903 -119.5)">
+                                                <g id="Group_642" data-name="Group 642" transform="translate(3.903 120)">
+                                                    <path id="Path_1873" data-name="Path 1873" d="M255.313,334.1v9.236a.94.94,0,0,1-.933.94h-7.646a.94.94,0,0,1-.933-.94V334.1" transform="translate(-243.532 -330.276)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <path id="Path_1874" data-name="Path 1874" d="M132,248H118" transform="translate(-118 -245.714)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <path id="Path_1875" data-name="Path 1875" d="M356,122.286v-1.761a.572.572,0,0,1,.575-.525h4.473a.5.5,0,0,1,.488.525v1.761" transform="translate(-351.777 -120)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <line id="Line_100" data-name="Line 100" y2="7.882" transform="translate(5.463 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                    <line id="Line_101" data-name="Line 101" y2="7.882" transform="translate(8.585 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        <span>Delete</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="archive-hint">
+                            <p>This is your archive, where you can put all the items you don’t need, but don’t want to delete yet.</p>
+                        </div>
+                    </div>
+                    <div class="product-item my-item">
+                        <a href="#" class="product-info">
+                            <div class="image-container">
+                                <img src="/img/pics/my-products-image.png">
+                            </div>
+                            <h3>Fresh eggs from thoroughbred chickens</h3>
+                        </a>
+                        <div class="product-panel">
+                            <a href="#">Edit</a>
+                            <a href="#" data-toggle="modal" data-target="#modal-my-product-open">Delete</a>
+                            <a href="#">Archive</a>
+                            <a href="#">Unpublish</a>
+                        </div>
+                        <div class="deleted-item-display">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 0 14 15">
+                                <g id="noun_Delete_1561486" transform="translate(-3.903 -119.5)">
+                                    <g id="Group_642" data-name="Group 642" transform="translate(3.903 120)">
+                                        <path id="Path_1873" data-name="Path 1873" d="M255.313,334.1v9.236a.94.94,0,0,1-.933.94h-7.646a.94.94,0,0,1-.933-.94V334.1" transform="translate(-243.532 -330.276)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <path id="Path_1874" data-name="Path 1874" d="M132,248H118" transform="translate(-118 -245.714)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <path id="Path_1875" data-name="Path 1875" d="M356,122.286v-1.761a.572.572,0,0,1,.575-.525h4.473a.5.5,0,0,1,.488.525v1.761" transform="translate(-351.777 -120)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <line id="Line_100" data-name="Line 100" y2="7.882" transform="translate(5.463 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <line id="Line_101" data-name="Line 101" y2="7.882" transform="translate(8.585 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <span>Deleted</span>
+                        </div>
+                    </div>
+                    <div class="product-item my-item">
+                        <a href="#" class="product-info">
+                            <div class="image-container">
+                                <img src="/img/pics/my-products-image.png">
+                            </div>
+                            <h3>Fresh eggs from thoroughbred chickens</h3>
+                        </a>
+                        <div class="product-panel">
+                            <a href="#">Edit</a>
+                            <a href="#" data-toggle="modal" data-target="#modal-my-product-open">Delete</a>
+                            <a href="#">Archive</a>
+                            <a href="#">Unpublish</a>
+                        </div>
+                        <div class="deleted-item-display">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 0 14 15">
+                                <g id="noun_Delete_1561486" transform="translate(-3.903 -119.5)">
+                                    <g id="Group_642" data-name="Group 642" transform="translate(3.903 120)">
+                                        <path id="Path_1873" data-name="Path 1873" d="M255.313,334.1v9.236a.94.94,0,0,1-.933.94h-7.646a.94.94,0,0,1-.933-.94V334.1" transform="translate(-243.532 -330.276)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <path id="Path_1874" data-name="Path 1874" d="M132,248H118" transform="translate(-118 -245.714)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <path id="Path_1875" data-name="Path 1875" d="M356,122.286v-1.761a.572.572,0,0,1,.575-.525h4.473a.5.5,0,0,1,.488.525v1.761" transform="translate(-351.777 -120)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <line id="Line_100" data-name="Line 100" y2="7.882" transform="translate(5.463 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <line id="Line_101" data-name="Line 101" y2="7.882" transform="translate(8.585 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <span>Deleted</span>
+                        </div>
+                    </div>
+                    <div class="product-item my-item">
+                        <a href="#" class="product-info">
+                            <div class="image-container">
+                                <img src="/img/pics/my-products-image.png">
+                            </div>
+                            <h3>Fresh eggs from thoroughbred chickens</h3>
+                        </a>
+                        <div class="product-panel">
+                            <a href="#">Edit</a>
+                            <a href="#" data-toggle="modal" data-target="#modal-my-product-open">Delete</a>
+                            <a href="#">Archive</a>
+                            <a href="#">Unpublish</a>
+                        </div>
+                        <div class="deleted-item-display">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 0 14 15">
+                                <g id="noun_Delete_1561486" transform="translate(-3.903 -119.5)">
+                                    <g id="Group_642" data-name="Group 642" transform="translate(3.903 120)">
+                                        <path id="Path_1873" data-name="Path 1873" d="M255.313,334.1v9.236a.94.94,0,0,1-.933.94h-7.646a.94.94,0,0,1-.933-.94V334.1" transform="translate(-243.532 -330.276)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <path id="Path_1874" data-name="Path 1874" d="M132,248H118" transform="translate(-118 -245.714)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <path id="Path_1875" data-name="Path 1875" d="M356,122.286v-1.761a.572.572,0,0,1,.575-.525h4.473a.5.5,0,0,1,.488.525v1.761" transform="translate(-351.777 -120)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <line id="Line_100" data-name="Line 100" y2="7.882" transform="translate(5.463 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <line id="Line_101" data-name="Line 101" y2="7.882" transform="translate(8.585 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <span>Deleted</span>
+                        </div>
+                    </div>
+                    <div class="product-item my-item">
+                        <a href="#" class="product-info">
+                            <div class="image-container">
+                                <img src="/img/pics/my-products-image.png">
+                            </div>
+                            <h3>Fresh eggs from thoroughbred chickens</h3>
+                        </a>
+                        <div class="product-panel">
+                            <a href="#">Edit</a>
+                            <a href="#" data-toggle="modal" data-target="#modal-my-product-open">Delete</a>
+                            <a href="#">Archive</a>
+                            <a href="#">Unpublish</a>
+                        </div>
+                        <div class="deleted-item-display">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 0 14 15">
+                                <g id="noun_Delete_1561486" transform="translate(-3.903 -119.5)">
+                                    <g id="Group_642" data-name="Group 642" transform="translate(3.903 120)">
+                                        <path id="Path_1873" data-name="Path 1873" d="M255.313,334.1v9.236a.94.94,0,0,1-.933.94h-7.646a.94.94,0,0,1-.933-.94V334.1" transform="translate(-243.532 -330.276)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <path id="Path_1874" data-name="Path 1874" d="M132,248H118" transform="translate(-118 -245.714)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <path id="Path_1875" data-name="Path 1875" d="M356,122.286v-1.761a.572.572,0,0,1,.575-.525h4.473a.5.5,0,0,1,.488.525v1.761" transform="translate(-351.777 -120)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <line id="Line_100" data-name="Line 100" y2="7.882" transform="translate(5.463 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                        <line id="Line_101" data-name="Line 101" y2="7.882" transform="translate(8.585 3.824)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <span>Deleted</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-->
+        <div class="modal-my-product modal fade" id="modal-my-product-open" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="image-container">
+                            <img src="/img/pics/modal-image.png" alt="">
+                        </div>
+                        <div class="text-container">
+                            <p class="alert-text">Are you sure you want to delete this item?</p>
+                            <p>You will not be able to restore this product in the future.</p>
+                        </div>
+                        <div class="button-container">
+                            <button type="button" class="close-button" data-dismiss="modal">Close</button>
+                            <button type="button" class="delete-button">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-my-review modal fade" id="modal-my-review-open" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="review-container">
+                            <a href="#" class="post-title">
+                                <div class="post-image-container">
+                                    <img src="/img/pics/my-products-image.png" alt="">
+                                </div>
+                                <p>Fresh eggs from thoroughbred chickens</p>
+                            </a>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
+                        </div>
+                        <div class="text-container">
+                            <p class="alert-text">Are you sure you want to delete this item?</p>
+                            <p>You will not be able to restore this review in the future.</p>
+                        </div>
+                        <div class="button-container">
+                            <button type="button" class="close-button" data-dismiss="modal">Close</button>
+                            <button type="button" class="delete-button">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-product-post modal fade" id="modal-product-post-open" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="image-container">
+                            <img src="/img/pics/modal-product-post.png" alt="">
+                        </div>
+                        <div class="text-container">
+                            <p class="alert-text">Your product has been published!</p>
+                            <p>From now all your customers and users of Ecofarmer be able to see your product and message you!</p>
+                        </div>
+                        <div class="button-container">
+                            <button type="button" class="close-button" data-dismiss="modal">Yeah!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-verify-account modal fade" id="modal-verify-account-open" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h4>Verify your account</h4>
+                        <p>When you verify your account, you can get an <svg xmlns="http://www.w3.org/2000/svg" width="12.062" height="12" viewBox="0 0 12.062 12">
+                                <g id="noun_verified_2396751" transform="translate(-65.989 -67.821)">
+                                    <g id="Group_14" data-name="Group 14" transform="translate(65.989 67.821)">
+                                        <path id="Path_936" data-name="Path 936" d="M72.291,67.952l.77.879,1.152-.489a.344.344,0,0,1,.461.215l.352,1.133,1.25.022a.344.344,0,0,1,.335.383l-.139,1.18,1.133.529a.343.343,0,0,1,.165.456c-.154.32-.434.732-.623,1.05l.821.945a.345.345,0,0,1-.062.505l-.969.685.365,1.2a.343.343,0,0,1-.263.436l-1.162.232-.153,1.241a.345.345,0,0,1-.442.288l-1.133-.257L73.5,79.654a.344.344,0,0,1-.5.1l-.952-.711-1.024.717a.343.343,0,0,1-.5-.115l-.579-1.035-1.229.239a.344.344,0,0,1-.408-.327l-.106-1.161-1.218-.282a.344.344,0,0,1-.249-.445l.382-1.124-1-.753a.344.344,0,0,1-.025-.528l.787-.851-.606-1.094a.344.344,0,0,1,.166-.483l1.089-.468-.109-1.246a.346.346,0,0,1,.377-.372l1.156.016.408-1.183a.345.345,0,0,1,.487-.192l1.061.489.853-.914A.344.344,0,0,1,72.291,67.952Zm-3.086,6a.491.491,0,0,1,.694-.694l1.536,1.536,2.69-2.982a.49.49,0,0,1,.728.655l-3.02,3.347a.49.49,0,0,1-.727.037Z" transform="translate(-65.989 -67.821)" fill="#3997f0" fill-rule="evenodd" />
+                                    </g>
+                                </g>
+                            </svg> icon. All buyers and visitors of your store will understand that they can trust you. To verify your account, you need to upload several documents and wait until our system check them. After a successful verification, you will immediately receive an icon.</p>
+                        <label class="title-tooltip tooltip-relative"> Document 1 <svg xmlns="http://www.w3.org/2000/svg" width="12.486" height="15" viewBox="0 0 12.486 15">
+                                <g id="noun_Info_2397918" transform="translate(-105.498 -41.5)">
+                                    <g id="Group_1005" data-name="Group 1005" transform="translate(105.498 41.5)">
+                                        <path id="Path_2100" data-name="Path 2100" d="M105.595,49.765c-.076-1.847-.142-3.744-.057-5.594l6.2-2.671,6.2,2.671c.085,1.85.019,3.747-.057,5.594-.125,3.021-3.645,5.523-6.146,6.735C109.24,55.288,105.719,52.787,105.595,49.765Zm6.974-1.34v3.769a.828.828,0,0,1-1.656,0V48.425A.828.828,0,0,1,112.569,48.425Zm-.828-3.441a.871.871,0,1,1-.871.871A.871.871,0,0,1,111.741,44.985ZM106.7,49.722c.115,2.793,4.019,5.008,5.037,5.54,1.018-.531,4.922-2.747,5.037-5.54.107-2.593.1-4.159.083-4.806l-5.12-2.2-5.12,2.2C106.607,45.563,106.6,47.129,106.7,49.722Z" transform="translate(-105.498 -41.5)" fill="#00a757" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <div class="tooltip-container">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata </p>
+                            </div>
+                        </label>
+                        <div class="drag-n-drop-container drag-n-drop-verification">
+                            <div class="dropped-item"></div>
+                            <div class="drag-n-drop-input">
+                                <label for="drag-n-drop-file">or browse files</label>
+                                <input id="drag-n-drop-file" type="file">
+                            </div>
+                            <div class="drag-n-drop-paceholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="noun_Document_2887989" width="30" height="31.665" viewBox="0 0 30 31.665">
+                                    <defs>
+                                        <style> .cls-1 {
+                    fill: #cecece
+                  }
+                </style>
+                                    </defs>
+                                    <g id="Group_1252" data-name="Group 1252">
+                                        <g id="Group_1251" data-name="Group 1251">
+                                            <path id="Path_2432" d="M1211 1826h8.077v1.008H1211z" class="cls-1" data-name="Path 2432" transform="translate(-1206.342 -1818.977)" />
+                                            <path id="Path_2433" d="M1211 2847h8.077v1.007H1211z" class="cls-1" data-name="Path 2433" transform="translate(-1206.342 -2836.05)" />
+                                            <path id="Path_2434" d="M607 5183h19.592v1.008H607z" class="cls-1" data-name="Path 2434" transform="translate(-604.665 -5163.065)" />
+                                            <path id="Path_2435" d="M607 7176h19.592v1H607z" class="cls-1" data-name="Path 2435" transform="translate(-604.665 -7148.4)" />
+                                            <path id="Path_2436" d="M607 6233h19.592v1.008H607z" class="cls-1" data-name="Path 2436" transform="translate(-604.665 -6209.026)" />
+                                            <path id="Path_2437" d="M28.992 6.885H23.3V1.008H6.746v.958h11.527l5.988 6.258v20.468h4.731zM24.3 1.742v4.139h4.008zm-1.05 28.915V8.85h-5.7V2.969H1.008v27.689zm-.677-22.815l-4.008-4.134v4.134zM5.738 1.965V0h18.27L30 6.181V29.7h-5.738v1.965H0v-29.7z" class="cls-1" data-name="Path 2437" />
+                                        </g>
+                                    </g>
+                                </svg>
+                                <p>Drag&Drop File here</p>
+                            </div>
+                        </div>
+                        <label class="title-tooltip tooltip-relative"> Document 2 <svg xmlns="http://www.w3.org/2000/svg" width="12.486" height="15" viewBox="0 0 12.486 15">
+                                <g id="noun_Info_2397918" transform="translate(-105.498 -41.5)">
+                                    <g id="Group_1005" data-name="Group 1005" transform="translate(105.498 41.5)">
+                                        <path id="Path_2100" data-name="Path 2100" d="M105.595,49.765c-.076-1.847-.142-3.744-.057-5.594l6.2-2.671,6.2,2.671c.085,1.85.019,3.747-.057,5.594-.125,3.021-3.645,5.523-6.146,6.735C109.24,55.288,105.719,52.787,105.595,49.765Zm6.974-1.34v3.769a.828.828,0,0,1-1.656,0V48.425A.828.828,0,0,1,112.569,48.425Zm-.828-3.441a.871.871,0,1,1-.871.871A.871.871,0,0,1,111.741,44.985ZM106.7,49.722c.115,2.793,4.019,5.008,5.037,5.54,1.018-.531,4.922-2.747,5.037-5.54.107-2.593.1-4.159.083-4.806l-5.12-2.2-5.12,2.2C106.607,45.563,106.6,47.129,106.7,49.722Z" transform="translate(-105.498 -41.5)" fill="#00a757" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <div class="tooltip-container">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata </p>
+                            </div>
+                        </label>
+                        <div class="drag-n-drop-container drag-n-drop-verification">
+                            <div class="dropped-item"></div>
+                            <div class="drag-n-drop-input">
+                                <label for="drag-n-drop-file">or browse files</label>
+                                <input id="drag-n-drop-file" type="file">
+                            </div>
+                            <div class="drag-n-drop-paceholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="noun_Document_2887989" width="30" height="31.665" viewBox="0 0 30 31.665">
+                                    <defs>
+                                        <style> .cls-1 {
+                    fill: #cecece
+                  }
+                </style>
+                                    </defs>
+                                    <g id="Group_1252" data-name="Group 1252">
+                                        <g id="Group_1251" data-name="Group 1251">
+                                            <path id="Path_2432" d="M1211 1826h8.077v1.008H1211z" class="cls-1" data-name="Path 2432" transform="translate(-1206.342 -1818.977)" />
+                                            <path id="Path_2433" d="M1211 2847h8.077v1.007H1211z" class="cls-1" data-name="Path 2433" transform="translate(-1206.342 -2836.05)" />
+                                            <path id="Path_2434" d="M607 5183h19.592v1.008H607z" class="cls-1" data-name="Path 2434" transform="translate(-604.665 -5163.065)" />
+                                            <path id="Path_2435" d="M607 7176h19.592v1H607z" class="cls-1" data-name="Path 2435" transform="translate(-604.665 -7148.4)" />
+                                            <path id="Path_2436" d="M607 6233h19.592v1.008H607z" class="cls-1" data-name="Path 2436" transform="translate(-604.665 -6209.026)" />
+                                            <path id="Path_2437" d="M28.992 6.885H23.3V1.008H6.746v.958h11.527l5.988 6.258v20.468h4.731zM24.3 1.742v4.139h4.008zm-1.05 28.915V8.85h-5.7V2.969H1.008v27.689zm-.677-22.815l-4.008-4.134v4.134zM5.738 1.965V0h18.27L30 6.181V29.7h-5.738v1.965H0v-29.7z" class="cls-1" data-name="Path 2437" />
+                                        </g>
+                                    </g>
+                                </svg>
+                                <p>Drag&Drop File here</p>
+                            </div>
+                        </div>
+                        <label class="title-tooltip tooltip-relative"> Document 3 <svg xmlns="http://www.w3.org/2000/svg" width="12.486" height="15" viewBox="0 0 12.486 15">
+                                <g id="noun_Info_2397918" transform="translate(-105.498 -41.5)">
+                                    <g id="Group_1005" data-name="Group 1005" transform="translate(105.498 41.5)">
+                                        <path id="Path_2100" data-name="Path 2100" d="M105.595,49.765c-.076-1.847-.142-3.744-.057-5.594l6.2-2.671,6.2,2.671c.085,1.85.019,3.747-.057,5.594-.125,3.021-3.645,5.523-6.146,6.735C109.24,55.288,105.719,52.787,105.595,49.765Zm6.974-1.34v3.769a.828.828,0,0,1-1.656,0V48.425A.828.828,0,0,1,112.569,48.425Zm-.828-3.441a.871.871,0,1,1-.871.871A.871.871,0,0,1,111.741,44.985ZM106.7,49.722c.115,2.793,4.019,5.008,5.037,5.54,1.018-.531,4.922-2.747,5.037-5.54.107-2.593.1-4.159.083-4.806l-5.12-2.2-5.12,2.2C106.607,45.563,106.6,47.129,106.7,49.722Z" transform="translate(-105.498 -41.5)" fill="#00a757" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <div class="tooltip-container">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata </p>
+                            </div>
+                        </label>
+                        <div class="drag-n-drop-container drag-n-drop-verification">
+                            <div class="dropped-item"></div>
+                            <div class="drag-n-drop-input">
+                                <label for="drag-n-drop-file">or browse files</label>
+                                <input id="drag-n-drop-file" type="file">
+                            </div>
+                            <div class="drag-n-drop-paceholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="noun_Document_2887989" width="30" height="31.665" viewBox="0 0 30 31.665">
+                                    <defs>
+                                        <style> .cls-1 {
+                    fill: #cecece
+                  }
+                </style>
+                                    </defs>
+                                    <g id="Group_1252" data-name="Group 1252">
+                                        <g id="Group_1251" data-name="Group 1251">
+                                            <path id="Path_2432" d="M1211 1826h8.077v1.008H1211z" class="cls-1" data-name="Path 2432" transform="translate(-1206.342 -1818.977)" />
+                                            <path id="Path_2433" d="M1211 2847h8.077v1.007H1211z" class="cls-1" data-name="Path 2433" transform="translate(-1206.342 -2836.05)" />
+                                            <path id="Path_2434" d="M607 5183h19.592v1.008H607z" class="cls-1" data-name="Path 2434" transform="translate(-604.665 -5163.065)" />
+                                            <path id="Path_2435" d="M607 7176h19.592v1H607z" class="cls-1" data-name="Path 2435" transform="translate(-604.665 -7148.4)" />
+                                            <path id="Path_2436" d="M607 6233h19.592v1.008H607z" class="cls-1" data-name="Path 2436" transform="translate(-604.665 -6209.026)" />
+                                            <path id="Path_2437" d="M28.992 6.885H23.3V1.008H6.746v.958h11.527l5.988 6.258v20.468h4.731zM24.3 1.742v4.139h4.008zm-1.05 28.915V8.85h-5.7V2.969H1.008v27.689zm-.677-22.815l-4.008-4.134v4.134zM5.738 1.965V0h18.27L30 6.181V29.7h-5.738v1.965H0v-29.7z" class="cls-1" data-name="Path 2437" />
+                                        </g>
+                                    </g>
+                                </svg>
+                                <p>Drag&Drop File here</p>
+                            </div>
+                        </div>
+                        <button class="submit-button" type="submit">Send</button>
+                        <a class="close-modal" href="#" data-dismiss="modal">Skip for now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-after-verify-account modal fade" id="modal-after-verify-account-open" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h4>Thank you!</h4>
+                        <p>You’ll get an Email with response as fast as we can!</p>
+                        <a class="close-modal" href="#" data-dismiss="modal">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="aside-fixed-shadow disabled"></div>
+        <footer class="footer-reserved">
+            <div class="designer-name">
+                <div class="footer-menu-container">
+                    <svg class="toggle-footer-menu" xmlns="http://www.w3.org/2000/svg" width="14" height="3" viewBox="0 0 14 3">
+                        <g>
+                            <g>
+                                <g>
+                                    <path fill="#cecece" d="M10.96 1.492a1.508 1.508 0 1 1 3.016 0 1.508 1.508 0 0 1-3.017 0z" />
+                                </g>
+                                <g>
+                                    <path fill="#cecece" d="M5.72 1.492a1.508 1.508 0 1 1 3.017 0 1.508 1.508 0 0 1-3.017 0z" />
+                                </g>
+                                <g>
+                                    <path fill="#cecece" d="M.48 1.492a1.508 1.508 0 1 1 3.017 0 1.508 1.508 0 0 1-3.017 0z" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    <p>Ecofarmer Inc., All Rights Reserved, 2019.<br class="d-block d-sm-none"> Design by <a href="https://smotrow.com/" target="_blank">smotrow.com</a></p>
+                    <div class="footer-menu-list">
+                        <div class="green-links">
+                            <a href="#">What is new?</a>
+                            <a href="#">Tips for using</a>
+                        </div>
+                        <div class="regular-links">
+                            <a href="#">Terms of service</a>
+                            <a href="#">Email us</a>
+                            <a href="#">About Ecofarmer</a>
+                            <div class="langs-menu"> Language: English (USA) > <ul>
+                                    <li><a href="#">Russian</a></li>
+                                    <li><a href="#">German</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="scripts">
+            <!-- Set JS assets-->
+            <script src="js/vendor-bundle.min.js"></script>
+            <script src="js/custom-bundle.min.js"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document Template Title</title>
+        <!-- Main Meta information-->
+        <meta charset="utf-8" />
+        <meta http-equiv="Cache-control" content="public" />
+        <meta name="viewport" content="width=device-width, user-scalable=yes" />
+        <!-- Meta Information-->
+        <meta name="robots" content="index, follow" />
+        <link type="text/plain" rel="author" href="humans.txt" />
+        <!-- Get html5shiv if this is IE lower or equal to 9-->
+        <!--[if lte IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+        <link rel="stylesheet" href="css/main.min.css" />
+    </head>
+    <body>
+        <header>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="header-wrapper col-12">
+                        <div class="header-button">
+                            <button class="menu-toggle-trigger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                            <a href="index.html" class="header-logo">
+                                <h1>ECOFARMER</h1>
+                            </a>
+                        </div>
+                        <div class="header-navigation">
+                            <div class="navigation-container">
+                                <a href="search.html">Search</a>
+                                <a href="saved.html">Saved</a>
+                                <a href="add-item.html">Add item</a>
+                            </div>
+                            <div class="search-container">
+                                <form action="">
+                                    <div class="input-field">
+                                        <input type="text">
+                                        <svg class="field-icon search-icon" xmlns="http://www.w3.org/2000/svg" width="12.992" height="13" viewBox="0 0 12.992 13">
+                                            <g id="noun_Search_875352" transform="translate(-10.4 -10.3)">
+                                                <path id="Path_938" data-name="Path 938" d="M23.176,22.07l-2.332-2.316a5.854,5.854,0,1,0-4.6,2.236,5.777,5.777,0,0,0,3.593-1.246l2.316,2.348a.7.7,0,0,0,.511.208.769.769,0,0,0,.511-.208A.713.713,0,0,0,23.176,22.07Zm-2.523-5.925a4.417,4.417,0,1,1-1.294-3.114A4.373,4.373,0,0,1,20.653,16.145Z" transform="translate(0)" fill="#cecece" />
+                                            </g>
+                                        </svg>
+                                        <svg class="field-icon micro-icon" xmlns="http://www.w3.org/2000/svg" width="12.136" height="15.925" viewBox="0 0 12.136 15.925">
+                                            <g id="noun_voice_2627272" transform="translate(0 0)">
+                                                <g id="Group_16" data-name="Group 16">
+                                                    <path id="Path_939" data-name="Path 939" d="M10.928,93.839a.6.6,0,0,1,1.208,0v.906A6.082,6.082,0,0,1,6.7,100.782v2.174a.6.6,0,0,1-1.208,0v-2.174A6.135,6.135,0,0,1,0,94.744v-.906a.6.6,0,0,1,1.208,0v.906a4.861,4.861,0,0,0,9.721,0Z" transform="translate(0 -87.62)" fill="#00074d" />
+                                                    <path id="Path_940" data-name="Path 940" d="M48.381,0A3.35,3.35,0,0,1,51.7,3.321v3.8a3.351,3.351,0,0,1-6.7,0v-3.8A3.363,3.363,0,0,1,48.381,0Zm0,1.208a2.152,2.152,0,0,0-2.174,2.113v3.8a2.144,2.144,0,0,0,4.287,0v-3.8A2.139,2.139,0,0,0,48.381,1.208Z" transform="translate(-42.283)" fill="#00074d" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="button-wrapper">
+                                        <button type="submit">Find now</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="header-panel">
+                            <a class="conversation-link" href="chat.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                    <g id="noun_messages_1516437" transform="translate(-5 -2)">
+                                        <g id="Group_1019" data-name="Group 1019" transform="translate(5 2)">
+                                            <path id="Path_2126" data-name="Path 2126" d="M9.5,4h-6a.5.5,0,0,1,0-1h6a.5.5,0,0,1,0,1Z" fill="#2b2c33" />
+                                            <path id="Path_2127" data-name="Path 2127" d="M7.5,6h-4a.5.5,0,0,1,0-1h4a.5.5,0,0,1,0,1Z" fill="#2b2c33" />
+                                            <g id="Group_1018" data-name="Group 1018">
+                                                <path id="Path_2128" data-name="Path 2128" d="M.5,12.5a.507.507,0,0,1-.212-.047A.5.5,0,0,1,0,12V2A2,2,0,0,1,2,0h9a2,2,0,0,1,2,2V8a2,2,0,0,1-2,2H3.681L.82,12.384A.494.494,0,0,1,.5,12.5ZM2,1A1,1,0,0,0,1,2v8.933L3.18,9.117A.5.5,0,0,1,3.5,9H11a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1Z" fill="#2b2c33" />
+                                                <path id="Path_2129" data-name="Path 2129" d="M15.5,16a.5.5,0,0,1-.312-.109L12.824,14H6a2,2,0,0,1-2-2v-.5a.5.5,0,0,1,1,0V12a1,1,0,0,0,1,1h7a.5.5,0,0,1,.312.109L15,14.46V6a1,1,0,0,0-1-1,.5.5,0,0,1,0-1,2,2,0,0,1,2,2v9.5a.5.5,0,0,1-.283.45A.51.51,0,0,1,15.5,16Z" fill="#2b2c33" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                            <div class="notification-link new-notification">
+                                <div class="svg-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.928" height="15" viewBox="0 0 13.928 15">
+                                        <g id="noun_notification_2184965" transform="translate(-24 -22)">
+                                            <g id="Group_18" data-name="Group 18" transform="translate(24 22)">
+                                                <g id="Group_17" data-name="Group 17">
+                                                    <path id="Path_941" data-name="Path 941" d="M37.929,32.179a1.609,1.609,0,0,1-1.61,1.607H25.61a1.607,1.607,0,1,1,0-3.214s0-3.214,0-3.214a5.357,5.357,0,0,1,10.714,0v3.214A1.609,1.609,0,0,1,37.929,32.179Zm-1.608-.536a1.07,1.07,0,0,1-1.071-1.072V27.357a4.286,4.286,0,0,0-8.571,0v3.214a1.072,1.072,0,0,1-1.071,1.072.536.536,0,1,0,0,1.071H36.319a.536.536,0,1,0,0-1.071Zm-7.767,2.946h1.071a1.339,1.339,0,1,0,2.679,0h1.071a2.411,2.411,0,0,1-4.821,0Z" transform="translate(-24 -22)" fill="#2b2c33" />
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="new-notification-panel">
+                                    <div class="notification-item">
+                                        <div class="image-container">
+                                            <div class="image-wrapper">
+                                                <img src="/img/pics/avatar.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="text-container">
+                                            <p><span class="span-big">Oleg Makarov</span> send you a message.</p>
+                                            <a href="#">View</a>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="notification-item verification-notification">
+                                        <div class="image-container">
+                                            <div class="image-wrapper">
+                                                <img src="/img/pics/verified-icon.svg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="text-container">
+                                            <p><span class="span-big">You</span> received a verification icon!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="profile-panel" href="profile.html">
+                                <img src="/img/pics/avatar.png" alt="">
+                            </a>
+                            <!-- FOR USERS (DELETE THIS LINE)-->
+                            <!-- <a href="#" class="link-button">Log&nbsp;in</a>
+                    <a href="#" class="link-button button-fill">Sign&nbsp;Up</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="header-fixed-shadow disabled"></div>
+        <div class="d-flex fullscreen-page">
+            <div class="add-item-page fullscreen-block">
+                <div class="title-block">
+                    <div class="register-links">
+                        <a class="active" href="#">1. Information</a>
+                        <a href="#">2. Review</a>
+                    </div>
+                    <h2>Let’s add a product</h2>
+                </div>
+                <hr>
+                <div class="form-block">
+                    <form action="">
+                        <label for="product-name-input">Product Name</label>
+                        <input id="product-name-input" placeholder="Example: Fresh tomatoes" type="text">
+                        <label for="short-description-input">Short Description</label>
+                        <input class="count-description login-password" id="short-description-input" placeholder="Example: Fresh tomatoes" type="text">
+                        <div class="button-container">
+                            <span><span class="count-description-number">0</span> symbols</span>
+                        </div>
+                        <label for="description-input" class="title-tooltip tooltip-relative">
+                            <span>Product Descrisption</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12.486" height="15" viewBox="0 0 12.486 15">
+                                <g id="noun_Info_2397918" transform="translate(-105.498 -41.5)">
+                                    <g id="Group_1005" data-name="Group 1005" transform="translate(105.498 41.5)">
+                                        <path id="Path_2100" data-name="Path 2100" d="M105.595,49.765c-.076-1.847-.142-3.744-.057-5.594l6.2-2.671,6.2,2.671c.085,1.85.019,3.747-.057,5.594-.125,3.021-3.645,5.523-6.146,6.735C109.24,55.288,105.719,52.787,105.595,49.765Zm6.974-1.34v3.769a.828.828,0,0,1-1.656,0V48.425A.828.828,0,0,1,112.569,48.425Zm-.828-3.441a.871.871,0,1,1-.871.871A.871.871,0,0,1,111.741,44.985ZM106.7,49.722c.115,2.793,4.019,5.008,5.037,5.54,1.018-.531,4.922-2.747,5.037-5.54.107-2.593.1-4.159.083-4.806l-5.12-2.2-5.12,2.2C106.607,45.563,106.6,47.129,106.7,49.722Z" transform="translate(-105.498 -41.5)" fill="#00a757" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <div class="tooltip-container">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata </p>
+                            </div>
+                        </label>
+                        <textarea class="count-description" id="description-input" maxlength="250" rows="5"></textarea>
+                        <div class="button-container">
+                            <span><span class="count-description-number">0</span> symbols</span>
+                        </div>
+                        <div class="form-group-container">
+                            <div class="form-group-item">
+                                <label for="subcategory-input">Select a subcategory</label>
+                                <select class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="subcategory-input">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+                            </div>
+                            <div class="form-group-item">
+                                <label for="category-input">Select a category</label>
+                                <select class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="category-input">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group-container">
+                            <div class="form-group-item">
+                                <label for="price-input">Price</label>
+                                <input id="price-input" placeholder="Example: Poltaskiy Shlyah" type="text">
+                            </div>
+                            <div class="form-group-container form-group-item">
+                                <div class="form-group-item">
+                                    <label for="unit-input">Unit</label>
+                                    <select class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="unit-input">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                                <div class="form-group-item">
+                                    <label for="currency-input">Currency</label>
+                                    <select class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="currency-input">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <label for="drag-n-drop">Add some photos</label>
+                        <div class="drag-n-drop-container" id="drag-n-drop">
+                            <div class="drag-n-drop-slick"></div>
+                            <div class="drag-n-drop-input">
+                                <label for="drag-n-drop-file">or browse files</label>
+                                <input id="drag-n-drop-file" type="file">
+                            </div>
+                            <div class="drag-n-drop-paceholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="49" viewBox="0 0 46 49">
+                                    <g id="noun_Photo_2139977" transform="translate(-12 -11)">
+                                        <g id="Group_1008" data-name="Group 1008">
+                                            <g id="Group_1007" data-name="Group 1007" transform="translate(16.148 17.552)">
+                                                <g id="noun_vegetables_1422990">
+                                                    <path id="Path_2106" data-name="Path 2106" d="M33.427,13.5a2.858,2.858,0,0,0-.874,3.817l5.224,9.007a.967.967,0,0,0,1.1.445h0a.967.967,0,0,0,.7-.963L39.224,15.37a2.858,2.858,0,0,0-2.888-2.761,4.444,4.444,0,0,0,.233-1.739,5.629,5.629,0,0,0-1.832-3.359.424.424,0,0,0-.7.382s.2,1.438.36,3.176c0,.144.025.3.038.424l-.2-.394c-.785-1.556-1.37-2.871-1.374-2.884a.424.424,0,0,0-.793.047,5.666,5.666,0,0,0,.225,3.817A4.461,4.461,0,0,0,33.427,13.5Zm4.122.356a2,2,0,0,1,.848,1.561l.03.916-1.518.424a.424.424,0,1,0,.233.814l1.31-.377.3,8.642a.119.119,0,0,1-.221.064l-2.12-3.7,1.107-.318a.424.424,0,1,0-.233-.814l-1.221.352a.424.424,0,0,0-.081.042l-.92-1.5.9-.259a.435.435,0,1,0-.242-.835l-1.107.318L33.52,17.291l.8-.229a.424.424,0,1,0-.233-.814l-.967.276a2.01,2.01,0,0,1,1.349-2.591L35.8,13.55a2.027,2.027,0,0,1,.56-.081,2,2,0,0,1,1.187.386Zm-1.828-2.9a3.846,3.846,0,0,1-.331,1.84h0c-.038-.615-.089-1.221-.14-1.8-.059-.666-.127-1.272-.187-1.8a3.91,3.91,0,0,1,.657,1.764Zm-2.256.53c.263.522.543,1.06.848,1.6h0a3.846,3.846,0,0,1-1.272-1.387,3.91,3.91,0,0,1-.369-1.84C32.893,10.336,33.177,10.9,33.465,11.477Z" transform="translate(-20.292 -5.656)" fill="#cecece" />
+                                                    <path id="Path_2107" data-name="Path 2107" d="M19.426,16.691A23.748,23.748,0,0,0,21.207,19.7l.288.424a.424.424,0,0,0,.7-.483l-.288-.424a22.932,22.932,0,0,1-1.59-2.646c.356-.539,1.785-2.879,1.166-5.131h0c-.691-2.51-3.634-3.817-3.757-3.872a.424.424,0,0,0-.513.165c-.081.11-1.938,2.739-1.247,5.25C16.534,15.041,18.645,16.292,19.426,16.691ZM17.7,8.511a5.938,5.938,0,0,1,2.968,3.159h0a5.624,5.624,0,0,1-.793,3.995,22.9,22.9,0,0,1-1.374-3.893l-.123-.488a.424.424,0,0,0-.823.208l.114.483a23.747,23.747,0,0,0,1.12,3.325,5.062,5.062,0,0,1-2.014-2.57A5.876,5.876,0,0,1,17.7,8.511Z" transform="translate(-11.062 -5.73)" fill="#cecece" />
+                                                    <path id="Path_2108" data-name="Path 2108" d="M12.931,46.871a1.209,1.209,0,0,1-2.12-.208.424.424,0,0,0-.785.322,2.057,2.057,0,0,0,3.613.352.425.425,0,1,0-.708-.471Z" transform="translate(-7.714 -28.111)" fill="#cecece" />
+                                                    <path id="Path_2109" data-name="Path 2109" d="M32.88,49.218a1.628,1.628,0,1,0,1.628-1.628A1.628,1.628,0,0,0,32.88,49.218Zm2.409,0a.78.78,0,1,1-.78-.78A.78.78,0,0,1,35.289,49.218Z" transform="translate(-20.895 -28.797)" fill="#cecece" />
+                                                    <path id="Path_2110" data-name="Path 2110" d="M80,21.347a1.628,1.628,0,1,0-1.628-1.628A1.628,1.628,0,0,0,80,21.347Zm0-2.409a.773.773,0,1,1-.553.226A.78.78,0,0,1,80,18.938Z" transform="translate(-47.094 -11.807)" fill="#cecece" />
+                                                    <path id="Path_2111" data-name="Path 2111" d="M51.738,14.7a1.628,1.628,0,1,0-1.628-1.628A1.628,1.628,0,0,0,51.738,14.7Zm0-2.409a.78.78,0,1,1-.78.78A.78.78,0,0,1,51.738,12.288Z" transform="translate(-30.818 -7.977)" fill="#cecece" />
+                                                    <path id="Path_2112" data-name="Path 2112" d="M8.918,27.957A1.628,1.628,0,1,0,7.29,26.328,1.628,1.628,0,0,0,8.918,27.957Zm0-2.409a.78.78,0,1,1-.78.78A.78.78,0,0,1,8.918,25.548Z" transform="translate(-6.156 -15.614)" fill="#cecece" />
+                                                    <path id="Path_2113" data-name="Path 2113" d="M23.471,68.87a.426.426,0,0,0-.738.424q.2.352.424.687a.425.425,0,0,0,.708-.471Q23.662,69.2,23.471,68.87Z" transform="translate(-15.018 -40.93)" fill="#cecece" />
+                                                    <path id="Path_2114" data-name="Path 2114" d="M30.322,76.092c-.276-.14-.551-.293-.818-.45s-.632-.4-.929-.611a11.845,11.845,0,0,1-1.438-1.226l-.161-.157a2.992,2.992,0,0,1-.263-.284.424.424,0,0,0-.649.547,3.681,3.681,0,0,0,.322.348l.148.148a12.692,12.692,0,0,0,1.544,1.315c.318.229.649.449.992.653s.572.331.848.479A.424.424,0,1,0,30.3,76.1Z" transform="translate(-16.912 -43.555)" fill="#cecece" />
+                                                    <path id="Path_2115" data-name="Path 2115" d="M42.292,23.852a1.158,1.158,0,0,0-1.76.331L39.3,26.422a3.036,3.036,0,0,0-1.671-.144,3.248,3.248,0,0,0-1.62.929l-1.823,1.862A27.033,27.033,0,0,1,27.7,33.936l-1.989,1.073a6.912,6.912,0,0,0-3.036,3.168c-.064.14-.114.288-.17.424h-6.95a.424.424,0,0,0,.212-.5L14.38,33.614a2.057,2.057,0,1,0-1.332-3.85c-.034,0-.059.042-.093.059a2.651,2.651,0,0,0-.119-.28,2.616,2.616,0,0,0-4.953,1.03,2.621,2.621,0,0,0-2.812,4.016A2.625,2.625,0,0,0,9.736,37l1.2,1.6H9.02a.424.424,0,0,0-.424.424c0,7.739,6.1,13.146,14.842,13.146S38.28,46.764,38.28,39.025a.424.424,0,0,0-.424-.424h-.475l3.893-7.654a3.176,3.176,0,0,0-.14-3.041l1.429-2.612a1.162,1.162,0,0,0-.271-1.442ZM9.923,35.861h0a.418.418,0,0,0-.772.17,1.777,1.777,0,1,1-3.223-1.247v-.03a.585.585,0,0,0,.055-.157.424.424,0,0,0-.089-.31h0A1.777,1.777,0,0,1,8.1,31.574a.424.424,0,0,0,.225.047h.089a.424.424,0,0,0,.322-.5,1.777,1.777,0,1,1,3.507-.5.424.424,0,0,0,.161.3h0a.425.425,0,0,0,.068.034l.055.03A.424.424,0,0,0,13,30.853a1.222,1.222,0,1,1,.865,1.934.416.416,0,0,0-.42.606h0l1.429,4.584-.814.424-1.527-3.028a.425.425,0,0,0-.759.382L13.188,38.6h-1.2ZM23.438,51.322h0c-7.188,0-12.349-3.643-13.663-9.329H37.1C35.786,47.68,30.626,51.322,23.438,51.322ZM37.262,41.145H9.613a13.277,13.277,0,0,1-.17-1.7H37.432a13.282,13.282,0,0,1-.17,1.7ZM23.438,38.6a.093.093,0,0,1,.03-.081,6.06,6.06,0,0,1,2.663-2.752L28.1,34.7a27.89,27.89,0,0,0,6.692-5.034l.611-.623.721.068a1.064,1.064,0,0,1,.848.645,1.908,1.908,0,0,0,1.365,1.132h.068a1.064,1.064,0,0,1,.721.6l.424.924h0L36.431,38.6ZM41.821,24.887l-1.548,2.824a.4.4,0,0,0,0,.059.424.424,0,0,0-.025.085.984.984,0,0,0,0,.161.424.424,0,0,0,.034.085.4.4,0,0,0,.025.055,2.366,2.366,0,0,1,.221,2.413l-.45.886-.148-.322a1.917,1.917,0,0,0-1.336-1.069h-.068a1.06,1.06,0,0,1-.759-.628,1.921,1.921,0,0,0-1.531-1.158H36.16l.445-.458a2.4,2.4,0,0,1,1.192-.7,2.328,2.328,0,0,1,1.505.229.424.424,0,0,0,.068,0,.424.424,0,0,0,.081,0,.424.424,0,0,0,.081,0,.25.25,0,0,0,.148-.051.748.748,0,0,0,.17-.161L41.257,24.6a.31.31,0,0,1,.471-.089A.314.314,0,0,1,41.821,24.887Z" transform="translate(-4.617 -14.969)" fill="#cecece" />
+                                                    <path id="Path_2116" data-name="Path 2116" d="M72.352,41.149c-.649.572-1.336,1.115-2.04,1.624a.424.424,0,1,0,.5.687c.725-.522,1.433-1.086,2.12-1.675a.424.424,0,1,0-.56-.636Z" transform="translate(-42.344 -25.019)" fill="#cecece" />
+                                                    <path id="Path_2117" data-name="Path 2117" d="M57.91,49.447,55.917,50.5a7.239,7.239,0,0,0-2.069,1.662.424.424,0,1,0,.64.556,6.4,6.4,0,0,1,1.823-1.45L58.3,50.2a.424.424,0,0,0-.4-.746Z" transform="translate(-32.906 -29.839)" fill="#cecece" />
+                                                    <path id="Path_2118" data-name="Path 2118" d="M58.239,19.2a.424.424,0,0,0,.547.123c.492-.267,4.8-2.672,5.309-4.923a3.172,3.172,0,0,0-.708-2.943,4.326,4.326,0,0,0-1.353-.967,3.94,3.94,0,0,0,2.048-1.332h0a4.689,4.689,0,0,0,.56-3.265.424.424,0,0,0-.466-.339,5.055,5.055,0,0,0-.924.2,6.42,6.42,0,0,0-.967-2.307.424.424,0,0,0-.551-.123,5.5,5.5,0,0,0-2.544,3.147,5.064,5.064,0,0,0,.632,3.392,4.792,4.792,0,0,0-2.392.25,3.172,3.172,0,0,0-1.9,2.37C55.025,14.734,57.891,18.754,58.239,19.2ZM63.374,8.67h0a3.363,3.363,0,0,1-1.938,1.107,3.346,3.346,0,0,1,.488-2.18A3.367,3.367,0,0,1,63.862,6.49a3.346,3.346,0,0,1-.488,2.18ZM60.02,6.66a4.467,4.467,0,0,1,1.794-2.37,5.369,5.369,0,0,1,.636,1.8,3.431,3.431,0,0,0-1.213,1,3.961,3.961,0,0,0-.666,2.392A4.362,4.362,0,0,1,60.02,6.66Zm-3.664,6.009a2.328,2.328,0,0,1,1.4-1.76,3.477,3.477,0,0,1,1.332-.237,5.984,5.984,0,0,1,1.306.157,4.448,4.448,0,0,1,2.345,1.2,2.328,2.328,0,0,1,.509,2.188C62.9,15.684,60.1,17.575,58.684,18.4,57.764,17.058,56.03,14.136,56.356,12.669Z" transform="translate(-33.905 -3.273)" fill="#cecece" />
+                                                    <path id="Path_2119" data-name="Path 2119" d="M61.249,26.709a4.559,4.559,0,0,1-.56-2.544,2.506,2.506,0,0,1,.5-1.06.425.425,0,0,0-.653-.543,3.337,3.337,0,0,0-.67,1.416,5.22,5.22,0,0,0,.615,3.074.425.425,0,0,0,.776-.348Z" transform="translate(-36.402 -14.294)" fill="#cecece" />
+                                                </g>
+                                            </g>
+                                            <g id="Rectangle_1022" data-name="Rectangle 1022" transform="translate(12 11)" fill="none" stroke="#cecece" stroke-width="1">
+                                                <rect width="46" height="49" rx="5" stroke="none" />
+                                                <rect x="0.5" y="0.5" width="45" height="48" rx="4.5" fill="none" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <p>Drag&Drop Photos here</p>
+                            </div>
+                        </div>
+                        <label for="tags-input" class="title-tooltip tooltip-relative">
+                            <span>Add tags</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12.486" height="15" viewBox="0 0 12.486 15">
+                                <g id="noun_Info_2397918" transform="translate(-105.498 -41.5)">
+                                    <g id="Group_1005" data-name="Group 1005" transform="translate(105.498 41.5)">
+                                        <path id="Path_2100" data-name="Path 2100" d="M105.595,49.765c-.076-1.847-.142-3.744-.057-5.594l6.2-2.671,6.2,2.671c.085,1.85.019,3.747-.057,5.594-.125,3.021-3.645,5.523-6.146,6.735C109.24,55.288,105.719,52.787,105.595,49.765Zm6.974-1.34v3.769a.828.828,0,0,1-1.656,0V48.425A.828.828,0,0,1,112.569,48.425Zm-.828-3.441a.871.871,0,1,1-.871.871A.871.871,0,0,1,111.741,44.985ZM106.7,49.722c.115,2.793,4.019,5.008,5.037,5.54,1.018-.531,4.922-2.747,5.037-5.54.107-2.593.1-4.159.083-4.806l-5.12-2.2-5.12,2.2C106.607,45.563,106.6,47.129,106.7,49.722Z" transform="translate(-105.498 -41.5)" fill="#00a757" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <div class="tooltip-container">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata </p>
+                            </div>
+                        </label>
+                        <textarea id="tags-input" rows="4" placeholder="Write tags using coma (,) to separate them" style="resize: none"></textarea>
+                        <button class="submit-button disabled" type="submit">Hold on, please</button>
+                        <p class="terms-of-use">By clicking «Continue» I agree to Ecofarmer’s <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-->
+        <div class="modal-my-product modal fade" id="modal-my-product-open" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="image-container">
+                            <img src="/img/pics/modal-image.png" alt="">
+                        </div>
+                        <div class="text-container">
+                            <p class="alert-text">Are you sure you want to delete this item?</p>
+                            <p>You will not be able to restore this product in the future.</p>
+                        </div>
+                        <div class="button-container">
+                            <button type="button" class="close-button" data-dismiss="modal">Close</button>
+                            <button type="button" class="delete-button">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-my-review modal fade" id="modal-my-review-open" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="review-container">
+                            <a href="#" class="post-title">
+                                <div class="post-image-container">
+                                    <img src="/img/pics/my-products-image.png" alt="">
+                                </div>
+                                <p>Fresh eggs from thoroughbred chickens</p>
+                            </a>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
+                        </div>
+                        <div class="text-container">
+                            <p class="alert-text">Are you sure you want to delete this item?</p>
+                            <p>You will not be able to restore this review in the future.</p>
+                        </div>
+                        <div class="button-container">
+                            <button type="button" class="close-button" data-dismiss="modal">Close</button>
+                            <button type="button" class="delete-button">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-product-post modal fade" id="modal-product-post-open" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="image-container">
+                            <img src="/img/pics/modal-product-post.png" alt="">
+                        </div>
+                        <div class="text-container">
+                            <p class="alert-text">Your product has been published!</p>
+                            <p>From now all your customers and users of Ecofarmer be able to see your product and message you!</p>
+                        </div>
+                        <div class="button-container">
+                            <button type="button" class="close-button" data-dismiss="modal">Yeah!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-verify-account modal fade" id="modal-verify-account-open" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h4>Verify your account</h4>
+                        <p>When you verify your account, you can get an <svg xmlns="http://www.w3.org/2000/svg" width="12.062" height="12" viewBox="0 0 12.062 12">
+                                <g id="noun_verified_2396751" transform="translate(-65.989 -67.821)">
+                                    <g id="Group_14" data-name="Group 14" transform="translate(65.989 67.821)">
+                                        <path id="Path_936" data-name="Path 936" d="M72.291,67.952l.77.879,1.152-.489a.344.344,0,0,1,.461.215l.352,1.133,1.25.022a.344.344,0,0,1,.335.383l-.139,1.18,1.133.529a.343.343,0,0,1,.165.456c-.154.32-.434.732-.623,1.05l.821.945a.345.345,0,0,1-.062.505l-.969.685.365,1.2a.343.343,0,0,1-.263.436l-1.162.232-.153,1.241a.345.345,0,0,1-.442.288l-1.133-.257L73.5,79.654a.344.344,0,0,1-.5.1l-.952-.711-1.024.717a.343.343,0,0,1-.5-.115l-.579-1.035-1.229.239a.344.344,0,0,1-.408-.327l-.106-1.161-1.218-.282a.344.344,0,0,1-.249-.445l.382-1.124-1-.753a.344.344,0,0,1-.025-.528l.787-.851-.606-1.094a.344.344,0,0,1,.166-.483l1.089-.468-.109-1.246a.346.346,0,0,1,.377-.372l1.156.016.408-1.183a.345.345,0,0,1,.487-.192l1.061.489.853-.914A.344.344,0,0,1,72.291,67.952Zm-3.086,6a.491.491,0,0,1,.694-.694l1.536,1.536,2.69-2.982a.49.49,0,0,1,.728.655l-3.02,3.347a.49.49,0,0,1-.727.037Z" transform="translate(-65.989 -67.821)" fill="#3997f0" fill-rule="evenodd" />
+                                    </g>
+                                </g>
+                            </svg> icon. All buyers and visitors of your store will understand that they can trust you. To verify your account, you need to upload several documents and wait until our system check them. After a successful verification, you will immediately receive an icon.</p>
+                        <label class="title-tooltip tooltip-relative"> Document 1 <svg xmlns="http://www.w3.org/2000/svg" width="12.486" height="15" viewBox="0 0 12.486 15">
+                                <g id="noun_Info_2397918" transform="translate(-105.498 -41.5)">
+                                    <g id="Group_1005" data-name="Group 1005" transform="translate(105.498 41.5)">
+                                        <path id="Path_2100" data-name="Path 2100" d="M105.595,49.765c-.076-1.847-.142-3.744-.057-5.594l6.2-2.671,6.2,2.671c.085,1.85.019,3.747-.057,5.594-.125,3.021-3.645,5.523-6.146,6.735C109.24,55.288,105.719,52.787,105.595,49.765Zm6.974-1.34v3.769a.828.828,0,0,1-1.656,0V48.425A.828.828,0,0,1,112.569,48.425Zm-.828-3.441a.871.871,0,1,1-.871.871A.871.871,0,0,1,111.741,44.985ZM106.7,49.722c.115,2.793,4.019,5.008,5.037,5.54,1.018-.531,4.922-2.747,5.037-5.54.107-2.593.1-4.159.083-4.806l-5.12-2.2-5.12,2.2C106.607,45.563,106.6,47.129,106.7,49.722Z" transform="translate(-105.498 -41.5)" fill="#00a757" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <div class="tooltip-container">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata </p>
+                            </div>
+                        </label>
+                        <div class="drag-n-drop-container drag-n-drop-verification">
+                            <div class="dropped-item"></div>
+                            <div class="drag-n-drop-input">
+                                <label for="drag-n-drop-file">or browse files</label>
+                                <input id="drag-n-drop-file" type="file">
+                            </div>
+                            <div class="drag-n-drop-paceholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="noun_Document_2887989" width="30" height="31.665" viewBox="0 0 30 31.665">
+                                    <defs>
+                                        <style> .cls-1 {
+                    fill: #cecece
+                  }
+                </style>
+                                    </defs>
+                                    <g id="Group_1252" data-name="Group 1252">
+                                        <g id="Group_1251" data-name="Group 1251">
+                                            <path id="Path_2432" d="M1211 1826h8.077v1.008H1211z" class="cls-1" data-name="Path 2432" transform="translate(-1206.342 -1818.977)" />
+                                            <path id="Path_2433" d="M1211 2847h8.077v1.007H1211z" class="cls-1" data-name="Path 2433" transform="translate(-1206.342 -2836.05)" />
+                                            <path id="Path_2434" d="M607 5183h19.592v1.008H607z" class="cls-1" data-name="Path 2434" transform="translate(-604.665 -5163.065)" />
+                                            <path id="Path_2435" d="M607 7176h19.592v1H607z" class="cls-1" data-name="Path 2435" transform="translate(-604.665 -7148.4)" />
+                                            <path id="Path_2436" d="M607 6233h19.592v1.008H607z" class="cls-1" data-name="Path 2436" transform="translate(-604.665 -6209.026)" />
+                                            <path id="Path_2437" d="M28.992 6.885H23.3V1.008H6.746v.958h11.527l5.988 6.258v20.468h4.731zM24.3 1.742v4.139h4.008zm-1.05 28.915V8.85h-5.7V2.969H1.008v27.689zm-.677-22.815l-4.008-4.134v4.134zM5.738 1.965V0h18.27L30 6.181V29.7h-5.738v1.965H0v-29.7z" class="cls-1" data-name="Path 2437" />
+                                        </g>
+                                    </g>
+                                </svg>
+                                <p>Drag&Drop File here</p>
+                            </div>
+                        </div>
+                        <label class="title-tooltip tooltip-relative"> Document 2 <svg xmlns="http://www.w3.org/2000/svg" width="12.486" height="15" viewBox="0 0 12.486 15">
+                                <g id="noun_Info_2397918" transform="translate(-105.498 -41.5)">
+                                    <g id="Group_1005" data-name="Group 1005" transform="translate(105.498 41.5)">
+                                        <path id="Path_2100" data-name="Path 2100" d="M105.595,49.765c-.076-1.847-.142-3.744-.057-5.594l6.2-2.671,6.2,2.671c.085,1.85.019,3.747-.057,5.594-.125,3.021-3.645,5.523-6.146,6.735C109.24,55.288,105.719,52.787,105.595,49.765Zm6.974-1.34v3.769a.828.828,0,0,1-1.656,0V48.425A.828.828,0,0,1,112.569,48.425Zm-.828-3.441a.871.871,0,1,1-.871.871A.871.871,0,0,1,111.741,44.985ZM106.7,49.722c.115,2.793,4.019,5.008,5.037,5.54,1.018-.531,4.922-2.747,5.037-5.54.107-2.593.1-4.159.083-4.806l-5.12-2.2-5.12,2.2C106.607,45.563,106.6,47.129,106.7,49.722Z" transform="translate(-105.498 -41.5)" fill="#00a757" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <div class="tooltip-container">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata </p>
+                            </div>
+                        </label>
+                        <div class="drag-n-drop-container drag-n-drop-verification">
+                            <div class="dropped-item"></div>
+                            <div class="drag-n-drop-input">
+                                <label for="drag-n-drop-file">or browse files</label>
+                                <input id="drag-n-drop-file" type="file">
+                            </div>
+                            <div class="drag-n-drop-paceholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="noun_Document_2887989" width="30" height="31.665" viewBox="0 0 30 31.665">
+                                    <defs>
+                                        <style> .cls-1 {
+                    fill: #cecece
+                  }
+                </style>
+                                    </defs>
+                                    <g id="Group_1252" data-name="Group 1252">
+                                        <g id="Group_1251" data-name="Group 1251">
+                                            <path id="Path_2432" d="M1211 1826h8.077v1.008H1211z" class="cls-1" data-name="Path 2432" transform="translate(-1206.342 -1818.977)" />
+                                            <path id="Path_2433" d="M1211 2847h8.077v1.007H1211z" class="cls-1" data-name="Path 2433" transform="translate(-1206.342 -2836.05)" />
+                                            <path id="Path_2434" d="M607 5183h19.592v1.008H607z" class="cls-1" data-name="Path 2434" transform="translate(-604.665 -5163.065)" />
+                                            <path id="Path_2435" d="M607 7176h19.592v1H607z" class="cls-1" data-name="Path 2435" transform="translate(-604.665 -7148.4)" />
+                                            <path id="Path_2436" d="M607 6233h19.592v1.008H607z" class="cls-1" data-name="Path 2436" transform="translate(-604.665 -6209.026)" />
+                                            <path id="Path_2437" d="M28.992 6.885H23.3V1.008H6.746v.958h11.527l5.988 6.258v20.468h4.731zM24.3 1.742v4.139h4.008zm-1.05 28.915V8.85h-5.7V2.969H1.008v27.689zm-.677-22.815l-4.008-4.134v4.134zM5.738 1.965V0h18.27L30 6.181V29.7h-5.738v1.965H0v-29.7z" class="cls-1" data-name="Path 2437" />
+                                        </g>
+                                    </g>
+                                </svg>
+                                <p>Drag&Drop File here</p>
+                            </div>
+                        </div>
+                        <label class="title-tooltip tooltip-relative"> Document 3 <svg xmlns="http://www.w3.org/2000/svg" width="12.486" height="15" viewBox="0 0 12.486 15">
+                                <g id="noun_Info_2397918" transform="translate(-105.498 -41.5)">
+                                    <g id="Group_1005" data-name="Group 1005" transform="translate(105.498 41.5)">
+                                        <path id="Path_2100" data-name="Path 2100" d="M105.595,49.765c-.076-1.847-.142-3.744-.057-5.594l6.2-2.671,6.2,2.671c.085,1.85.019,3.747-.057,5.594-.125,3.021-3.645,5.523-6.146,6.735C109.24,55.288,105.719,52.787,105.595,49.765Zm6.974-1.34v3.769a.828.828,0,0,1-1.656,0V48.425A.828.828,0,0,1,112.569,48.425Zm-.828-3.441a.871.871,0,1,1-.871.871A.871.871,0,0,1,111.741,44.985ZM106.7,49.722c.115,2.793,4.019,5.008,5.037,5.54,1.018-.531,4.922-2.747,5.037-5.54.107-2.593.1-4.159.083-4.806l-5.12-2.2-5.12,2.2C106.607,45.563,106.6,47.129,106.7,49.722Z" transform="translate(-105.498 -41.5)" fill="#00a757" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <div class="tooltip-container">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata </p>
+                            </div>
+                        </label>
+                        <div class="drag-n-drop-container drag-n-drop-verification">
+                            <div class="dropped-item"></div>
+                            <div class="drag-n-drop-input">
+                                <label for="drag-n-drop-file">or browse files</label>
+                                <input id="drag-n-drop-file" type="file">
+                            </div>
+                            <div class="drag-n-drop-paceholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="noun_Document_2887989" width="30" height="31.665" viewBox="0 0 30 31.665">
+                                    <defs>
+                                        <style> .cls-1 {
+                    fill: #cecece
+                  }
+                </style>
+                                    </defs>
+                                    <g id="Group_1252" data-name="Group 1252">
+                                        <g id="Group_1251" data-name="Group 1251">
+                                            <path id="Path_2432" d="M1211 1826h8.077v1.008H1211z" class="cls-1" data-name="Path 2432" transform="translate(-1206.342 -1818.977)" />
+                                            <path id="Path_2433" d="M1211 2847h8.077v1.007H1211z" class="cls-1" data-name="Path 2433" transform="translate(-1206.342 -2836.05)" />
+                                            <path id="Path_2434" d="M607 5183h19.592v1.008H607z" class="cls-1" data-name="Path 2434" transform="translate(-604.665 -5163.065)" />
+                                            <path id="Path_2435" d="M607 7176h19.592v1H607z" class="cls-1" data-name="Path 2435" transform="translate(-604.665 -7148.4)" />
+                                            <path id="Path_2436" d="M607 6233h19.592v1.008H607z" class="cls-1" data-name="Path 2436" transform="translate(-604.665 -6209.026)" />
+                                            <path id="Path_2437" d="M28.992 6.885H23.3V1.008H6.746v.958h11.527l5.988 6.258v20.468h4.731zM24.3 1.742v4.139h4.008zm-1.05 28.915V8.85h-5.7V2.969H1.008v27.689zm-.677-22.815l-4.008-4.134v4.134zM5.738 1.965V0h18.27L30 6.181V29.7h-5.738v1.965H0v-29.7z" class="cls-1" data-name="Path 2437" />
+                                        </g>
+                                    </g>
+                                </svg>
+                                <p>Drag&Drop File here</p>
+                            </div>
+                        </div>
+                        <button class="submit-button" type="submit">Send</button>
+                        <a class="close-modal" href="#" data-dismiss="modal">Skip for now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-after-verify-account modal fade" id="modal-after-verify-account-open" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h4>Thank you!</h4>
+                        <p>You’ll get an Email with response as fast as we can!</p>
+                        <a class="close-modal" href="#" data-dismiss="modal">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="aside-fixed-shadow disabled"></div>
+        <footer class="footer-reserved">
+            <div class="designer-name">
+                <div class="footer-menu-container">
+                    <svg class="toggle-footer-menu" xmlns="http://www.w3.org/2000/svg" width="14" height="3" viewBox="0 0 14 3">
+                        <g>
+                            <g>
+                                <g>
+                                    <path fill="#cecece" d="M10.96 1.492a1.508 1.508 0 1 1 3.016 0 1.508 1.508 0 0 1-3.017 0z" />
+                                </g>
+                                <g>
+                                    <path fill="#cecece" d="M5.72 1.492a1.508 1.508 0 1 1 3.017 0 1.508 1.508 0 0 1-3.017 0z" />
+                                </g>
+                                <g>
+                                    <path fill="#cecece" d="M.48 1.492a1.508 1.508 0 1 1 3.017 0 1.508 1.508 0 0 1-3.017 0z" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    <p>Ecofarmer Inc., All Rights Reserved, 2019.<br class="d-block d-sm-none"> Design by <a href="https://smotrow.com/" target="_blank">smotrow.com</a></p>
+                    <div class="footer-menu-list">
+                        <div class="green-links">
+                            <a href="#">What is new?</a>
+                            <a href="#">Tips for using</a>
+                        </div>
+                        <div class="regular-links">
+                            <a href="#">Terms of service</a>
+                            <a href="#">Email us</a>
+                            <a href="#">About Ecofarmer</a>
+                            <div class="langs-menu"> Language: English (USA) > <ul>
+                                    <li><a href="#">Russian</a></li>
+                                    <li><a href="#">German</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="scripts">
+            <!-- Set JS assets-->
+            <script src="js/vendor-bundle.min.js"></script>
+            <script src="js/custom-bundle.min.js"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>
+        </div>
+    </body>
+</html>

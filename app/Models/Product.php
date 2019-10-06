@@ -3,12 +3,15 @@
 namespace App\Models;
 
 use Auth;
+use App\Traits\ImageTrait;
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
+	use ImageTrait;
+	
     /**
      * The database table used by the model.
      *
@@ -80,13 +83,13 @@ class Product extends Model
     }
 
     /**
-     * Overwrited the image method in the imageable
+     * Overwrited the image method in the imagetrait
      *
      * @return Illuminate\Database\Eloquent\Collection
      */
     public function image()
     {
-        return $this->morphOne(\App\Image::class, 'imageable')
+        return $this->morphOne(\App\Models\Image::class, 'imagetrait')
         ->where(function($q){
             $q->whereNull('featured')->orWhere('featured', 0);
         })->orderBy('order', 'asc');

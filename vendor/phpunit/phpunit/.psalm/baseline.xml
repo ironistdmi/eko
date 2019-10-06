@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="3.4.10@c283f0877d543e7ab738d231ba6a3cdce5e1039a">
+<files psalm-version="3.4.12@86e5e50c1bb492045e70f2ebe1da3cad06e4e9b2">
   <file src="src/Framework/Assert.php">
     <ArgumentTypeCoercion occurrences="2">
       <code>$expectedElement-&gt;childNodes-&gt;item($i)</code>
@@ -117,9 +117,6 @@
       <code>self</code>
       <code>self</code>
     </MoreSpecificReturnType>
-    <UndefinedInterfaceMethod occurrences="1">
-      <code>registerId</code>
-    </UndefinedInterfaceMethod>
   </file>
   <file src="src/Framework/MockObject/Generator.php">
     <ArgumentTypeCoercion occurrences="4">
@@ -128,29 +125,15 @@
       <code>$interfaceName</code>
       <code>$className</code>
     </ArgumentTypeCoercion>
+    <InvalidArgument occurrences="1">
+      <code>$e</code>
+    </InvalidArgument>
     <PossiblyFalseArgument occurrences="1">
       <code>\strpos($args[$i], '$')</code>
     </PossiblyFalseArgument>
-  </file>
-  <file src="src/Framework/MockObject/InvocationMocker.php">
-    <InvalidNullableReturnType occurrences="1">
-      <code>Match</code>
-    </InvalidNullableReturnType>
-    <NullableReturnStatement occurrences="1">
-      <code>null</code>
-    </NullableReturnStatement>
-    <UndefinedInterfaceMethod occurrences="1">
-      <code>hasMatchers</code>
-    </UndefinedInterfaceMethod>
-  </file>
-  <file src="src/Framework/MockObject/Matcher.php">
-    <InvalidPropertyAssignmentValue occurrences="1">
-      <code>new AnyParameters</code>
-    </InvalidPropertyAssignmentValue>
-    <PossiblyNullReference occurrences="2">
-      <code>__phpunit_getInvocationMocker</code>
-      <code>__phpunit_getInvocationMocker</code>
-    </PossiblyNullReference>
+    <UndefinedConstant occurrences="1">
+      <code>\WSDL_CACHE_NONE</code>
+    </UndefinedConstant>
   </file>
   <file src="src/Framework/MockObject/Matcher/ConsecutiveParameters.php">
     <TypeDoesNotContainNull occurrences="1">
@@ -158,9 +141,6 @@
     </TypeDoesNotContainNull>
   </file>
   <file src="src/Framework/MockObject/Matcher/Parameters.php">
-    <InvalidPropertyAssignmentValue occurrences="1">
-      <code>$this-&gt;doVerify()</code>
-    </InvalidPropertyAssignmentValue>
     <PossiblyNullPropertyAssignmentValue occurrences="1">
       <code>null</code>
     </PossiblyNullPropertyAssignmentValue>
@@ -184,8 +164,7 @@
       <code>$class_name</code>
       <code>$this-&gt;expectedException</code>
     </ArgumentTypeCoercion>
-    <InvalidArgument occurrences="2">
-      <code>0</code>
+    <InvalidArgument occurrences="1">
       <code>$header</code>
     </InvalidArgument>
     <InvalidCatch occurrences="1"/>
@@ -219,20 +198,6 @@
     <PossiblyUndefinedVariable occurrences="1">
       <code>$afterClassMethod</code>
     </PossiblyUndefinedVariable>
-    <PropertyTypeCoercion occurrences="1">
-      <code>$this-&gt;tests</code>
-    </PropertyTypeCoercion>
-  </file>
-  <file src="src/Framework/TestSuiteIterator.php">
-    <ArgumentTypeCoercion occurrences="1">
-      <code>$this-&gt;tests[$this-&gt;position]</code>
-    </ArgumentTypeCoercion>
-    <InvalidNullableReturnType occurrences="1">
-      <code>Test</code>
-    </InvalidNullableReturnType>
-    <NullableReturnStatement occurrences="1">
-      <code>$this-&gt;valid() ? $this-&gt;tests[$this-&gt;position] : null</code>
-    </NullableReturnStatement>
   </file>
   <file src="src/Runner/Filter/NameFilterIterator.php">
     <InvalidPropertyAssignmentValue occurrences="2">
@@ -249,11 +214,6 @@
     </PossiblyNullReference>
     <PossiblyUndefinedVariable occurrences="1">
       <code>$sectionOffset</code>
-    </PossiblyUndefinedVariable>
-  </file>
-  <file src="src/Runner/StandardTestSuiteLoader.php">
-    <PossiblyUndefinedVariable occurrences="1">
-      <code>$filename</code>
     </PossiblyUndefinedVariable>
   </file>
   <file src="src/Runner/TestSuiteSorter.php">
@@ -298,9 +258,6 @@
     <PossiblyUndefinedVariable occurrences="1">
       <code>$color</code>
     </PossiblyUndefinedVariable>
-    <TooManyArguments occurrences="1">
-      <code>Color::colorize($color, \str_pad($line, $padding), false)</code>
-    </TooManyArguments>
   </file>
   <file src="src/TextUI/TestRunner.php">
     <LessSpecificReturnStatement occurrences="1"/>
@@ -319,13 +276,23 @@
       <code>$this-&gt;createPrinter(ResultPrinter::class, $arguments)</code>
     </PropertyTypeCoercion>
   </file>
+  <file src="src/Util/Annotation/DocBlock.php">
+    <InvalidCatch occurrences="1"/>
+  </file>
+  <file src="src/Util/Annotation/RegistryTest.php">
+    <UndefinedClass occurrences="1">
+      <code>\ThisClassDoesNotExist</code>
+    </UndefinedClass>
+  </file>
   <file src="src/Util/Blacklist.php">
     <UndefinedClass occurrences="1">
       <code>Invoker</code>
     </UndefinedClass>
   </file>
   <file src="src/Util/Configuration.php">
-    <ArgumentTypeCoercion occurrences="2">
+    <ArgumentTypeCoercion occurrences="4">
+      <code>$extension</code>
+      <code>$listener</code>
       <code>$testSuiteNodes-&gt;item(0)</code>
       <code>$testSuiteNode</code>
     </ArgumentTypeCoercion>
@@ -392,6 +359,10 @@
     <PossiblyNullPropertyAssignmentValue occurrences="1">
       <code>null</code>
     </PossiblyNullPropertyAssignmentValue>
+    <UndefinedInterfaceMethod occurrences="2">
+      <code>getName</code>
+      <code>getName</code>
+    </UndefinedInterfaceMethod>
   </file>
   <file src="src/Util/Log/TeamCity.php">
     <ArgumentTypeCoercion occurrences="1">
@@ -450,31 +421,14 @@
     </PossiblyNullArgument>
   </file>
   <file src="src/Util/Test.php">
-    <ArgumentTypeCoercion occurrences="4">
+    <ArgumentTypeCoercion occurrences="3">
       <code>$className</code>
       <code>$className</code>
       <code>$className</code>
-      <code>$dataProviderClassName</code>
     </ArgumentTypeCoercion>
-    <InvalidArgument occurrences="1">
-      <code>$e</code>
-    </InvalidArgument>
-    <InvalidCatch occurrences="1"/>
-    <InvalidOperand occurrences="1">
-      <code>$matches[0][1]</code>
-    </InvalidOperand>
-    <InvalidReturnStatement occurrences="1">
-      <code>$data</code>
-    </InvalidReturnStatement>
-    <InvalidReturnType occurrences="1">
-      <code>?array</code>
-    </InvalidReturnType>
     <InvalidScalarArgument occurrences="1">
       <code>\array_flip($lineNumbers)</code>
     </InvalidScalarArgument>
-    <PossiblyNullOperand occurrences="1">
-      <code>$methodName</code>
-    </PossiblyNullOperand>
   </file>
   <file src="src/Util/TestDox/CliTestDoxPrinter.php">
     <PossiblyInvalidArrayOffset occurrences="6">

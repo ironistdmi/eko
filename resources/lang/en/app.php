@@ -12,7 +12,10 @@ return [
     | you want to customize your views to better match your application.
     |
     */
-
+	'landing' => [
+		'block1' => 'With you from first sale to full scale',
+		'block2' => 'One platform with all the ecommerce and point of sale features you need to start, run, and grow your business.',
+	],
 	'notify' => [
 		'subscribed' => 'You have subscribed successfully!',
 		'' => '',

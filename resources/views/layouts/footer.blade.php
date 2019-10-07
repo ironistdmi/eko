@@ -7,7 +7,6 @@
             <div class="footer-container">
                 <div class="link-item">
                     <h4>About Ecofarmer</h4>
-						<a href="#">Sitemap</a>
 					@foreach($pages->where('position', 'footer_1st_column') as $page)
 					  <a href="{{ route('page.index', $page->slug) }}" rel="nofollow" target="_blank">{{ $page->title }}</a>
 					@endforeach

@@ -457,8 +457,8 @@
         </div>
         <div class="text-block">
             <div class="text-wrapper">
-                <h2>With you from first sale to full scale</h2>
-                <p>One platform with all the ecommerce and point of sale features you need to start, run, and grow your business.</p>
+                <h2>@lang('app.landing.block1')</h2>
+                <p>@lang('app.landing.block2')</p>
             </div>
         </div>
         <div class="auth-block-container">

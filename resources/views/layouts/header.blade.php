@@ -14,9 +14,11 @@
                         </div>
                         <div class="header-navigation">
                             <div class="navigation-container">
-                                <a href="search.html">Search</a>
-                                <a href="saved.html">Saved</a>
-                                <a href="add-item.html">Add item</a>
+                                <a href="{{ route('inCategoriesSearch') }}">Search</a>
+                                @if (Auth::check())
+									<a href="saved.html">Saved</a>
+									<a href="add-item.html">Add item</a>
+								@endif
                             </div>
                             <div class="search-container">
                                 <form action="">
@@ -43,6 +45,7 @@
                             </div>
                         </div>
                         <div class="header-panel">
+							@if (Auth::check())
                             <a class="conversation-link" href="chat.html">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                                     <g id="noun_messages_1516437" transform="translate(-5 -2)">
@@ -97,9 +100,11 @@
                             <a class="profile-panel" href="profile.html">
                                 <img src="/img/pics/avatar.png" alt="">
                             </a>
-                            <!-- FOR USERS (DELETE THIS LINE)-->
-                            <!-- <a href="#" class="link-button">Log&nbsp;in</a>
-                    <a href="#" class="link-button button-fill">Sign&nbsp;Up</a> -->
+							@else
+								<a href="{{ route('login') }}" class="link-button">Log&nbsp;in</a>
+								<a href="{{ route('register') }}" class="link-button button-fill">Sign&nbsp;Up</a>
+							@endif
+
                         </div>
                     </div>
                 </div>

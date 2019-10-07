@@ -59,6 +59,8 @@ Route::group(['middleware' => ['front'], 'namespace' => 'Front'], function() {
 	
 	Route::post('newsletter', 'NewsletterController@subscribe')->name('newsletter.subscribe');
 	
+	Route::get('lang/{lang?}', 'HomeController@changeLang')->name('lang.change');
+	
 	Route::post('messages', function(Illuminate\Http\Request $request) {
 		App\Events\PrivateChat::dispatch($request->all());
 	});

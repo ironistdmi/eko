@@ -3,27 +3,27 @@
 @section('content')
 
 <div class="register-page auth-pages">
-    <a class="logo-link" href="index.html">
+    <a class="logo-link" href="/">
         <h1>ECOFARMER</h1>
     </a>
     <div class="auth-wrapper">
         <div class="register-links">
-            <a href="register.html">1. Sign Up</a>
-            <a class="active" href="#">2. Set Up</a>
+            <a href="{{ route('register') }}">@lang('auth.first_step')</a>
+            <a class="active" href="#">@lang('auth.second_step')</a>
         </div>
-        <h2>Thanks for signing up!</h2>
-        <p>We know you’re excited to start designing, but we have 4 quick questions first. <br> They’ll help us tailor your experience for you.</p>
+        <h2>@lang('auth.thx_sign')</h2>
+        <p>@lang('auth.second_step_explain')</p>
         <form action="/register/seller/submit" method="POST">
             @csrf
-            <label for="store-name-input">Name of the store</label>
+            <label for="store-name-input">@lang('auth.store_name')</label>
             <input id="store-name-input" type="text" name="store_name">
-            <label for="name-input">Full name of seller</label>
+            <label for="name-input">@lang('auth.name_seller')</label>
             <input id="name-input" type="text" name="name">
             <div class="form-group-container mb-3">
                 <div class="form-group-item col-6">
-                    <label for="country-input">Country</label>
+                    <label for="country-input">@lang('auth.country')</label>
                     <div class="dropdown bootstrap-select bs-custom-select">
-                        <select name="country_id" class="bs-custom-select w-100" data-dropup-auto="false" title="Choose country" data-size="5" id="country-input" tabindex="-98"><option class="bs-title-option" value=""></option>
+                        <select name="country_id" class="bs-custom-select w-100" data-dropup-auto="false" title="@lang('auth.choose_country')" data-size="5" id="country-input" tabindex="-98"><option class="bs-title-option" value=""></option>
                             @foreach($countries as $item)
                             <option value="{{ $item->id }}">{{ $item->full_namename }}</option>
                             @endforeach
@@ -31,9 +31,9 @@
                     </div>
                 </div>
                 <div class="form-group-item col-6">
-                    <label for="city-input">City</label>
+                    <label for="city-input">@lang('auth.city')</label>
                     <div class="dropdown bootstrap-select bs-custom-select">
-                        <select name="city_id" class="bs-custom-select w-100" data-dropup-auto="false" title="Choose city" data-size="5" id="city-input" tabindex="-98"><option class="bs-title-option" value=""></option>
+                        <select name="city_id" class="bs-custom-select w-100" data-dropup-auto="false" title="@lang('auth.choose_city')" data-size="5" id="city-input" tabindex="-98"><option class="bs-title-option" value=""></option>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -46,37 +46,21 @@
             </div>
             <div class="form-group-container">
                 <div class="form-group-item">
-                    <label for="street-input">Street</label>
-                    <input name="street" id="street-input" placeholder="Example: Poltaskiy Shlyah" type="text">
+                    <label for="street-input">@lang('auth.street')</label>
+                    <input name="street" id="street-input" placeholder="@lang('auth.street_example')" type="text">
                 </div>
                 <div class="form-group-item">
-                    <label for="building-input">Building</label>
-                    <input name="building" id="building-input" placeholder="Example: 34/A" type="text">
+                    <label for="building-input">@lang('auth.building')</label>
+                    <input name="building" id="building-input" placeholder="@lang('auth.building_example')" type="text">
                 </div>
             </div>
-            <label for="phone-input">Phone number</label>
+            <label for="phone-input">@lang('auth.phone')</label>
             <div class="form-wrapper">
-                <div class="intl-tel-input allow-dropdown">
-                    <div class="flag-container">
-                        <div class="selected-flag" role="combobox" aria-owns="country-listbox" tabindex="0" title="Afghanistan (‫افغانستان‬‎): +93">
-                            <div class="iti-flag af"></div>
-                            <div class="iti-country-code">+93</div>
-                            <div class="iti-arrow"></div></div>
-                            <ul class="country-list hide" id="country-listbox" aria-expanded="false" role="listbox" aria-activedescendant="iti-item-af">
-                                <li class="country standard active" tabindex="-1" id="iti-item-af" role="option" data-dial-code="93" data-country-code="af" aria-selected="true">
-                                    <div class="flag-box">
-                                        <div class="iti-flag af"></div>                                            
-                                    </div>
-                                    <span class="country-name">Afghanistan (‫افغانستان‬‎)</span>
-                                    <span class="dial-code">+93</span>
-                                </li>
-                            </ul>
-                    </div>
-                    <input name="calling_code" type="text" class="form-control country-code-anchor" id="countryCode" value="" placeholder="" tabindex="-1" autocomplete="off" data-intl-tel-input-id="0"></div>
-                <input name="phone" id="phone-input" placeholder="66-997-8629" type="text">
+                <input type="text" class="form-control country-code-anchor" id="countryCode" value="" placeholder="" tabindex="-1">
+                <input id="phone-input" placeholder="66-997-8629" type="text">
             </div>
-            <button class="btn btn-success" type="submit">Hold on, please</button>
-            <p class="terms-of-use">By clicking «Continue» I agree to Ecofarmer’s <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+            <button class="btn btn-success" type="submit">@lang('auth.finish')</button>
+            <p class="terms-of-use">@lang('auth.footer_agreement') <a href="#">@lang('auth.terms')</a> and <a href="#">@lang('auth.policy')</a>.</p>
         </form>
     </div>
 </div>

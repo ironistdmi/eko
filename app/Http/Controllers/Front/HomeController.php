@@ -107,4 +107,17 @@ class HomeController extends Controller
         return view('shop', compact('shop'));
     }
 
+    /**
+     * Change Language
+     *
+     * @param  string $lang
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function changeLanguage($lang = 'en')
+    {
+        Session::put('locale', $lang);
+
+        return redirect()->back();
+    }
 }

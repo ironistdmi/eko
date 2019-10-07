@@ -19,7 +19,7 @@ class CreateAddressesTable extends Migration
         });
 
         Schema::create('addresses', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id');            
             $table->string('address_type')->default('Primary')->nullable();
             $table->string('address_title')->nullable();
             $table->string('address_line_1')->nullable();

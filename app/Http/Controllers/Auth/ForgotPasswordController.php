@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Ekofrontend\Auth;
+namespace App\Http\Controllers\Auth;
 
 use Password;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Auth\ForgotMail;
 
 class ForgotPasswordController extends Controller
 {
@@ -31,11 +34,6 @@ class ForgotPasswordController extends Controller
         $this->middleware('guest');
     }
 
-    protected function broker()
-    {
-        return Password::broker('customers');
-    }
-
     /**
      * Display the form to request a password reset link.
      *
@@ -45,5 +43,4 @@ class ForgotPasswordController extends Controller
     {
         return view('auth.passwords.forgot');
     }
-
 }

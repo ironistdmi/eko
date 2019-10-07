@@ -29,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'account';
+    protected $redirectTo = '/account';
 
     /**
      * Create a new controller instance.
@@ -59,7 +59,7 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-      return view('login');
+      return view('auth.login');
     }
 
     /**
@@ -133,7 +133,7 @@ class LoginController extends Controller
       if ($this->attemptLogin($request)) {
         // if successful, then redirect to their intended location
 
-        return redirect()->intended(url()->previous())->with('success', trans('auth.messages.logged_in_successfully'));
+        return redirect('/account')->with('success', trans('auth.messages.logged_in_successfully'));
       }
 
       // If the login attempt was unsuccessful we will increment the number of attempts
@@ -152,7 +152,7 @@ class LoginController extends Controller
      */
     protected function attemptLogin(Request $request)
     {
-        return Auth::guard('customer')->attempt(
+        return Auth::guard('web')->attempt(
             $request->only($this->username(), 'password'), $request->filled('remember')
         );
     }
@@ -166,7 +166,7 @@ class LoginController extends Controller
      */
     public function logout(Request $request)
     {
-        Auth::guard('customer')->logout();
+        Auth::guard('web')->logout();
 
         $request->session()->invalidate();
 

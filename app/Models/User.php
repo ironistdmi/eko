@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Mail;
 
 class User extends Authenticatable
 {
@@ -143,6 +144,10 @@ class User extends Authenticatable
         return $this->hasOne(Shop::class, 'owner_id')->withTrashed()->withDefault();
     }
 
+    public function address()
+   {
+    return $this->belongsTo('App\Models\Address');
+   }
     /**
      * Get dob for the user.
      *
@@ -342,5 +347,12 @@ class User extends Authenticatable
     {
         return $query->where('shop_id', Auth::user()->merchantId());
     }
-
+    
+    public function sendPasswordResetNotification($token)
+    {
+ 		Mail::send('emails.reset_password', ['user' => $user], function ($m) use ($user) {
+            $m->from('hello@app.com', 'Your Application');
+            $m->to($user->email, $user->name)->subject('Your Password Reset!');
+        });
+    }
 }

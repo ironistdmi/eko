@@ -21,7 +21,7 @@ Route::group(['middleware' => ['front'], 'namespace' => 'Front'], function() {
 
 
     // Auth route for customers
-        Route::group(['as' => 'customer.', 'prefix' => 'customer'], function() {
+//        Route::group(['as' => 'customer.', 'prefix' => 'customer'], function() {
             Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
             Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider')->name('login.social');
             Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('login.social.callback');
@@ -31,18 +31,6 @@ Route::group(['middleware' => ['front'], 'namespace' => 'Front'], function() {
             // Register
             Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
             Route::post('/register', 'Auth\RegisterController@register');
-//            Route::post('/register', function (Request $request){
-//                $route = Route::current();
-//                if ($request->has('type')) {
-//                    if ($request->input('client-type') == 'seller') {
-//                        exit('seller');
-//                    } else if ($request->input('client-type') == 'buyer') {
-//                        exit('buyer');
-//                        //return $this->('Auth\RegisterController@register')
-//                    }
-//                }
-//
-//            })->name('register.submit'); //'Auth\RegisterController@register')->name('register.submit');
             Route::get('/verify/{token?}', 'Auth\RegisterController@verify')->name('verify');
 
             // Forgot Password
@@ -50,7 +38,7 @@ Route::group(['middleware' => ['front'], 'namespace' => 'Front'], function() {
             Route::Post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
             Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
             Route::Post('password/reset', 'Auth\ResetPasswordController@reset');
-        });
+//        });
 
     Route::get('/', 'HomeController@index')->name('homepage');
     Route::get('page/{page}', 'HomeController@openPage')->name('page.open');
@@ -67,3 +55,11 @@ Route::auth();
 Route::get('/register/', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::get('/verify/{token?}', 'Auth\RegisterController@verify')->name('verify');
 Route::get('/logout' , 'Auth\LoginController@logout');
+
+Route::get('/register/seller', 'Auth\RegisterSellerController@showForm')->name('register.seller');
+Route::post('/register/seller/submit', 'Auth\RegisterSellerController@store')->name('register.seller.submit');
+Route::get('/account', function(){
+    if(Auth::user()->type == 'seller' && Auth::user()->address == 0){        
+        return redirect()->route('register.seller');
+    }
+});

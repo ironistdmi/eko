@@ -64,7 +64,7 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        return view('register');
+        return view('auth.register');
     }
 
     /**
@@ -95,7 +95,7 @@ class RegisterController extends Controller
         $this->validator($request->all())->validate();
 
         event(new Registered($user = $this->create($request->all())));
-
+        
         return redirect()->route('login')
                ->with('success', 'Check your email and click on the link to verify.');
     }

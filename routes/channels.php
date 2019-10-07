@@ -11,6 +11,8 @@
 |
 */
 
-Broadcast::channel('App.User.{id}', function ($user, $id) {
-    return (int) $user->id === (int) $id;
+Broadcast::channel('dialog.{dialog_id}', function ($user, $dialog_id) {
+	if($user->rooms->contains($dialog_id)){
+		return $user->name;
+	}
 });

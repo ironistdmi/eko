@@ -70,6 +70,10 @@ class AccountController extends Controller
 
         return redirect()->route('account', 'account#settings')->with('success', trans('notify.info_deleted'));
     }
+	
+	public function chat() {
+		return view('chat');
+	}
 
     /**
      * Load dashboard content

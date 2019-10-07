@@ -70,6 +70,13 @@ Route::group(['middleware' => ['front'], 'namespace' => 'Front'], function() {
     Route::get('search', 'SearchController@search')->name('inCategoriesSearch');
 	
 	Route::post('newsletter', 'NewsletterController@subscribe')->name('newsletter.subscribe');
+	
+	Route::post('messages', function(Illuminate\Http\Request $request) {
+		App\Events\PrivateChat::dispatch($request->all());
+	});
+	Route::get('/dialog/{dialog}', function(App\Models\Dialog $dialog) {
+		return view('chat', ['dialog' => $dialog]);		
+	});
 });
 
 Route::auth();

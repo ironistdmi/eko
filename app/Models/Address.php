@@ -216,4 +216,8 @@ class Address extends Model
 
         return $address;
     }
+	public function user()
+    {
+		return $this->hasOne('App\MOdels\User');
+    }
 }

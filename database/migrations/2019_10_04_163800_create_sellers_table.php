@@ -21,8 +21,6 @@ class CreateSellersTable extends Migration
                   ->onDelete('cascade');
             $table->timestamp('read_announcements_at')->nullable();
             $table->integer('shop_id')->unsigned()->nullable();
-            $table->integer('role_id')->unsigned()->default(3);
-            $table->boolean('active')->default(1);
             $table->softDeletes();
             $table->timestamps();
         });

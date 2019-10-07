@@ -12,7 +12,7 @@
 	</section>
 
 	<!-- For contact page only -->
-	@if(\App\Page::PAGE_CONTACT_US == $page->slug)
+	@if(\App\Models\Page::PAGE_CONTACT_US == $page->slug)
 		@include('layouts.contact_us')
 	@endif
 

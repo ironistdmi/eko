@@ -1,0 +1,10 @@
+.footer-main .footer-container .subscribe-container .subscribe-button button, .footer-main .footer-container .subscribe-container .subscribe-button input {
+    color: #fff;
+    font-weight: 500;
+    transition: .3s ease;
+	border: none;
+    background: none;
+}
+.footer-main .footer-container .subscribe-container .subscribe-button input::placeholder {
+	color:#fff;
+}

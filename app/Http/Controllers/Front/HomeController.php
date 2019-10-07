@@ -22,7 +22,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
+		$popular_nearby = Product::with('featuredImage')->latest()->limit(30)->get();
+		
+        return view('index', compact('popular_nearby'));
     }
 
     /**
@@ -31,7 +33,7 @@ class HomeController extends Controller
      * @param  str  $slug
      * @return \Illuminate\Http\Response
      */
-    public function openPage($slug)
+    public function page($slug)
     {
         $page = Page::where('slug', $slug)->firstOrFail();
 

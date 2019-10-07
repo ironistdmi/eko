@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use Auth;
-use App\Models\Customer;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -121,7 +120,7 @@ class RegisterController extends Controller
     }
 
     /**
-     * Verify the User the given token.
+     * Verify User by given token.
      *
      * @param  string|null  $token
      * @return \Illuminate\Http\Response

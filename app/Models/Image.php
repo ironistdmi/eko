@@ -30,9 +30,9 @@ class Image extends Model
                 ];
 
     /**
-     * Get all of the owning imageable models.
+     * Get all of the owning imagetrait models.
      */
-	public function imageable()
+	public function imagetrait()
     {
         return $this->morphTo();
     }

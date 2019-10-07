@@ -17,13 +17,15 @@ class CreateMessagesTable extends Migration
             $table->bigIncrements('id');
             $table->integer('shop_id')->unsigned()->nullable();
             $table->bigInteger('user_id')->unsigned()->nullable();
-            $table->string('subject')->nullable();
             $table->longtext('message')->nullable();
-            $table->bigInteger('customer_id')->unsigned()->nullable();
-            $table->bigInteger('order_id')->unsigned()->nullable();
-            $table->bigInteger('product_id')->unsigned()->nullable();
-            $table->integer('status')->default(1);
-            $table->string('label')->default(1);
+            $table->bigInteger('dialog_id')->unsigned()->nullable();
+            $table->integer('status')->default(0);
+            $table->timestamps();
+        });       
+
+		Schema::create('dialogs', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->text('last_message')->nullable();
             $table->timestamps();
         });
     }
@@ -36,5 +38,6 @@ class CreateMessagesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('messages');
+        Schema::dropIfExists('dialogs');
     }
 }

@@ -18,4 +18,14 @@ class CatalogHelper
         return \DB::table('countries')->orderBy('name', 'asc')->pluck('name', 'id');
     }
 
+    /**
+     * Get pages list for theme.
+     */
+    public static function pages($visibility = Null)
+    {
+        if($visibility)
+            return Page::select('title','slug','position')->published()->visibilityOf($visibility)->get();
+
+        return Page::select('title','slug','position')->published()->get();
+    }
 }

@@ -82,7 +82,7 @@ class Page extends Model
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeVisibilityOf($query, $visibility)
+    public function scopeVisibility($query, $visibility)
     {
         return $query->where('visibility', $visibility);
     }

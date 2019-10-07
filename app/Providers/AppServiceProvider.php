@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use View;
+use App\Models\Page;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +16,21 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+		$this->app->singleton(\League\Glide\Server::class, function($app)
+            {
+                $filesystem = $app->make(\Illuminate\Contracts\Filesystem\Filesystem::class);
+
+                return \League\Glide\ServerFactory::create([
+                    'response' => new \League\Glide\Responses\LaravelResponseFactory(app('request')),
+                    'driver' => config('image.driver'),
+                    'presets' => config('image.sizes'),
+                    'source' => $filesystem->getDriver(),
+                    'cache' => $filesystem->getDriver(),
+                    'cache_path_prefix' => config('image.cache_dir'),
+                    'base_url' => 'image', //Don't change this value
+                ]);
+            }
+        );       
     }
 
     /**
@@ -23,6 +40,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+		Blade::withoutDoubleEncoding();
+		View::share('pages', Page::select('title','slug','position')->visibility(Page::VISIBILITY_PUBLIC)->get());
     }
 }

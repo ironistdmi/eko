@@ -11,15 +11,22 @@
 |
 */
 
-Route::get('/clear-cache', function() {
-	Artisan::call('view:clear'); 
-    Artisan::call('cache:clear');
-    return "Cache is cleared";
-});
+
 //Front Route
 Route::group(['middleware' => ['front'], 'namespace' => 'Front'], function() {
 
+		Route::get('/clear-cache', function() {
+			Artisan::call('config:clear');
+			Artisan::call('cache:clear');
+			Artisan::call('route:clear');
+			Artisan::call('view:clear');
 
+			// cache
+			Artisan::call('config:cache');
+			Artisan::call('route:cache');
+				
+			return "Cache is cleared";
+		});
     // Auth route for customers
 //        Route::group(['as' => 'customer.', 'prefix' => 'customer'], function() {
             Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -41,7 +48,7 @@ Route::group(['middleware' => ['front'], 'namespace' => 'Front'], function() {
 //        });
 
     Route::get('/', 'HomeController@index')->name('homepage');
-    Route::get('page/{page}', 'HomeController@openPage')->name('page.open');
+    Route::get('page/{page}', 'HomeController@page')->name('page.index');
     Route::get('product/{slug}', 'HomeController@product')->name('show.product');
     Route::get('product/{slug}/quickView', 'HomeController@quickViewItem')->name('quickView.product')->middleware('ajax');
     Route::get('product/{slug}/offers', 'HomeController@offers')->name('show.offers');
@@ -49,6 +56,15 @@ Route::group(['middleware' => ['front'], 'namespace' => 'Front'], function() {
     Route::get('category/{slug}', 'HomeController@browseCategory')->name('category.browse');
     Route::get('shop/{slug}', 'HomeController@shop')->name('show.store');
     Route::get('search', 'SearchController@search')->name('inCategoriesSearch');
+	
+	Route::post('newsletter', 'NewsletterController@subscribe')->name('newsletter.subscribe');
+	
+	Route::post('messages', function(Illuminate\Http\Request $request) {
+		App\Events\PrivateChat::dispatch($request->all());
+	});
+	Route::get('/dialog/{dialog}', function(App\Models\Dialog $dialog) {
+		return view('chat', ['dialog' => $dialog]);		
+	});
 });
 
 Route::auth();

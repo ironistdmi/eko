@@ -14,14 +14,15 @@
                         </div>
                         <div class="header-navigation">
                             <div class="navigation-container">
-                                <a href="{{ route('inCategoriesSearch') }}">Search</a>
-                                @if (Auth::check())
-									<a href="saved.html">Saved</a>
-									<a href="add-item.html">Add item</a>
+                                <a href="{{ route('inCategoriesSearch') }}">@lang('app.header.search')</a>
+                                
+									<a href="@if (Auth::check()){{ route('account', 'wishlist') }}@else{{ route('login') }}@endif">@lang('app.header.saved')</a>
+								@if (Auth::check())
+									<a href="add-item.html">@lang('app.header.add_item')</a>
 								@endif
                             </div>
                             <div class="search-container">
-                                <form action="">
+                                {!! Form::open(['route' => 'inCategoriesSearch', 'method' => 'GET', 'id' => 'search-header-form', 'class' => '', 'role' => 'search']) !!}
                                     <div class="input-field">
                                         <input type="text">
                                         <svg class="field-icon search-icon" xmlns="http://www.w3.org/2000/svg" width="12.992" height="13" viewBox="0 0 12.992 13">
@@ -39,9 +40,9 @@
                                         </svg>
                                     </div>
                                     <div class="button-wrapper">
-                                        <button type="submit">Find now</button>
+                                        <button type="submit">@lang('app.header.find_now')</button>
                                     </div>
-                                </form>
+                                {!! Form::close() !!}
                             </div>
                         </div>
                         <div class="header-panel">
@@ -97,12 +98,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <a class="profile-panel" href="profile.html">
+                            <a class="profile-panel" href="{{ route('account') }}">
                                 <img src="/img/pics/avatar.png" alt="">
                             </a>
 							@else
-								<a href="{{ route('login') }}" class="link-button">Log&nbsp;in</a>
-								<a href="{{ route('register') }}" class="link-button button-fill">Sign&nbsp;Up</a>
+								<a href="{{ route('login') }}" class="link-button">@lang('app.header.login')</a>
+								<a href="{{ route('register') }}" class="link-button button-fill">@lang('app.header.singup')</a>
 							@endif
 
                         </div>

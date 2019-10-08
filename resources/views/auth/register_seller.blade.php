@@ -60,7 +60,7 @@
                 <input id="phone-input" placeholder="66-997-8629" type="text">
             </div>
             <button class="btn btn-success" type="submit">@lang('auth.finish')</button>
-            <p class="terms-of-use">@lang('auth.footer_agreement') <a href="#">@lang('auth.terms')</a> and <a href="#">@lang('auth.policy')</a>.</p>
+            <p class="terms-of-use">@lang('auth.footer_agreement') <a href="{{ route('page.index', \App\Models\Page::PAGE_TNC_FOR_MERCHANT) }}">@lang('auth.terms')</a> and <a href="{{ route('page.index', \App\Models\Page::PAGE_PRIVACY_POLICY) }}">@lang('auth.policy')</a>.</p>
         </form>
     </div>
 </div>

@@ -91,6 +91,7 @@ return array(
     'Facade\\Ignition\\' => array($vendorDir . '/facade/ignition/src'),
     'Facade\\IgnitionContracts\\' => array($vendorDir . '/facade/ignition-contracts/src'),
     'Facade\\FlareClient\\' => array($vendorDir . '/facade/flare-client-php/src'),
+    'EloquentFilter\\' => array($vendorDir . '/tucker-eric/eloquentfilter/src'),
     'Egulias\\EmailValidator\\' => array($vendorDir . '/egulias/email-validator/EmailValidator'),
     'DrewM\\MailChimp\\' => array($vendorDir . '/drewm/mailchimp-api/src'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),

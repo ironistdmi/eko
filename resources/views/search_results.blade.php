@@ -16,7 +16,7 @@
                                             </g>
                                         </svg>
                                     </div>
-                                    <input type="text" placeholder="What are you looking for?">
+                                    <input type="text" placeholder="@lang('app.search.search_what')">
                                     <div class="search-result disabled">
                                         <div class="result-items-container">
                                             <div class="result-item">
@@ -347,7 +347,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit">Find now</button>
+                                <button type="submit">@lang('app.search.find_now')</button>
                             </div>
                             <span id="filter-toggle" class="filter-button"><svg xmlns="http://www.w3.org/2000/svg" width="12.135" height="10.974" viewBox="0 0 12.135 10.974">
                                     <g id="noun_sorting_1058871" transform="translate(-2 -4)">
@@ -359,19 +359,19 @@
                                             </g>
                                         </g>
                                     </g>
-                                </svg> Filter</span>
+                                </svg> @lang('app.search.filter')</span>
                             <div class="background-fixed-shadow disabled"></div>
                             <div id="filter-content-toggle" class="filter-container disabled">
                                 <div class="filter-title">
-                                    <h4>Customize your search</h4>
+                                    <h4>@lang('app.search.customize_search')</h4>
                                     <div class="title-button">
-                                        <input type="reset" value="Reset">
-                                        <a class="close-filter" href="#">Close</a>
+                                        <input type="reset" value="@lang('app.search.reset')Reset">
+                                        <a class="close-filter" href="#">@lang('app.search.close')</a>
                                     </div>
                                 </div>
                                 <div class="form-group-container">
                                     <div class="form-group-item">
-                                        <label for="radius-input">Radius</label>
+                                        <label for="radius-input">@lang('app.search.radius')</label>
                                         <select class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="radius-input">
                                             <option>1</option>
                                             <option>2</option>
@@ -381,12 +381,12 @@
                                     </div>
                                     <div class="form-group-container form-group-item">
                                         <div class="form-group-item">
-                                            <label for="price-input">Price</label>
+                                            <label for="price-input">@lang('app.search.price')</label>
                                             <input id="price-input" placeholder="Example: 4,500" type="text">
                                         </div>
                                         <div class="form-group-container form-group-item">
                                             <div class="form-group-item">
-                                                <label for="unit-input">Unit</label>
+                                                <label for="unit-input">@lang('app.search.unit')</label>
                                                 <select class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="unit-input">
                                                     <option>1</option>
                                                     <option>2</option>
@@ -395,7 +395,7 @@
                                                 </select>
                                             </div>
                                             <div class="form-group-item">
-                                                <label for="currency-input">Currency</label>
+                                                <label for="currency-input">@lang('app.search.currency')</label>
                                                 <select class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="currency-input">
                                                     <option>1</option>
                                                     <option>2</option>
@@ -409,7 +409,7 @@
                                 <div class="form-group-container">
                                     <div class="form-group-container form-group-item">
                                         <div class="form-group-item">
-                                            <label for="subcategory-input">Subcategory</label>
+                                            <label for="subcategory-input">@lang('app.search.subcat')</label>
                                             <select class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="subcategory-input">
                                                 <option>1</option>
                                                 <option>2</option>
@@ -418,7 +418,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group-item">
-                                            <label for="category-input">Category</label>
+                                            <label for="category-input">@lang('app.search.cat')</label>
                                             <select class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="category-input">
                                                 <option>1</option>
                                                 <option>2</option>
@@ -428,19 +428,19 @@
                                         </div>
                                     </div>
                                     <div class="form-group-item">
-                                        <label for="rating-input">Rating</label>
+                                        <label for="rating-input">@lang('app.search.rating')</label>
                                         <div class="range-container">
                                             <input id="rating-input" type="range" min="1" max="5" value="1">
                                             <div class="range-value"><span>1</span></div>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit">Accept</button>
+                                <button type="submit">@lang('app.search.accept')</button>
                             </div>
                         </div>
                     </form>
                     <div class="hint-content">
-                        <p>The largest online agricultural marketplace in Germany, which brings together sellers and buyers.</p>
+                        <p>@lang('app.search.explain')</p>
                     </div>
                 </div>
             </div>

@@ -61,6 +61,11 @@ Route::group(['middleware' => ['front'], 'namespace' => 'Front'], function() {
 	
 	Route::get('lang/{lang?}', 'HomeController@changeLang')->name('lang.change');
 	
+	Route::get('account/{tab?}', 'AccountController@index')->name('account');
+	
+	Route::get('wishlist/{item}', 'WishlistController@add')->name('wishlist.add');
+	Route::delete('wishlist/{wishlist}', 'WishlistController@remove')->name('wishlist.remove');
+	
 	Route::post('messages', function(Illuminate\Http\Request $request) {
 		App\Events\PrivateChat::dispatch($request->all());
 	});

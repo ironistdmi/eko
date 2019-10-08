@@ -31,19 +31,19 @@
                 <li data-target="#auth-slider" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active" style="background-image: url(img/pics/auth-slider-image.png)">
+                <div class="carousel-item active" style="background-image: url(/img/pics/auth-slider-image.png)">
                     <div class="text-container">
                         <p>«I do my favorite thing. And I am incredibly pleased that products are appearing that help me not only enjoymy work, but also earn more. Ecofarmer is what I need!»</p>
                         <p class="marked-text">- Markus Stanley, farmer, New York</p>
                     </div>
                 </div>
-                <div class="carousel-item" style="background-image: url(img/pics/auth-slider-image.png)">
+                <div class="carousel-item" style="background-image: url(/img/pics/auth-slider-image.png)">
                     <div class="text-container">
                         <p>«I do my favorite thing. And I am incredibly pleased that products »</p>
                         <p class="marked-text">- Markus Stanley, farmer, New York</p>
                     </div>
                 </div>
-                <div class="carousel-item" style="background-image: url(img/pics/auth-slider-image.png)">
+                <div class="carousel-item" style="background-image: url(/img/pics/auth-slider-image.png)">
                     <div class="text-container">
                         <p>« enjoymy work, but also earn more. Ecofarmer is what I need!»</p>
                         <p class="marked-text">- Markus Stanley, farmer, New York</p>

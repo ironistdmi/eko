@@ -187,6 +187,7 @@ class ComposerStaticInit88a2c93b928b59eb5d144bf2ffed987f
         ),
         'E' => 
         array (
+            'EloquentFilter\\' => 15,
             'Egulias\\EmailValidator\\' => 23,
         ),
         'D' => 
@@ -563,6 +564,10 @@ class ComposerStaticInit88a2c93b928b59eb5d144bf2ffed987f
         array (
             0 => __DIR__ . '/..' . '/facade/flare-client-php/src',
         ),
+        'EloquentFilter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tucker-eric/eloquentfilter/src',
+        ),
         'Egulias\\EmailValidator\\' => 
         array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator',
@@ -665,8 +670,8 @@ class ComposerStaticInit88a2c93b928b59eb5d144bf2ffed987f
     );
 
     public static $classMap = array (
-        'App\\Address' => __DIR__ . '/../..' . '/app/Models/Address.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Events\\PrivateChat' => __DIR__ . '/../..' . '/app/Events/PrivateChat.php',
         'App\\Exceptions\\ExceptionTrait' => __DIR__ . '/../..' . '/app/Exceptions/ExceptionTrait.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Helpers\\Authorize' => __DIR__ . '/../..' . '/app/Helpers/Authorize.php',
@@ -677,8 +682,10 @@ class ComposerStaticInit88a2c93b928b59eb5d144bf2ffed987f
         'App\\Http\\Controllers\\Api\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/Controller.php',
         'App\\Http\\Controllers\\Api\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/ProductController.php',
         'App\\Http\\Controllers\\Api\\ReviewController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/ReviewController.php',
+        'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
+        'App\\Http\\Controllers\\Auth\\RegisterSellerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterSellerController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Back\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Back/CategoryController.php',
         'App\\Http\\Controllers\\Back\\CustomerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Back/CustomerController.php',
@@ -689,7 +696,6 @@ class ComposerStaticInit88a2c93b928b59eb5d144bf2ffed987f
         'App\\Http\\Controllers\\Back\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Back/UserController.php',
         'App\\Http\\Controllers\\ChatController' => __DIR__ . '/../..' . '/app/Http/Controllers/ChatController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
-        'App\\Http\\Controllers\\Ekofrontend\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Ekofrontend\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Front\\AccountController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/AccountController.php',
         'App\\Http\\Controllers\\Front\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/HomeController.php',
@@ -702,6 +708,7 @@ class ComposerStaticInit88a2c93b928b59eb5d144bf2ffed987f
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\Front' => __DIR__ . '/../..' . '/app/Http/Middleware/Front.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
+        'App\\Http\\Middleware\\SetLocale' => __DIR__ . '/../..' . '/app/Http/Middleware/SetLocale.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
@@ -727,9 +734,12 @@ class ComposerStaticInit88a2c93b928b59eb5d144bf2ffed987f
         'App\\Http\\Resources\\ReviewResource' => __DIR__ . '/../..' . '/app/Http/Resources/ReviewResource.php',
         'App\\Http\\Resources\\StateResource' => __DIR__ . '/../..' . '/app/Http/Resources/StateResource.php',
         'App\\Mail\\Auth\\VerifyMail' => __DIR__ . '/../..' . '/app/Mail/Auth/VerifyMail.php',
+        'App\\ModelFilters\\ProductFilter' => __DIR__ . '/../..' . '/app/ModelFilters/ProductFilter.php',
+        'App\\Models\\Address' => __DIR__ . '/../..' . '/app/Models/Address.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
         'App\\Models\\Country' => __DIR__ . '/../..' . '/app/Models/Country.php',
         'App\\Models\\Customer' => __DIR__ . '/../..' . '/app/Models/Customer.php',
+        'App\\Models\\Dialog' => __DIR__ . '/../..' . '/app/Models/Dialog.php',
         'App\\Models\\Image' => __DIR__ . '/../..' . '/app/Models/Image.php',
         'App\\Models\\Messages' => __DIR__ . '/../..' . '/app/Models/Messages.php',
         'App\\Models\\Module' => __DIR__ . '/../..' . '/app/Models/Module.php',
@@ -742,6 +752,17 @@ class ComposerStaticInit88a2c93b928b59eb5d144bf2ffed987f
         'App\\Models\\State' => __DIR__ . '/../..' . '/app/Models/State.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\Wishlist' => __DIR__ . '/../..' . '/app/Models/Wishlist.php',
+        'App\\Policies\\CategoryPolicy' => __DIR__ . '/../..' . '/app/Policies/CategoryPolicy.php',
+        'App\\Policies\\CurrencyPolicy' => __DIR__ . '/../..' . '/app/Policies/CurrencyPolicy.php',
+        'App\\Policies\\CustomerPolicy' => __DIR__ . '/../..' . '/app/Policies/CustomerPolicy.php',
+        'App\\Policies\\MerchantPolicy' => __DIR__ . '/../..' . '/app/Policies/MerchantPolicy.php',
+        'App\\Policies\\PagePolicy' => __DIR__ . '/../..' . '/app/Policies/PagePolicy.php',
+        'App\\Policies\\PermissionPolicy' => __DIR__ . '/../..' . '/app/Policies/PermissionPolicy.php',
+        'App\\Policies\\ProductPolicy' => __DIR__ . '/../..' . '/app/Policies/ProductPolicy.php',
+        'App\\Policies\\RolePolicy' => __DIR__ . '/../..' . '/app/Policies/RolePolicy.php',
+        'App\\Policies\\ShopPolicy' => __DIR__ . '/../..' . '/app/Policies/ShopPolicy.php',
+        'App\\Policies\\UserPolicy' => __DIR__ . '/../..' . '/app/Policies/UserPolicy.php',
+        'App\\Policies\\WishlistPolicy' => __DIR__ . '/../..' . '/app/Policies/WishlistPolicy.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -1026,6 +1047,11 @@ class ComposerStaticInit88a2c93b928b59eb5d144bf2ffed987f
         'Egulias\\EmailValidator\\Warning\\QuotedString' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/QuotedString.php',
         'Egulias\\EmailValidator\\Warning\\TLD' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/TLD.php',
         'Egulias\\EmailValidator\\Warning\\Warning' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/Warning.php',
+        'EloquentFilter\\Commands\\MakeEloquentFilter' => __DIR__ . '/..' . '/tucker-eric/eloquentfilter/src/Commands/MakeEloquentFilter.php',
+        'EloquentFilter\\Filterable' => __DIR__ . '/..' . '/tucker-eric/eloquentfilter/src/Filterable.php',
+        'EloquentFilter\\LumenServiceProvider' => __DIR__ . '/..' . '/tucker-eric/eloquentfilter/src/LumenServiceProvider.php',
+        'EloquentFilter\\ModelFilter' => __DIR__ . '/..' . '/tucker-eric/eloquentfilter/src/ModelFilter.php',
+        'EloquentFilter\\ServiceProvider' => __DIR__ . '/..' . '/tucker-eric/eloquentfilter/src/ServiceProvider.php',
         'Evenement\\EventEmitter' => __DIR__ . '/..' . '/evenement/evenement/src/Evenement/EventEmitter.php',
         'Evenement\\EventEmitterInterface' => __DIR__ . '/..' . '/evenement/evenement/src/Evenement/EventEmitterInterface.php',
         'Evenement\\EventEmitterTrait' => __DIR__ . '/..' . '/evenement/evenement/src/Evenement/EventEmitterTrait.php',

@@ -5,8 +5,9 @@
     <div class="main-page">
         <div class="first-screen">
             <div class="search-container">
-                <h3>Find your product</h3>
-                <form action="">
+                <h3>@lang('app.landing.find_product')</h3>
+                {!! Form::open(['route' => 'inCategoriesSearch', 'method' => 'GET', 'id' => 'search-form', 'class' => '', 'role' => 'search']) !!}
+					
                     <div class="search-area">
                         <div class="input-container">
                             <div class="loop-icon">
@@ -16,7 +17,7 @@
                                     </g>
                                 </svg>
                             </div>
-                            <input type="text" placeholder="What are you looking for?">
+                            <input type="text" placeholder="@lang('app.landing.search_what')">
                         </div>
                         <span class="filter-button"><svg xmlns="http://www.w3.org/2000/svg" width="12.135" height="10.974" viewBox="0 0 12.135 10.974">
                                     <g id="noun_sorting_1058871" transform="translate(-2 -4)">
@@ -28,31 +29,31 @@
                                             </g>
                                         </g>
                                     </g>
-                                </svg> Filter</span>
+                                </svg> @lang('app.landing.filter')</span>
                     </div>
                     <div class="filter-container">
                         <div class="filter-title">
-                            <h4>Customize your search</h4>
-                            <a href="#">Reset</a>
+                            <h4>@lang('app.landing.customize_search')</h4>
+                            <a href="#">@lang('app.landing.reset')</a>
                         </div>
                         <div class="form-group-container">
                             <div class="form-group-item">
-                                <label for="street-input">Price</label>
-                                <input id="street-input" placeholder="Example: Poltaskiy Shlyah" type="text">
+                                <label for="street-input">@lang('app.landing.price')</label>
+                                <input id="street-input" placeholder="" type="text">
                             </div>
                             <div class="form-group-container form-group-item">
                                 <div class="form-group-item">
-                                    <label for="street-input">Price</label>
-                                    <input id="street-input" placeholder="Example: Poltaskiy Shlyah" type="text">
+                                    <label for="street-input">@lang('app.landing.price')</label>
+                                    <input id="street-input" placeholder="" type="text">
                                 </div>
                                 <div class="form-group-container form-group-item">
                                     <div class="form-group-item">
-                                        <label for="street-input">Unit</label>
-                                        <input id="street-input" placeholder="Example: Poltaskiy Shlyah" type="text">
+                                        <label for="street-input">@lang('app.landing.unit')</label>
+                                        <input id="street-input" placeholder="" type="text">
                                     </div>
                                     <div class="form-group-item">
-                                        <label for="building-input">Currency</label>
-                                        <input id="building-input" placeholder="Example: 34/A" type="text">
+                                        <label for="building-input">@lang('app.landing.currency')</label>
+                                        <input id="building-input" placeholder="" type="text">
                                     </div>
                                 </div>
                             </div>
@@ -60,30 +61,30 @@
                         <div class="form-group-container">
                             <div class="form-group-container form-group-item">
                                 <div class="form-group-item">
-                                    <label for="street-input">Unit</label>
-                                    <input id="street-input" placeholder="Example: Poltaskiy Shlyah" type="text">
+                                    <label for="street-input">@lang('app.landing.unit')</label>
+                                    <input id="street-input" placeholder="" type="text">
                                 </div>
                                 <div class="form-group-item">
-                                    <label for="building-input">Currency</label>
-                                    <input id="building-input" placeholder="Example: 34/A" type="text">
+                                    <label for="building-input">@lang('app.landing.currency')</label>
+                                    <input id="building-input" placeholder="" type="text">
                                 </div>
                             </div>
                             <div class="form-group-item">
-                                <label for="street-input">Price</label>
-                                <input id="street-input" placeholder="Example: Poltaskiy Shlyah" type="text">
+                                <label for="street-input">@lang('app.landing.price')</label>
+                                <input id="street-input" placeholder="" type="text">
                             </div>
                         </div>
-                        <button type="submit">Show results</button>
+                        <button type="submit">@lang('app.landing.show_results')</button>
                     </div>
-                </form>
+                {!! Form::close() !!}
             </div>
             <div class="text-container">
-                <h2>One place. Millions of eco-products. </h2>
+                <h2>@lang('app.landing.block_one_title') </h2>
             </div>
         </div>
         <div class="product-near-container">
             <div class="product-near-wrapper">
-                <h3>Products near you:</h3>
+                <h3>@lang('app.landing.block_one_explain')</h3>
                 <div class="product-near-scroll">
                     <div class="scroll-container">
                         <a href="#" class="product-item">
@@ -457,15 +458,15 @@
         </div>
         <div class="text-block">
             <div class="text-wrapper">
-                <h2>@lang('app.landing.block1')</h2>
-                <p>@lang('app.landing.block2')</p>
+                <h2>@lang('app.landing.block_two_title')</h2>
+                <p>@lang('app.landing.block_two_explain')</p>
             </div>
         </div>
         <div class="auth-block-container">
             <div class="text-container">
-                <h3><span>Create —</span><br> your online store</h3>
-                <p>Exactly the same store. Exactly the same counters. <br> Exactly the same visitors. Only online and much easier.</p>
-                <a href="{{ route('register') }}">Sign Up <svg xmlns="http://www.w3.org/2000/svg" width="33.312" height="13.934" viewBox="0 0 33.312 13.934">
+                <h3><span>@lang('app.landing.create') —</span><br> @lang('app.landing.online_store')</h3>
+                <p>@lang('app.landing.block_three_explain')</p>
+                <a href="{{ route('register') }}">@lang('app.landing.signup') <svg xmlns="http://www.w3.org/2000/svg" width="33.312" height="13.934" viewBox="0 0 33.312 13.934">
                         <g id="noun_back_1971165" transform="translate(-1.681 -553)">
                             <g id="Group_997" data-name="Group 997" transform="translate(1.681 553)">
                                 <path id="Path_2079" data-name="Path 2079" d="M180.414,565.632l.428.428-.865.875L173,559.967,179.977,553l.865.875-5.471,5.48h30.941v1.234H175.371Z" transform="translate(-173 -553)" fill="#fff" />
@@ -486,7 +487,7 @@
                         </g>
                     </svg>
                 </div>
-                <input type="text" placeholder="What are you looking for?">
+                <input type="text" placeholder="@lang('app.landing.search_what')">
             </div>
         </div>
         <div class="products-slider-block">
@@ -969,9 +970,9 @@
         </div>
         <div class="text-block">
             <div class="text-wrapper">
-                <h2>Popular nearby</h2>
-                <p>One platform with all the ecommerce and point of sale features you need to start, run, and grow your business.</p>
-                <a class="button-link" href="{{ route('register') }}">Sign Up</a>
+                <h2>@lang('app.landing.block_four_title')</h2>
+                <p>@lang('app.landing.block_four_explain')</p>
+                <a class="button-link" href="{{ route('register') }}">@lang('app.landing.signup')</a>
             </div>
         </div>
         <div class="auth-block-container big-image">
@@ -979,9 +980,9 @@
                 <img src="/img/pics/landing-page-2.png" alt="">
             </div>
             <div class="text-container">
-                <h3><span>Start —</span><br> your business journey</h3>
-                <p>One platform with all the ecommerce and point of sale features you need to start, run, and grow your eco- business.</p>
-                <a href="{{ route('register') }}">Sign Up <svg xmlns="http://www.w3.org/2000/svg" width="33.312" height="13.934" viewBox="0 0 33.312 13.934">
+                <h3><span>@lang('app.landing.start') —</span><br> @lang('app.landing.business_journey')</h3>
+                <p>@lang('app.landing.block_four_explain2')</p>
+                <a href="{{ route('register') }}">@lang('app.landing.signup') <svg xmlns="http://www.w3.org/2000/svg" width="33.312" height="13.934" viewBox="0 0 33.312 13.934">
                         <g id="noun_back_1971165" transform="translate(-1.681 -553)">
                             <g id="Group_997" data-name="Group 997" transform="translate(1.681 553)">
                                 <path id="Path_2079" data-name="Path 2079" d="M180.414,565.632l.428.428-.865.875L173,559.967,179.977,553l.865.875-5.471,5.48h30.941v1.234H175.371Z" transform="translate(-173 -553)" fill="#fff" />
@@ -992,8 +993,8 @@
         </div>
         <div class="text-block">
             <div class="text-wrapper">
-                <h2>Popular nearby</h2>
-                <p>Find your nearest sellers and products and buy the right products with ease right now</p>
+                <h2>@lang('app.landing.block_five_title')</h2>
+                <p>@lang('app.landing.block_five_explain')</p>
             </div>
             <div class="product-items-container">
                 <div class="product-item">
@@ -1531,11 +1532,11 @@
         </div>
         <div class="auth-block-container sign-up-button">
             <div class="text-container">
-                <h3>Start selling now!</h3>
-                <p>Create your online-store, add positions and start earning money online. It is so easy!</p>
+                <h3>@lang('app.landing.block_six_title')</h3>
+                <p>@lang('app.landing.block_six_explain')</p>
                 <div class="button-container">
-                    <a href="{{ route('login') }}">Log in</a>
-                    <a class="button-link" href="{{ route('register') }}">Sign Up</a>
+                    <a href="{{ route('login') }}">@lang('app.landing.login')</a>
+                    <a class="button-link" href="{{ route('register') }}">@lang('app.landing.signup')</a>
                 </div>
             </div>
             <div class="image-container">

@@ -13,35 +13,39 @@
         </div>
         <h2>@lang('auth.thx_sign')</h2>
         <p>@lang('auth.second_step_explain')</p>
+        @if ($errors->any())
+            <div class="row">
+                <div class="col-12">
+                    <div class="alert alert-danger" role="alert">
+                        <ul>                         
+                          @foreach($errors->all() as $error)                         
+                                <li> {{{ $error }}}</li>                         
+                          @endforeach    
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        @endif        
         <form action="/register/seller/submit" method="POST">
             @csrf
             <label for="store-name-input">@lang('auth.store_name')</label>
-            <input id="store-name-input" type="text" name="store_name">
+            <input id="store-name-input" type="text" name="store_name" value="{{old('store_name')}}">
             <label for="name-input">@lang('auth.name_seller')</label>
-            <input id="name-input" type="text" name="name">
+            <input id="name-input" type="text" name="name" value="{{ Auth::user()->name }}">
             <div class="form-group-container mb-3">
                 <div class="form-group-item col-6">
                     <label for="country-input">@lang('auth.country')</label>
                     <div class="dropdown bootstrap-select bs-custom-select">
-                        <select name="country_id" class="bs-custom-select w-100" data-dropup-auto="false" title="@lang('auth.choose_country')" data-size="5" id="country-input" tabindex="-98"><option class="bs-title-option" value=""></option>
+                        <select name="country_id" class="bs-custom-select w-100" title="@lang('auth.choose_country')" data-size="5" id="country-input" tabindex="-98"><option class="bs-title-option" value=""></option>
                             @foreach($countries as $item)
-                            <option value="{{ $item->id }}">{{ $item->full_namename }}</option>
+                            <option value="{{ $item['id'] }}">{{ $item['name'] }}</option>
                             @endforeach
                         </select>
                     </div>
                 </div>
                 <div class="form-group-item col-6">
                     <label for="city-input">@lang('auth.city')</label>
-                    <div class="dropdown bootstrap-select bs-custom-select">
-                        <select name="city_id" class="bs-custom-select w-100" data-dropup-auto="false" title="@lang('auth.choose_city')" data-size="5" id="city-input" tabindex="-98"><option class="bs-title-option" value=""></option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>1</option>
-                        </select>
-                    </div>
+                    <input type="text" name="city" value="" placeholder="you city">
                 </div>
             </div>
             <div class="form-group-container">
@@ -56,8 +60,8 @@
             </div>
             <label for="phone-input">@lang('auth.phone')</label>
             <div class="form-wrapper">
-                <input type="text" class="form-control country-code-anchor" id="countryCode" value="" placeholder="" tabindex="-1">
-                <input id="phone-input" placeholder="66-997-8629" type="text">
+                <input name="phone_code" type="text" class="form-control country-code-anchor" id="countryCode" value="" placeholder="" tabindex="-1">
+                <input id="phone-input" placeholder="66-997-8629" type="text" name="phone">
             </div>
             <button class="btn btn-success" type="submit">@lang('auth.finish')</button>
             <p class="terms-of-use">@lang('auth.footer_agreement') <a href="{{ route('page.index', \App\Models\Page::PAGE_TNC_FOR_MERCHANT) }}">@lang('auth.terms')</a> and <a href="{{ route('page.index', \App\Models\Page::PAGE_PRIVACY_POLICY) }}">@lang('auth.policy')</a>.</p>

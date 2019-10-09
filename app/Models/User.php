@@ -148,6 +148,10 @@ class User extends Authenticatable
    {
     return $this->belongsTo('App\Models\Address');
    }
+   public function seller()
+   {
+       return $this->hasOne('App\Models\Seller');
+   }
     /**
      * Get dob for the user.
      *

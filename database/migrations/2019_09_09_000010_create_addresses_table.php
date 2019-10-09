@@ -31,8 +31,8 @@ class CreateAddressesTable extends Migration
             $table->string('phone')->nullable();
             $table->float('latitude')->nullable();
             $table->float('longitude')->nullable();
-            $table->bigInteger('addressable_id')->unsigned();
-            $table->string('addressable_type');
+            $table->bigInteger('addressable_id')->unsigned()->nullable();
+            $table->string('addressable_type')->nullable();
             $table->timestamps();
 
             $table->foreign('country_id')->references('id')->on('countries');

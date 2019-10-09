@@ -13,8 +13,12 @@ class DatabaseSeeder extends Seeder
     {
         $this->call('RolesSeeder');
         $this->call('UsersSeeder');
+        $this->call('CountriesSeeder');
         //$this->call('ModulesSeeder');
-        //$this->call('PermissionSeeder');
-        // $this->call(UsersTableSeeder::class);
+        $this->call('PermissionSeeder');
+        $this->call('CurrenciesSeeder');
+        $this->call('StatesSeeder');
+        $this->call('TimezonesSeeder');
+        //$this->call(UsersTableSeeder::class);
     }
 }

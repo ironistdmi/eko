@@ -1,16 +1,16 @@
 @extends('layouts.master')
 
 @section('content')
-
+<?php $user = $tab; ?>
 <div class="d-flex fullscreen-page">
             <aside class="profile-aside">
                 <h3>Dashboard</h3>
                 <div class="aside-navigation">
-                    <a class="active" href="profile.html">Profile</a>
+                    <a class="active" href="{{ route('account') }}">Profile</a>
                     <a class="" href="profile-full.html">Profile full delete</a>
                     <a class="" href="my-products.html">My products</a>
                     <a class="" href="my-reviews.html">All reviews</a>
-                    <a class="" href="settings.html">Settings</a>
+                    <a class="" href="{{ route('profile.edit') }}">Settings</a>
                     <hr>
                     <a href="#">Log out</a>
                 </div>
@@ -53,7 +53,7 @@
                                             </g>
                                         </g>
                                     </svg></span>
-                                <p>Melnikov Boris Markovich</p>
+                                <p>{{ $user->name }}</p>
                             </div>
                             <div class="contact-item"><span><svg xmlns="http://www.w3.org/2000/svg" width="8.182" height="14.282" viewBox="0 0 8.182 14.282">
                                         <g id="Group_993" data-name="Group 993" transform="translate(-69.25 -18.427)">
@@ -62,7 +62,7 @@
                                         </g>
                                     </svg>
                                 </span>
-                                <p>Kharkov, Ukraine</p>
+                                <p>{{ $user->address->city . ' ' . $user->address->country->name }}</p>
                             </div>
                             <div class="contact-item"><span><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13.066" viewBox="0 0 13 13.066">
                                         <g id="noun_Phone_1538695" transform="translate(0.035 -0.017)">
@@ -74,7 +74,7 @@
                                         </g>
                                     </svg>
                                 </span>
-                                <p>+(380)-66-997-8629</p>
+                                <p>{{ $user->address->phone }}</p>
                             </div>
                             <div class="contact-item"><span><svg xmlns="http://www.w3.org/2000/svg" width="16.696" height="12" viewBox="0 0 16.696 12">
                                         <g id="noun_Email_1703147" transform="translate(-38 -46)">
@@ -84,13 +84,16 @@
                                         </g>
                                     </svg>
                                 </span>
-                                <p>melnikov.shop@gmail.com</p>
+                                <p>{{ $user->email }}</p>
                             </div>
                         </div>
+                        @can('seller')
                         <div class="profile-button">
-                            <a class="link-button" href="#">Edit Profile</a>
+                            <a class="link-button" href="{{ route('profile.edit') }}">Edit Profile</a>
                         </div>
+                        @endcan
                     </div>
+                    
                     <div class="content-container">
                         <h4>Products</h4>
                         <div class="cards-container">
@@ -127,9 +130,11 @@
                                                 </g>
                                             </svg> German meat factory</h5>
                                     </div>
+                                    @can('seller')
                                     <div class="card-info">
-                                        <a class="add-item-button" href="'{{ route('product.add') }}'">Add product</a>
+                                        <a class="add-item-button" href="{{ route('product.add') }}">Add product</a>
                                     </div>
+                                    @endcan
                                 </div>
                             </div>
                             <div class="card-item green-hint">
@@ -137,6 +142,7 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
             <div class="verify-hint">

@@ -25,17 +25,16 @@
                 <h2>Settings</h2>
                 <div class="settings-container">
                     <div class="settings-wrapper">
-                        <form action="">
+                        <form action="{{ route('profile.edit.submit') }}" method='POST' id="settings_profile">
+                            {{ csrf_field() }}
                             <label for="storeName-input">Store name</label>
-                            <input id="storeName-input" placeholder="Store name" type="text">
+                            <input name="store_name" value="{{ $shop->name }}" id="storeName-input" placeholder="Store name" type="text">
                             <button class="change-button" type="submit">Change</button>
-                        </form>
-                        <form action="">
+                        
                             <label for="sellerName-input">Full name of seller</label>
-                            <input id="sellerName-input" placeholder="Seller name" type="text">
+                            <input name="name" value="{{$user->name}}" id="sellerName-input" placeholder="Seller name" type="text">
                             <button class="change-button" type="submit">Change</button>
-                        </form>
-                        <form action="">
+                        
                             <label for="description-input" class="title-tooltip tooltip-relative">
                                 <span>Store Descrisption</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="12.486" height="15" viewBox="0 0 12.486 15">
@@ -49,71 +48,64 @@
                                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata </p>
                                 </div>
                             </label>
-                            <textarea class="count-description" id="description-input" maxlength="250" rows="5"></textarea>
+                            <textarea name="description" class="count-description" id="description-input" maxlength="250" rows="5">
+                                {{$shop->description}}
+                            </textarea>
                             <div class="button-container">
                                 <span><span class="count-description-number">0</span> symbols</span>
                                 <button class="change-button" type="submit">Change</button>
                             </div>
-                        </form>
                         <div class="form-group-container">
-                            <form action="">
-                                <label for="country-input">Country</label>
-                                <select class="bs-custom-select" data-dropup-auto="false" title="Choose country" data-size="5" id="country-input">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>1</option>
-                                </select>
+                            <div class="form-group-item col-6 pl-0">
+                                <label for="country-input" class="d-block">Country</label>
+                                <select name="country_id" class="bs-custom-select w-100" title="Choose country" id="country-input">
+                                    @foreach($countries as $key => $val)
+                                    @php $selected = ($key==$address->country_id)?'selected':''; @endphp 
+                                    <option value="{{ $key }}" {{ $selected }}>{{ $val }}</option>
+                                    @endforeach
+                                </select>                                
                                 <button class="change-button" type="submit">Change</button>
-                            </form>
-                            <form action="">
+                            </div>
+                            <div class="form-group-item col-6 pr-0">
                                 <label for="city-input">City</label>
-                                <select class="bs-custom-select" data-dropup-auto="false" title="Choose city" data-size="5" id="city-input">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>1</option>
-                                </select>
+                                <input type="text" name="city" value="{{$address->city}}" placeholder="you city">
                                 <button class="change-button" type="submit">Change</button>
-                            </form>
+                            </div>
                         </div>
-                        <div class="form-group-container">
-                            <form action="">
+                        <div class="form-group-container mt-5">
+                            <div class="form-group-item col-6 pl-0">
                                 <label for="street-input">Street</label>
-                                <input id="street-input" placeholder="Example: Poltaskiy Shlyah" type="text">
+                                <input name="address_line_1" value="{{$address->address_line_1}}" id="street-input" placeholder="Example: Poltaskiy Shlyah" type="text">
                                 <button class="change-button" type="submit">Change</button>
-                            </form>
-                            <form action="">
+                            </div>
+                            <div class="form-group-item col-6 pr-0">
                                 <label for="building-input">Building</label>
-                                <input id="building-input" placeholder="Example: 34/A" type="text">
+                                <input name="address_line_2" value="{{$address->address_line_2}}" id="building-input" placeholder="Example: 34/A" type="text">
                                 <button class="change-button" type="submit">Change</button>
-                            </form>
+                            </div>
                         </div>
-                        <form action="">
+
                             <label for="email-input">Email</label>
-                            <input id="email-input" placeholder="Example: email@mail.com" type="text">
+                            <input name="email" value="{{$user->email}}" id="email-input" placeholder="Example: email@mail.com" type="text">
                             <button class="change-button" type="submit">Change</button>
-                        </form>
-                        <form action="">
+
                             <label for="phone-input">Phone number</label>
                             <div class="form-wrapper">
-                                <input type="text" class="form-control country-code-anchor" id="countryCode" value="" placeholder="" tabindex="-1">
-                                <input id="phone-input" placeholder="66-997-8629" type="text">
+                                <input name="phone_code" value="{{$address->phone_code}}" type="text" class="form-control country-code-anchor" id="countryCode" value="" placeholder="" tabindex="-1">
+                                <input name="phone" value="{{$address->phone}}" id="phone-input" placeholder="66-997-8629" type="text">
                             </div>
                             <button class="change-button" type="submit">Change</button>
-                        </form>
+
                         <div class="checkbox-container">
                             <div class="checkbox-item">
-                                <input id="checkbox-chat" type="checkbox">
+                                <input name="to_chat" value="0" type="hidden">
+                                <input name="to_chat" value="1" id="checkbox-chat" type="checkbox">
                                 <label for="checkbox-chat"></label>
                                 <span>I’m ready to chat</span>
                             </div>
                             <div class="checkbox-item">
-                                <input id="checkbox-call" type="checkbox">
+                                <input name="to_call" value="0" type="hidden">
+                                <input name="to_call" value="1" id="checkbox-call" type="checkbox">
                                 <label for="checkbox-call"></label>
                                 <span>I’m ready to have calls</span>
                             </div>
@@ -121,7 +113,8 @@
                         <h2>Additional Information</h2>
                         <div class="checkbox-container tooltip-relative">
                             <div class="checkbox-item">
-                                <input id="checkbox-bio" type="checkbox">
+                                <input name="bio" value="0" type="hidden">
+                                <input name="bio" value="1" id="checkbox-bio" type="checkbox">
                                 <label for="checkbox-bio"></label>
                                 <span class="title-tooltip"><span>Create bio-materials</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="12.486" height="15" viewBox="0 0 12.486 15">
@@ -137,6 +130,7 @@
                                 </span>
                             </div>
                         </div>
+                      </form>
                     </div>
                     <div class="change-success">Information Saved</div>
                 </div>

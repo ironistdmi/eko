@@ -46,5 +46,9 @@ class Shop extends Model
                     'trial_ends_at',
                     'active',
                 ];
+    public function seller()
+   {
+       return $this->hasOne('App\Models\Seller');
+   }
 
 }

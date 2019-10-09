@@ -61,7 +61,7 @@ Route::group(['middleware' => ['front'], 'namespace' => 'Front'], function() {
 	
 	Route::get('lang/{lang?}', 'HomeController@changeLang')->name('lang.change');
 	
-	Route::get('account/{tab?}', 'AccountController@index')->name('account');
+
 	
 	Route::get('wishlist/{item}', 'WishlistController@add')->name('wishlist.add');
 	Route::delete('wishlist/{wishlist}', 'WishlistController@remove')->name('wishlist.remove');
@@ -77,12 +77,16 @@ Route::group(['middleware' => ['front'], 'namespace' => 'Front'], function() {
 Route::auth();
 Route::get('/register/', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::get('/verify/{token?}', 'Auth\RegisterController@verify')->name('verify');
-Route::get('/logout' , 'Auth\LoginController@logout');
 
-Route::get('/register/seller', 'Auth\RegisterSellerController@showForm')->name('register.seller');
-Route::post('/register/seller/submit', 'Auth\RegisterSellerController@store')->name('register.seller.submit');
-Route::get('/account', function(){
-    if(Auth::user()->type == 'seller' && Auth::user()->address == 0){        
-        return redirect()->route('register.seller');
-    }
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/logout' , 'Auth\LoginController@logout');
+
+    Route::get('/register/seller', 'Auth\RegisterSellerController@showForm')->name('register.seller');
+    Route::post('/register/seller/submit', 'Auth\RegisterSellerController@store')->name('register.seller.submit');
+//    Route::get('/account/{tab?}', 'Front\AccountController@index')->name('account');
+    Route::get('/account', 'Front\AccountController@index')->name('account');
+    Route::get('/account/add', 'Front\ProductController@addProductForm')->name('product.add');
+    Route::post('/account/add', 'Front\ProductController@storeForm')->name('product.add.submit');
+    Route::get('/account/edit', 'Front\AccountController@editProfileForm')->name('profile.edit');
+    Route::post('/account/edit', 'Front\AccountController@storeProfileForm')->name('profile.edit.submit');
 });

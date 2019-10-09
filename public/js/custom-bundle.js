@@ -270,27 +270,34 @@ $(document).ready(function () {
 
   if ($(".settings-wrapper button[type='submit']").length) {
     var changeSuccess;
-    $(".settings-wrapper button[type='submit']").on("click", function (e) {
+    $("#settings_profile button[type='submit']").on("click", function (e) {
       e.preventDefault();
-      clearTimeout(changeSuccess);
       var thisButton;
+      clearTimeout(changeSuccess);
       if ($(this).prev("input, .form-wrapper").length > 0) {
         thisButton = $(this).prev("input, .form-wrapper");
       } else if ($(this).parent().prev("textarea").length > 0) {
         thisButton = $(this).parent().prev("textarea");
-      }
-      $(".change-success").css({
-        "top": thisButton.offset().top + "px",
-        "opacity": "1"
+      }      
+      var form = $('#settings_profile');
+      $.ajax({
+          type: form.attr('method'),
+          url: form.attr('action'),
+          data: form.serialize(),
+          cache: false,
+          success: function(){            
+            console.log('success')
+            $(".change-success").css({
+              "top": thisButton.offset().top + "px",
+              "opacity": "1"
+            });
+            changeSuccess = setTimeout(function () {
+              $(".change-success").css({"opacity": "0"});              
+            }, 5000);           
+           }    
       });
-      changeSuccess = setTimeout(function () {
-        $(".change-success").css({
-          "opacity": "0"
-        });
-      }, 5000);
-    });
+  });
   }
-
   if ($(".toggle-archive-button").length) {
     $(".toggle-archive-button").on("click", function (e) {
       e.preventDefault();

@@ -15,7 +15,7 @@ class CategoriesSeeder extends Seeder
     {
         DB::table('categories')->insert([
             [
-                'parent_id' => 0,
+                'category_sub_id' => 0,
                 'name' => 'Grapes',
                 'slug' => 'grapes',
                 'description' => 'Grapes',
@@ -23,7 +23,7 @@ class CategoriesSeeder extends Seeder
                 'created_at' => Carbon::Now(),
                 'updated_at' => Carbon::Now(),
             ],[
-                'parent_id' => 0,
+                'category_sub_id' => 0,
                 'name' => 'Eggs',
                 'slug' => 'eggs',
                 'description' => 'Eggs',
@@ -31,7 +31,7 @@ class CategoriesSeeder extends Seeder
                 'created_at' => Carbon::Now(),
                 'updated_at' => Carbon::Now(),
             ],[
-                'parent_id' => 0,
+                'category_sub_id' => 0,
                 'name' => 'Meat',
                 'slug' => 'meat',
                 'description' => 'Meat',
@@ -39,7 +39,7 @@ class CategoriesSeeder extends Seeder
                 'created_at' => Carbon::Now(),
                 'updated_at' => Carbon::Now(),
             ],[
-                'parent_id' => 0,
+                'category_sub_id' => 0,
                 'name' => 'Potatoes',
                 'slug' => 'potatoes',
                 'description' => 'Potatoes',
@@ -47,7 +47,7 @@ class CategoriesSeeder extends Seeder
                 'created_at' => Carbon::Now(),
                 'updated_at' => Carbon::Now(),
             ],[
-                'parent_id' => 0,
+                'category_sub_id' => 0,
                 'name' => 'Apples',
                 'slug' => 'apples',
                 'description' => 'Apples',
@@ -55,7 +55,7 @@ class CategoriesSeeder extends Seeder
                 'created_at' => Carbon::Now(),
                 'updated_at' => Carbon::Now(),
             ],[
-                'parent_id' => 0,
+                'category_sub_id' => 0,
                 'name' => 'Bananas',
                 'slug' => 'bananas',
                 'description' => 'Bananas',
@@ -63,7 +63,7 @@ class CategoriesSeeder extends Seeder
                 'created_at' => Carbon::Now(),
                 'updated_at' => Carbon::Now(),
             ],[
-                'parent_id' => 0,
+                'category_sub_id' => 0,
                 'name' => 'Bread',
                 'slug' => 'bread',
                 'description' => 'Bread',
@@ -71,7 +71,7 @@ class CategoriesSeeder extends Seeder
                 'created_at' => Carbon::Now(),
                 'updated_at' => Carbon::Now(),
             ],[
-                'parent_id' => 0,
+                'category_sub_id' => 0,
                 'name' => 'Cabbage',
                 'slug' => 'cabbage',
                 'description' => 'Cabbage',
@@ -79,7 +79,7 @@ class CategoriesSeeder extends Seeder
                 'created_at' => Carbon::Now(),
                 'updated_at' => Carbon::Now(),
             ],[
-                'parent_id' => 0,
+                'category_sub_id' => 0,
                 'name' => 'Cucumbers',
                 'slug' => 'cucumbers',
                 'description' => 'Cucumbers',
@@ -87,7 +87,7 @@ class CategoriesSeeder extends Seeder
                 'created_at' => Carbon::Now(),
                 'updated_at' => Carbon::Now(),
             ],[
-                'parent_id' => 0,
+                'category_sub_id' => 0,
                 'name' => 'Peppers',
                 'slug' => 'peppers',
                 'description' => 'Peppers',
@@ -95,7 +95,7 @@ class CategoriesSeeder extends Seeder
                 'created_at' => Carbon::Now(),
                 'updated_at' => Carbon::Now(),
             ],[
-                'parent_id' => 0,
+                'category_sub_id' => 0,
                 'name' => 'Oranges',
                 'slug' => 'oranges',
                 'description' => 'Oranges',

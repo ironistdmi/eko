@@ -49,6 +49,12 @@ return [
 		'block_six_explain' => 'Create your online-store, add positions and start earning money online. It is so easy!',
 		'login' => 'Log in',
 	],
+	'category' => [
+		'no_product_found' => 'No products found',
+		'' => '',
+		'' => '',
+		'' => '',
+	],
 	'search' => [
 		'search_what' => 'What are you looking for?',
 		'find_now' => 'Find now',

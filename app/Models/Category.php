@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\ImageTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
 {
+	use ImageTrait;
 
     /**
      * The database table used by the model.
@@ -20,7 +22,7 @@ class Category extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'parent_id', 'slug', 'description', 'active', 'featured'];
+    protected $fillable = ['name', 'category_sub_id', 'slug', 'description', 'active', 'featured'];
 
     /**
      * The attributes that should be mutated to dates.
@@ -29,6 +31,14 @@ class Category extends Model
      */
     protected $dates = ['deleted_at'];
 
+    /**
+     * Get the subGroups for the category.
+     */
+    public function sub()
+    {
+        return $this->belongsTo(CategorySub::class, 'category_sub_id')->withTrashed();
+    }
+	
     /**
      * Get the products for the category.
      */

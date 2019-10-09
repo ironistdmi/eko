@@ -6,7 +6,7 @@
     <a class="logo-link" href="/">
         <h1>ECOFARMER</h1>
     </a>
-    <div class="link-to-login"> Already have an account? <a href="{{ route('login') }}">Log in</a>
+    <div class="link-to-login">{{ trans('auth.already_account') }} <a href="{{ route('login') }}">{{ trans('auth.login') }}</a>
     </div>
     <div class="auth-wrapper">
         <h2>{{ trans('auth.register_header') }}</h2>
@@ -44,7 +44,7 @@
                 <input type="password" id="password-repeat-input" name="password_confirmation" placeholder="{{trans('auth.password-repeat')}}" required>
             </div>
             <button type="submit" class="btn btn-block btn-lg btn-flat btn-primary">{{trans('auth.register')}}</button>
-            <p class="terms-of-use">By clicking «Continue» I agree to Ecofarmer’s <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+			<p class="terms-of-use">@lang('auth.footer_agreement') <a href="{{ route('page.index', \App\Models\Page::PAGE_TNC_FOR_MERCHANT) }}">@lang('auth.terms')</a> and <a href="{{ route('page.index', \App\Models\Page::PAGE_PRIVACY_POLICY) }}">@lang('auth.policy')</a>.</p>
         {!! Form::close() !!}
     </div>
 </div>

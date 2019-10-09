@@ -23,6 +23,7 @@ return [
     'login_header' => 'Log in into account',
     'forgot_password' => 'Forgot your password?',
     'no_account_que' => 'Don’t have an account?',
+	'already_account' => 'Already have an account?',
     'register' => 'Register',
 	'login' => 'Login',
 	'first_step' => '1. Sign Up',

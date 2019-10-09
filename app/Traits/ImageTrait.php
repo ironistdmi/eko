@@ -213,4 +213,31 @@ trait ImageTrait {
 			'configs' => rtrim($configs, ',')
 		];
 	}
+	
+	public function getImagePath($item = null, $size = 'medium', $type = 'primary', $node = 'Product')
+    {
+        /*if (is_int($item) && !($item instanceof \App\Models\{$node}))
+            $item = \App\Models\{$node}::findorFail($item);*/
+
+        $images_count = $item->images->count();
+
+        // If the listing has no images then pick the product images
+        if( ! $images_count ) {
+            $item = $item->product;
+            $images_count = $item->images->count();
+        }
+
+        if($images_count) {
+            if($type == 'alt' && $images_count > 1) {
+                $imgs = $item->images->toArray();
+                $path = $imgs[1]['path'];
+            }
+            else{
+                $path = $item->images->first()->path;
+            }
+            return Storage::url("image/{$path}?p={$size}");
+        }
+
+        return asset('images/placeholders/no_img.png');
+    }
 }

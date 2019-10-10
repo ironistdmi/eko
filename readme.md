@@ -13,6 +13,9 @@ make stop
 <b>Connect to docker app container</b>
 make connect_app
 
+<b>Composer refresh autoload</b>
+composer dump-autoload
+
 <b>Create migrations</b>
 php artisan migrate
 

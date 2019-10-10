@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit4bb541c03014be46453fc5def2708800
+class ComposerStaticInit78cd822cfec5dcbfbec8b7101c75e191
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -670,7 +670,6 @@ class ComposerStaticInit4bb541c03014be46453fc5def2708800
     );
 
     public static $classMap = array (
-        'App\\CategorySubGroup' => __DIR__ . '/../..' . '/app/Models/CategorySub.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Events\\PrivateChat' => __DIR__ . '/../..' . '/app/Events/PrivateChat.php',
         'App\\Exceptions\\ExceptionTrait' => __DIR__ . '/../..' . '/app/Exceptions/ExceptionTrait.php',
@@ -702,6 +701,7 @@ class ComposerStaticInit4bb541c03014be46453fc5def2708800
         'App\\Http\\Controllers\\Front\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/HomeController.php',
         'App\\Http\\Controllers\\Front\\NewsletterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/NewsletterController.php',
         'App\\Http\\Controllers\\Front\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/ProductController.php',
+        'App\\Http\\Controllers\\Front\\ReviewController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/ReviewController.php',
         'App\\Http\\Controllers\\Front\\SearchController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/SearchController.php',
         'App\\Http\\Controllers\\Front\\WishlistController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/WishlistController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -724,8 +724,10 @@ class ComposerStaticInit4bb541c03014be46453fc5def2708800
         'App\\Http\\Requests\\CustomerUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CustomerUpdateRequest.php',
         'App\\Http\\Requests\\NewsletterSubscribeRequest' => __DIR__ . '/../..' . '/app/Http/Requests/NewsletterSubscribeRequest.php',
         'App\\Http\\Requests\\ProductRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProductRequest.php',
+        'App\\Http\\Requests\\ProductReviewCreateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProductReviewCreateRequest.php',
         'App\\Http\\Requests\\Request' => __DIR__ . '/../..' . '/app/Http/Requests/Request.php',
         'App\\Http\\Requests\\ReviewRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ReviewRequest.php',
+        'App\\Http\\Requests\\ShopReviewCreateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ShopReviewCreateRequest.php',
         'App\\Http\\Requests\\UpdateCustomerRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateCustomerRequest.php',
         'App\\Http\\Requests\\Validations\\UpdateUserRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateUserRequest.php',
         'App\\Http\\Resources\\CountryResource' => __DIR__ . '/../..' . '/app/Http/Resources/CountryResource.php',
@@ -739,6 +741,7 @@ class ComposerStaticInit4bb541c03014be46453fc5def2708800
         'App\\ModelFilters\\ProductFilter' => __DIR__ . '/../..' . '/app/ModelFilters/ProductFilter.php',
         'App\\Models\\Address' => __DIR__ . '/../..' . '/app/Models/Address.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
+        'App\\Models\\CategorySub' => __DIR__ . '/../..' . '/app/Models/CategorySub.php',
         'App\\Models\\Country' => __DIR__ . '/../..' . '/app/Models/Country.php',
         'App\\Models\\Customer' => __DIR__ . '/../..' . '/app/Models/Customer.php',
         'App\\Models\\Dialog' => __DIR__ . '/../..' . '/app/Models/Dialog.php',
@@ -782,6 +785,7 @@ class ComposerStaticInit4bb541c03014be46453fc5def2708800
         'App\\Repositories\\User\\UserRepository' => __DIR__ . '/../..' . '/app/Repositories/User/UserRepository.php',
         'App\\Traits\\AddressTrait' => __DIR__ . '/../..' . '/app/Traits/AddressTrait.php',
         'App\\Traits\\AuthorizeTrait' => __DIR__ . '/../..' . '/app/Traits/AuthorizeTrait.php',
+        'App\\Traits\\CascadeSoftDeletes' => __DIR__ . '/../..' . '/app/Traits/CascadeSoftDeletes.php',
         'App\\Traits\\ImageTrait' => __DIR__ . '/../..' . '/app/Traits/ImageTrait.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'BeyondCode\\LaravelWebSockets\\Apps\\App' => __DIR__ . '/..' . '/beyondcode/laravel-websockets/src/Apps/App.php',
@@ -2605,6 +2609,7 @@ class ComposerStaticInit4bb541c03014be46453fc5def2708800
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
+        'InstallDataSeeder' => __DIR__ . '/../..' . '/database/seeds/InstallDataSeeder.php',
         'Intervention\\Image\\AbstractColor' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/AbstractColor.php',
         'Intervention\\Image\\AbstractDecoder' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/AbstractDecoder.php',
         'Intervention\\Image\\AbstractDriver' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/AbstractDriver.php',
@@ -5025,6 +5030,7 @@ class ComposerStaticInit4bb541c03014be46453fc5def2708800
         'Symfony\\Component\\Finder\\Exception\\AccessDeniedException' => __DIR__ . '/..' . '/symfony/finder/Exception/AccessDeniedException.php',
         'Symfony\\Component\\Finder\\Exception\\DirectoryNotFoundException' => __DIR__ . '/..' . '/symfony/finder/Exception/DirectoryNotFoundException.php',
         'Symfony\\Component\\Finder\\Finder' => __DIR__ . '/..' . '/symfony/finder/Finder.php',
+        'Symfony\\Component\\Finder\\Gitignore' => __DIR__ . '/..' . '/symfony/finder/Gitignore.php',
         'Symfony\\Component\\Finder\\Glob' => __DIR__ . '/..' . '/symfony/finder/Glob.php',
         'Symfony\\Component\\Finder\\Iterator\\CustomFilterIterator' => __DIR__ . '/..' . '/symfony/finder/Iterator/CustomFilterIterator.php',
         'Symfony\\Component\\Finder\\Iterator\\DateRangeFilterIterator' => __DIR__ . '/..' . '/symfony/finder/Iterator/DateRangeFilterIterator.php',
@@ -5718,9 +5724,11 @@ class ComposerStaticInit4bb541c03014be46453fc5def2708800
         'phpDocumentor\\Reflection\\ProjectFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src/ProjectFactory.php',
         'phpDocumentor\\Reflection\\Type' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Type.php',
         'phpDocumentor\\Reflection\\TypeResolver' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/TypeResolver.php',
+        'phpDocumentor\\Reflection\\Types\\AbstractList' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/AbstractList.php',
         'phpDocumentor\\Reflection\\Types\\Array_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Array_.php',
         'phpDocumentor\\Reflection\\Types\\Boolean' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Boolean.php',
         'phpDocumentor\\Reflection\\Types\\Callable_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Callable_.php',
+        'phpDocumentor\\Reflection\\Types\\Collection' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Collection.php',
         'phpDocumentor\\Reflection\\Types\\Compound' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Compound.php',
         'phpDocumentor\\Reflection\\Types\\Context' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Context.php',
         'phpDocumentor\\Reflection\\Types\\ContextFactory' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/ContextFactory.php',
@@ -5768,10 +5776,10 @@ class ComposerStaticInit4bb541c03014be46453fc5def2708800
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit4bb541c03014be46453fc5def2708800::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit4bb541c03014be46453fc5def2708800::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit4bb541c03014be46453fc5def2708800::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit4bb541c03014be46453fc5def2708800::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit78cd822cfec5dcbfbec8b7101c75e191::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit78cd822cfec5dcbfbec8b7101c75e191::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit78cd822cfec5dcbfbec8b7101c75e191::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit78cd822cfec5dcbfbec8b7101c75e191::$classMap;
 
         }, null, ClassLoader::class);
     }

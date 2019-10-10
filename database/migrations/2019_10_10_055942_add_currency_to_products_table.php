@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddToProductsTable extends Migration
+class AddCurrencyToProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,8 @@ class AddToProductsTable extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-             $table->string('short_desc')->nullable();
-             $table->string('unit')->length(10)->nullable();
+            $table->integer('currency_id')->unsigned()->nullable();
+			$table->string('unit')->length(10)->nullable();
         });
     }
 
@@ -27,8 +27,8 @@ class AddToProductsTable extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('short_desc');
-            $table->dropColumn('unit');//
+            $table->dropColumn('currency_id');   
+            $table->dropColumn('unit');			
         });
     }
 }

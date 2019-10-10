@@ -1,6 +1,6 @@
 "use strict";
 
-if ($("#drag-n-drop").length) {
+if ($("#drag-n-drop").length) { console.log($("#drag-n-drop").length)
     $(".drag-n-drop-slick").slick({
         slidesToShow: 4,
         slidesToScroll: 1,

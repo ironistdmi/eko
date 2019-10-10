@@ -11,13 +11,27 @@
                     </div>
                     <h2>Let’s add a product</h2>
                 </div>
+                @if ($errors->any())
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="alert alert-danger" role="alert">
+                                <ul>                         
+                                  @foreach($errors->all() as $error)                         
+                                        <li> {{{ $error }}}</li>                         
+                                  @endforeach    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                @endif
                 <hr>
                 <div class="form-block">
-                    <form action="">
+                    <form action="/account/add/submit" method="POST" enctype="multipart/form-data">
+                        {{ csrf_field() }}
                         <label for="product-name-input">Product Name</label>
-                        <input id="product-name-input" placeholder="Example: Fresh tomatoes" type="text">
+                        <input name="name" id="product-name-input" placeholder="Example: Fresh tomatoes" type="text" required>
                         <label for="short-description-input">Short Description</label>
-                        <input class="count-description login-password" id="short-description-input" placeholder="Example: Fresh tomatoes" type="text">
+                        <input name="short_desc" class="count-description login-password" id="short-description-input" placeholder="Example: Fresh tomatoes" type="text" required>
                         <div class="button-container">
                             <span><span class="count-description-number">0</span> symbols</span>
                         </div>
@@ -34,52 +48,62 @@
                                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata </p>
                             </div>
                         </label>
-                        <textarea class="count-description" id="description-input" maxlength="250" rows="5"></textarea>
+                        <textarea name="description" class="count-description" id="description-input" maxlength="250" rows="5" required></textarea>
                         <div class="button-container">
                             <span><span class="count-description-number">0</span> symbols</span>
                         </div>
                         <div class="form-group-container">
                             <div class="form-group-item">
                                 <label for="subcategory-input">Select a subcategory</label>
-                                <select class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="subcategory-input">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
+                                <select name="category_sub_id" class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="subcategory-input">
+                                    <option value="0">1</option>
+                                    <option value="0">2</option>
+                                    <option value="0">3</option>
+                                    <option value="0">4</option>
                                 </select>
                             </div>
                             <div class="form-group-item">
                                 <label for="category-input">Select a category</label>
-                                <select class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="category-input">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
+                                <select name="category_id" class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="category-input">
+                                    @foreach($categories as $item)
+                                    <option
+                                        value="{{$item->id}}"
+                                        @if ($loop->first)
+                                        selected
+                                        @endif
+                                        >
+                                        {{$item->name}}
+                                    </option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="form-group-container">
                             <div class="form-group-item">
                                 <label for="price-input">Price</label>
-                                <input id="price-input" placeholder="Example: Poltaskiy Shlyah" type="text">
+                                <input name="price" id="price-input" placeholder="Example: 1000.00" type="text" required>
                             </div>
                             <div class="form-group-container form-group-item">
                                 <div class="form-group-item">
                                     <label for="unit-input">Unit</label>
-                                    <select class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="unit-input">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
+                                    <select name="unit" class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="unit-input">
+                                        <option value="Kg." selected>Kg.</option>
+                                        <option value="Pc.">Pc.</option>
                                     </select>
                                 </div>
                                 <div class="form-group-item">
                                     <label for="currency-input">Currency</label>
-                                    <select class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="currency-input">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
+                                    <select name="currency_id" class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="currency-input">
+                                        @foreach($currencies as $item)
+                                        <option
+                                            value="{{$item->id}}"
+                                            @if ($loop->first)
+                                            selected
+                                            @endif
+                                            >
+                                            {{$item->iso_code}}
+                                        </option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -89,7 +113,7 @@
                             <div class="drag-n-drop-slick"></div>
                             <div class="drag-n-drop-input">
                                 <label for="drag-n-drop-file">or browse files</label>
-                                <input id="drag-n-drop-file" type="file">
+                                <input name="images[]" id="drag-n-drop-file" type="file" multiple>
                             </div>
                             <div class="drag-n-drop-paceholder">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="46" height="49" viewBox="0 0 46 49">
@@ -136,13 +160,12 @@
                                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata </p>
                             </div>
                         </label>
-                        <textarea id="tags-input" rows="4" placeholder="Write tags using coma (,) to separate them" style="resize: none"></textarea>
-                        <button class="submit-button disabled" type="submit">Hold on, please</button>
+                        <textarea name="tags" id="tags-input" rows="4" placeholder="Write tags using coma (,) to separate them" style="resize: none"></textarea>
+                        <button class="submit-button" type="submit" >Hold on, please</button>>
                         <p class="terms-of-use">By clicking «Continue» I agree to Ecofarmer’s <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
                     </form>
                 </div>
             </div>
         </div>
-       
 
 @endsection

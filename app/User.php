@@ -366,5 +366,8 @@ class User extends Authenticatable
     {
         return $query->where('shop_id', Auth::user()->merchantId());
     }
-
+   public function seller()
+   {
+       return $this->hasOne('App\Models\Seller', 'user_id');
+   }
 }

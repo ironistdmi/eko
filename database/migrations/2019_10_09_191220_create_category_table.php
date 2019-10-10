@@ -23,7 +23,7 @@ class CreateCategoryTable extends Migration
         });
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('category_sub_id')->unsigned();
+            $table->integer('category_sub_id')->unsigned()->nullable();
             $table->string('name',200)->unique();
             $table->string('slug',200)->unique();
             $table->text('description')->nullable();
@@ -32,7 +32,7 @@ class CreateCategoryTable extends Migration
             $table->softDeletes();
             $table->timestamps();
 
-            $table->foreign('category_sub_id')->references('id')->on('category_subs')->onDelete('cascade');
+//            $table->foreign('category_sub_id')->references('id')->on('category_subs')->onDelete('cascade');
         });
         Schema::create('category_product', function (Blueprint $table) {
             $table->integer('category_id')->unsigned()->index();

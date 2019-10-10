@@ -670,6 +670,7 @@ class ComposerStaticInit4bb541c03014be46453fc5def2708800
     );
 
     public static $classMap = array (
+        'App\\CategorySubGroup' => __DIR__ . '/../..' . '/app/Models/CategorySub.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Events\\PrivateChat' => __DIR__ . '/../..' . '/app/Events/PrivateChat.php',
         'App\\Exceptions\\ExceptionTrait' => __DIR__ . '/../..' . '/app/Exceptions/ExceptionTrait.php',
@@ -700,6 +701,7 @@ class ComposerStaticInit4bb541c03014be46453fc5def2708800
         'App\\Http\\Controllers\\Front\\AccountController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/AccountController.php',
         'App\\Http\\Controllers\\Front\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/HomeController.php',
         'App\\Http\\Controllers\\Front\\NewsletterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/NewsletterController.php',
+        'App\\Http\\Controllers\\Front\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/ProductController.php',
         'App\\Http\\Controllers\\Front\\SearchController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/SearchController.php',
         'App\\Http\\Controllers\\Front\\WishlistController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/WishlistController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -748,6 +750,7 @@ class ComposerStaticInit4bb541c03014be46453fc5def2708800
         'App\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Product.php',
         'App\\Models\\Review' => __DIR__ . '/../..' . '/app/Models/Review.php',
         'App\\Models\\Role' => __DIR__ . '/../..' . '/app/Models/Role.php',
+        'App\\Models\\Seller' => __DIR__ . '/../..' . '/app/Models/Seller.php',
         'App\\Models\\Shop' => __DIR__ . '/../..' . '/app/Models/Shop.php',
         'App\\Models\\State' => __DIR__ . '/../..' . '/app/Models/State.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
@@ -869,6 +872,7 @@ class ComposerStaticInit4bb541c03014be46453fc5def2708800
         'Carbon\\Traits\\Units' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Units.php',
         'Carbon\\Traits\\Week' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Week.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
+        'CategoriesSeeder' => __DIR__ . '/../..' . '/database/seeds/CategoriesSeeder.php',
         'Clue\\React\\Buzz\\Browser' => __DIR__ . '/..' . '/clue/buzz-react/src/Browser.php',
         'Clue\\React\\Buzz\\Io\\Sender' => __DIR__ . '/..' . '/clue/buzz-react/src/Io/Sender.php',
         'Clue\\React\\Buzz\\Io\\Transaction' => __DIR__ . '/..' . '/clue/buzz-react/src/Io/Transaction.php',
@@ -5021,7 +5025,6 @@ class ComposerStaticInit4bb541c03014be46453fc5def2708800
         'Symfony\\Component\\Finder\\Exception\\AccessDeniedException' => __DIR__ . '/..' . '/symfony/finder/Exception/AccessDeniedException.php',
         'Symfony\\Component\\Finder\\Exception\\DirectoryNotFoundException' => __DIR__ . '/..' . '/symfony/finder/Exception/DirectoryNotFoundException.php',
         'Symfony\\Component\\Finder\\Finder' => __DIR__ . '/..' . '/symfony/finder/Finder.php',
-        'Symfony\\Component\\Finder\\Gitignore' => __DIR__ . '/..' . '/symfony/finder/Gitignore.php',
         'Symfony\\Component\\Finder\\Glob' => __DIR__ . '/..' . '/symfony/finder/Glob.php',
         'Symfony\\Component\\Finder\\Iterator\\CustomFilterIterator' => __DIR__ . '/..' . '/symfony/finder/Iterator/CustomFilterIterator.php',
         'Symfony\\Component\\Finder\\Iterator\\DateRangeFilterIterator' => __DIR__ . '/..' . '/symfony/finder/Iterator/DateRangeFilterIterator.php',

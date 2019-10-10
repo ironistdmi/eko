@@ -173,6 +173,7 @@ if ($("#drag-n-drop").length) {
     $(".drag-n-drop-container").on('drop', function (e) {
         $(this).removeClass("drag-over");
         if (e.originalEvent.dataTransfer.files && e.originalEvent.dataTransfer.files[0]) reader.readAsDataURL(e.originalEvent.dataTransfer.files[0]);
+        console.log(e.originalEvent.dataTransfer.files)
     });
 }
 

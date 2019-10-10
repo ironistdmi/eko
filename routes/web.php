@@ -86,7 +86,9 @@ Route::group(['middleware' => 'auth'], function () {
 //    Route::get('/account/{tab?}', 'Front\AccountController@index')->name('account');
     Route::get('/account', 'Front\AccountController@index')->name('account');
     Route::get('/account/add', 'Front\ProductController@addProductForm')->name('product.add');
-    Route::post('/account/add', 'Front\ProductController@storeForm')->name('product.add.submit');
+    Route::post('/account/add/submit', 'Front\ProductController@storeForm')->name('product.add.submit');
+    Route::get('/account/add/next', 'Front\ProductController@addNextProductForm')->name('product.add.next');
+    Route::post('/account/add/next/submit', 'Front\ProductController@storeNextForm')->name('product.add.next.submit');
     Route::get('/account/edit', 'Front\AccountController@editProfileForm')->name('profile.edit');
     Route::post('/account/edit', 'Front\AccountController@storeProfileForm')->name('profile.edit.submit');
 });

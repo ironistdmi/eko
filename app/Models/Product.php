@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
-	use ImageTrait;
+	use ImageTrait, SoftDeletes;
 	
     /**
      * The database table used by the model.

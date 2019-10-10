@@ -11,14 +11,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call('RolesSeeder');
-        $this->call('UsersSeeder');
-        $this->call('CountriesSeeder');
+    //    $this->call('RolesSeeder');
+    //    $this->call('UsersSeeder');
+    //    $this->call('CountriesSeeder');
         //$this->call('ModulesSeeder');
-        $this->call('PermissionSeeder');
-        $this->call('CurrenciesSeeder');
-        $this->call('StatesSeeder');
-        $this->call('TimezonesSeeder');
+    //    $this->call('PermissionSeeder');
+    //    $this->call('CurrenciesSeeder');
+    //    $this->call('StatesSeeder');
+    //    $this->call('TimezonesSeeder');
         //$this->call(UsersTableSeeder::class);
+        $this->call('CategoriesSeeder::class');
     }
 }

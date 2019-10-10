@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\CategorySubGroup' => $baseDir . '/app/Models/CategorySub.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Events\\PrivateChat' => $baseDir . '/app/Events/PrivateChat.php',
     'App\\Exceptions\\ExceptionTrait' => $baseDir . '/app/Exceptions/ExceptionTrait.php',
@@ -36,6 +37,7 @@ return array(
     'App\\Http\\Controllers\\Front\\AccountController' => $baseDir . '/app/Http/Controllers/Front/AccountController.php',
     'App\\Http\\Controllers\\Front\\HomeController' => $baseDir . '/app/Http/Controllers/Front/HomeController.php',
     'App\\Http\\Controllers\\Front\\NewsletterController' => $baseDir . '/app/Http/Controllers/Front/NewsletterController.php',
+    'App\\Http\\Controllers\\Front\\ProductController' => $baseDir . '/app/Http/Controllers/Front/ProductController.php',
     'App\\Http\\Controllers\\Front\\SearchController' => $baseDir . '/app/Http/Controllers/Front/SearchController.php',
     'App\\Http\\Controllers\\Front\\WishlistController' => $baseDir . '/app/Http/Controllers/Front/WishlistController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
@@ -84,6 +86,7 @@ return array(
     'App\\Models\\Product' => $baseDir . '/app/Models/Product.php',
     'App\\Models\\Review' => $baseDir . '/app/Models/Review.php',
     'App\\Models\\Role' => $baseDir . '/app/Models/Role.php',
+    'App\\Models\\Seller' => $baseDir . '/app/Models/Seller.php',
     'App\\Models\\Shop' => $baseDir . '/app/Models/Shop.php',
     'App\\Models\\State' => $baseDir . '/app/Models/State.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
@@ -205,6 +208,7 @@ return array(
     'Carbon\\Traits\\Units' => $vendorDir . '/nesbot/carbon/src/Carbon/Traits/Units.php',
     'Carbon\\Traits\\Week' => $vendorDir . '/nesbot/carbon/src/Carbon/Traits/Week.php',
     'Carbon\\Translator' => $vendorDir . '/nesbot/carbon/src/Carbon/Translator.php',
+    'CategoriesSeeder' => $baseDir . '/database/seeds/CategoriesSeeder.php',
     'Clue\\React\\Buzz\\Browser' => $vendorDir . '/clue/buzz-react/src/Browser.php',
     'Clue\\React\\Buzz\\Io\\Sender' => $vendorDir . '/clue/buzz-react/src/Io/Sender.php',
     'Clue\\React\\Buzz\\Io\\Transaction' => $vendorDir . '/clue/buzz-react/src/Io/Transaction.php',
@@ -4357,7 +4361,6 @@ return array(
     'Symfony\\Component\\Finder\\Exception\\AccessDeniedException' => $vendorDir . '/symfony/finder/Exception/AccessDeniedException.php',
     'Symfony\\Component\\Finder\\Exception\\DirectoryNotFoundException' => $vendorDir . '/symfony/finder/Exception/DirectoryNotFoundException.php',
     'Symfony\\Component\\Finder\\Finder' => $vendorDir . '/symfony/finder/Finder.php',
-    'Symfony\\Component\\Finder\\Gitignore' => $vendorDir . '/symfony/finder/Gitignore.php',
     'Symfony\\Component\\Finder\\Glob' => $vendorDir . '/symfony/finder/Glob.php',
     'Symfony\\Component\\Finder\\Iterator\\CustomFilterIterator' => $vendorDir . '/symfony/finder/Iterator/CustomFilterIterator.php',
     'Symfony\\Component\\Finder\\Iterator\\DateRangeFilterIterator' => $vendorDir . '/symfony/finder/Iterator/DateRangeFilterIterator.php',

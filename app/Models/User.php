@@ -150,7 +150,7 @@ class User extends Authenticatable
    }
    public function seller()
    {
-       return $this->hasOne('App\Models\Seller');
+       return $this->hasOne('App\Models\Seller', 'user_id');
    }
     /**
      * Get dob for the user.

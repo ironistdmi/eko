@@ -8,7 +8,7 @@ class Seller extends Model
 {
     protected $table = 'sellers';
     
-    protected $fillable = ['user_id','user_id','read_announcements_at','shop_id'];
+    protected $fillable = ['user_id','read_announcements_at','shop_id'];
     
     public function shop()
     {

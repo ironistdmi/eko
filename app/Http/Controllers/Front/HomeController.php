@@ -23,8 +23,8 @@ class HomeController extends Controller
     public function index()
     {
 		$popular_nearby = Product::with('featuredImage')->latest()->limit(30)->get();
-		
-        return view('index', compact('popular_nearby'));
+		$categories = Category::get();
+        return view('index', compact('popular_nearby', 'categories'));
     }
 
     /**
@@ -58,8 +58,17 @@ class HomeController extends Controller
     public function browseCategory(Request $request, $slug, $sortby = Null)
     {
         $category = Category::where('slug', $slug)->active()->firstOrFail();
-
-        return view('category', compact('category'));
+		
+		$all_products = $category->listings();
+		
+		$priceRange['min'] = floor($all_products->min('price'));
+        $priceRange['max'] = ceil($all_products->max('price'));
+		
+        $products = $all_products->filter($request->all())
+        ->with(['reviews:rating,node_id,node_type', 'images:path,imageable_id,imageable_type'])
+        ->paginate(20)->appends($request->except('page'));
+		
+        return view('category', compact('category', 'products', 'priceRange'));
     }
 
     /**

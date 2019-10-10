@@ -109,6 +109,23 @@ class AccountController extends Controller
 
         return Auth::guard('customer')->user();
     }
+	
+    /**
+     * Return product
+     * @return collection
+     */
+    private function products()
+    {
+		return Product::mine()->paginate(10);
+    }	
+    /**
+     * Return product
+     * @return collection
+     */
+    private function reviews()
+    {
+		//return Review::mine()->paginate(10);
+    }
     
     public function editProfileForm(User $user)
     {

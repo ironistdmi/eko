@@ -5,12 +5,14 @@ namespace App\Models;
 use Auth;
 use App\Traits\ImageTrait;
 use Laravel\Scout\Searchable;
+use EloquentFilter\Filterable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Product extends Model
 {
-	use ImageTrait;
+	use ImageTrait, Filterable;
 	
     /**
      * The database table used by the model.
@@ -40,8 +42,7 @@ class Product extends Model
                         'gtin',
                         'gtin_type',
                         'description',
-                        'min_price',
-                        'max_price',
+                        'price',
                         'origin_country',
                         'has_variant',
                         'requires_shipping',

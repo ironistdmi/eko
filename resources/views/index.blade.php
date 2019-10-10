@@ -87,72 +87,14 @@
                 <h3>@lang('app.landing.block_one_explain')</h3>
                 <div class="product-near-scroll">
                     <div class="scroll-container">
-                        <a href="#" class="product-item">
+						@foreach($categories as $category)
+						<a href="{{ route('category.browse', $category->slug) }}" class="product-item">
                             <div class="product-image">
-								<img src="/storage/grapes.svg">
+								<img src="/storage/{{ $category->slug }}.svg">
                             </div>
-                            <span>Grapes</span>
+                            <span>{{ $category->name }}</span>
                         </a>
-                        <a href="#" class="product-item">
-                            <div class="product-image">
-							
-                            </div>
-                            <span>Eggs</span>
-                        </a>
-                        <a href="#" class="product-item">
-                            <div class="product-image">
-                            
-							</div>
-                            <span>Meat</span>
-                        </a>
-                        <a href="#" class="product-item">
-                            <div class="product-image">
-                            
-							</div>
-                            <span>Potatoes</span>
-                        </a>
-                        <a href="#" class="product-item">
-                            <div class="product-image">
-                            
-							</div>
-                            <span>Apples</span>
-                        </a>
-                        <a href="#" class="product-item">
-                            <div class="product-image">
-                            
-							</div>
-                            <span>Bananas</span>
-                        </a>
-                        <a href="#" class="product-item">
-                            <div class="product-image">
-                            
-							</div>
-                            <span>Bread</span>
-                        </a>
-                        <a href="#" class="product-item">
-                            <div class="product-image">
-                            
-							</div>
-                            <span>Cabbage</span>
-                        </a>
-                        <a href="#" class="product-item">
-                            <div class="product-image">
-                            
-							</div>
-                            <span>Cucumbers</span>
-                        </a>
-                        <a href="#" class="product-item">
-                            <div class="product-image">
-                            
-							</div>
-                            <span>Pepers</span>
-                        </a>
-                        <a href="#" class="product-item">
-                            <div class="product-image">
-                            
-							</div>
-                            <span>Oranges</span>
-                        </a>
+						@endforeach
                     </div>
                 </div>
             </div>

@@ -144,14 +144,21 @@ class User extends Authenticatable
         return $this->hasOne(Shop::class, 'owner_id')->withTrashed()->withDefault();
     }
 
+    /**
+     * Get the address the user.
+     */
     public function address()
-   {
-    return $this->belongsTo('App\Models\Address');
-   }
-   public function seller()
-   {
-       return $this->hasOne('App\Models\Seller');
-   }
+	{
+		return $this->belongsTo(Address::class);
+	}
+		
+    /**
+     * Connect seller with user.
+     */
+	public function seller()
+	{
+		return $this->hasOne(Seller::class);
+	}
     /**
      * Get dob for the user.
      *

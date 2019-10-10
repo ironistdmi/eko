@@ -32,6 +32,14 @@ class Category extends Model
     protected $dates = ['deleted_at'];
 
     /**
+     * Get all listings for the category.
+     */
+    public function listings()
+    {
+        return $this->belongsToMany(Product::class, 'category_product', null, 'product_id', null, 'id');
+    }
+
+    /**
      * Get the subGroups for the category.
      */
     public function sub()

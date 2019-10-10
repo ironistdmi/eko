@@ -61,7 +61,9 @@ Route::group(['middleware' => ['front'], 'namespace' => 'Front'], function() {
 	
 	Route::get('lang/{lang?}', 'HomeController@changeLang')->name('lang.change');
 	
-
+	//Route::get('product/{slug}/review', 'ReviewController@review_form')->name('product.review');
+	Route::post('product/{slug}/review', 'ReviewController@create_review_product')->name('createproduct.review');
+	Route::post('shop/{slug}/review', 'ReviewController@create_review_shop')->name('createshop.review');
 	
 	Route::get('wishlist/{item}', 'WishlistController@add')->name('wishlist.add');
 	Route::delete('wishlist/{wishlist}', 'WishlistController@remove')->name('wishlist.remove');
@@ -85,6 +87,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/register/seller/submit', 'Auth\RegisterSellerController@store')->name('register.seller.submit');
 //    Route::get('/account/{tab?}', 'Front\AccountController@index')->name('account');
     Route::get('/account', 'Front\AccountController@index')->name('account');
+    Route::get('/account', 'Front\AccountController@products')->name('account.products');
+    Route::get('/account', 'Front\AccountController@reviews')->name('account.reviews');
     Route::get('/account/add', 'Front\ProductController@addProductForm')->name('product.add');
     Route::post('/account/add', 'Front\ProductController@storeForm')->name('product.add.submit');
     Route::get('/account/edit', 'Front\AccountController@editProfileForm')->name('profile.edit');

@@ -6,11 +6,10 @@
             <aside class="profile-aside">
                 <h3>Dashboard</h3>
                 <div class="aside-navigation">
-                    <a class="" href="profile.html">Profile</a>
-                    <a class="" href="profile-full.html">Profile full delete</a>
-                    <a class="" href="my-products.html">My products</a>
-                    <a class="" href="my-reviews.html">All reviews</a>
-                    <a class="active" href="settings.html">Settings</a>
+                    <a class="" href="{{ route('account') }}">Profile</a>
+                    <a class="" href="{{ route('account.products') }}">My products</a>
+                    <a class="" href="{{ route('account.reviews') }}">All reviews</a>
+                    <a class="active" href="{{ route('profile.edit') }}">Settings</a>
                     <hr>
                     <a href="#">Log out</a>
                 </div>

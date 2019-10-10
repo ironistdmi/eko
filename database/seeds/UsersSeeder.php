@@ -1,5 +1,8 @@
 <?php
 
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+
+use App\Models\Role;
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
@@ -15,7 +18,7 @@ class UsersSeeder extends Seeder
         DB::table('users')->insert([
             'id' => 1,
 //        	'shop_id' => Null,     in sellers
-            'role_id' => \App\Models\Role::SUPER_ADMIN,
+            'role_id' => Role::SUPER_ADMIN,
             'name' => 'Global',
             'email' => 'admin@ekofarmer.ua',
             'password' => bcrypt('password'),

@@ -122,9 +122,10 @@ class AccountController extends Controller
      * Return product
      * @return collection
      */
-    private function reviews()
+    public function reviews()
     {
 		//return Review::mine()->paginate(10);
+		return '';
     }
     
     public function editProfileForm(User $user)

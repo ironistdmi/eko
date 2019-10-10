@@ -74,21 +74,22 @@ Route::group(['middleware' => ['front'], 'namespace' => 'Front'], function() {
 	Route::get('/dialog/{dialog}', function(App\Models\Dialog $dialog) {
 		return view('chat', ['dialog' => $dialog]);		
 	});
+	Route::get('/dialog/', 'chatController@index')->name('dialog');
 });
 
 Route::auth();
 Route::get('/register/', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::get('/verify/{token?}', 'Auth\RegisterController@verify')->name('verify');
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => ['auth','front']], function () {
     Route::get('/logout' , 'Auth\LoginController@logout');
 
     Route::get('/register/seller', 'Auth\RegisterSellerController@showForm')->name('register.seller');
     Route::post('/register/seller/submit', 'Auth\RegisterSellerController@store')->name('register.seller.submit');
 //    Route::get('/account/{tab?}', 'Front\AccountController@index')->name('account');
     Route::get('/account', 'Front\AccountController@index')->name('account');
-    Route::get('/account', 'Front\AccountController@products')->name('account.products');
-    Route::get('/account', 'Front\AccountController@reviews')->name('account.reviews');
+    Route::get('/account/products', 'Front\AccountController@products')->name('account.products');
+    Route::get('/account/reviews', 'Front\AccountController@reviews')->name('account.reviews');
     Route::get('/account/add', 'Front\ProductController@addProductForm')->name('product.add');
     Route::post('/account/add/submit', 'Front\ProductController@storeForm')->name('product.add.submit');
     Route::get('/account/add/next', 'Front\ProductController@addNextProductForm')->name('product.add.next');

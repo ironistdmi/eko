@@ -1,6 +1,8 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
+
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
@@ -16,7 +18,7 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\User::class, function (Faker $faker) {
+$factory->define(User::class, function (Faker $faker) {
     return [
         'shop_id' => $faker->randomElement(\DB::table('shops')->pluck('id')->toArray()),
         'role_id' => $faker->randomElement(\DB::table('roles')->whereNotIn('id', [1,3])->pluck('id')->toArray()),

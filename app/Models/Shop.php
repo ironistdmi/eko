@@ -46,9 +46,27 @@ class Shop extends Model
                     'trial_ends_at',
                     'active',
                 ];
+				
+	
     public function seller()
-   {
-       return $this->hasOne('App\Models\Seller');
-   }
+	{
+       return $this->hasOne(Seller::class);
+	}
 
+	
+    /**
+     * Get the reviews for the shop.
+     */
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
+    /**
+     * Get the user that owns the shop.
+     */
+    public function owner()
+    {
+        return $this->belongsTo(User::class, 'owner_id')->withTrashed();
+    }
 }

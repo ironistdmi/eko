@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use View;
-use App\Models\Page;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -41,6 +40,5 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 		Blade::withoutDoubleEncoding();
-		View::share('pages', Page::select('title','slug','position')->visibility(Page::VISIBILITY_PUBLIC)->get());
     }
 }

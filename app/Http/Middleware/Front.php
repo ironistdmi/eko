@@ -20,7 +20,7 @@ class Front
     public function handle($request, Closure $next)
     {
 		if( ! $request->ajax() ){
-			//View::share('pages', Page::select('title','slug','position')->published()->visibilityOf(Page::VISIBILITY_PUBLIC)->get());
+			View::share('pages', Page::select('title','slug','position')->visibility(Page::VISIBILITY_PUBLIC)->get());
 		}
         return $next($request);
     }

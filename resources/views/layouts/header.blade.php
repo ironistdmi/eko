@@ -18,7 +18,7 @@
                                 
 									<a href="@if (Auth::check()){{ route('account', 'wishlist') }}@else{{ route('login') }}@endif">@lang('app.header.saved')</a>
 								@if (Auth::check())
-									<a href="add-item.html">@lang('app.header.add_item')</a>
+									<a href="{{ route('product.add') }}">@lang('app.header.add_item')</a>
 								@endif
                             </div>
                             <div class="search-container">
@@ -47,7 +47,7 @@
                         </div>
                         <div class="header-panel">
 							@if (Auth::check())
-                            <a class="conversation-link" href="chat.html">
+                            <a class="conversation-link" href="{{ route('dialog') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                                     <g id="noun_messages_1516437" transform="translate(-5 -2)">
                                         <g id="Group_1019" data-name="Group 1019" transform="translate(5 2)">

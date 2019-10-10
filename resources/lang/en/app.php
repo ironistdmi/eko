@@ -51,9 +51,13 @@ return [
 	],
 	'category' => [
 		'no_product_found' => 'No products found',
-		'' => '',
-		'' => '',
-		'' => '',
+		'map' => 'Map',
+		'list' => 'List',
+		'results' => 'Results',
+		'saved' => 'Saved',
+		'learn_more' => 'Learn more',
+		'message' => 'Message',
+		'show_map' => 'Show on map',
 	],
 	'search' => [
 		'search_what' => 'What are you looking for?',
@@ -70,6 +74,7 @@ return [
 		'category' => 'Category',
 		'rating' => 'Rating',
 		'accept' => 'Accept',
+		'find' => 'Find',
 		'explain' => 'The largest online agricultural marketplace in Germany, which brings together sellers and buyers.',
 	],
 	'notify' => [

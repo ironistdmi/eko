@@ -1,14 +1,21 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
-use App\Common\CascadeSoftDeletes;
+use App\Traits\CascadeSoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class CategorySubGroup extends Model
+class CategorySub extends Model
 {
     use SoftDeletes, CascadeSoftDeletes;
+
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'category_subs';
 
     /**
      * The attributes that are mass assignable.
@@ -32,7 +39,7 @@ class CategorySubGroup extends Model
     protected $cascadeDeletes = ['categories'];
 
     /**
-     * Get the categories for the CategorySubGroup.
+     * Get the categories for the CategorySub.
      */
     public function categories()
     {
@@ -40,7 +47,7 @@ class CategorySubGroup extends Model
     }
 
     /**
-     * Scope a query to only include active categorySubGroups.
+     * Scope a query to only include active categorySub.
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */

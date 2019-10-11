@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Auth;
+use App\Models\Currency;
 use App\Traits\ImageTrait;
 use Laravel\Scout\Searchable;
 use EloquentFilter\Filterable;
@@ -15,7 +16,7 @@ class Product extends Model
 
 	use ImageTrait, Filterable, SoftDeletes;
 
-	
+        protected $softDelete = true;
     /**
      * The database table used by the model.
      *
@@ -50,7 +51,10 @@ class Product extends Model
                         'requires_shipping',
                         'slug',
                         'sale_count',
-                        'active'
+                        'active',
+                        'short_desc',
+                        'currency_id',
+                        'unit',
                     ];
 
     /**
@@ -143,5 +147,10 @@ class Product extends Model
     {
         return $query->where('active', 1);
     }
+
+    public function images()
+    {
+        return $this->hasMany('App\Models\Image', 'imageable_id');
+    }   
 
 }

@@ -17,6 +17,7 @@
             <![endif]-->
             <link rel="stylesheet" href="{{ asset('css/main.min.css') }}" />
             <link rel="stylesheet" href="{{ asset('css/custom.css') }}" />
+            @stack('styles')
     </head>
     <body>
         <!--[if lte IE 9]>
@@ -41,6 +42,6 @@
 
         <!-- Page Scripts -->
         @yield('scripts')
-
+        @stack('scripts')
     </body>
 </html>

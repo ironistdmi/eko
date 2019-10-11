@@ -28,10 +28,11 @@
                 <div class="form-block">
                     <form action="/account/add/submit" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
+                        <input type='hidden' name='repeat'  value='{{isset($data)?$data['repeat']:0}}'>
                         <label for="product-name-input">Product Name</label>
-                        <input name="name" id="product-name-input" placeholder="Example: Fresh tomatoes" type="text" required>
+                        <input name="name" id="product-name-input" placeholder="Example: Fresh tomatoes" type="text" value='{{isset($data)?$data['name']:''}}' required>
                         <label for="short-description-input">Short Description</label>
-                        <input name="short_desc" class="count-description login-password" id="short-description-input" placeholder="Example: Fresh tomatoes" type="text" required>
+                        <input name="short_desc" class="count-description" id="short-description-input" placeholder="Example: Fresh tomatoes" type="text"  value='{{isset($data)?$data['short_desc']:''}}' required>
                         <div class="button-container">
                             <span><span class="count-description-number">0</span> symbols</span>
                         </div>
@@ -48,7 +49,7 @@
                                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata </p>
                             </div>
                         </label>
-                        <textarea name="description" class="count-description" id="description-input" maxlength="250" rows="5" required></textarea>
+                        <textarea name="description" class="count-description" id="description-input" maxlength="250" rows="5" required>{{isset($data)?$data['description']:''}}</textarea>
                         <div class="button-container">
                             <span><span class="count-description-number">0</span> symbols</span>
                         </div>
@@ -81,7 +82,7 @@
                         <div class="form-group-container">
                             <div class="form-group-item">
                                 <label for="price-input">Price</label>
-                                <input name="price" id="price-input" placeholder="Example: 1000.00" type="text" required>
+                                <input name="price" id="price-input" placeholder="Example: 1000.00" type="text" value='{{isset($data)?$data['price']:''}}' required>
                             </div>
                             <div class="form-group-container form-group-item">
                                 <div class="form-group-item">
@@ -108,7 +109,9 @@
                                 </div>
                             </div>
                         </div>
-                        <label for="drag-n-drop">Add some photos</label>
+                        <label for="drag-n-drop">Add some photos or browse files</label>
+                        <input name="images[]" accept="image/*" type="file" multiple>
+                        <!--
                         <div class="drag-n-drop-container" id="drag-n-drop">
                             <div class="drag-n-drop-slick"></div>
                             <div class="drag-n-drop-input">
@@ -147,7 +150,8 @@
                                 <p>Drag&Drop Photos here</p>
                             </div>
                         </div>
-                        <label for="tags-input" class="title-tooltip tooltip-relative">
+                        -->
+                        <label for="tags-input" class="title-tooltip tooltip-relative mt-5">
                             <span>Add tags</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="12.486" height="15" viewBox="0 0 12.486 15">
                                 <g id="noun_Info_2397918" transform="translate(-105.498 -41.5)">
@@ -169,3 +173,15 @@
         </div>
 
 @endsection
+@push('styles')
+    <link href="{{ asset('css/imageuploadify/imageuploadify.min.css') }}" rel="stylesheet">
+@endpush
+
+@push('scripts')
+    <script type="text/javascript" src="{{ asset('js/imageuploadify/imageuploadify.min.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('input[type="file"]').imageuploadify();
+        })
+    </script>    
+@endpush

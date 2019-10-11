@@ -43,4 +43,8 @@ class Image extends Model
         else $this->attributes['featured'] = null;
     }
 
+    public function product()
+    {
+        return $this->belongsTo('App\Models\Product');
+    }
 }

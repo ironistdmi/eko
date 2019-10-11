@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CustomerAvatarUpdateRequest;
 use App\Http\Requests\CustomerPasswordUpdateRequest;
+use Illuminate\Support\Facades\DB;
 
 class AccountController extends Controller
 {
@@ -24,7 +25,7 @@ class AccountController extends Controller
      * @return Response
      */
     public function index($tab = 'dashboard')
-    {
+    {   
         if(Auth::user()->type == 'seller' && Auth::user()->address_id == 0){        
             return redirect()->route('register.seller');
         }

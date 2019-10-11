@@ -6,7 +6,7 @@
             <div class="add-item-page fullscreen-block">
                 <div class="title-block">
                     <div class="register-links">
-                        <a href="#">1. Information</a>
+                        <a href="{{route('product.add',['repeat'=>$product->id])}}">1. Information</a>
                         <a class="active" href="#">2. Review</a>
                     </div>
                     <h2>Is everything correct?</h2>
@@ -16,26 +16,27 @@
                     <div class="product-info-block">
                         <div class="slider-block">
                             <div class="slick-container">
-                                <div class="slider-for slick-initialized slick-slider">
-                                    <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 1325px;"><a data-fancybox="gallery" href="img/pics/product-slider-main.png" class="item slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 265px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;" tabindex="0"><img src="/img/pics/product-slider-main.png" alt=""></a><a data-fancybox="gallery" href="img/pics/product-slider-2.png" class="item slick-slide" data-slick-index="1" aria-hidden="true" style="width: 265px; position: relative; left: -265px; top: 0px; z-index: 998; opacity: 0;" tabindex="-1"><img src="/img/pics/product-slider-2.png" alt=""></a><a data-fancybox="gallery" href="img/pics/product-slider-1.png" class="item slick-slide" data-slick-index="2" aria-hidden="true" style="width: 265px; position: relative; left: -530px; top: 0px; z-index: 998; opacity: 0;" tabindex="-1"><img src="/img/pics/product-slider-1.png" alt=""></a><a data-fancybox="gallery" href="img/pics/product-slider-main.png" class="item slick-slide" data-slick-index="3" aria-hidden="true" style="width: 265px; position: relative; left: -795px; top: 0px; z-index: 998; opacity: 0;" tabindex="-1"><img src="/img/pics/product-slider-main.png" alt=""></a><a data-fancybox="gallery" href="img/pics/product-slider-main.png" class="item slick-slide" data-slick-index="4" aria-hidden="true" style="width: 265px; position: relative; left: -1060px; top: 0px; z-index: 998; opacity: 0;" tabindex="-1"><img src="/img/pics/product-slider-main.png" alt=""></a></div></div>
-                                    
-                                    
-                                    
-                                    
+                                <div class='slider-for'>
+                                @foreach($product->images as $item)
+                                <div style='width:265px;height:285px;'>
+                                    <img style='width:100%;height:auto;' src='/{{$item->path}}' alt=''>
                                 </div>
-                                <div class="slider-nav slick-initialized slick-slider">
-                                    <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 25000px; transform: translate3d(-268px, 0px, 0px);"><div class="item slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true" tabindex="-1"><img src="/img/pics/product-slider-2.png" alt=""></div><div class="item slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" tabindex="-1"><img src="/img/pics/product-slider-1.png" alt=""></div><div class="item slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" tabindex="-1"><img src="/img/pics/product-slider-2.png" alt=""></div><div class="item slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1"><img src="/img/pics/product-slider-1.png" alt=""></div><div class="item slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="0"><img src="/img/pics/product-slider-main.png" alt=""></div><div class="item slick-slide slick-active" data-slick-index="1" aria-hidden="false" tabindex="0"><img src="/img/pics/product-slider-2.png" alt=""></div><div class="item slick-slide slick-active" data-slick-index="2" aria-hidden="false" tabindex="0"><img src="/img/pics/product-slider-1.png" alt=""></div><div class="item slick-slide slick-active" data-slick-index="3" aria-hidden="false" tabindex="0"><img src="/img/pics/product-slider-2.png" alt=""></div><div class="item slick-slide" data-slick-index="4" aria-hidden="true" tabindex="-1"><img src="/img/pics/product-slider-1.png" alt=""></div><div class="item slick-slide slick-cloned" data-slick-index="5" aria-hidden="true" tabindex="-1"><img src="/img/pics/product-slider-main.png" alt=""></div><div class="item slick-slide slick-cloned" data-slick-index="6" aria-hidden="true" tabindex="-1"><img src="/img/pics/product-slider-2.png" alt=""></div><div class="item slick-slide slick-cloned" data-slick-index="7" aria-hidden="true" tabindex="-1"><img src="/img/pics/product-slider-1.png" alt=""></div><div class="item slick-slide slick-cloned" data-slick-index="8" aria-hidden="true" tabindex="-1"><img src="/img/pics/product-slider-2.png" alt=""></div><div class="item slick-slide slick-cloned" data-slick-index="9" aria-hidden="true" tabindex="-1"><img src="/img/pics/product-slider-1.png" alt=""></div></div></div>
-                                    
-                                    
-                                    
-                                    
+                                @endforeach
+                                </div>
+                                <div class='slider-nav'>
+                                @foreach($product->images as $item)
+                                <div style='width:60px;'>
+                                    <img style='width:100%;height:auto;' src='{{asset($item->path)}}' alt=''>
+                                </div>
+                                @endforeach
                                 </div>
                             </div>
                         </div>
+                    
                         <div class="info-block">
                             <div class="title-container">
                                 <div class="title-info">
-                                    <h2>Tomatoes</h2>
+                                    <h2>{{$product->name}}</h2>
                                     <a href="#">
                                         <svg id="noun_Heart_2854587" xmlns="http://www.w3.org/2000/svg" width="15.136" height="13.474" viewBox="0 0 15.136 13.474">
                                             <path id="Path_2148" data-name="Path 2148" d="M19.02,11.475a3.939,3.939,0,0,0-2.815-1.129,4.892,4.892,0,0,0-3.42,1.457l-.2.2-.2-.2a4.893,4.893,0,0,0-3.42-1.457,3.869,3.869,0,0,0-3.937,4.2,4.885,4.885,0,0,0,1.45,3.162l.2.2.563.563,4.782,4.782.562.563.563-.563,4.782-4.782.563-.563.2-.2A4.432,4.432,0,0,0,19.02,11.475Zm-.89,5.672-.2.2-.563.563-4.782,4.782L7.8,17.912l-.563-.563-.2-.2A4.09,4.09,0,0,1,5.817,14.5a3.074,3.074,0,0,1,3.143-3.36,4.093,4.093,0,0,1,2.857,1.224l.2.2.562.563.563-.563.2-.2a4.093,4.093,0,0,1,2.857-1.224,3.149,3.149,0,0,1,2.253.9A3.64,3.64,0,0,1,18.13,17.147Z" transform="translate(-5.016 -10.345)" fill="#b2b2b2"></path>
@@ -86,19 +87,19 @@
                                         <span>1,3 km</span>
                                     </div>
                                 </div>
-                                <p>Fresh homemade tomatoes the variety of which we have been inventing for more than 5 years…</p>
+                                <p>{{$product->short_desc}}</p>
                             </div>
                             <div class="price-container">
                                 <div class="price-content">
-                                    <span class="big-green-span">50 UAH</span>
+                                    <span class="big-green-span">{{$product->price}} {{$iso_code}}</span>
                                     <span class="big-span">/</span>
-                                    <span>1 KG</span>
+                                    <span>1 {{$product->unit}}</span>
                                 </div>
                                 <div class="tags-container">
                                     <div class="tag-category">
                                         <p>Category</p>
                                         <div class="tag-item">
-                                            <span>Food</span>
+                                            <span>{{$product->categories[0]->name}}</span>
                                             <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="8.342" height="8.342" viewBox="0 0 8.342 8.342">
                                                     <g id="Group_926" data-name="Group 926" transform="translate(0.731 0.731)">
                                                         <path id="Path_2074" data-name="Path 2074" d="M-5721.075,6344.8l6.552,6.552" transform="translate(5721.238 -6344.639)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"></path>
@@ -133,7 +134,7 @@
                         <hr>
                         <div class="detail-container">
                             <h4>Detailed Product Description</h4>
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam vol uptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea taki mata sanctus est Lorem ipsum dolor sit amet. Lore m ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labor e et dolore magna aliquyam erat, sed diam voluptu a. At vero eos et accusam et justo duo dolores et e a rebum. Stet clita kasd gubergren, no sea takimat a sanctus est Lorem ipsum dolor sit amet. Lorem ip sum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.</p>
+                            <p>{{$product->description}}</p>
                         </div>
                         <div class="map-container">
                             <h4>Detailed Product Description</h4>
@@ -144,9 +145,42 @@
                     </div>
                 </div>
                 <div class="form-block">
-                    <button class="submit-button" type="submit">Publish!</button>
+                    <form action="{{route('product.add.next.submit')}}" method="POST">
+                        {{ csrf_field() }}
+                        <input type='hidden' name='product' value="{{$product->id}}">
+                        <button class="submit-button" type="submit">Publish!</button>
+                    </form>
                     <p class="terms-of-use">By clicking «Continue» I agree to Ecofarmer’s <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
                 </div>
             </div>
         </div>
 @endsection
+{{--
+@push('styles')
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+@endpush
+
+@push('scripts')
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+//    $('document').ready(function(){
+        $('.slider-for').slick({
+           slidesToShow: 1,
+           slidesToScroll: 1,
+           arrows: true,
+           fade: true,
+           asNavFor: '.slider-nav'
+         //});
+//         $('.slider-nav').slick({
+           slidesToShow: 3,
+           slidesToScroll: 1,
+           arrows: true,
+           asNavFor: '.slider-for',
+           dots: true,
+           centerMode: true,
+           focusOnSelect: true
+         //});        
+//    }); 
+    </script>
+@endpush
+--}}

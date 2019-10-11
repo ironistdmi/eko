@@ -11,7 +11,7 @@
                     <a class="" href="{{ route('account.reviews') }}">All reviews</a>
                     <a class="active" href="{{ route('profile.edit') }}">Settings</a>
                     <hr>
-                    <a href="#">Log out</a>
+                    <a href="{{ route('logout') }}">Log out</a>
                 </div>
             </aside>
             <div class="settings-page fullscreen-block">

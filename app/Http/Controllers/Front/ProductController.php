@@ -9,13 +9,15 @@ use Illuminate\Support\Str;
 use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
     public function addProductForm()
     {
-        $categories = \App\Models\Category::orderBy('name')->get();
+        $categories = Category::orderBy('name')->get();
         $currencies = DB::table('currencies')->orderBy('priority')->get();
         return view('dashboard.addproduct',compact('categories','currencies'));
     }
@@ -42,6 +44,28 @@ class ProductController extends Controller
         
         DB::table('category_product')
             ->insert(['category_id'=>$category, 'product_id'=>$product->id]);
+			
+		/*if ($request->hasFile('images')){
+			$data = [];
+			$dir = '/storage/';
+			$files = $request->file('images');
+
+        	foreach ($files as $order => $file) {
+		        $path = Storage::put($dir, $file);
+
+				$data[] = [
+		            'path' => $path,
+		            'name' => $file->getClientOriginalName(),
+		            'extension' => $file->getClientOriginalExtension(),
+		            'size' => $file->getClientSize(),
+		            'order' => $order
+		        ];
+			}
+
+        	$attachable = Product::find($product->id);
+
+			$attachable->images()->createMany($data);
+        }
 
         foreach ($request->images as $img) {
             $filename = $img->store('images'.$request->user()->id);
@@ -61,7 +85,7 @@ class ProductController extends Controller
 					'updated_at' => Carbon::Now(),
                                     ]
 			]); 
-        }
+        }*/
         
         foreach($tags as $tag){
             DB::table('tags')->insert(['name' => $tag]);
@@ -69,7 +93,8 @@ class ProductController extends Controller
         $product->save();
         $product->delete();
         
-        return redirect()->route('product.add.next');
+		return Response::json(['id' => $product->id,'model' => 'product','redirect' => route('product.add.next')]);
+       // return redirect()->route('product.add.next');
     }
     
     public function addNextProductForm()
@@ -78,7 +103,7 @@ class ProductController extends Controller
         $seller = $user->seller;
         $shop = $seller->shop;
 
-        $categories = \App\Models\Category::orderBy('name')->get();
+        $categories = Category::orderBy('name')->get();
         $currencies = DB::table('currencies')->orderBy('priority')->get();
         return view('dashboard.addproduct_next',compact('categories','currencies'));
     }

@@ -11,6 +11,7 @@
 |
 */
 
+Route::get('image/{path}', 'ImageController@show')->where('path', '.*')->name('image.show');
 
 //Front Route
 Route::group(['middleware' => ['front'], 'namespace' => 'Front'], function() {
@@ -96,4 +97,10 @@ Route::group(['middleware' => ['auth','front']], function () {
     Route::post('/account/add/next/submit', 'Front\ProductController@storeNextForm')->name('product.add.next.submit');
     Route::get('/account/edit', 'Front\AccountController@editProfileForm')->name('profile.edit');
     Route::post('/account/edit', 'Front\AccountController@storeProfileForm')->name('profile.edit.submit');
+	
+	
+	Route::get('download/{image}', 'ImageController@download')->name('image.download');
+	Route::post('delete/{image}', 'ImageController@delete')->name('image.delete');
+	Route::post('upload', 'ImageController@upload')->name('image.upload');
+	Route::post('image/sort', 'ImageController@sort')->name('image.sort');
 });

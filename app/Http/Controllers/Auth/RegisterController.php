@@ -114,7 +114,7 @@ class RegisterController extends Controller
             'verification_token' => Str::random(40),
             'verify' => User::STATUS_INACTIVE,                
         ]);
-    //    Mail::to($user->email)->send(new VerifyMail($user));
+		Mail::to($user->email)->send(new VerifyMail($user));
 
         return $user;
     }

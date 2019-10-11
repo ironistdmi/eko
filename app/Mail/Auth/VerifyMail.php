@@ -4,9 +4,11 @@ namespace App\Mail\Auth;
 
 use App\Models\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Mail\Mailable;
+//use Illuminate\Notifications\Notification;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
+//use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Mail\Mailable;
 
 class VerifyMail extends Mailable
 {
@@ -29,7 +31,10 @@ class VerifyMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Signup Confirmation')
-                    ->markdown('emails.auth.verify');
+        //return (new MailMessage)
+        //->from(get_sender_email(), get_sender_name())
+        //->subject( trans('app.notify.signup_conf') )
+        //->markdown('emails.auth.verify', ['url' => route('verify', $this->user->verification_token), 'user' => $this->user]);
+        return $this->subject(trans('app.notify.signup_conf'))->markdown('emails.auth.verify');
     }
 }

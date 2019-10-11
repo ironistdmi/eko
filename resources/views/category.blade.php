@@ -161,16 +161,16 @@
 											<svg id="noun_Heart_2854587" xmlns="http://www.w3.org/2000/svg" width="15.136" height="13.474" viewBox="0 0 15.136 13.474">
 												<path id="Path_2148" data-name="Path 2148" d="M19.02,11.475a3.939,3.939,0,0,0-2.815-1.129,4.892,4.892,0,0,0-3.42,1.457l-.2.2-.2-.2a4.893,4.893,0,0,0-3.42-1.457,3.869,3.869,0,0,0-3.937,4.2,4.885,4.885,0,0,0,1.45,3.162l.2.2.563.563,4.782,4.782.562.563.563-.563,4.782-4.782.563-.563.2-.2A4.432,4.432,0,0,0,19.02,11.475Zm-.89,5.672-.2.2-.563.563-4.782,4.782L7.8,17.912l-.563-.563-.2-.2A4.09,4.09,0,0,1,5.817,14.5a3.074,3.074,0,0,1,3.143-3.36,4.093,4.093,0,0,1,2.857,1.224l.2.2.562.563.563-.563.2-.2a4.093,4.093,0,0,1,2.857-1.224,3.149,3.149,0,0,1,2.253.9A3.64,3.64,0,0,1,18.13,17.147Z" transform="translate(-5.016 -10.345)" fill="#b2b2b2" />
 											</svg>
-											<span>@lang('app.category.saved')</span>
+											<span>@lang('app.product.saved')</span>
 										</a>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="button-container">
-							<a class="link-button" href="{{ route('show.product', $item->slug) }}">@lang('app.category.learn_more')</a>
-							<a class="link-button button-fill" href="{{ route('dialog', $item->shop_id) }}">@lang('app.category.message')</a>
-							<a class="link-button show-on-map" href="#">@lang('app.category.show_map')</a>
+							<a class="link-button" href="{{ route('show.product', $item->slug) }}">@lang('app.product.learn_more')</a>
+							<a class="link-button button-fill" href="{{ route('dialog', $item->shop_id) }}">@lang('app.product.message')</a>
+							<a class="link-button show-on-map" href="#">@lang('app.product.show_map')</a>
 						</div>
 					</div>
 					@endforeach

@@ -1,6 +1,28 @@
 ## About Ekofarmer
 
+	Multivendor shop for farmers
+	
+## Install
 
+<b>Clone from repository</b><br>
+git clone https://swsdmi@bitbucket.org/farmerdj/farmerweb.git
+
+<b>Start Docker containers (docker-up)</b><br>
+make start
+
+<b>Install composer dependencies</b><br>
+make composer_dep
+
+<b>Connect to app</b><br>
+make connect_app
+
+<b>Create migrations</b><br>
+php artisan migrate
+
+<b>Install Demo data</b><br>
+php artisan db:seed --class=InstallDataSeeder
+
+Enjoy :)
 
 ## Command
 

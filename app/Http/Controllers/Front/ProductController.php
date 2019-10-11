@@ -57,7 +57,7 @@ class ProductController extends Controller
             ->insert(['category_id'=>$category, 'product_id'=>$product->id]);
             $images = DB::table('images')->where('imageable_id', $product->id)->get();
             foreach($images as $item){
-                \Storage::delete('images7/'.$item->name.'.'.$item->extension);
+                \Storage::delete('images'.$user->id.DIRECTORY_SEPARATOR.$item->name.'.'.$item->extension);
             }            
         }else{
             $product = Product::create($p);
@@ -75,7 +75,7 @@ class ProductController extends Controller
             DB::table('images')->insert([
                                     [
                                         'name' => $name,
-                                        'path' => "storage/".$filename,
+                                        'path' => 'images'.$user->id.DIRECTORY_SEPARATOR,
                                         'extension' => $ext,
                                         'size' => 0,
                                         'imageable_id' => $product->id,

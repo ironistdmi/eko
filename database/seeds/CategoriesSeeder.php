@@ -118,8 +118,8 @@ class CategoriesSeeder extends Seeder
 					'path' => "storage/".$key.".svg",
 					'extension' => 'svg',
 					'size' => 0,
-					'imageable_id' => $val,
-					'imageable_type' => 'Category', //Product
+					'imagetrait_id' => $val,
+					'imagetrait_type' => 'Category', //Product
 					'created_at' => Carbon::Now(),
 					'updated_at' => Carbon::Now(),
 				]

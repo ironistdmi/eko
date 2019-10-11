@@ -23,7 +23,7 @@ class ProductController extends Controller
             $product = Product::withTrashed()->find($request->repeat);
             $data['repeat'] = $request->repeat;
             $data['name'] = $product->name;
-            $data['short_desc'] = $product->short_desc;
+            $data['short_descriptionription'] = $product->short_description;
             $data['description'] = $product->description;
             $data['price'] = $product->price;
             return view('dashboard.addproduct',compact('categories','currencies','data'));
@@ -40,7 +40,7 @@ class ProductController extends Controller
         $repeat = $data['repeat'];
        
         $p['name'] = empty($data['name'])?'':$data['name'];
-        $p['short_desc'] = empty($data['short_desc'])?'':$data['short_desc'];
+        $p['short_description'] = empty($data['short_description'])?'':$data['short_description'];
         $p['slug'] = Str::slug($p['name'],'_') . time();
         $p['description'] = empty($data['description'])?'':$data['description'];
         $p['price'] = empty($data['price'])?0:$data['price'];
@@ -58,7 +58,7 @@ class ProductController extends Controller
             DB::table('category_product')
             ->insert(['category_id'=>$category, 'product_id'=>$product->id]);
 			
-            $images = DB::table('images')->where('imageable_id', $product->id)->get();
+            $images = DB::table('images')->where('imagetrait_id', $product->id)->get();
             foreach($images as $item){
                 \Storage::delete('images7/'.$item->name.'.'.$item->extension);
             }            
@@ -67,7 +67,7 @@ class ProductController extends Controller
             $data['repeat'] = $product->id;
             DB::table('category_product')
                 ->insert(['category_id'=>$category, 'product_id'=>$product->id]);
-            DB::table('images')->where('imageable_id', $product->id)->delete();
+            DB::table('images')->where('imagetrait_id', $product->id)->delete();
         }
 
         foreach ($request->images as $img) {
@@ -82,8 +82,8 @@ class ProductController extends Controller
 					'path' => "storage/".$filename,
 					'extension' => $ext,
 					'size' => 0,
-					'imageable_id' => $product->id,
-					'imageable_type' => 'Product',
+					'imagetrait_id' => $product->id,
+					'imagetrait_type' => 'Product',
 					'created_at' => Carbon::Now(),
 					'updated_at' => Carbon::Now(),
 				]

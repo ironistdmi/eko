@@ -141,7 +141,7 @@ class User extends Authenticatable
      */
     public function owns()
     {
-        return $this->hasOne(Shop::class, 'owner_id')->withTrashed()->withDefault();
+        return $this->hasOne(Shop::class, 'owner_id')->withDefault();
     }
 
     /**

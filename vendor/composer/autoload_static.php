@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit4bb541c03014be46453fc5def2708800
+class ComposerStaticInit78cd822cfec5dcbfbec8b7101c75e191
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -704,6 +704,7 @@ class ComposerStaticInit4bb541c03014be46453fc5def2708800
         'App\\Http\\Controllers\\Front\\ReviewController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/ReviewController.php',
         'App\\Http\\Controllers\\Front\\SearchController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/SearchController.php',
         'App\\Http\\Controllers\\Front\\WishlistController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/WishlistController.php',
+        'App\\Http\\Controllers\\ImageController' => __DIR__ . '/../..' . '/app/Http/Controllers/ImageController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -5030,6 +5031,7 @@ class ComposerStaticInit4bb541c03014be46453fc5def2708800
         'Symfony\\Component\\Finder\\Exception\\AccessDeniedException' => __DIR__ . '/..' . '/symfony/finder/Exception/AccessDeniedException.php',
         'Symfony\\Component\\Finder\\Exception\\DirectoryNotFoundException' => __DIR__ . '/..' . '/symfony/finder/Exception/DirectoryNotFoundException.php',
         'Symfony\\Component\\Finder\\Finder' => __DIR__ . '/..' . '/symfony/finder/Finder.php',
+        'Symfony\\Component\\Finder\\Gitignore' => __DIR__ . '/..' . '/symfony/finder/Gitignore.php',
         'Symfony\\Component\\Finder\\Glob' => __DIR__ . '/..' . '/symfony/finder/Glob.php',
         'Symfony\\Component\\Finder\\Iterator\\CustomFilterIterator' => __DIR__ . '/..' . '/symfony/finder/Iterator/CustomFilterIterator.php',
         'Symfony\\Component\\Finder\\Iterator\\DateRangeFilterIterator' => __DIR__ . '/..' . '/symfony/finder/Iterator/DateRangeFilterIterator.php',
@@ -5723,9 +5725,11 @@ class ComposerStaticInit4bb541c03014be46453fc5def2708800
         'phpDocumentor\\Reflection\\ProjectFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src/ProjectFactory.php',
         'phpDocumentor\\Reflection\\Type' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Type.php',
         'phpDocumentor\\Reflection\\TypeResolver' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/TypeResolver.php',
+        'phpDocumentor\\Reflection\\Types\\AbstractList' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/AbstractList.php',
         'phpDocumentor\\Reflection\\Types\\Array_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Array_.php',
         'phpDocumentor\\Reflection\\Types\\Boolean' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Boolean.php',
         'phpDocumentor\\Reflection\\Types\\Callable_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Callable_.php',
+        'phpDocumentor\\Reflection\\Types\\Collection' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Collection.php',
         'phpDocumentor\\Reflection\\Types\\Compound' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Compound.php',
         'phpDocumentor\\Reflection\\Types\\Context' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Context.php',
         'phpDocumentor\\Reflection\\Types\\ContextFactory' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/ContextFactory.php',
@@ -5773,10 +5777,10 @@ class ComposerStaticInit4bb541c03014be46453fc5def2708800
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit4bb541c03014be46453fc5def2708800::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit4bb541c03014be46453fc5def2708800::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit4bb541c03014be46453fc5def2708800::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit4bb541c03014be46453fc5def2708800::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit78cd822cfec5dcbfbec8b7101c75e191::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit78cd822cfec5dcbfbec8b7101c75e191::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit78cd822cfec5dcbfbec8b7101c75e191::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit78cd822cfec5dcbfbec8b7101c75e191::$classMap;
 
         }, null, ClassLoader::class);
     }

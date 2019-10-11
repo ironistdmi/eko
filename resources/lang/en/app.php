@@ -54,10 +54,14 @@ return [
 		'map' => 'Map',
 		'list' => 'List',
 		'results' => 'Results',
+	],
+	'product' => [
 		'saved' => 'Saved',
 		'learn_more' => 'Learn more',
 		'message' => 'Message',
 		'show_map' => 'Show on map',
+		'drag_n_drop_here' => 'Drag&Drop Photos here',
+		'add_photos' => 'Add some photos',
 	],
 	'search' => [
 		'search_what' => 'What are you looking for?',
@@ -77,9 +81,12 @@ return [
 		'find' => 'Find',
 		'explain' => 'The largest online agricultural marketplace in Germany, which brings together sellers and buyers.',
 	],
+	'wishlist' => [
+		'saved_products' => 'Saved products and stores'
+	],
 	'notify' => [
 		'subscribed' => 'You have subscribed successfully!',
-		'' => '',
+		'signup_conf' => 'Signup Confirmation',
 		'' => '',
 	],
 	'footer' => [

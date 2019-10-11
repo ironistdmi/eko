@@ -26,7 +26,7 @@
                 @endif
                 <hr>
                 <div class="form-block">
-                    <form action="/account/add/submit" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('product.add.submit') }}" id="productForm" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <input type='hidden' name='repeat'  value='{{isset($data)?$data['repeat']:0}}'>
                         <label for="product-name-input">Product Name</label>
@@ -165,7 +165,7 @@
                             </div>
                         </label>
                         <textarea name="tags" id="tags-input" rows="4" placeholder="Write tags using coma (,) to separate them" style="resize: none"></textarea>
-                        <button class="submit-button" type="submit" >Hold on, please</button>>
+                        <button class="submit-button" type="submit" >Hold on, please</button>
                         <p class="terms-of-use">By clicking «Continue» I agree to Ecofarmer’s <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
                     </form>
                 </div>

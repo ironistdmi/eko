@@ -9,19 +9,21 @@ use Illuminate\Support\Str;
 use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
     public function addProductForm(Request $request)
     {
-        $categories = \App\Models\Category::orderBy('name')->get();
+        $categories = Category::orderBy('name')->get();
         $currencies = DB::table('currencies')->orderBy('priority')->get();        
         if(isset($request->repeat)) {
             $product = Product::withTrashed()->find($request->repeat);
             $data['repeat'] = $request->repeat;
             $data['name'] = $product->name;
-            $data['short_desc'] = $product->short_desc;
+            $data['short_descriptionription'] = $product->short_description;
             $data['description'] = $product->description;
             $data['price'] = $product->price;
             return view('dashboard.addproduct',compact('categories','currencies','data'));
@@ -38,7 +40,7 @@ class ProductController extends Controller
         $repeat = $data['repeat'];
        
         $p['name'] = empty($data['name'])?'':$data['name'];
-        $p['short_desc'] = empty($data['short_desc'])?'':$data['short_desc'];
+        $p['short_description'] = empty($data['short_description'])?'':$data['short_description'];
         $p['slug'] = Str::slug($p['name'],'_') . time();
         $p['description'] = empty($data['description'])?'':$data['description'];
         $p['price'] = empty($data['price'])?0:$data['price'];
@@ -55,7 +57,8 @@ class ProductController extends Controller
                 ->where('product_id',$product->id)->delete();
             DB::table('category_product')
             ->insert(['category_id'=>$category, 'product_id'=>$product->id]);
-            $images = DB::table('images')->where('imageable_id', $product->id)->get();
+			
+            $images = DB::table('images')->where('imagetrait_id', $product->id)->get();
             foreach($images as $item){
                 \Storage::delete('images'.$user->id.DIRECTORY_SEPARATOR.$item->name.'.'.$item->extension);
             }            
@@ -64,8 +67,9 @@ class ProductController extends Controller
             $data['repeat'] = $product->id;
             DB::table('category_product')
                 ->insert(['category_id'=>$category, 'product_id'=>$product->id]);
-            DB::table('images')->where('imageable_id', $product->id)->delete();
+            DB::table('images')->where('imagetrait_id', $product->id)->delete();
         }
+
         foreach ($request->images as $img) {
             $filename = $img->store('images'.$request->user()->id);
             $name = explode('/',$filename);
@@ -92,6 +96,7 @@ class ProductController extends Controller
         $product->save();
         $product->delete();
 
+		//return Response::json(['id' => $product->id,'model' => 'product','redirect' => route('product.add.next')]);
         return redirect()->route('product.add.next');
     }
     
@@ -104,7 +109,8 @@ class ProductController extends Controller
         $product = Product::withTrashed()->where('shop_id',$shop->id)->orderBy('id','desc')->first();
         $currency = DB::table('currencies')->find($product->currency_id);
         $iso_code = $currency->iso_code;
-        $categories = \App\Models\Category::orderBy('name')->get();
+        $categories = Category::orderBy('name')->get();
+
         $currencies = DB::table('currencies')->orderBy('priority')->get();
         return view('dashboard.addproduct_next',compact('product','iso_code'));
     }

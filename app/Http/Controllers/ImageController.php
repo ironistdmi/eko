@@ -27,7 +27,7 @@ class ImageController extends Controller
 	{
         if ($request->hasFile('images')){
 			$data = [];
-			$dir = '/storage/';
+			$dir = 'storage';
 			$files = $request->file('images');
 
         	foreach ($files as $order => $file) {
@@ -44,7 +44,7 @@ class ImageController extends Controller
 
         	$model = "App\Models\\".$request->input('model_name');
         	$attachable = (new $model)->find($request->input('model_id'));
-echo '<pre>'; print_r($attachable); exit();
+
 			if($attachable->images()->createMany($data)){
 				return Response::json(['success' => trans('response.success')]);
 			}

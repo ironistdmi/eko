@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\DB;
@@ -33,12 +34,12 @@ class ProductController extends Controller
 	
 	public function store(CreateProductRequest $request) 
 	{	
-		$product = new Product();
+		$model = new Product();
 		
-		$product->create($request->all());
+		$product = $model->create($request->all());
 	
-		if ($request->input('category_id')) {
-			$product->categories()->sync([$request->input('category_id')]);
+		if ($request->input('category_list')) {
+			$product->categories()->sync($request->input('category_list'));
 		}
 		
 		if ($request->input('tag_list')) {
@@ -68,9 +69,9 @@ class ProductController extends Controller
 	
 	public function update(UpdateProductRequest $request, $id) 
 	{	
-		$product = new Product();
+		$model = new Product();
 		
-		$product->update($request->all(), $id);
+		$product = $model->update($request->all(), $id);
 		
 		$product->categories()->sync($request->input('category_list', []));
         $product->syncTags($product, $request->input('tag_list', []));
@@ -79,19 +80,16 @@ class ProductController extends Controller
 	}
 
     
-    public function addNextProductForm()
+    public function publish()
     {
-        $user = auth()->user();
-        $seller = $user->seller;
-        $shop = $seller->shop;
 
-        $product = Product::withTrashed()->where('shop_id',$shop->id)->orderBy('id','desc')->first();
+        $product = Product::withTrashed()->where('shop_id',auth()->user()->shop->id)->orderBy('id','desc')->first();
         $iso_code = Currency::where('id',$product->currency_id)->value('iso_code');
 
         return view('dashboard.product.addproduct_next',compact('product','iso_code'));
     }
     
-    public function storeNextForm(Request $request)
+    public function store_publish(Request $request)
     {
         $product = Product::withTrashed()->find($request->product);
         $product->withTrashed()->restore();

@@ -64,7 +64,7 @@
                             </div>
                             <div class="form-group-item">
                                 <label for="category-input">Select a category</label>
-                                <select name="category_id" class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="category-input">
+                                <select name="category_list[]" class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="category-input">
                                     @foreach($categories as $item)
                                     <option
                                         value="{{$item->id}}"

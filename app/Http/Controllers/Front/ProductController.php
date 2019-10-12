@@ -61,43 +61,7 @@ class ProductController extends Controller
             DB::table('category_product')
             ->insert(['category_id'=>$category, 'product_id'=>$product->id]);
 			
-            $images = Image::where('imagetrait_id', $product->id)->get();         
-        }else{
-            //$product = Product::create($p);
-            $data['repeat'] = $product->id;
-            /*DB::table('category_product')
-                ->insert(['category_id'=>$category, 'product_id'=>$product->id]);*/
-				
-			Product::create($request->all());
-		
-			if ($request->input('category_id')) {
-				Product::categories()->sync([$request->input('category_id')]);
-			}
-			
-			if ($request->input('tag_list')) {
-				Tag::syncTags($product, $request->input('tag_list'));
-			}
-        }
 
-        /*foreach ($request->images as $img) {
-            $filename = $img->store('images'.$request->user()->id);
-            $name = explode('/',$filename);
-            $name = explode('.',$name[1]);
-            $ext = $name[1];
-            $name = $name[0];            
-            DB::table('images')->insert([
-				[
-					'name' => $name,
-					'path' => "storage/".$filename,
-					'extension' => $ext,
-					'size' => 0,
-					'imagetrait_id' => $product->id,
-					'imagetrait_type' => 'Product',
-					'created_at' => Carbon::Now(),
-					'updated_at' => Carbon::Now(),
-				]
-			]); 
-        }*/
         
         foreach($tags as $tag){
             DB::table('tags')->insert(['name' => $tag]);

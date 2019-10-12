@@ -88,7 +88,7 @@ class ProductController extends Controller
         $product = Product::withTrashed()->where('shop_id',$shop->id)->orderBy('id','desc')->first();
         $iso_code = Currency::where('id',$product->currency_id)->value('iso_code');
 
-        return view('dashboard.addproduct_next',compact('product','iso_code'));
+        return view('dashboard.product.addproduct_next',compact('product','iso_code'));
     }
     
     public function storeNextForm(Request $request)

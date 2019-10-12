@@ -82,23 +82,30 @@ Route::auth();
 Route::get('/register/', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::get('/verify/{token?}', 'Auth\RegisterController@verify')->name('verify');
 
-Route::group(['middleware' => ['auth','front']], function () {
-    Route::get('/logout' , 'Auth\LoginController@logout');
 
+Route::group(['middleware' => ['auth', 'back'], 'namespace' => 'Back', 'prefix' => 'account'], function()
+{
+
+	Route::get('/', 'AccountController@index')->name('account');
+	Route::get('/products', 'AccountController@products')->name('account.products');
+    Route::get('/reviews', 'AccountController@reviews')->name('account.reviews');
+	Route::get('/edit', 'AccountController@editProfileForm')->name('profile.edit');
+    Route::post('/edit', 'AccountController@storeProfileForm')->name('profile.edit.submit');
+	
+	Route::get('product/create', 'ProductController@create')->name('product.add');
+	Route::post('product/store', 'ProductController@store')->name('product.add.submit');	
+	Route::get('/account/add/next', 'Front\ProductController@addNextProductForm')->name('product.add.next');
+    Route::post('/account/add/next/submit', 'Front\ProductController@storeNextForm')->name('product.add.next.submit');
+	Route::post('product/{product}/update', 'ProductController@update')->name('product.update');
+	
+	Route::delete('product/{product}/trash', 'ProductController@trash')->name('product.trash');
+	Route::get('product/{product}/restore', 'ProductController@restore')->name('product.restore');
+});
+
+Route::group(['middleware' => ['auth']], function(){
+	Route::get('/logout' , 'Auth\LoginController@logout');	
     Route::get('/register/seller', 'Auth\RegisterSellerController@showForm')->name('register.seller');
     Route::post('/register/seller/submit', 'Auth\RegisterSellerController@store')->name('register.seller.submit');
-//    Route::get('/account/{tab?}', 'Front\AccountController@index')->name('account');
-    Route::get('/account', 'Front\AccountController@index')->name('account');
-    Route::get('/account/products', 'Front\AccountController@products')->name('account.products');
-    Route::get('/account/reviews', 'Front\AccountController@reviews')->name('account.reviews');
-    Route::get('/account/add', 'Front\ProductController@addProductForm')->name('product.add');
-    Route::post('/account/add/submit', 'Front\ProductController@storeForm')->name('product.add.submit');
-    Route::get('/account/add/next', 'Front\ProductController@addNextProductForm')->name('product.add.next');
-    Route::post('/account/add/next/submit', 'Front\ProductController@storeNextForm')->name('product.add.next.submit');
-    Route::get('/account/edit', 'Front\AccountController@editProfileForm')->name('profile.edit');
-    Route::post('/account/edit', 'Front\AccountController@storeProfileForm')->name('profile.edit.submit');
-	
-	
 	Route::get('download/{image}', 'ImageController@download')->name('image.download');
 	Route::post('delete/{image}', 'ImageController@delete')->name('image.delete');
 	Route::post('upload', 'ImageController@upload')->name('image.upload');

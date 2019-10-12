@@ -107,8 +107,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+		if ($data['client-type'] == 'seller') {
+			$role = Role::MERCHANT;
+		} elseif ($data['client-type'] == 'buyer') {
+			$role = Role::CUSTOMER;
+		}
         $user =  User::create([
             'email' => $data['email'],
+			'role_id' => $role,
             'password' => bcrypt($data['password']),
             'type' => $data['client-type'],
             'verification_token' => Str::random(40),

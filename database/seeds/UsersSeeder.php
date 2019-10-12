@@ -23,6 +23,19 @@ class UsersSeeder extends Seeder
             'email' => 'admin@ekofarmer.ua',
             'password' => bcrypt('password'),
         	'active' => 1,
+			'verify' => 1,
+            'created_at' => Carbon::Now(),
+            'updated_at' => Carbon::Now(),
+        ]);        
+		DB::table('users')->insert([
+            'id' => 2,
+			'shop_id' => 1,
+            'role_id' => Role::MERCHANT,
+            'name' => 'Test merch',
+            'email' => 'd5721299@gmail.com',
+            'password' => bcrypt('ya123321'),
+        	'active' => 1,
+        	'verify' => 1,
             'created_at' => Carbon::Now(),
             'updated_at' => Carbon::Now(),
         ]);

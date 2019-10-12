@@ -115,7 +115,7 @@ class Address extends Model
     {
         $html = [];
 
-        if ('App\Customer' == $this->addressable_type && $show_heading)
+        if ('App\Models\Customer' == $this->addressable_type && $show_heading)
             $html [] = '<strong class="pull-right">' . strtoupper($this->address_type) . '</strong>';
 
         if(config('system_settings.show_address_title'))
@@ -216,9 +216,5 @@ class Address extends Model
         if (empty($address)) return;
 
         return $address;
-    }
-	public function user()
-    {
-		return $this->hasOne('App\MOdels\User');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Front;
+namespace App\Http\Controllers\Back;
 
 use Auth;
 use View;
@@ -9,7 +9,6 @@ use App\Models\Wishlist;
 use App\Models\Customer;
 use App\Models\Address;
 use App\Models\Shop;
-use App\Models\Seller;
 use App\Helpers\CatalogHelper;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -26,7 +25,7 @@ class AccountController extends Controller
      */
     public function index($tab = 'dashboard')
     {   
-        if(Auth::user()->type == 'seller' && Auth::user()->address_id == 0){        
+        if(Auth::user()->type == 'seller' && Auth::user()->shop_id == 0){
             return redirect()->route('register.seller');
         }
         if( !method_exists($this, $tab) ) abort(404);
@@ -133,20 +132,18 @@ class AccountController extends Controller
     {
         $countries = CatalogHelper::countries();
         $user = User::find(auth()->user()->id);
-        $address = Address::findOrFail($user->address_id);
-        $seller = Seller::where('user_id',$user->id)->firstOrFail();
-        $shop = Shop::where('id',$seller->shop_id)->firstOrFail();
+        $shop = Shop::where('id',$user->shop_id)->firstOrFail();
+        $address = $shop->address;
         $phone = explode('#',$address->phone);
         $address->phone_code = $phone[0];
         $address->phone = $phone[1];
-        return view('dashboard.settings',compact('countries','user','address','seller','shop'));
+        return view('dashboard.settings',compact('countries','user','address','shop'));
     }
     public function storeProfileForm(Request $request)
     {
         $user = User::find(auth()->user()->id);
-        $address = Address::findOrFail($user->address_id);
-        $seller = Seller::where('user_id',$user->id)->firstOrFail();
-        $shop = Shop::where('id',$seller->shop_id)->firstOrFail();
+        $address = $shop->address;
+        $shop = Shop::where('id',$user->shop_id)->firstOrFail();
                 
         $user->name = empty($request->name)?'':$request->name;
       

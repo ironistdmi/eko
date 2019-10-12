@@ -13,7 +13,7 @@ $factory->define(Shop::class, function (Faker $faker) {
         'name' => $company,
         'legal_name' => $company,
         'slug' => $faker->slug,
-        'email' => $faker->email
+        'email' => $faker->email,
         'description' => $faker->text(500),
         'timezone_id' => $faker->randomElement(\DB::table('timezones')->pluck('id')->toArray()),
 		'to_chat' => rand(0,1),

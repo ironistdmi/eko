@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call('CurrenciesSeeder');
         $this->call('StatesSeeder');
         $this->call('TimezonesSeeder');
-        //$this->call(UsersTableSeeder::class);
         $this->call('CategoriesSeeder');
+        $this->call('ShopsSeeder');
     }
 }

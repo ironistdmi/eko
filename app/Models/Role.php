@@ -13,6 +13,7 @@ class Role extends Model
     const SUPER_ADMIN   = 1;
     const ADMIN         = 2;
     const MERCHANT      = 3;
+    const CUSTOMER      = 4;
 
     /**
      * The database table used by the model.

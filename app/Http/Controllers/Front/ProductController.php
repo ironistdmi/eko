@@ -107,11 +107,9 @@ class ProductController extends Controller
         $shop = $seller->shop;
 
         $product = Product::withTrashed()->where('shop_id',$shop->id)->orderBy('id','desc')->first();
-        $currency = DB::table('currencies')->find($product->currency_id);
-        $iso_code = $currency->iso_code;
-        $categories = Category::orderBy('name')->get();
-
-        $currencies = DB::table('currencies')->orderBy('priority')->get();
+        
+        $iso_code = Currency::where('id',$product->currency_id)->value('iso_code');
+ 
         return view('dashboard.addproduct_next',compact('product','iso_code'));
     }
     

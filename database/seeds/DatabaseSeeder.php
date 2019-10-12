@@ -20,6 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call('StatesSeeder');
         $this->call('TimezonesSeeder');
         //$this->call(UsersTableSeeder::class);
-        $this->call('CategoriesSeeder::class');
+        $this->call('CategoriesSeeder');
     }
 }

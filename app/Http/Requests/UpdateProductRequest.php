@@ -25,11 +25,10 @@ class UpdateProductRequest extends Request
     {
 
         return [
-           'category_id' => 'required',
+           'category_list' => 'required',
            'name' => 'required|composite_unique:products,name',
            'short_description' => 'required',
            'description' => 'required',
-           'active' => 'required',
            'price' => 'nullable|numeric|min:0',
         ];
 
@@ -43,7 +42,7 @@ class UpdateProductRequest extends Request
     public function messages()
     {
         return [
-            'category_id.required' => trans('validation.category_id_required'),
+            'category_list.required' => trans('validation.category_list_required'),
         ];
     }
 }

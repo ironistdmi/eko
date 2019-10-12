@@ -33,12 +33,12 @@ class ProductController extends Controller
 	
 	public function store(CreateProductRequest $request) 
 	{	
-		$product = new Product();
+		$model = new Product();
 		
-		$product->create($request->all());
+		$product = $model->create($request->all());
 	
-		if ($request->input('category_id')) {
-			$product->categories()->sync([$request->input('category_id')]);
+		if ($request->input('category_list')) {
+			$product->categories()->sync($request->input('category_list'));
 		}
 		
 		if ($request->input('tag_list')) {
@@ -68,9 +68,9 @@ class ProductController extends Controller
 	
 	public function update(UpdateProductRequest $request, $id) 
 	{	
-		$product = new Product();
+		$model = new Product();
 		
-		$product->update($request->all(), $id);
+		$product = $model->update($request->all(), $id);
 		
 		$product->categories()->sync($request->input('category_list', []));
         $product->syncTags($product, $request->input('tag_list', []));
@@ -79,7 +79,7 @@ class ProductController extends Controller
 	}
 
     
-    public function addNextProductForm()
+    public function publish()
     {
         $user = auth()->user();
         $seller = $user->seller;
@@ -91,7 +91,7 @@ class ProductController extends Controller
         return view('dashboard.product.addproduct_next',compact('product','iso_code'));
     }
     
-    public function storeNextForm(Request $request)
+    public function store_publish(Request $request)
     {
         $product = Product::withTrashed()->find($request->product);
         $product->withTrashed()->restore();

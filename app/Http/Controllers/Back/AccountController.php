@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Back;
 use Auth;
 use View;
 use App\Models\User;
+use App\Models\Product;
 use App\Models\Wishlist;
 use App\Models\Customer;
 use App\Models\Address;
@@ -23,16 +24,51 @@ class AccountController extends Controller
      *
      * @return Response
      */
-    public function index($tab = 'dashboard')
+    public function index()
     {   
         if(Auth::user()->type == 'seller' && Auth::user()->shop_id == 0){
             return redirect()->route('register.seller');
         }
-        if( !method_exists($this, $tab) ) abort(404);
+		
+		$user = User::where('id', Auth::user()->id)->first();
+		$products = Product::mine()->paginate(10);
 
-        $tab = $this->$tab();
+        return view('dashboard.profile', compact('user', 'products'));
+    }
+	
+		
+	public function chat() {
+		return view('chat');
+	}
 
-        return view('dashboard.profile', compact('tab', $tab));
+    /**
+     * Return wishlist
+     * @return collection
+     */
+    public function wishlist()
+    {
+        $products = Wishlist::mine()->paginate(7);
+		return view('dashboard.wishlist', compact('products'));
+    }
+	
+    /**
+     * Return product
+     * @return collection
+     */
+    public function products()
+    {
+		$products = Product::mine()->paginate(10);
+		$trashed = Product::mine()->onlyTrashed()->with('categories')->get();
+		return view('dashboard.products', compact('products', 'trashed'));
+    }	
+    /**
+     * Return product
+     * @return collection
+     */
+    public function reviews()
+    {
+		$reviews = Review::mine()->paginate(10);
+		return view('dashboard.wishlist', compact('reviews'));
     }
 
     /**
@@ -75,57 +111,6 @@ class AccountController extends Controller
         Auth::guard('customer')->user()->deleteImage();
 
         return redirect()->route('account', 'account#settings')->with('success', trans('notify.info_deleted'));
-    }
-	
-	public function chat() {
-		return view('chat');
-	}
-
-    /**
-     * Load dashboard content
-     * @return mix
-     */
-    private function dashboard()
-    {
-        return User::where('id', Auth::user()->id)->first();
-    }
-
-    /**
-     * Return wishlist
-     * @return collection
-     */
-    private function wishlist()
-    {
-        return Wishlist::mine()->paginate(7);
-    }
-
-    /**
-     * Return account info
-     * @return collection
-     */
-    private function account()
-    {
-        View::share('countries', CatalogHelper::countries());
-
-        return Auth::guard('customer')->user();
-    }
-	
-    /**
-     * Return product
-     * @return collection
-     */
-    private function products()
-    {
-		return Product::mine()->paginate(10);
-    }	
-    /**
-     * Return product
-     * @return collection
-     */
-    public function reviews()
-    {
-		//return Review::mine()->paginate(10);
-		return '';
     }
     
     public function editProfileForm(User $user)

@@ -110,6 +110,14 @@ class Product extends Model
     }
 
     /**
+     * Get the shop associated with the product.
+     */
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'product_tag');
+    }
+
+    /**
      * Get the categories for the product.
      */
     public function categories()

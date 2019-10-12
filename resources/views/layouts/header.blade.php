@@ -16,7 +16,7 @@
                             <div class="navigation-container">
                                 <a href="{{ route('inCategoriesSearch') }}">@lang('app.header.search')</a>
                                 
-									<a href="@if (Auth::check()){{ route('account', 'wishlist') }}@else{{ route('login') }}@endif">@lang('app.header.saved')</a>
+									<a href="@if (Auth::check()){{ route('account.wishlist') }}@else{{ route('login') }}@endif">@lang('app.header.saved')</a>
 								@if (Auth::check())
 									<a href="{{ route('product.add') }}">@lang('app.header.add_item')</a>
 								@endif

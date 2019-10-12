@@ -19,7 +19,7 @@
                                 <div class='slider-for'>
                                 @foreach($product->images as $item)
                                 <div style='width:265px;height:285px;'>
-                                    <img style='width:100%;height:auto;' src='/{{$item->path}}' alt=''>
+                                    <img style='width:100%;height:auto;' src='/storage/{{$item->path}}' alt=''>
                                 </div>
                                 @endforeach
                                 </div>
@@ -91,7 +91,7 @@
                             </div>
                             <div class="price-container">
                                 <div class="price-content">
-                                    <span class="big-green-span">{{$product->price}} {{$iso_code}}</span>
+                                    <span class="big-green-span">{{round($product->price,2)}} {{$iso_code}}</span>
                                     <span class="big-span">/</span>
                                     <span>1 {{$product->unit}}</span>
                                 </div>

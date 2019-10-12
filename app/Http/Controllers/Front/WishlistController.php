@@ -13,24 +13,24 @@ class WishlistController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Wishlist  $wishlist
+     * @param  \App\Models\Wishlist  $wishlist
      * @return \Illuminate\Http\Response
      */
     public function add(Request $request, Product $item)
     {
         $wishlist = new Wishlist;
         $wishlist->updateOrCreate([
-            'product_id'   =>  $item->id,
+            'product_id'  => $item->id,
             'customer_id' => $request->user()->id
         ]);
 
-        return back()->with('success',  trans('notify.item_added_to_wishlist'));
+        return redirect()->route('account.wishlist');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Wishlist  $wishlist
+     * @param  \App\Models\Wishlist  $wishlist
      * @return \Illuminate\Http\Response
      */
     public function remove(Request $request, Wishlist $wishlist)
@@ -39,6 +39,6 @@ class WishlistController extends Controller
 
         $wishlist->forceDelete();
 
-        return back()->with('success',  trans('notify.item_removed_from_wishlist'));
+        return redirect()->route('account.wishlist');
     }
 }

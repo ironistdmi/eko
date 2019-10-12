@@ -91,8 +91,65 @@ class ProductController extends Controller
     
     public function store_publish(Request $request)
     {
-        $product = Product::withTrashed()->find($request->product);
-        $product->withTrashed()->restore();
-        return redirect()->route('account');
+        $product = Product::find($request->product);
+        $product->active = 1;
+		$product->save();
+        return redirect()->route('account.products');
+    }
+	
+	public function store_unpublish($id) 
+	{
+		$product = Product::find($id);	
+		$product->active = 0;
+		$product->save();
+		return redirect()->route('account.products');
+	}
+
+    /**
+     * Trash the specified resource.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function trash(Request $request, $id)
+    {
+		Product::findOrFail($id)->delete();
+        return redirect()->route('account.products');
+    }
+
+    /**
+     * Restore the specified resource from soft delete.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function restore(Request $request, $id)
+    {
+        Product::onlyTrashed()->findOrFail($id)->restore();
+
+        return redirect()->route('account.products');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Request $request, $id)
+    {
+		$product = Product::onlyTrashed()->findOrFail($id);
+        $product->detachTags($product->id, 'product');
+        $product->flushImages();
+
+        //if($product->hasFeedbacks())
+        //    $product->flushFeedbacks();
+
+        $product->forceDelete();
+
+        return back()->with('success',  trans('messages.deleted', ['model' => $this->model]));
     }
 }

@@ -1,7 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-<?php $user = $tab; ?>
 <div class="d-flex fullscreen-page">
             <aside class="profile-aside">
                 <h3>Dashboard</h3>
@@ -136,9 +135,61 @@
                                     @endcan
                                 </div>
                             </div>
-                            <div class="card-item green-hint">
+                            @foreach($products as $item)
+							<div class="card-item">
+                                <div class="card-content">
+                                    <a href="profile-product.html" class="card-image" style="background-image: url(img/pics/profile-card-1.png)">
+                                        <div class="card-status published"> @if ($item->active) Published @else Non published @endif </div>
+                                    </a>
+                                    <div class="text-container verified">
+                                        <h5> <svg xmlns="http://www.w3.org/2000/svg" width="15.764" height="15.764" viewBox="0 0 15.764 15.764">
+                                                <g id="Layer_2" data-name="Layer 2" transform="translate(0 0)">
+                                                    <path id="Path_924" data-name="Path 924" d="M29.764,14.882a7.882,7.882,0,1,0-7.882,7.882,7.882,7.882,0,0,0,7.882-7.882Zm-14.888,0a7.006,7.006,0,1,1,7.006,7.006,7.006,7.006,0,0,1-7.006-7.006Z" transform="translate(-14 -7)" fill="#a3a3a3" />
+                                                    <path id="Path_925" data-name="Path 925" d="M29.32,24.071a.438.438,0,0,0,.438-.438V19.452a1.752,1.752,0,0,0,.876-1.441h0v-.175l-.153-.622a.246.246,0,0,0,0-.053l-.723-2.829A.438.438,0,0,0,29.32,14H22.314a.438.438,0,0,0-.438.333l-.705,2.829a.245.245,0,0,0,0,.053L21,17.836v.175h0a1.752,1.752,0,0,0,.876,1.445v4.177a.438.438,0,0,0,.438.438Zm-.648-5.285h-.061a.74.74,0,0,1-.136-.057l-.031-.048a.876.876,0,0,1-.162-.123h0a.837.837,0,0,1-.145-.18h1.511a.876.876,0,0,1-.477.39.793.793,0,0,1-.49,0Zm-5.22-.324-.057.07-.048.048-.079.061-.044.035-.123.066h0a.876.876,0,0,1-.35.074.727.727,0,0,1-.14,0,.7.7,0,0,1-.158-.044.841.841,0,0,1-.46-.394H23.5V18.4Zm3.613-.959h-2.5l.328-2.627h1.8a.289.289,0,0,0,0,.061Zm-.49.876a.876.876,0,0,1-1.515,0Zm3.039-.959a.158.158,0,0,0,0,.048V17.5H27.949l-.381-2.627h1.406Zm-6.958-2.544h1.353L23.68,17.5H22v-.031a.245.245,0,0,0,0-.053Zm.1,4.817a1.607,1.607,0,0,0,.328-.035.876.876,0,0,0,.1-.026,1.593,1.593,0,0,0,.206-.061l.109-.048.175-.1.1-.066a1.139,1.139,0,0,0,.158-.131l.083-.074a2.189,2.189,0,0,0,.153-.188l.044-.053a1.42,1.42,0,0,0,.074-.14,1.752,1.752,0,0,0,3.065,0,1.419,1.419,0,0,0,.074.14l.044.053a1.634,1.634,0,0,0,.158.188c0,.026.053.048.079.074a1.139,1.139,0,0,0,.158.131l.1.066.175.1.109.048a1.594,1.594,0,0,0,.206.061.876.876,0,0,0,.1.026,1.607,1.607,0,0,0,.328.035v3.5H27.131V21.006a.438.438,0,0,0-.438-.438H24.941a.438.438,0,0,0-.438.438V23.2H22.752Zm2.627,3.5V21.444h.876V23.2Z" transform="translate(-17.935 -10.935)" fill="#a3a3a3" />
+                                                </g>
+                                            </svg> {{$item->shop->name}}</h5>
+                                        <a href="{{route('product.edit',['product'=>$item->id])}}">
+                                            <h3>{{$item->name}}</h3>
+                                        </a>
+                                        <p>{{$item->short_description}}</p>
+                                    </div>
+                                    <div class="card-info">
+                                        @if ($item->active)<p>Published: <span>{{implode('-', array_reverse(explode('-',mb_substr($item->updated_at, 0, -9))))}}</span></p>@endif
+                                        <div class='tags-info'>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="12.006" height="12.032" viewBox="0 0 12.006 12.032">
+                                                <g id="noun_Tag_938953" transform="translate(-5.725 -5.7)">
+                                                    <g id="Group_68" data-name="Group 68" transform="translate(5.725 5.7)">
+                                                        <path id="Path_968" data-name="Path 968" d="M38.3,14a1.7,1.7,0,1,0,1.7,1.7A1.7,1.7,0,0,0,38.3,14Zm0,2.534a.815.815,0,0,1,0-1.631.815.815,0,1,1,0,1.631Z" transform="translate(-29.796 -12.171)" fill="#00a757" />
+                                                        <path id="Path_969" data-name="Path 969" d="M16.121,5.7l-3.394.11a2.444,2.444,0,0,0-1.543.705L6.27,11.43a1.849,1.849,0,0,0,0,2.622L9.4,17.181a1.876,1.876,0,0,0,1.3.551,1.785,1.785,0,0,0,1.3-.551l4.914-4.914a2.394,2.394,0,0,0,.705-1.543l.11-3.394A1.582,1.582,0,0,0,16.121,5.7Zm.639,4.958a1.47,1.47,0,0,1-.441.97l-4.936,4.936a.971.971,0,0,1-1.366,0L6.887,13.435a.971.971,0,0,1,0-1.366L11.8,7.154a1.465,1.465,0,0,1,.948-.441l3.394-.11a.679.679,0,0,1,.705.705Z" transform="translate(-5.725 -5.7)" fill="#00a757" />
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <p>{{ count($item->tags) }} tags</p>
+                                        </div>
+                                        <div class="tags-container">
+											@foreach ($item->tags as $tag)
+                                            <div class="tag-item">
+                                                <span>{{$tag->name}}</span>
+                                                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="8.342" height="8.342" viewBox="0 0 8.342 8.342">
+                                                        <g id="Group_926" data-name="Group 926" transform="translate(0.731 0.731)">
+                                                            <path id="Path_2074" data-name="Path 2074" d="M-5721.075,6344.8l6.552,6.552" transform="translate(5721.238 -6344.639)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1" />
+                                                            <path id="Path_2075" data-name="Path 2075" d="M0,0,6.651,6.651" transform="matrix(0.035, 0.999, -0.999, 0.035, 6.647, 0)" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-width="1" />
+                                                        </g>
+                                                    </svg>
+                                                </a>
+                                            </div>
+											@endforeach
+										</div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+							{{ $products->links('templates.pagination') }}
+							@if (!count($products)) 
+								<div class="card-item green-hint">
                                 <p> Add your first product <br> Click here and add your first position. So buyers can see it and buy. <a href="#" data-toggle="modal" data-target="#modal-verify-account-open">Learn more</a>. </p>
                             </div>
+							@endif
                         </div>
                     </div>
                     

@@ -66,9 +66,6 @@ Route::group(['middleware' => ['front'], 'namespace' => 'Front'], function() {
 	Route::post('product/{slug}/review', 'ReviewController@create_review_product')->name('createproduct.review');
 	Route::post('shop/{slug}/review', 'ReviewController@create_review_shop')->name('createshop.review');
 	
-	Route::get('wishlist/{item}', 'WishlistController@add')->name('wishlist.add');
-	Route::delete('wishlist/{wishlist}', 'WishlistController@remove')->name('wishlist.remove');
-	
 	Route::post('messages', function(Illuminate\Http\Request $request) {
 		App\Events\PrivateChat::dispatch($request->all());
 	});
@@ -89,15 +86,18 @@ Route::group(['middleware' => ['auth', 'back'], 'namespace' => 'Back', 'prefix' 
 	Route::get('/', 'AccountController@index')->name('account');
 	Route::get('/products', 'AccountController@products')->name('account.products');
     Route::get('/reviews', 'AccountController@reviews')->name('account.reviews');
+    Route::get('/wishlist', 'AccountController@wishlist')->name('account.wishlist');
 	Route::get('/edit', 'AccountController@editProfileForm')->name('profile.edit');
     Route::post('/edit', 'AccountController@storeProfileForm')->name('profile.edit.submit');
 	
 	Route::get('product/create', 'ProductController@create')->name('product.add');
 	Route::post('product/store', 'ProductController@store')->name('product.add.submit');	
 	Route::get('product/store/publish', 'ProductController@publish')->name('product.add.next');
+	Route::get('product/{product}/unpublish', 'ProductController@store_unpublish')->name('product.unpublish');
     Route::post('product/store/publish/submit', 'ProductController@store_publish')->name('product.add.next.submit');
 	Route::get('product/{product}/edit', 'ProductController@edit')->name('product.edit');
 	Route::post('product/{product}/update', 'ProductController@update')->name('product.update');
+	Route::get('product/{product}/destroy', 'ProductController@destroy')->name('product.destroy');
 	
 	Route::delete('product/{product}/trash', 'ProductController@trash')->name('product.trash');
 	Route::get('product/{product}/restore', 'ProductController@restore')->name('product.restore');
@@ -105,8 +105,13 @@ Route::group(['middleware' => ['auth', 'back'], 'namespace' => 'Back', 'prefix' 
 
 Route::group(['middleware' => ['auth']], function(){
 	Route::get('/logout' , 'Auth\LoginController@logout');	
+	
     Route::get('/register/seller', 'Auth\RegisterSellerController@showForm')->name('register.seller');
     Route::post('/register/seller/submit', 'Auth\RegisterSellerController@store')->name('register.seller.submit');
+	
+	Route::get('wishlist/{item}', 'Front\WishlistController@add')->name('wishlist.add');
+	Route::delete('wishlist/{wishlist}', 'Front\WishlistController@remove')->name('wishlist.remove');
+	
 	Route::get('download/{image}', 'ImageController@download')->name('image.download');
 	Route::post('delete/{image}', 'ImageController@delete')->name('image.delete');
 	Route::post('upload', 'ImageController@upload')->name('image.upload');

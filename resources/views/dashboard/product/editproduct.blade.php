@@ -28,10 +28,11 @@
                 <div class="form-block">
                     <form action="{{ route('product.add.submit') }}" accept-charset="UTF-8" id="productForm" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
+                        <input type='hidden' name='repeat'  value='{{isset($data)?$data['repeat']:0}}'>
                         <label for="product-name-input">Product Name</label>
-                        <input name="name" id="product-name-input" placeholder="Example: Fresh tomatoes" type="text" value='' required>
+                        <input name="name" id="product-name-input" placeholder="Example: Fresh tomatoes" type="text" value='{{isset($data)?$data['name']:''}}' required>
                         <label for="short-description-input">Short Description</label>
-                        <input name="short_description" class="count-description" id="short-description-input" placeholder="Example: Fresh tomatoes" type="text"  value='' required>
+                        <input name="short_description" class="count-description" id="short-description-input" placeholder="Example: Fresh tomatoes" type="text"  value='{{isset($data)?$data['short_description']:''}}' required>
                         <div class="button-container">
                             <span><span class="count-description-number">0</span> symbols</span>
                         </div>
@@ -48,7 +49,7 @@
                                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata </p>
                             </div>
                         </label>
-                        <textarea name="description" class="count-description" id="description-input" maxlength="250" rows="5" required></textarea>
+                        <textarea name="description" class="count-description" id="description-input" maxlength="250" rows="5" required>{{isset($data)?$data['description']:''}}</textarea>
                         <div class="button-container">
                             <span><span class="count-description-number">0</span> symbols</span>
                         </div>
@@ -81,7 +82,7 @@
                         <div class="form-group-container">
                             <div class="form-group-item">
                                 <label for="price-input">Price</label>
-                                <input name="price" id="price-input" placeholder="Example: 1000.00" type="text" value='' required>
+                                <input name="price" id="price-input" placeholder="Example: 1000.00" type="text" value='{{isset($data)?$data['price']:''}}' required>
                             </div>
                             <div class="form-group-container form-group-item">
                                 <div class="form-group-item">
@@ -324,7 +325,7 @@
 
 				$('#dropzone-input').fileinput('upload');
 
-				window.location.href = result.redirect;
+				//window.location.href = result.redirect;
 			})
 			.fail(function(xhr){
 		      	$("#productForm").find(":submit").removeAttr("disabled");

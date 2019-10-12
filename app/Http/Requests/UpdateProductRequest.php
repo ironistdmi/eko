@@ -3,9 +3,8 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
-use Illuminate\Support\Str;
 
-class CreateProductRequest extends Request
+class UpdateProductRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,23 +23,19 @@ class CreateProductRequest extends Request
      */
     public function rules()
     {
-        $shop_id = Request::user()->merchantId(); //Get current user's shop_id
-        Request::merge([
-			'shop_id' => $shop_id ,
-			'slug' => Str::slug($this->input('name'), '-'),
-		]);
 
         return [
-            'category_id' => 'required',
-            'name' => 'required|unique:products',
-            'short_description' => 'required',
-            'description' => 'required',
-			'active' => 'required',
-            'price' => 'nullable|numeric|min:0',
+           'category_id' => 'required',
+           'name' => 'required|composite_unique:products,name',
+           'short_description' => 'required',
+           'description' => 'required',
+           'active' => 'required',
+           'price' => 'nullable|numeric|min:0',
         ];
+
     }
 
-    /**
+   /**
      * Get the error messages for the defined validation rules.
      *
      * @return array

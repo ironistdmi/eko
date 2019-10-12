@@ -6,7 +6,7 @@
             <div class="add-item-page fullscreen-block">
                 <div class="title-block">
                     <div class="register-links">
-                        <a href="{{route('product.add',['repeat'=>$product->id])}}">1. Information</a>
+                        <a href="{{route('product.update',['product'=>$product->id])}}">1. Information</a>
                         <a class="active" href="#">2. Review</a>
                     </div>
                     <h2>Is everything correct?</h2>

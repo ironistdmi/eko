@@ -96,6 +96,7 @@ Route::group(['middleware' => ['auth', 'back'], 'namespace' => 'Back', 'prefix' 
 	Route::post('product/store', 'ProductController@store')->name('product.add.submit');	
 	Route::get('product/store/publish', 'ProductController@publish')->name('product.add.next');
     Route::post('product/store/publish/submit', 'ProductController@store_publish')->name('product.add.next.submit');
+	Route::get('product/{product}/edit', 'ProductController@edit')->name('product.edit');
 	Route::post('product/{product}/update', 'ProductController@update')->name('product.update');
 	
 	Route::delete('product/{product}/trash', 'ProductController@trash')->name('product.trash');

@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\DB;
@@ -81,11 +82,8 @@ class ProductController extends Controller
     
     public function publish()
     {
-        $user = auth()->user();
-        $seller = $user->seller;
-        $shop = $seller->shop;
 
-        $product = Product::withTrashed()->where('shop_id',$shop->id)->orderBy('id','desc')->first();
+        $product = Product::withTrashed()->where('shop_id',auth()->user()->shop->id)->orderBy('id','desc')->first();
         $iso_code = Currency::where('id',$product->currency_id)->value('iso_code');
 
         return view('dashboard.product.addproduct_next',compact('product','iso_code'));

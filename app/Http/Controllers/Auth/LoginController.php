@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use Auth;
 use Socialite;
-use App\Customer;
+use App\Models\Customer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;

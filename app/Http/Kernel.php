@@ -64,6 +64,7 @@ class Kernel extends HttpKernel
         'admin' => \App\Http\Middleware\VerifyUserIsAdmin::class,
         'merchant' => \App\Http\Middleware\VerifyUserIsMerchant::class,
         'front' => \App\Http\Middleware\Front::class,
+        'back' => \App\Http\Middleware\Back::class,
     ];
 
     /**

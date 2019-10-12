@@ -65,7 +65,7 @@ class HomeController extends Controller
         $priceRange['max'] = ceil($all_products->max('price'));
 		
         $products = $all_products->filter($request->all())
-        ->with(['reviews:rating,node_id,node_type', 'images:path,imageable_id,imageable_type'])
+        ->with(['reviews:rating,node_id,node_type', 'images:path,imagetrait_id,imagetrait_type'])
         ->paginate(20)->appends($request->except('page'));
 		
         return view('category', compact('category', 'products', 'priceRange'));

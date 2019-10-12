@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+//use App\Models\Address;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -30,29 +31,31 @@ class Shop extends Model
      * @var array
      */
     protected $fillable = [
-                    'owner_id',
-                    'name',
-                    'legal_name',
-                    'email',
-                    'slug',
-                    'description',
-                    'external_url',
-                    'timezone_id',
-                    'current_billing_plan',
-                    'stripe_id',
-                    'card_holder_name',
-                    'card_brand',
-                    'card_last_four',
-                    'trial_ends_at',
-                    'active',
-                ];
-				
-	
-    public function seller()
-	{
-       return $this->hasOne(Seller::class);
-	}
+		'owner_id',
+		'name',
+		'legal_name',
+		'email',
+		'slug',
+		'description',
+		'external_url',
+		'timezone_id',
+		'current_billing_plan',
+		'stripe_id',
+		'card_holder_name',
+		'card_brand',
+		'card_last_four',
+		'trial_ends_at',
+		'active',
+	];				
 
+	
+    /**
+     * Get the address for the shop.
+     */
+    public function address()
+    {
+		return $this->morphOne(Address::class, 'addressable')->where('addressable_type','App\Models\Shop');
+    }
 	
     /**
      * Get the reviews for the shop.

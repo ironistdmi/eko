@@ -43,8 +43,8 @@ class RolesSeeder extends Seeder
             ], [
                 'id' => 4,
                 'shop_id' => NULL,
-                'name' => 'Moderator',
-                'description' => 'Can access all information except the shop settings in under his/her shop.',
+                'name' => 'Customer',
+                'description' => 'Can access customer dashboard.',
                 'public' => 1,
                 'level' => 4,
                 'created_at' => Carbon::Now(),
@@ -52,10 +52,19 @@ class RolesSeeder extends Seeder
             ], [
                 'id' => 5,
                 'shop_id' => NULL,
+                'name' => 'Moderator',
+                'description' => 'Can access all information except the shop settings in under his/her shop.',
+                'public' => 1,
+                'level' => 5,
+                'created_at' => Carbon::Now(),
+                'updated_at' => Carbon::Now(),
+            ], [
+                'id' => 6,
+                'shop_id' => NULL,
                 'name' => 'Support',
                 'description' => 'Only can access chat under his/her shop.',
                 'public' => 1,
-                'level' => 5,
+                'level' => 6,
                 'created_at' => Carbon::Now(),
                 'updated_at' => Carbon::Now(),
             ]

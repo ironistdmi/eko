@@ -11,7 +11,6 @@ use App\Models\User;
 use App\Models\Country;
 use App\Models\Address;
 use App\Models\Shop;
-use App\Models\Seller;
 
 class RegisterSellerController extends Controller
 {
@@ -44,20 +43,18 @@ class RegisterSellerController extends Controller
                                ]);
         $adr->save();
         
-        $user->address_id = $adr->id;
-        $user->name = $data['name'];
-        $user->save();
-        
         $shop = Shop::create(['name' => $data['store_name'],
                               'email' => $user->email,
                               'slug' => Str::slug($data['store_name'],'_')
                             ]);
-        $shop->save();
+        $shop->save(); 
+
         
-        $seller = Seller::create(['user_id' => $user->id,
-                                  'shop_id' => $shop->id
-                                ]);  
-        return redirect()->action('Front\AccountController@index');
+        $user->shop_id = $shop->id;
+        $user->name = $data['name'];
+        $user->save();
+		
+        return redirect()->action('Back\AccountController@index');
     }
     
     private function validator(array $data)

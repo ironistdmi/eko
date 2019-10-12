@@ -52,3 +52,6 @@ php artisan config:clear
 
 <b>Install Demo data</b>
 php artisan db:seed --class=InstallDataSeeder
+
+<b>Fast reload data</b>
+php artisan migrate:refresh && php artisan db:seed --class=InstallDataSeeder

@@ -47,12 +47,10 @@ class Product extends Model
                         'description',
                         'price',
                         'origin_country',
-                        'has_variant',
-                        'requires_shipping',
                         'slug',
                         'sale_count',
                         'active',
-                        'short_desc',
+                        'short_description',
                         'currency_id',
                         'unit',
                     ];
@@ -83,6 +81,7 @@ class Product extends Model
         $array['model_number'] = $this->model_number;
         $array['mpn'] = $this->mpn;
         $array['gtin'] = $this->gtin;
+        $array['short_description'] = $this->short_description;
         $array['description'] = $this->description;
         $array['active'] = $this->active;
 
@@ -146,11 +145,6 @@ class Product extends Model
     public function scopeActive($query)
     {
         return $query->where('active', 1);
-    }
-
-    public function images()
-    {
-        return $this->hasMany('App\Models\Image', 'imageable_id');
     }   
 
 }

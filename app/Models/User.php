@@ -151,15 +151,7 @@ class User extends Authenticatable
 	{
 		return $this->belongsTo(Address::class);
 	}
-		
-    /**
-     * Connect seller with user.
-     */
-	public function seller()
-	{
-		return $this->hasOne(Seller::class, 'user_id');
-	}
-
+	
     /**
      * Get dob for the user.
      *

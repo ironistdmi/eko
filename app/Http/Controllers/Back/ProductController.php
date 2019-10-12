@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Front;
+namespace App\Http\Controllers\Back;
 
 use App\Models\Product;
 use App\Models\Currency;
@@ -18,11 +18,16 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
-    public function addProductForm(Request $request)
+	/**
+     * Show the form for creating a new product.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
         $categories = Category::orderBy('name')->get();
-        $currencies = DB::table('currencies')->orderBy('priority')->get();        
-        if(isset($request->repeat)) {
+        $currencies = Currency::orderBy('priority')->get();        
+        /*if(isset($request->repeat)) {
             $product = Product::withTrashed()->find($request->repeat);
             $data['repeat'] = $request->repeat;
             $data['name'] = $product->name;
@@ -30,9 +35,26 @@ class ProductController extends Controller
             $data['description'] = $product->description;
             $data['price'] = $product->price;
             return view('dashboard.addproduct',compact('categories','currencies','data'));
-        }else    
-        return view('dashboard.addproduct',compact('categories','currencies'));
+        }else */   
+        return view('dashboard.product.addproduct',compact('categories','currencies'));
     }
+	
+	public function store(CreateProductRequest $request) {
+		
+		$product = new Product();
+		
+		$product->create($request->all());
+	
+		if ($request->input('category_id')) {
+			$product->categories()->sync([$request->input('category_id')]);
+		}
+		
+		if ($request->input('tag_list')) {
+			Tag::syncTags($product, $request->input('tag_list'));
+		}
+		
+		return Response::json(['id' => $product->id,'model' => 'Product','redirect' => route('product.add.next')]);
+	}
     
     public function storeForm(CreateProductRequest $request)
     {	

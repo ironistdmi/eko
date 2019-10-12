@@ -7,7 +7,7 @@ use Carbon\Carbon;
 use Faker\Generator as Faker;
 
 $factory->define(Wishlist::class, function (Faker $faker) {
-    $inventory = $faker->randomElement(\DB::table('products')->select('id')->get()->toArray());
+    $product = $faker->randomElement(\DB::table('products')->select('id')->get()->toArray());
     $time = Carbon::Now()->subDays(rand(0, 15));
     return [
         'customer_id' => 1,

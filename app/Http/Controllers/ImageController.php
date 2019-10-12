@@ -25,7 +25,6 @@ class ImageController extends Controller
 	 */
 	public function upload(Request $request)
 	{
-		exit('fsfsfsd');
         if ($request->hasFile('images')){
 			$data = [];
 			$dir = '/storage/';
@@ -43,14 +42,14 @@ class ImageController extends Controller
 		        ];
 			}
 
-        	$model = get_qualified_model($request->input('model_name'));
+        	$model = "App\Models\\".$request->input('model_name');
         	$attachable = (new $model)->find($request->input('model_id'));
-
+echo '<pre>'; print_r($attachable); exit();
 			if($attachable->images()->createMany($data)){
 				return Response::json(['success' => trans('response.success')]);
 			}
 			else{
-	            $request->session()->flash('global_msg', trans('messages.img_upload_failed'));
+	            $request->session()->flash('global_msg', trans('app.image.img_upload_failed'));
 			}
 
 			return Response::json(['error' => trans('responses.error')]);
@@ -72,7 +71,7 @@ class ImageController extends Controller
 	    if (Storage::exists($image->path))
 	        return Storage::download($image->path, $image->name);
 
-		return back()->with('error', trans('messages.file_not_exist'));
+		return back()->with('error', trans('app.image.file_not_exist'));
 	}
 
 	/**
@@ -96,7 +95,7 @@ class ImageController extends Controller
 			return Response::json(['error' => trans('response.error')]);
 	    }
 
-		return Response::json(['error' => trans('messages.file_not_exist')]);
+		return Response::json(['error' => trans('app.image.file_not_exist')]);
 	}
 
 

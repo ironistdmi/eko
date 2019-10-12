@@ -87,7 +87,7 @@
                                         <span>1,3 km</span>
                                     </div>
                                 </div>
-                                <p>{{$product->short_desc}}</p>
+                                <p>{{$product->short_description}}</p>
                             </div>
                             <div class="price-container">
                                 <div class="price-content">

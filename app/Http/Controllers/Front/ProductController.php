@@ -104,8 +104,7 @@ class ProductController extends Controller
     {
         $user = auth()->user();
         $seller = $user->seller;
-        $shop = $seller->shop;
-
+        $shop = $seller->shop; 
         $product = Product::withTrashed()->where('shop_id',$shop->id)->orderBy('id','desc')->first();
         
         $iso_code = Currency::where('id',$product->currency_id)->value('iso_code');

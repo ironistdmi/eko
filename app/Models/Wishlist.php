@@ -60,6 +60,6 @@ class Wishlist extends Model
      */
     public function scopeMine($query)
     {
-        return $query->where('customer_id', \Auth::guard('customer')->user()->id);
+        return $query->where('customer_id', \Auth::user()->id);
     }
 }

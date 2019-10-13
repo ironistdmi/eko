@@ -27,7 +27,7 @@ class ImageController extends Controller
 	{
         if ($request->hasFile('images')){
 			$data = [];
-			$dir = 'storage';
+			$dir = 'images';
 			$files = $request->file('images');
 
         	foreach ($files as $order => $file) {

@@ -18,12 +18,13 @@ class CreateTagsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('taggables', function (Blueprint $table) {
-            $table->integer('tag_id')->unsigned();
-            $table->integer('taggable_id')->unsigned();
-            $table->string('taggable_type');
-
-            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
+        Schema::create('product_tag', function (Blueprint $table) {
+			$table->bigInteger('tag_id')->unsigned()->index();
+            $table->bigInteger('product_id')->unsigned()->index();
+			$table->timestamps();
+			
+            //$table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
+			$table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
 
@@ -34,7 +35,7 @@ class CreateTagsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('taggables');
+        Schema::drop('product_tag');
         Schema::drop('tags');
     }
 }

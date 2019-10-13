@@ -306,19 +306,6 @@ $(document).ready(function () {
     });
   }
 
-  var deleteProductItem;
-  $("a[data-toggle='modal']").on("click", function (e) {
-    e.preventDefault();
-    deleteProductItem = $(this).parents(".my-item");
-  });
-
-  $(".modal .delete-button").on("click", function () {
-    $(this).parents(".modal").modal("hide");
-    deleteProductItem.addClass("deleted-item");
-    setTimeout(function () {
-      deleteProductItem.fadeOut();
-    }, 2000);
-  });
 
   if ($(".stars-container")) {
     $(".stars-container .stars-items label").on("click", function () {

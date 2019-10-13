@@ -9,6 +9,7 @@ use App\Models\Page;
 use App\Models\Shop;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Currency;
 use App\Helpers\CatalogHelper;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -57,6 +58,9 @@ class HomeController extends Controller
      */
     public function browseCategory(Request $request, $slug, $sortby = Null)
     {
+		$currencies = Currency::all();
+		$categories = Category::all();
+		
         $category = Category::where('slug', $slug)->active()->firstOrFail();
 		
 		$all_products = $category->listings();
@@ -68,7 +72,7 @@ class HomeController extends Controller
         ->with(['reviews:rating,node_id,node_type', 'images:path,imagetrait_id,imagetrait_type'])
         ->paginate(20)->appends($request->except('page'));
 		
-        return view('category', compact('category', 'products', 'priceRange'));
+        return view('category', compact('category', 'products', 'priceRange', 'currencies', 'categories'));
     }
 
     /**
@@ -79,7 +83,8 @@ class HomeController extends Controller
      */
     public function product($slug)
     {
-        return view('product');
+		$item = Product::where('slug', $slug)->withCount('reviews')->firstOrFail();
+        return view('product', compact('item'));
     }
 
     /**

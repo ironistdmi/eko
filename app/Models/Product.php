@@ -108,6 +108,29 @@ class Product extends Model
     {
         return $this->belongsTo(Shop::class);
     }
+    /**
+     * Get the currency associated with the product.
+     */
+    public function currencies()
+    {
+        return $this->belongsTo(Currency::class, 'currency_id');
+    }
+
+    /**
+     * Get the reviews associated with the product.
+     */
+    public function reviews()
+    {
+        return $this->hasMany(Review::class, 'node_id');
+    }
+
+    /**
+     * Get the shop associated with the product.
+     */
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'product_tag');
+    }
 
     /**
      * Get the categories for the product.

@@ -21,5 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call('TimezonesSeeder');
         $this->call('CategoriesSeeder');
         $this->call('ShopsSeeder');
+        $this->call('PagesSeeder');
+        $this->call('CitiesSeeder');
     }
 }

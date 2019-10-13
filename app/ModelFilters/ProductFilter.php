@@ -16,16 +16,27 @@ class ProductFilter extends ModelFilter
 
     public function rating($rating)
     {
-        return $this->whereHas('feedbacks', function($query) use ($rating) {
-            return $query->select('rating')->groupBy('feedbackable_id')->havingRaw('AVG(rating) >= ?', [$rating]);
+        return $this->whereHas('reviews', function($query) use ($rating) {
+            return $query->select('rating')->groupBy('node_id')->havingRaw('AVG(rating) >= ?', [$rating]);
         });
     }
 
     public function price($price)
     {
-    	$price = explode('-', $price);
+    	/*$price = explode('-', $price);
 
-    	return $this->whereBetween('sale_price', [$price[0], $price[1]]);
+    	return $this->whereBetween('price', [$price[0], $price[1]]);*/
+    	return $this->where('price', '>', $price);
+    }
+    
+	public function unit($unit)
+    {
+    	return $this->where('unit', $unit);
+    }    
+	
+	public function currencies($currencies)
+    {
+    	return $this->where('currencies', $currencies);
     }
 
     public function newArraivals($new_arrivals)

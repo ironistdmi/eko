@@ -66,12 +66,7 @@
                                 <label for="category-input">Select a category</label>
                                 <select name="category_list[]" class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="category-input">
                                     @foreach($categories as $item)
-                                    <option
-                                        value="{{$item->id}}"
-                                        @if ($loop->first)
-                                        selected
-                                        @endif
-                                        >
+                                    <option value="{{$item->id}}">
                                         {{$item->name}}
                                     </option>
                                     @endforeach
@@ -87,8 +82,8 @@
                                 <div class="form-group-item">
                                     <label for="unit-input">Unit</label>
                                     <select name="unit" class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="unit-input">
-                                        <option value="Kg." selected>Kg.</option>
-                                        <option value="Pc.">Pc.</option>
+                                        <option value="Kg" selected>Kg.</option>
+                                        <option value="Pc">Pc.</option>
                                     </select>
                                 </div>
                                 <div class="form-group-item">

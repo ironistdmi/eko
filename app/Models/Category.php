@@ -36,7 +36,7 @@ class Category extends Model
      */
     public function listings()
     {
-        return $this->belongsToMany(Product::class, 'category_product', null, 'product_id', null, 'product_id');
+        return $this->belongsToMany(Product::class, 'category_product', null, 'product_id', null, 'id');
     }
 
     /**

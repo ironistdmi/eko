@@ -12,7 +12,7 @@
 			<div class="shop-block active">
 				<div class="search-info">
 					<div class="background-fixed-shadow disabled"></div>
-					<span class="result-statistic">@lang('app.category.results'): 12 594</span>
+					<span class="result-statistic">@lang('app.category.results'): {{$products->count()}}</span>
 					<span id="filter-toggle" class="filter-button">
 						<svg xmlns="http://www.w3.org/2000/svg" width="10.904" height="12" viewBox="0 0 10.904 12">
 							<g id="noun_Settings_943929" transform="translate(-11.2 -7.3)">
@@ -24,10 +24,11 @@
 							</g>
 						</svg>@lang('app.search.filter') </span>
 					<div id="filter-content-toggle" class="filter-container disabled">
+						{!! Form::open(['method' => 'GET', 'id' => 'search-category-form', 'class' => 'navbar-left navbar-form navbar-search', 'role' => 'search']) !!}
 						<div class="filter-title">
 							<h4>@lang('app.search.customize_search')</h4>
 							<div class="title-button">
-								<input type="reset" value="@lang('app.search.reset')">
+								<a href="{{ url()->current() }}">@lang('app.search.reset')</a>
 								<a class="close-filter" href="#">@lang('app.search.close')</a>
 							</div>
 						</div>
@@ -53,35 +54,43 @@
 							<div class="form-group-item">
 								<label for="category-input">@lang('app.search.category')</label>
 								<select class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="category-input">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
+								@foreach($categories as $item)
+                                    <option value="{{$item->id}}">
+                                        {{$item->name}}
+                                    </option>
+                                @endforeach
 								</select>
 							</div>
 						</div>
 						<div class="form-group-container">
 							<div class="form-group-item">
 								<label for="price-input">@lang('app.search.price')</label>
-								<input id="price-input" placeholder="Example: Poltaskiy Shlyah" type="text">
+								<input id="price-input" name="price" placeholder="15" type="text" value="{{ Request::get('price') }}">
 							</div>
 							<div class="form-group-container form-group-item">
 								<div class="form-group-item">
 									<label for="unit-input">@lang('app.search.unit')</label>
-									<select class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="unit-input">
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
-										<option>4</option>
+									<select class="bs-custom-select" name="unit" data-dropup-auto="false" title="Select" data-size="5" id="unit-input">
+										<option value="Kg"
+											@if (Request::get('unit') == 'Kg')
+												selected
+											@endif
+										>Kg</option>
+										<option value="Pc"
+											@if (Request::get('unit') == 'Pc')
+												selected
+											@endif
+										>Pc</option>
 									</select>
 								</div>
 								<div class="form-group-item">
 									<label for="currency-input">@lang('app.search.currency')</label>
-									<select class="bs-custom-select" data-dropup-auto="false" title="Select" data-size="5" id="currency-input">
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
-										<option>4</option>
+									<select class="bs-custom-select" name="currencies" data-dropup-auto="false" title="Select" data-size="5" id="currency-input">
+									@foreach($currencies as $item)
+                                    <option value="{{$item->id}}">
+                                        {{$item->name}}
+                                    </option>
+									@endforeach
 									</select>
 								</div>
 							</div>
@@ -89,11 +98,12 @@
 						<div class="form-group-item">
 							<label for="rating-input">@lang('app.search.rating')</label>
 							<div class="range-container">
-								<input id="rating-input" type="range" min="1" max="5" value="1">
-								<div class="range-value"><span>1</span></div>
+								<input id="rating-input" name="rating" type="range" min="1" max="5" value="{{ Request::get('rating') }}">
+								<div class="range-value"><span>{{ Request::get('rating') }}</span></div>
 							</div>
 						</div>
 						<button type="submit">@lang('app.search.find')</button>
+						{!! Form::close() !!}
 					</div>
 				</div>
 				<div class="shop-list-container">
@@ -120,8 +130,8 @@
 											<svg id="Group" xmlns="http://www.w3.org/2000/svg" height="9.904" viewBox="0 0 10.366 9.904">
 												<path id="Path_922" data-name="Path 922" d="M9.973,5.735a.716.716,0,0,0,.206.773l1.829,1.777a.315.315,0,0,1,.077.232l-.464,2.5a.671.671,0,0,0,.18.618.782.782,0,0,0,.953.18L15,10.629a.193.193,0,0,1,.232,0l2.241,1.185a.778.778,0,0,0,1.133-.8l-.438-2.5a.415.415,0,0,1,.077-.232l1.829-1.777a.8.8,0,0,0,.206-.773.747.747,0,0,0-.618-.515l-2.55-.386a.194.194,0,0,1-.18-.129L15.795,2.438a.771.771,0,0,0-1.391,0L13.3,4.7a.194.194,0,0,1-.18.129l-2.524.361A.783.783,0,0,0,9.973,5.735Z" transform="translate(-9.94 -2)" fill="#efba0b" />
 											</svg>
-											<span>4</span>
-											<span class="all-review">(493)</span>
+											<span>{{ $item->reviews->avg('review') }}</span>
+											<span class="all-review">({{ $item->reviews->count() }})</span>
 										</div>
 										<div class="map-distance">
 											<svg id="noun_distance_1122903" xmlns="http://www.w3.org/2000/svg" width="18.02" height="14.921" viewBox="0 0 18.02 14.921">
@@ -174,6 +184,7 @@
 						</div>
 					</div>
 					@endforeach
+					{{ $products->links('templates.pagination') }}
 				</div>
 			</div>
 			<div class="map-block">

@@ -94,10 +94,10 @@ Route::group(['middleware' => ['auth', 'back'], 'namespace' => 'Back', 'prefix' 
 	Route::post('product/store', 'ProductController@store')->name('product.add.submit');	
 	Route::get('product/store/publish', 'ProductController@publish')->name('product.add.next');
 	Route::get('product/{product}/unpublish', 'ProductController@store_unpublish')->name('product.unpublish');
-    Route::post('product/store/publish/submit', 'ProductController@store_publish')->name('product.add.next.submit');
+    Route::post('product/store/publish/submit', 'ProductController@store_publish')->name('product.publish');
 	Route::get('product/{product}/edit', 'ProductController@edit')->name('product.edit');
 	Route::post('product/{product}/update', 'ProductController@update')->name('product.update');
-	Route::get('product/{product}/destroy', 'ProductController@destroy')->name('product.destroy');
+	Route::delete('product/{product}/destroy', 'ProductController@destroy')->name('product.destroy');
 	
 	Route::delete('product/{product}/trash', 'ProductController@trash')->name('product.trash');
 	Route::get('product/{product}/restore', 'ProductController@restore')->name('product.restore');
@@ -116,4 +116,15 @@ Route::group(['middleware' => ['auth']], function(){
 	Route::post('delete/{image}', 'ImageController@delete')->name('image.delete');
 	Route::post('upload', 'ImageController@upload')->name('image.upload');
 	Route::post('image/sort', 'ImageController@sort')->name('image.sort');
+});
+
+Route::group(['prefix' => 'location', 'middleware' => ['web']], function () {
+    Route::get('countries', 'LocationController@getCountries');
+    Route::get('country/{id}', 'LocationController@getCountry');
+    Route::get('states', 'LocationController@getStates');
+    Route::get('state/{id}', 'LocationController@getState');
+    Route::get('states/{countryId}', 'LocationController@getStatesByCountry');
+    Route::get('cities', 'LocationController@getCities');
+    Route::get('city/{id}', 'LocationController@getCity');
+    Route::get('cities/{stateId}', 'LocationController@getCitiesByStates');
 });

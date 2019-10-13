@@ -31,9 +31,24 @@ class Review extends Model
     /**
      * Get the customer associated with the model.
     */
-    public function customer()
+    public function user()
     {
-        return $this->belongsTo(Customer::class);
+        return $this->belongsTo(User::class, 'customer_id');
+    }
+	
+    /**
+     * Get the customer associated with the model.
+    */
+    public function products()
+    {
+        return $this->belongsTo(Product::class, 'node_id');
+    }	
+    /**
+     * Get the customer associated with the model.
+    */
+    public function shops()
+    {
+        return $this->belongsTo(Shop::class, 'node_id');
     }
 
     /**

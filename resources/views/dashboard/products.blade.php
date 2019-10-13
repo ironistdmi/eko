@@ -75,7 +75,8 @@
                                                 <path id="Path_2060" data-name="Path 2060" d="M17,10a7,7,0,0,1-13.948.848.583.583,0,0,1,1.157-.14,5.858,5.858,0,1,0,.644-3.43H6.694a.583.583,0,0,1,0,1.167H4.361A1.363,1.363,0,0,1,3,7.083V4.75a.583.583,0,1,1,1.167,0V6.156A6.989,6.989,0,0,1,17,10Z" transform="translate(11 0)" fill="#2b2c33" />
                                             </g>
                                         </svg> <span>Restore</span></a>
-                                    <a href="{{ route('product.destroy', $item->id) }}"><svg xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 0 14 15">
+										{!! Form::open(['route' => ['product.destroy', $item->id], 'method' => 'delete', 'class' => 'data-form']) !!}
+										<button type="submit"><svg xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 0 14 15">
                                             <g id="noun_Delete_1561486" transform="translate(-3.903 -119.5)">
                                                 <g id="Group_642" data-name="Group 642" transform="translate(3.903 120)">
                                                     <path id="Path_1873" data-name="Path 1873" d="M255.313,334.1v9.236a.94.94,0,0,1-.933.94h-7.646a.94.94,0,0,1-.933-.94V334.1" transform="translate(-243.532 -330.276)" fill="none" stroke="#2b2c33" stroke-miterlimit="10" stroke-width="1" />
@@ -86,7 +87,9 @@
                                                 </g>
                                             </g>
                                         </svg>
-                                        <span>Delete</span></a>
+                                        <span>Delete</span></button>
+										{!! Form::close() !!}
+                                    
                                 </div>
                             </div>
 							@endforeach
@@ -110,7 +113,15 @@
 								{!! Form::button('Archive', ['type' => 'submit', 'title' => trans('app.delete_permanently'), 'data-toggle' => 'tooltip', 'data-placement' => 'top']) !!}
 							{!! Form::close() !!}
 							<!--<a href="{{ route('product.trash', $item->id) }}">Archive</a>-->
+							@if ($item->active) 
                             <a href="{{ route('product.unpublish', $item->id) }}">Unpublish</a>
+							@else
+								<form action="{{route('product.publish')}}" method="POST">
+									{{ csrf_field() }}
+									<input type='hidden' name='product' value="{{$item->id}}">
+									<button class="submit-button" type="submit">Publish!</button>
+								</form>
+							@endif
                         </div>
                         <div class="deleted-item-display">
                             <svg xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 0 14 15">
@@ -128,6 +139,7 @@
                         </div>
                     </div>
 					@endforeach
+					{{ $products->links('templates.pagination') }}
                 </div>
             </div>
 			@foreach ($products as $item)
@@ -144,9 +156,7 @@
 							</div>
 							<div class="button-container">
 								<button type="button" class="close-button" data-dismiss="modal">Close</button>
-								{!! Form::open(['route' => ['product.destroy', $item->id], 'method' => 'delete', 'class' => 'data-form']) !!}
-									{!! Form::button('Delete', ['type' => 'submit', 'class' => 'delete-button', 'title' => trans('app.delete_permanently'), 'data-toggle' => 'tooltip', 'data-placement' => 'top']) !!}
-								{!! Form::close() !!}
+								<button type="button" class="delete-button" data-action="{{ route('product.destroy', $item->id) }}"><span>Delete</span></button>
 							</div>
 						</div>
 					</div>
@@ -156,4 +166,42 @@
 			
 		</div>
         
+@endsection
+@section('scripts')
+<script type="text/javascript">
+	$( document ).ready(function () {
+		
+		$.ajaxSetup ({
+		    cache: false,
+		    headers: {
+		        'X-CSRF-TOKEN': "{{ csrf_token() }}"
+		    }
+	  	});				
+		var deleteProductItem;
+		$("a[data-toggle='modal']").on("click", function (e) {
+			e.preventDefault();
+			deleteProductItem = $(this).parents(".my-item");
+		});
+
+		$(".modal .delete-button").on("click", function () {
+			$(this).parents(".modal").modal("hide");
+
+			var formData = new FormData();			
+			var action = $(this).data('action');
+			$.ajax({
+				url: action,
+				type: "POST",
+				datatype: "json",
+				data: formData,
+				processData: false,
+				contentType: false,
+			});
+			
+			deleteProductItem.addClass("deleted-item");
+			setTimeout(function () {
+			  deleteProductItem.fadeOut();
+			}, 2000);
+		});
+	});
+</script>
 @endsection

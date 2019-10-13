@@ -1,6 +1,17 @@
 @extends('layouts.master')
 
-@section('content')                    
+@section('content')  
+        <div class="d-flex fullscreen-page">
+            <div class="profile-page fullscreen-block">
+                <div class="profile-background" style="background-image: url(img/pics/profile-bg.jpg)">
+                    <a class="toggle-dashboard" href="#">Dashboard <br> <svg xmlns="http://www.w3.org/2000/svg" width="33.312" height="13.934" viewBox="0 0 33.312 13.934">
+                            <g id="Group_997" data-name="Group 997" transform="translate(0)">
+                                <path id="Path_2079" data-name="Path 2079" d="M180.414,565.632l.428.428-.865.875L173,559.967,179.977,553l.865.875-5.471,5.48h30.941v1.234H175.371Z" transform="translate(-173 -553)" fill="#fff" />
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+                <div class="profile-content">                  
 					<div class="profile-info">
                         <div class="profile-image">
                             <img src="/img/pics/avatar.png">
@@ -20,7 +31,7 @@
                                                 </g>
                                             </g>
                                         </svg></span>
-                                    <p>{{ $item->shop->owner->name}}</p>
+                                    <p>{{ $item->shop->name}}</p>
                                 </div>
                                 <div class="contact-item"><span><svg xmlns="http://www.w3.org/2000/svg" width="8.182" height="14.282" viewBox="0 0 8.182 14.282">
                                             <g id="Group_993" data-name="Group 993" transform="translate(-69.25 -18.427)">
@@ -29,7 +40,7 @@
                                             </g>
                                         </svg>
                                     </span>
-                                    <p>{{ $item->shop->owner->address->city }},{{ $item->shop->owner->address->country }}</p>
+                                    <p>{{ $item->shop->address->city }},{{ $item->shop->address->country->name }}</p>
                                 </div>
                                 <div class="contact-item"><span><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13.066" viewBox="0 0 13 13.066">
                                             <g id="noun_Phone_1538695" transform="translate(0.035 -0.017)">
@@ -41,7 +52,7 @@
                                             </g>
                                         </svg>
                                     </span>
-                                    <p>{{ $item->shop->owner->address->phone }}</p>
+                                    <p>{{ $item->shop->address->phone }}</p>
                                 </div>
                                 <div class="contact-item"><span><svg xmlns="http://www.w3.org/2000/svg" width="16.696" height="12" viewBox="0 0 16.696 12">
                                             <g id="noun_Email_1703147" transform="translate(-38 -46)">
@@ -51,13 +62,15 @@
                                             </g>
                                         </svg>
                                     </span>
-                                    <p>{{ $item->shop->owner->email }}</p>
+                                    <p>{{ $item->shop->email }}</p>
                                 </div>
                             </div>
                         </div>
+						@can('seller')
                         <div class="profile-button">
                             <a class="link-button" href="#">Edit Profile</a>
                         </div>
+						@endcan
                     </div>
                     <div class="product-container">
                         <a class="products-button" href="#" onclick="window.history.go(-1); return false;"> <svg xmlns="http://www.w3.org/2000/svg" width="33.312" height="13.934" viewBox="0 0 33.312 13.934">
@@ -69,18 +82,14 @@
                             <div class="slider-block">
                                 <div class="slick-container">
                                     <div class="slider-for">
-                                        <a data-fancybox="gallery" href="img/pics/product-slider-main.png" class="item"><img src="/img/pics/product-slider-main.png" alt=""></a>
-                                        <a data-fancybox="gallery" href="img/pics/product-slider-2.png" class="item"><img src="/img/pics/product-slider-2.png" alt=""></a>
-                                        <a data-fancybox="gallery" href="img/pics/product-slider-1.png" class="item"><img src="/img/pics/product-slider-1.png" alt=""></a>
-                                        <a data-fancybox="gallery" href="img/pics/product-slider-main.png" class="item"><img src="/img/pics/product-slider-main.png" alt=""></a>
-                                        <a data-fancybox="gallery" href="img/pics/product-slider-main.png" class="item"><img src="/img/pics/product-slider-main.png" alt=""></a>
+										@foreach($item->images as $item)
+                                        <a data-fancybox="gallery" href="/storage/{{$item->path}}" class="item"><img src="/storage/{{$item->path}}" alt=""></a>
+										@endforeach
                                     </div>
                                     <div class="slider-nav">
-                                        <div class="item"><img src="/img/pics/product-slider-main.png" alt=""></div>
-                                        <div class="item"><img src="/img/pics/product-slider-2.png" alt=""></div>
-                                        <div class="item"><img src="/img/pics/product-slider-1.png" alt=""></div>
-                                        <div class="item"><img src="/img/pics/product-slider-2.png" alt=""></div>
-                                        <div class="item"><img src="/img/pics/product-slider-1.png" alt=""></div>
+										@foreach($item->images as $item)
+                                        <div class="item"><img src="/storage/{{$item->path}}" alt=""></div>
+										@endforeach
                                     </div>
                                 </div>
                             </div>
@@ -100,8 +109,8 @@
                                             <svg id="Group" xmlns="http://www.w3.org/2000/svg" height="9.904" viewBox="0 0 10.366 9.904">
                                                 <path id="Path_922" data-name="Path 922" d="M9.973,5.735a.716.716,0,0,0,.206.773l1.829,1.777a.315.315,0,0,1,.077.232l-.464,2.5a.671.671,0,0,0,.18.618.782.782,0,0,0,.953.18L15,10.629a.193.193,0,0,1,.232,0l2.241,1.185a.778.778,0,0,0,1.133-.8l-.438-2.5a.415.415,0,0,1,.077-.232l1.829-1.777a.8.8,0,0,0,.206-.773.747.747,0,0,0-.618-.515l-2.55-.386a.194.194,0,0,1-.18-.129L15.795,2.438a.771.771,0,0,0-1.391,0L13.3,4.7a.194.194,0,0,1-.18.129l-2.524.361A.783.783,0,0,0,9.973,5.735Z" transform="translate(-9.94 -2)" fill="#efba0b" />
                                             </svg>
-                                            <span>4.9</span>
-                                            <span class="all-review">(493)</span>
+                                            <span>{{ $item->reviews->avg('review') }}</span>
+                                            <span class="all-review">({{ $item->reviews->count() }})</span>
                                         </div>
                                         <div class="map-distance">
                                             <svg id="noun_distance_1122903" xmlns="http://www.w3.org/2000/svg" width="18.02" height="14.921" viewBox="0 0 18.02 14.921">
@@ -138,19 +147,19 @@
                                             <span>1,3 km</span>
                                         </div>
                                     </div>
-                                    <p>{!! $item->product->short_description !!}</p>
+                                    <p>{!! $item->short_description !!}</p>
                                 </div>
                                 <div class="price-container">
                                     <div class="price-content">
-                                        <span class="big-green-span">50 UAH</span>
+                                        <span class="big-green-span">{{round($item->price,2)}} {{$item->currencies->iso_code}}</span>
                                         <span class="big-span">/</span>
-                                        <span>1 KG</span>
+                                        <span>1 {{$item->unit}}</span>
                                     </div>
                                     <div class="tags-container">
                                         <div class="tag-category">
                                             <p>Category</p>
                                             <div class="tag-item">
-                                                <span>Food</span>
+                                                <span>{{ $item->categories[0]->name }}</span>
                                                 <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="8.342" height="8.342" viewBox="0 0 8.342 8.342">
                                                         <g id="Group_926" data-name="Group 926" transform="translate(0.731 0.731)">
                                                             <path id="Path_2074" data-name="Path 2074" d="M-5721.075,6344.8l6.552,6.552" transform="translate(5721.238 -6344.639)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1" />
@@ -174,10 +183,12 @@
                                             </div>
                                         </div>
                                     </div>
+									@can('seller')
                                     <div class="button-container">
                                         <a class="button-fill link-button" href="#">Edit</a>
                                         <a class="link-button" href="#" data-toggle="modal" data-target="#modal-product-post-open">Unpublish</a>
                                     </div>
+									@endcan
                                 </div>
                             </div>
                         </div>
@@ -185,7 +196,7 @@
                             <hr>
                             <div class="detail-container">
                                 <h4>Detailed Product Description</h4>
-                                <p>{!! $item->product->description !!}</p>
+                                <p>{!! $item->description !!}</p>
                             </div>
                             <div class="map-container">
                                 <h4>Detailed Product Description</h4>
@@ -197,6 +208,7 @@
                         </div>
                         <div class="review-block">
                             <h4>Reviews</h4>
+							@foreach ($item->reviews as $review)
                             <div class="review-item">
                                 <div class="review-info">
                                     <div class="image-container">
@@ -213,103 +225,24 @@
                                     </div>
                                     <div class="info-container">
                                         <div class="info-title">
-                                            <h3>Oleg Markov</h3>
+                                            <h3>{{$review->user->name}}</h3>
                                             <div class="review-rating">
                                                 <svg id="Group" xmlns="http://www.w3.org/2000/svg" height="9.904" viewBox="0 0 10.366 9.904">
                                                     <path id="Path_922" data-name="Path 922" d="M9.973,5.735a.716.716,0,0,0,.206.773l1.829,1.777a.315.315,0,0,1,.077.232l-.464,2.5a.671.671,0,0,0,.18.618.782.782,0,0,0,.953.18L15,10.629a.193.193,0,0,1,.232,0l2.241,1.185a.778.778,0,0,0,1.133-.8l-.438-2.5a.415.415,0,0,1,.077-.232l1.829-1.777a.8.8,0,0,0,.206-.773.747.747,0,0,0-.618-.515l-2.55-.386a.194.194,0,0,1-.18-.129L15.795,2.438a.771.771,0,0,0-1.391,0L13.3,4.7a.194.194,0,0,1-.18.129l-2.524.361A.783.783,0,0,0,9.973,5.735Z" transform="translate(-9.94 -2)" fill="#efba0b" />
                                                 </svg>
-                                                <span>4.9</span>
+                                                <span>{{$review->rating}}</span>
                                             </div>
                                         </div>
-                                        <p>Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
+                                        <p>{{$review->comment}}</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="review-item">
-                                <div class="review-info">
-                                    <div class="image-container">
-                                        <div class="image-wrapper">
-                                            <img src="/img/pics/review-image-2.png" alt="">
-                                        </div>
-                                        <div class="review-status status-green">
-                                            <svg id="noun_Heart_1814275" xmlns="http://www.w3.org/2000/svg" width="9.073" height="8.354" viewBox="0 0 9.073 8.354">
-                                                <g id="Group_15" data-name="Group 15">
-                                                    <path id="Path_937" data-name="Path 937" d="M13.442,966.416a2.4,2.4,0,0,0-1.761.77,2.731,2.731,0,0,0,0,3.686l3.479,3.752a.465.465,0,0,0,.679,0l3.483-3.748a2.73,2.73,0,0,0,0-3.686,2.394,2.394,0,0,0-3.519,0l-.3.323-.3-.327A2.389,2.389,0,0,0,13.442,966.416Zm0,.9a1.464,1.464,0,0,1,1.075.5l.646.694a.465.465,0,0,0,.679,0l.643-.686a1.414,1.414,0,0,1,2.154,0,1.813,1.813,0,0,1,0,2.419L15.5,973.625l-3.134-3.385a1.818,1.818,0,0,1,0-2.422A1.471,1.471,0,0,1,13.442,967.32Z" transform="translate(-10.965 -966.416)" fill="#fff" />
-                                                </g>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div class="info-container">
-                                        <div class="info-title">
-                                            <h3>Oleg Markov</h3>
-                                            <div class="review-rating">
-                                                <svg id="Group" xmlns="http://www.w3.org/2000/svg" height="9.904" viewBox="0 0 10.366 9.904">
-                                                    <path id="Path_922" data-name="Path 922" d="M9.973,5.735a.716.716,0,0,0,.206.773l1.829,1.777a.315.315,0,0,1,.077.232l-.464,2.5a.671.671,0,0,0,.18.618.782.782,0,0,0,.953.18L15,10.629a.193.193,0,0,1,.232,0l2.241,1.185a.778.778,0,0,0,1.133-.8l-.438-2.5a.415.415,0,0,1,.077-.232l1.829-1.777a.8.8,0,0,0,.206-.773.747.747,0,0,0-.618-.515l-2.55-.386a.194.194,0,0,1-.18-.129L15.795,2.438a.771.771,0,0,0-1.391,0L13.3,4.7a.194.194,0,0,1-.18.129l-2.524.361A.783.783,0,0,0,9.973,5.735Z" transform="translate(-9.94 -2)" fill="#efba0b" />
-                                                </svg>
-                                                <span>4.9</span>
-                                            </div>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
-                                    </div>
-                                </div>
+                            @endforeach
+							@if ($item->reviews->count() > 10) 
+							<div class="button-container">
+                                <a href="#">See more ({{$item->reviews->count()}})</a>
                             </div>
-                            <div class="review-item">
-                                <div class="review-info">
-                                    <div class="image-container">
-                                        <div class="image-wrapper">
-                                            <img src="/img/pics/review-image-3.png" alt="">
-                                        </div>
-                                        <div class="review-status status-green">
-                                            <svg id="noun_Heart_1814275" xmlns="http://www.w3.org/2000/svg" width="9.073" height="8.354" viewBox="0 0 9.073 8.354">
-                                                <g id="Group_15" data-name="Group 15">
-                                                    <path id="Path_937" data-name="Path 937" d="M13.442,966.416a2.4,2.4,0,0,0-1.761.77,2.731,2.731,0,0,0,0,3.686l3.479,3.752a.465.465,0,0,0,.679,0l3.483-3.748a2.73,2.73,0,0,0,0-3.686,2.394,2.394,0,0,0-3.519,0l-.3.323-.3-.327A2.389,2.389,0,0,0,13.442,966.416Zm0,.9a1.464,1.464,0,0,1,1.075.5l.646.694a.465.465,0,0,0,.679,0l.643-.686a1.414,1.414,0,0,1,2.154,0,1.813,1.813,0,0,1,0,2.419L15.5,973.625l-3.134-3.385a1.818,1.818,0,0,1,0-2.422A1.471,1.471,0,0,1,13.442,967.32Z" transform="translate(-10.965 -966.416)" fill="#fff" />
-                                                </g>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div class="info-container">
-                                        <div class="info-title">
-                                            <h3>Oleg Markov</h3>
-                                            <div class="review-rating">
-                                                <svg id="Group" xmlns="http://www.w3.org/2000/svg" height="9.904" viewBox="0 0 10.366 9.904">
-                                                    <path id="Path_922" data-name="Path 922" d="M9.973,5.735a.716.716,0,0,0,.206.773l1.829,1.777a.315.315,0,0,1,.077.232l-.464,2.5a.671.671,0,0,0,.18.618.782.782,0,0,0,.953.18L15,10.629a.193.193,0,0,1,.232,0l2.241,1.185a.778.778,0,0,0,1.133-.8l-.438-2.5a.415.415,0,0,1,.077-.232l1.829-1.777a.8.8,0,0,0,.206-.773.747.747,0,0,0-.618-.515l-2.55-.386a.194.194,0,0,1-.18-.129L15.795,2.438a.771.771,0,0,0-1.391,0L13.3,4.7a.194.194,0,0,1-.18.129l-2.524.361A.783.783,0,0,0,9.973,5.735Z" transform="translate(-9.94 -2)" fill="#efba0b" />
-                                                </svg>
-                                                <span>4.9</span>
-                                            </div>
-                                        </div>
-                                        <p>Super! </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="review-item">
-                                <div class="review-info">
-                                    <div class="image-container">
-                                        <div class="image-wrapper">
-                                            <img src="/img/pics/review-image-4.png" alt="">
-                                        </div>
-                                        <div class="review-status status-red">
-                                            <svg id="Group_1080" data-name="Group 1080" xmlns="http://www.w3.org/2000/svg" width="8.783" height="8.283" viewBox="0 0 8.783 8.283">
-                                                <path id="Path_2136" data-name="Path 2136" d="M10.647,967.749a4.33,4.33,0,0,1,.8-2.648.588.588,0,0,0,.41.169h1.774a.6.6,0,0,0,.591-.591v-3.547a.6.6,0,0,0-.591-.591H11.854a.589.589,0,0,0-.425.185,2.143,2.143,0,0,0-.231-.166,1.509,1.509,0,0,0-.637-.194c-.519-.054-1.338-.014-3.24-.021a.3.3,0,0,0-.188.068,1.769,1.769,0,0,0-.647.958.3.3,0,0,0-.086.071,1.519,1.519,0,0,0-.351,1.14.292.292,0,0,0-.043.043,1.474,1.474,0,0,0-.317,1.315,1.143,1.143,0,0,0-.246.822.977.977,0,0,0,.579.782.3.3,0,0,0,.117.025H8.565a4.053,4.053,0,0,0,.311,2.461,1.119,1.119,0,0,0,.785.585A.877.877,0,0,0,10.647,967.749Zm-1.256-.015a3.874,3.874,0,0,1-.2-2.408.309.309,0,0,0-.289-.351H6.225a.36.36,0,0,1-.194-.283.564.564,0,0,1,.157-.406H7.222a.3.3,0,1,0,0-.591H6.243A.9.9,0,0,1,6.4,963.1h.825a.3.3,0,1,0,0-.591H6.637a.9.9,0,0,1,.154-.591h.431a.3.3,0,1,0,0-.591h-.1a1.2,1.2,0,0,1,.326-.394c1.794.006,2.65-.023,3.055.019a.818.818,0,0,1,.394.114,4.131,4.131,0,0,1,.366.28v3a5.26,5.26,0,0,0-1.207,3.378C9.963,968.23,9.522,968.019,9.39,967.734Zm4.237-3.055H11.854c.007-1.175,0-2.364,0-3.548h1.774Z" transform="translate(-5.436 -960.336)" fill="#fff" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div class="info-container">
-                                        <div class="info-title">
-                                            <h3>Oleg Markov</h3>
-                                            <div class="review-rating">
-                                                <svg id="Group" xmlns="http://www.w3.org/2000/svg" height="9.904" viewBox="0 0 10.366 9.904">
-                                                    <path id="Path_922" data-name="Path 922" d="M9.973,5.735a.716.716,0,0,0,.206.773l1.829,1.777a.315.315,0,0,1,.077.232l-.464,2.5a.671.671,0,0,0,.18.618.782.782,0,0,0,.953.18L15,10.629a.193.193,0,0,1,.232,0l2.241,1.185a.778.778,0,0,0,1.133-.8l-.438-2.5a.415.415,0,0,1,.077-.232l1.829-1.777a.8.8,0,0,0,.206-.773.747.747,0,0,0-.618-.515l-2.55-.386a.194.194,0,0,1-.18-.129L15.795,2.438a.771.771,0,0,0-1.391,0L13.3,4.7a.194.194,0,0,1-.18.129l-2.524.361A.783.783,0,0,0,9.973,5.735Z" transform="translate(-9.94 -2)" fill="#efba0b" />
-                                                </svg>
-                                                <span>1</span>
-                                            </div>
-                                        </div>
-                                        <p>Not as good as they say about it! Quality is bad. They need to check their proceses of creating tomatoes! </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="button-container">
-                                <a href="#">See more (23)</a>
-                            </div>
+							@endif
                             <div class="feedback-container">
                                 <h3>Post a feedback</h3>
                                 <form action="">
@@ -348,5 +281,8 @@
                                 </form>
                             </div>
                         </div>
-                    </div>
+                    </div>                            
+				</div>
+			</div>
+		</div>
 @endsection

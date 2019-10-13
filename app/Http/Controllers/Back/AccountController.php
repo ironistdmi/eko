@@ -10,6 +10,7 @@ use App\Models\Wishlist;
 use App\Models\Customer;
 use App\Models\Address;
 use App\Models\Shop;
+use App\Models\Review;
 use App\Helpers\CatalogHelper;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -68,7 +69,7 @@ class AccountController extends Controller
     public function reviews()
     {
 		$reviews = Review::mine()->paginate(10);
-		return view('dashboard.wishlist', compact('reviews'));
+		return view('dashboard.reviews', compact('reviews'));
     }
 
     /**
@@ -119,9 +120,11 @@ class AccountController extends Controller
         $user = User::find(auth()->user()->id);
         $shop = Shop::where('id',$user->shop_id)->firstOrFail();
         $address = $shop->address;
+		if (!empty($phone)) {
         $phone = explode('#',$address->phone);
         $address->phone_code = $phone[0];
         $address->phone = $phone[1];
+		} 
         return view('dashboard.settings',compact('countries','user','address','shop'));
     }
     public function storeProfileForm(Request $request)

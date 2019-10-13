@@ -142,7 +142,7 @@ class ProductController extends Controller
     public function destroy(Request $request, $id)
     {
 		$product = Product::onlyTrashed()->findOrFail($id);
-        $product->detachTags($product->id, 'product');
+        //$product->detachTags($product->id, 'product');
         $product->flushImages();
 
         //if($product->hasFeedbacks())
@@ -150,6 +150,6 @@ class ProductController extends Controller
 
         $product->forceDelete();
 
-        return back()->with('success',  trans('messages.deleted', ['model' => $this->model]));
+        return redirect()->route('account.products');
     }
 }

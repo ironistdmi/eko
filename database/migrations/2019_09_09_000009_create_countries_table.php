@@ -34,7 +34,7 @@ class CreateCountriesTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('states', function (Blueprint $table) {
+        /*Schema::create('states', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('country_id')->unsigned();
             $table->string('country_name', 255)->nullable();
@@ -47,6 +47,13 @@ class CreateCountriesTable extends Migration
             $table->timestamps();
 
             $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
+        });*/
+		
+		Schema::create('states', function (Blueprint $table) {
+            $table->increments('id')->index();
+            $table->string('name');
+            $table->integer('country_id');
+            $table->timestamps();
         });
 
         Schema::create('currencies', function (Blueprint $table) {
